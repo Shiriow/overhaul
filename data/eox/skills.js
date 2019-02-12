@@ -3062,7 +3062,7 @@ let skills = {
     fellingBird: {
       name_en: "Felling Bird",
       name_jp: "飛鳥落とし",
-      desc: "Increases damage dealt based on the number of attacks user made last turn.",
+      desc: "Increases damage dealt based on the number of attacks.",
       stats: [],
       dep: { },
       maxLevel: 10,

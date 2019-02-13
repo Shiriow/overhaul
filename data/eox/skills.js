@@ -244,7 +244,7 @@ let skills = {
     shieldProtect: {
       name_en: "Shield Protect",
       name_jp: "大盾の守護",
-      desc: "For 3 turns, increases damage reduction from shield skills.",
+      desc: "For 3 turns, increases damage reduction from shield skills and increases aggro chance.",
       stats: [],
       unique: true,
       type: "Boost",
@@ -264,21 +264,21 @@ let skills = {
       coords: { x: 1, y: 0 }
     },
     frontGuard: {
-      name_en: "Front Guard",
+      name_en: "Line Guard",
       name_jp: "フロントガード",
-      desc: "Reduces physical damage to the front row for one turn.",
+      desc: "Reduces physical damage to a row for one turn.",
       stats: [],
       dep: { },
       maxLevel: 6,
       coords: { x: 0, y: 1 }
     },
     backGuard: {
-      name_en: "Back Guard",
+      name_en: "Mana Guard",
       name_jp: "バッグガード",
-      desc: "Reduces physical damage to the back row for one turn.",
+      desc: "Reduces elemental damage a row for one turn.",
       stats: [],
       dep: { frontGuard: 2 },
-      maxLevel: 4,
+      maxLevel: 6,
       coords: { x: 1, y: 1 }
     },
     cellDivide: {

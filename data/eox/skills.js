@@ -718,7 +718,7 @@ let skills = {
       desc: "Increases physical attack and maximum TP when a staff is equipped.",
       stats: [],
       dep: { heavyStrike: 1 },
-      maxLevel: 8,
+      maxLevel: 4,
       coords: { x: 5, y: 5 }
     }
   },
@@ -1092,7 +1092,7 @@ let skills = {
       desc: "Deals melee cut+fire damage to one target. Critical hit if used during Upper Stance.",
       stats: ["STR"],
       dep: { helmSplitter: 3 },
-      maxLevel: 8,
+      maxLevel: 6,
       coords: { x: 3, y: 1 }
     },
     hazeSlash: {
@@ -1110,7 +1110,7 @@ let skills = {
       desc: "Deals melee stab+volt damage to one target. Critical hit if used during Clear Stance.",
       stats: ["STR"],
       dep: { hazeSlash: 3 },
-      maxLevel: 8,
+      maxLevel: 6,
       coords: { x: 3, y: 2 }
     },
     horizontalSlice: {
@@ -1128,7 +1128,7 @@ let skills = {
       desc: "Deals melee cut+ice damage to one target. Critical hit if used during Drawing Stance.",
       stats: ["STR"],
       dep: { horizontalSlice: 3 },
-      maxLevel: 8,
+      maxLevel: 6,
       coords: { x: 3, y: 3 }
     },
     duel: {
@@ -1208,7 +1208,7 @@ let skills = {
     warEdgePower: {
       name_en: "War Edge Power",
       name_jp: "巫剣の力",
-      desc: "For 3 turns, War Edge skills can activate additional effects even against targets without an ailment.",
+      desc: "For 3 turns, War Edge skills can activate additional effects even against targets without an ailment and the users speed is increased.",
       stats: [],
       unique: true,
       type: "Boost",
@@ -1248,7 +1248,7 @@ let skills = {
     randomDisease: {
       name_en: "Random Disease",
       name_jp: "巫術：乱疫",
-      desc: "Attempts to inflict one of poison, paralyze, blind, sleep or curse on one target.",
+      desc: "Attempts to inflict one of poison, paralyze, blind, sleep or curse on every target.",
       stats: ["LUC"],
       dep: { },
       maxLevel: 8,
@@ -1303,10 +1303,10 @@ let skills = {
     warEdgeMastery: {
       name_en: "War Edge Mastery",
       name_jp: "巫剣マスタリー",
-      desc: "User can use sword skills with staff. Increases maximum TP when a sword is equipped; increases damage when a staff is equipped.",
+      desc: "User can dual-wield and use sword skills with staff. Increases maximum TP when a sword is equipped; increases damage when a staff is equipped. Normal attacks have a chance of being repeated",
       stats: [],
       dep: { },
-      maxLevel: 8,
+      maxLevel: 4,
       coords: { x: 1, y: 6 }
     },
     warRevive: {

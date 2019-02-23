@@ -379,7 +379,7 @@ let skills = {
       stats: [],
       dep: { recoveryGuard: 3 },
       maxLevel: 6,
-      coords: { x: 3, y: 3 }
+      coords: { x: 3, y: 1 }
     },
     physDefUp: {
       name_en: "Shield Siphon",
@@ -388,7 +388,7 @@ let skills = {
       stats: ["STR"],
       dep: { elemDefUp: 3 },
       maxLevel: 8,
-      coords: { x: 2, y: 3 }
+      coords: { x: 3, y: 3 }
     },
     elemDefUp: {
       name_en: "Shield Break",
@@ -397,7 +397,7 @@ let skills = {
       stats: ["STR"],
       dep: { shieldRush: 3 },
       maxLevel: 8,
-      coords: { x: 2, y: 6 }
+      coords: { x: 2, y: 3 }
     },
     fireWall: {
       name_en: "Fire Wall",

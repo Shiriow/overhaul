@@ -2920,7 +2920,7 @@ let skills = {
       desc: "Increases physical defense when two weapons are equipped. Enables sub-weapon when this skill is learned.",
       stats: [],
       dep: { },
-      maxLevel: 10,
+      maxLevel: 6,
       coords: { x: 0, y: 1 }
     },
     spiritFlow: {
@@ -2944,7 +2944,7 @@ let skills = {
     boltSlash: {
       name_en: "Bolt Slash",
       name_jp: "雷切",
-      desc: "Deals melee cut+volt damage to one target.",
+      desc: "Deals melee cut+volt damage to one target with inverted splash damage.",
       stats: ["STR"],
       dep: { },
       maxLevel: 8,
@@ -2966,16 +2966,16 @@ let skills = {
       stats: [],
       dep: { },
       maxLevel: 6,
-      coords: { x: 0, y: 5 }
+      coords: { x: 1, y: 5 }
     },
     assassinGathering: {
       name_en: "Assassin Gathering",
       name_jp: "刺客寄せ",
       desc: "For a set number of steps, increases encounter rate and experience gained from defeating enemies.",
       stats: [],
-      dep: { greatGeneral: 2 },
+      dep: { },
       maxLevel: 6,
-      coords: { x: 1, y: 5 }
+      coords: { x: 0, y: 5 }
     },
     take: {
       name_en: "Take",
@@ -3026,7 +3026,7 @@ let skills = {
     morningStar: {
       name_en: "Morning Star",
       name_jp: "明星",
-      desc: "Deals melee cut damage to one row. Damage increases during the day.",
+      desc: "Deals melee cut damage to one target. Never misses and removes users Blind.",
       stats: ["STR"],
       dep: { boltSlash: 3 },
       maxLevel: 6,
@@ -3035,7 +3035,7 @@ let skills = {
     dusk: {
       name_en: "Dusk",
       name_jp: "禍時",
-      desc: "Deals melee cut damage to one target. Damage increases at night.",
+      desc: "Deals melee cut damage to one row. Never misses and inflicts Blind on the user.",
       stats: ["STR"],
       dep: { sight: 2 },
       maxLevel: 6,
@@ -3046,7 +3046,7 @@ let skills = {
       name_jp: "血染めの朱槍",
       desc: "When the user kills an enemy or ally, their attack is increased. The effect is reset when the user dies.",
       stats: [],
-      dep: { dusk: 2 },
+      dep: { },
       maxLevel: 6,
       coords: { x: 3, y: 4 }
     },
@@ -3055,18 +3055,18 @@ let skills = {
       name_jp: "仮死再生",
       desc: "On the turn when the user's HP reaches 0, there is a chance that they may revive at the end of that turn.",
       stats: [],
-      dep: { },
+      dep: { ritualSuicide: 2 },
       maxLevel: 10,
-      coords: { x: 3, y: 5 }
+      coords: { x: 3, y: 6 }
     },
     fellingBird: {
       name_en: "Felling Bird",
       name_jp: "飛鳥落とし",
       desc: "Increases damage dealt based on the number of attacks.",
       stats: [],
-      dep: { },
+      dep: { fiveRingSword: 2 },
       maxLevel: 10,
-      coords: { x: 2, y: 6 }
+      coords: { x: 3, y: 1 }
     },
     ritualSuicide: {
       name_en: "Ritual Suicide",
@@ -3075,14 +3075,14 @@ let skills = {
       stats: ["WIS"],
       dep: { },
       maxLevel: 6,
-      coords: { x: 3, y: 6 }
+      coords: { x: 2, y: 6 }
     },
     fiveRingSword: {
       name_en: "Five-Ring Sword",
       name_jp: "五輪の剣",
       desc: "Deals multiple instances of melee damage to random targets with user's weapon. If two weapons are equipped, the maximum number of hits will double, and this attack will alternate between the katana and the other weapon.",
       stats: ["STR"],
-      dep: { twinSparrow: 4 },
+      dep: { fellingBird: 4 },
       maxLevel: 10,
       coords: { x: 4, y: 1 }
     },
@@ -3127,7 +3127,7 @@ let skills = {
       name_jp: "先陣の名誉",
       desc: "For 3 turns, increases one ally's physical attack and action speed, but decreases their physical defense.",
       stats: [],
-      dep: { reincarnation: 2 },
+      dep: { greatGeneral: 2 },
       maxLevel: 6,
       coords: { x: 4, y: 5 }
     }

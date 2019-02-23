@@ -377,7 +377,7 @@ let skills = {
       name_jp: "キープガード",
       desc: "Reduces all damage to one ally until the end of the next turn, and disables all Guard skills until then.",
       stats: [],
-      dep: { recoveryGuard: 3 },
+      dep: { recoveryGuard: 2 },
       maxLevel: 6,
       coords: { x: 3, y: 1 }
     },

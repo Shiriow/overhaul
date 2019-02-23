@@ -370,32 +370,32 @@ let skills = {
       stats: ["STR"],
       dep: { shieldSmite: 3 },
       maxLevel: 10,
-      coords: { x: 2, y: 3 }
+      coords: { x: 1, y: 3 }
     },
     keepGuard: {
       name_en: "Keep Guard",
       name_jp: "キープガード",
       desc: "Reduces all damage to one ally until the end of the next turn, and disables all Guard skills until then.",
       stats: [],
-      dep: { },
+      dep: { recoveryGuard: 3 },
       maxLevel: 6,
-      coords: { x: 2, y: 4 }
+      coords: { x: 3, y: 1 }
     },
     physDefUp: {
-      name_en: "Phys DEF Up",
+      name_en: "Shield Siphon",
       name_jp: "物理防御ブースト",
-      desc: "Increases physical defense.",
-      stats: [],
-      dep: { },
+      desc: "Deals melee bash damage to one target. Deals more damage when low health and drains HP. Damage is based on the user's shield's DEF.",
+      stats: ["STR"],
+      dep: { elemDefUp: 3 },
       maxLevel: 8,
       coords: { x: 2, y: 5 }
     },
     elemDefUp: {
-      name_en: "Elem DEF Up",
+      name_en: "Shield Break",
       name_jp: "属性防御ブースト",
-      desc: "Increases elemental defense.",
-      stats: [],
-      dep: { },
+      desc: "Deals melee bash damage to one target. Damages user. Damage is based on the user's shield's DEF.",
+      stats: ["STR"],
+      dep: { shieldRush: 3 },
       maxLevel: 8,
       coords: { x: 2, y: 6 }
     },
@@ -427,20 +427,20 @@ let skills = {
       coords: { x: 3, y: 6 }
     },
     hpUp: {
-      name_en: "HP Up",
+      name_en: "Rampart",
       name_jp: "ＨＰブースト",
-      desc: "Increases maximum HP.",
+      desc: "Reduces one instance of any damage against all party members. Higher levels upgrade reduction to null, then absorb.",
       stats: [],
-      dep: { },
-      maxLevel: 8,
-      coords: { x: 4, y: 0 }
+      dep: { fireWall: 2, iceWall: 2, voltWall: 2 },
+      maxLevel: 4,
+      coords: { x: 4, y: 5 }
     },
     healGuard: {
       name_en: "Heal Guard",
       name_jp: "ヒールガード",
       desc: "Restores HP for one row, and reduces physical damage to that row for one turn.",
       stats: ["WIS"],
-      dep: { recoveryGuard: 2 },
+      dep: { keepGuard: 2 },
       maxLevel: 6,
       coords: { x: 4, y: 1 }
     },
@@ -467,7 +467,7 @@ let skills = {
       name_jp: "シールドフレア",
       desc: "Until the end of the next turn, when the user is attacked, they will counterattack with ranged fire damage. Damage is based on the user's shield's DEF.",
       stats: ["STR"],
-      dep: { shieldRush: 3 },
+      dep: { physDefUp: 3 },
       maxLevel: 6,
       coords: { x: 4, y: 3 }
     },
@@ -478,7 +478,7 @@ let skills = {
       stats: [],
       dep: { fireWall: 2, iceWall: 2, voltWall: 2 },
       maxLevel: 10,
-      coords: { x: 4, y: 5 }
+      coords: { x: 5, y: 1 }
     }
   },
   Medic: {

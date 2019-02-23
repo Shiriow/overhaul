@@ -379,7 +379,7 @@ let skills = {
       stats: [],
       dep: { recoveryGuard: 3 },
       maxLevel: 6,
-      coords: { x: 3, y: 1 }
+      coords: { x: 3, y: 3 }
     },
     physDefUp: {
       name_en: "Shield Siphon",
@@ -388,7 +388,7 @@ let skills = {
       stats: ["STR"],
       dep: { elemDefUp: 3 },
       maxLevel: 8,
-      coords: { x: 2, y: 5 }
+      coords: { x: 2, y: 3 }
     },
     elemDefUp: {
       name_en: "Shield Break",
@@ -476,7 +476,7 @@ let skills = {
       name_jp: "フルガード",
       desc: "Reduces all damage to all party members for one turn. Cannot be used again for a set number of turns.",
       stats: [],
-      dep: { fireWall: 2, iceWall: 2, voltWall: 2 },
+      dep: { healGuard: 2 },
       maxLevel: 10,
       coords: { x: 5, y: 1 }
     }

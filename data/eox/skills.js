@@ -269,7 +269,7 @@ let skills = {
       desc: "Reduces physical damage to a row for one turn.",
       stats: [],
       dep: { },
-      maxLevel: 6,
+      maxLevel: 8,
       coords: { x: 0, y: 1 }
     },
     backGuard: {
@@ -287,7 +287,7 @@ let skills = {
       desc: "Covers one ally for one turn.",
       stats: [],
       dep: { },
-      maxLevel: 8,
+      maxLevel: 6,
       coords: { x: 0, y: 2 }
     },
     fortify: {
@@ -305,7 +305,7 @@ let skills = {
       desc: "Deals melee bash damage to one target. Attempts to inflict arm bind. Damage is based on the user's shield's DEF.",
       stats: ["STR", "LUC"],
       dep: { },
-      maxLevel: 10,
+      maxLevel: 6,
       coords: { x: 0, y: 3 }
     },
     provoke: {
@@ -332,7 +332,7 @@ let skills = {
       desc: "When the user defends, restores HP to allies on the user's row.",
       stats: [],
       dep: { },
-      maxLevel: 6,
+      maxLevel: 8,
       coords: { x: 0, y: 5 }
     },
     chop: {
@@ -351,7 +351,7 @@ let skills = {
       desc: "Removes binds from one row, and reduces physical damage to that row for one turn.",
       stats: [],
       dep: { backGuard: 1 },
-      maxLevel: 4,
+      maxLevel: 6,
       coords: { x: 2, y: 1 }
     },
     aegis: {
@@ -369,7 +369,7 @@ let skills = {
       desc: "Deals melee bash damage to all enemies, and reduces their physical attack for 3 turns. Damage is based on the user's shield's DEF.",
       stats: ["STR"],
       dep: { shieldSmite: 3 },
-      maxLevel: 10,
+      maxLevel: 8,
       coords: { x: 1, y: 3 }
     },
     keepGuard: {
@@ -441,7 +441,7 @@ let skills = {
       desc: "Restores HP for one row, and reduces physical damage to that row for one turn.",
       stats: ["WIS"],
       dep: { keepGuard: 2 },
-      maxLevel: 6,
+      maxLevel: 8,
       coords: { x: 4, y: 1 }
     },
     lineDivide: {

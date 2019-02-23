@@ -3064,7 +3064,7 @@ let skills = {
       name_jp: "飛鳥落とし",
       desc: "Increases damage dealt based on the number of attacks.",
       stats: [],
-      dep: { fiveRingSword: 2 },
+      dep: { twinSparrow: 4 },
       maxLevel: 10,
       coords: { x: 3, y: 1 }
     },
@@ -3082,7 +3082,7 @@ let skills = {
       name_jp: "五輪の剣",
       desc: "Deals multiple instances of melee damage to random targets with user's weapon. If two weapons are equipped, the maximum number of hits will double, and this attack will alternate between the katana and the other weapon.",
       stats: ["STR"],
-      dep: { fellingBird: 4 },
+      dep: { fellingBird: 2 },
       maxLevel: 10,
       coords: { x: 4, y: 1 }
     },

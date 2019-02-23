@@ -1600,27 +1600,27 @@ let skills = {
       name_jp: "防衛本能",
       desc: "At the start of battle, there is a chance to cast a buff on all party members that negates ailments once for 3 turns. Cannot activate if another ally activated it first.",
       stats: [],
-      dep: { bloodFortune: 2 },
+      dep: { bloodyOffense: 2 },
       maxLevel: 6,
-      coords: { x: 3, y: 4 }
+      coords: { x: 4, y: 4 }
     },
     bloodyOffense: {
       name_en: "Bloody Offense",
       name_jp: "ブラッドウェポン",
       desc: "For a set number of turns, one row of allies will have increased attack, but lose HP every time they act.",
       stats: [],
-      dep: { bloodVeil: 2 },
+      dep: { bloodFortune: 2 },
       maxLevel: 8,
-      coords: { x: 2, y: 5 }
+      coords: { x: 3, y: 4 }
     },
     bloodlust: {
       name_en: "Bloodlust",
       name_jp: "血の暴走",
       desc: "When the user loses HP, there is a chance that they will automatically attack with their weapon.",
       stats: [],
-      dep: { bloodyOffense: 2 },
-      maxLevel: 10,
-      coords: { x: 3, y: 5 }
+      dep: { bloodVeil: 2 },
+      maxLevel: 6,
+      coords: { x: 2, y: 5 }
     },
     physDefUp: {
       name_en: "Phys DEF Up",
@@ -1636,9 +1636,9 @@ let skills = {
       name_jp: "スピアリバーサル",
       desc: "Deals melee stab damage to one target. Damage is increased if the target has higher percentage of HP remaining than the user.",
       stats: ["STR"],
-      dep: { headPierce: 3 },
+      dep: { bloodlust: 3 },
       maxLevel: 6,
-      coords: { x: 4, y: 1 }
+      coords: { x: 4, y: 5 }
     },
     crossCharge: {
       name_en: "Cross Charge",
@@ -1672,9 +1672,9 @@ let skills = {
       name_jp: "ブラックサバス",
       desc: "Deals ranged almighty damage to all enemies, and restores all party members' HP based on damage dealt.",
       stats: ["STR"],
-      dep: { bloodlust: 3 },
+      dep: { headPierce: 3 },
       maxLevel: 8,
-      coords: { x: 4, y: 5 }
+      coords: { x: 4, y: 1 }
     },
     physAtkUp: {
       name_en: "Phys ATK Up",
@@ -1965,7 +1965,7 @@ let skills = {
       desc: "For a set number of turns, imbues one row of allies' weapons with fire, and increases their fire-elemental attack.",
       stats: [],
       dep: { attackOrder: 2 },
-      maxLevel: 8,
+      maxLevel: 6,
       coords: { x: 1, y: 1 }
     },
     freezeArms: {
@@ -1974,7 +1974,7 @@ let skills = {
       desc: "For a set number of turns, imbues one row of allies' weapons with ice, and increases their ice-elemental attack.",
       stats: [],
       dep: { attackOrder: 2 },
-      maxLevel: 8,
+      maxLevel: 6,
       coords: { x: 1, y: 2 }
     },
     shockArms: {
@@ -1983,7 +1983,7 @@ let skills = {
       desc: "For a set number of turns, imbues one row of allies' weapons with volt, and increases their volt-elemental attack.",
       stats: [],
       dep: { attackOrder: 2 },
-      maxLevel: 8,
+      maxLevel: 6,
       coords: { x: 1, y: 3 }
     },
     guardOrder: {
@@ -3990,10 +3990,10 @@ let skills = {
     impulseEdge: {
       name_en: "Impulse Edge",
       name_jp: "インパルスエッジ",
-      desc: "Connecting skill. Deals melee cut damage to one target. Restores TP to the user. Can only be used if an activation skill was used on the previous turn.",
+      desc: "Activation skill. Deals melee cut damage to one target. Restores TP to the user. Can only be used if an activation skill was used on the previous turn.",
       stats: ["STR"],
       dep: { tripEdge: 2 },
-      maxLevel: 10,
+      maxLevel: 8,
       coords: { x: 3, y: 2 }
     },
     intercooler: {
@@ -4011,7 +4011,7 @@ let skills = {
       desc: "Deals melee cut+fire damage to one target, and places the user in the overheat state for 8 turns. Cannot be used while overheated. Low action speed, and the user will take double damage until the skill activates.",
       stats: ["STR"],
       dep: { intercooler: 3 },
-      maxLevel: 8,
+      maxLevel: 6,
       coords: { x: 3, y: 3 }
     },
     freezeDrive: {
@@ -4020,7 +4020,7 @@ let skills = {
       desc: "Deals melee cut+ice damage to one target, and places the user in the overheat state for 8 turns. Cannot be used while overheated. Low action speed, and the user will take double damage until the skill activates.",
       stats: ["STR"],
       dep: { intercooler: 3 },
-      maxLevel: 8,
+      maxLevel: 6,
       coords: { x: 3, y: 4 }
     },
     shockDrive: {
@@ -4029,7 +4029,7 @@ let skills = {
       desc: "Deals melee cut+volt damage to one target, and places the user in the overheat state for 8 turns. Cannot be used while overheated. Low action speed, and the user will take double damage until the skill activates.",
       stats: ["STR"],
       dep: { intercooler: 3 },
-      maxLevel: 8,
+      maxLevel: 6,
       coords: { x: 3, y: 5 }
     },
     statusDefUp: {
@@ -4039,7 +4039,7 @@ let skills = {
       stats: [],
       dep: { },
       maxLevel: 8,
-      coords: { x: 2, y: 6 }
+      coords: { x: 4, y: 5 }
     },
     chargeEdge: {
       name_en: "Charge Edge",
@@ -4053,7 +4053,7 @@ let skills = {
     forceEdge: {
       name_en: "Force Edge",
       name_jp: "フォースエッジ",
-      desc: "Terminating skill. Deals melee cut damage to one target. Restores Force to the user. Can only be used if an activation skill or connecting skill was used on the previous turn.",
+      desc: "Connecting skill. Deals melee cut damage to one target. Restores Force to the user. Can only be used if an activation skill or connecting skill was used on the previous turn.",
       stats: ["STR"],
       dep: { impulseEdge: 2 },
       maxLevel: 6,
@@ -4085,8 +4085,8 @@ let skills = {
       desc: "Restores TP to the user when hitting a weakness.",
       stats: [],
       dep: { },
-      maxLevel: 4,
-      coords: { x: 4, y: 5 }
+      maxLevel: 6,
+      coords: { x: 2, y: 6 }
     },
     elemAtkUp: {
       name_en: "Elem ATK Up",

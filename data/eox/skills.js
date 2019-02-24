@@ -269,7 +269,7 @@ let skills = {
       desc: "Reduces physical damage to a row for one turn.",
       stats: [],
       dep: { },
-      maxLevel: 8,
+      maxLevel: 6,
       coords: { x: 0, y: 1 }
     },
     backGuard: {

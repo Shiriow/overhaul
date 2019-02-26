@@ -2687,7 +2687,7 @@ let skills = {
       name_jp: "不思議な種",
       desc: "At the end of this turn, attempts to inflict one of head bind, arm bind and leg bind to all enemies.",
       stats: ["LUC"],
-      dep: { sympathyPain: 1 },
+      dep: { lullaby: 1 },
       maxLevel: 10,
       coords: { x: 1, y: 1 }
     },
@@ -2760,7 +2760,7 @@ let skills = {
       name_jp: "弱り目に祟り目",
       desc: "For 3 turns, decreases attack for all enemies. Effect is stronger against enemies with an ailment.",
       stats: [],
-      dep: { strangeSeeds: 3, sympathyPain: 1 },
+      dep: { strangeSeeds: 3, sympathyPain: 3 },
       maxLevel: 6,
       coords: { x: 2, y: 1.5 }
     },
@@ -2832,7 +2832,7 @@ let skills = {
       name_jp: "労作歌",
       desc: "During exploration, restores TP to all allies every set number of steps taken.",
       stats: [],
-      dep: { sharingIsCaring: 3 },
+      dep: { sharingIsCaring: 2 },
       maxLevel: 8,
       coords: { x: 4, y: 3 }
     },
@@ -2850,7 +2850,7 @@ let skills = {
       name_jp: "探知マスター",
       desc: "For a set number of steps, displays treasure chests, hidden passages, staircases, FOEs and gather points on the minimap.",
       stats: [],
-      dep: { persistence: 1 },
+      dep: { persistence: 2 },
       maxLevel: 6,
       coords: { x: 4, y: 1 }
     },
@@ -2859,7 +2859,7 @@ let skills = {
       name_jp: "収穫祭",
       desc: "Deals melee cut damage to all enemies. Increases damage dealt and attempts to inflict instant death on enemy with binds.",
       stats: ["STR", "LUC"],
-      dep: { persistence: 1 },
+      dep: { persistence: 2 },
       maxLevel: 10,
       coords: { x: 4, y: 2 }
     },
@@ -2868,7 +2868,7 @@ let skills = {
       name_jp: "解体の恩恵",
       desc: "When the user kills an enemy, restores Force to all party members.",
       stats: [],
-      dep: { keenEye: 2, harvestFestival: 2 },
+      dep: { keenEye: 2, harvestFestival: 1 },
       maxLevel: 6,
       coords: { x: 5, y: 1.5 }
     },

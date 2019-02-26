@@ -1656,7 +1656,7 @@ let skills = {
       stats: ["STR"],
       dep: { legionBurst: 3 },
       maxLevel: 10,
-      coords: { x: 4, y: 3 }
+      coords: { x: 3, y: 3 }
     },
     alliedBonds: {
       name_en: "Allied Bonds",

@@ -2718,15 +2718,6 @@ let skills = {
       maxLevel: 4,
       coords: { x: 0, y: 3 }
     },
-    playPossum: {
-      name_en: "Play Possum",
-      name_jp: "鳴かずば討たれず",
-      desc: "For 3 turns, decreases one ally's chance of being targeted.",
-      stats: [],
-      dep: { flee: 1 },
-      maxLevel: 6,
-      coords: { x: 1, y: 3 }
-    },
     slapAwake: {
       name_en: "Slap Awake",
       name_jp: "応急蘇生",
@@ -2880,6 +2871,15 @@ let skills = {
       dep: { survivalSkills: 2 },
       maxLevel: 4,
       coords: { x: 4, y: 6 }
+    },
+    playPossum: {
+      name_en: "Play Possum",
+      name_jp: "鳴かずば討たれず",
+      desc: "For 3 turns, decreases one ally's chance of being targeted.",
+      stats: [],
+      dep: { flee: 1 },
+      maxLevel: 6,
+      coords: { x: 1, y: 3 }
     },
     doubleChop: {
       name_en: "Double Chop",

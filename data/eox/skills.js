@@ -2723,7 +2723,7 @@ let skills = {
       name_jp: "鳴かずば討たれず",
       desc: "For 3 turns, decreases one ally's chance of being targeted.",
       stats: [],
-      dep: { flee: 1 },
+      dep: { },
       maxLevel: 6,
       coords: { x: 1, y: 3 }
     },

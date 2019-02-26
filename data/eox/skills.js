@@ -2709,6 +2709,15 @@ let skills = {
       maxLevel: 8,
       coords: { x: 1, y: 4 }
     },
+    flee: {
+      name_en: "Flee",
+      name_jp: "猛進逃走",
+      desc: "Consumes HP from all party members to attempt to flee the battle and return to the last used staircase or geomagnetic pole. Does not consume HP if fleeing failed.",
+      stats: [],
+      dep: { },
+      maxLevel: 4,
+      coords: { x: 0, y: 3 }
+    },
     playPossum: {
       name_en: "Play Possum",
       name_jp: "鳴かずば討たれず",
@@ -2871,15 +2880,6 @@ let skills = {
       dep: { survivalSkills: 2 },
       maxLevel: 4,
       coords: { x: 4, y: 6 }
-    },
-    flee: {
-      name_en: "Flee",
-      name_jp: "猛進逃走",
-      desc: "Consumes HP from all party members to attempt to flee the battle and return to the last used staircase or geomagnetic pole. Does not consume HP if fleeing failed.",
-      stats: [],
-      dep: { },
-      maxLevel: 4,
-      coords: { x: 0, y: 3 }
     },
     doubleChop: {
       name_en: "Double Chop",

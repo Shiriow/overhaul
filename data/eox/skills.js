@@ -2673,14 +2673,14 @@ let skills = {
       maxLevel: 0,
       coords: { x: 1, y: 0 }
     },
-    sympathyPain: {
-      name_en: "Bolster",
-      name_jp: "怪我の功名",
-      desc: "Attempts to inflict ailments and binds on the user to all enemies. This will not remove them from the user.",
-      stats: [],
-      dep: { lullaby: 1 },
+    lullaby: {
+      name_en: "Lullaby",
+      name_jp: "子守唄",
+      desc: "Inflicts sleep on the user and attempts to inflict sleep on all enemies.",
+      stats: ["LUC"],
+      dep: { },
       maxLevel: 6,
-      coords: { x: 1, y: 2 }
+      coords: { x: 0, y: 1.5 }
     },
     strangeSeeds: {
       name_en: "Strange Seeds",
@@ -2691,23 +2691,14 @@ let skills = {
       maxLevel: 10,
       coords: { x: 1, y: 1 }
     },
-    playPossum: {
-      name_en: "Play Possum",
-      name_jp: "鳴かずば討たれず",
-      desc: "For 3 turns, decreases one ally's chance of being targeted.",
+    sympathyPain: {
+      name_en: "Bolster",
+      name_jp: "怪我の功名",
+      desc: "Attempts to inflict ailments and binds on the user to all enemies. This will not remove them from the user.",
       stats: [],
-      dep: { flee: 1 },
+      dep: { lullaby: 1 },
       maxLevel: 6,
-      coords: { x: 1, y: 3 }
-    },
-    keenEye: {
-      name_en: "Invigorate",
-      name_jp: "探知マスター",
-      desc: "For a set number of steps, displays treasure chests, hidden passages, staircases, FOEs and gather points on the minimap.",
-      stats: [],
-      dep: { persistence: 1 },
-      maxLevel: 6,
-      coords: { x: 4, y: 1 }
+      coords: { x: 1, y: 2 }
     },
     searchSkill: {
       name_en: "Search Skill",
@@ -2726,6 +2717,15 @@ let skills = {
       dep: { },
       maxLevel: 4,
       coords: { x: 0, y: 4 }
+    },
+    playPossum: {
+      name_en: "Play Possum",
+      name_jp: "鳴かずば討たれず",
+      desc: "For 3 turns, decreases one ally's chance of being targeted.",
+      stats: [],
+      dep: { flee: 1 },
+      maxLevel: 6,
+      coords: { x: 1, y: 3 }
     },
     slapAwake: {
       name_en: "Slap Awake",
@@ -2809,15 +2809,6 @@ let skills = {
       maxLevel: 6,
       coords: { x: 3, y: 5 }
     },
-    sharingIsCaring: {
-      name_en: "Sharing is Caring",
-      name_jp: "御裾分け",
-      desc: "Consumes the user's TP to restore TP to other allies on the same row.",
-      stats: [],
-      dep: { braveHeart: 1 },
-      maxLevel: 8,
-      coords: { x: 3, y: 3 }
-    },
     braveHeart: {
       name_en: "Brave Heart",
       name_jp: "怖いもの知らず",
@@ -2827,23 +2818,14 @@ let skills = {
       maxLevel: 4,
       coords: { x: 2, y: 3 }
     },
-    survivalSkills: {
-      name_en: "Survival Skills",
-      name_jp: "生存の知恵",
-      desc: "Restores HP and TP to all party members when gathering.",
+    sharingIsCaring: {
+      name_en: "Sharing is Caring",
+      name_jp: "御裾分け",
+      desc: "Consumes the user's TP to restore TP to other allies on the same row.",
       stats: [],
-      dep: { },
-      maxLevel: 6,
-      coords: { x: 2, y: 6 }
-    },
-    lullaby: {
-      name_en: "Lullaby",
-      name_jp: "子守唄",
-      desc: "Inflicts sleep on the user and attempts to inflict sleep on all enemies.",
-      stats: ["LUC"],
-      dep: { },
-      maxLevel: 6,
-      coords: { x: 0, y: 1.5 }
+      dep: { braveHeart: 1 },
+      maxLevel: 8,
+      coords: { x: 3, y: 3 }
     },
     songOfLabour: {
       name_en: "Song of Labour",
@@ -2854,14 +2836,23 @@ let skills = {
       maxLevel: 8,
       coords: { x: 4, y: 3 }
     },
-    dissection: {
-      name_en: "Dissection",
-      name_jp: "解体の恩恵",
-      desc: "When the user kills an enemy, restores Force to all party members.",
+    survivalSkills: {
+      name_en: "Survival Skills",
+      name_jp: "生存の知恵",
+      desc: "Restores HP and TP to all party members when gathering.",
       stats: [],
-      dep: { keenEye: 2, harvestFestival: 2 },
+      dep: { },
       maxLevel: 6,
-      coords: { x: 5, y: 1.5 }
+      coords: { x: 2, y: 6 }
+    },
+    keenEye: {
+      name_en: "Invigorate",
+      name_jp: "探知マスター",
+      desc: "For a set number of steps, displays treasure chests, hidden passages, staircases, FOEs and gather points on the minimap.",
+      stats: [],
+      dep: { persistence: 1 },
+      maxLevel: 6,
+      coords: { x: 4, y: 1 }
     },
     harvestFestival: {
       name_en: "Harvest Festival",
@@ -2871,6 +2862,15 @@ let skills = {
       dep: { persistence: 1 },
       maxLevel: 10,
       coords: { x: 4, y: 2 }
+    },
+    dissection: {
+      name_en: "Dissection",
+      name_jp: "解体の恩恵",
+      desc: "When the user kills an enemy, restores Force to all party members.",
+      stats: [],
+      dep: { keenEye: 2, harvestFestival: 2 },
+      maxLevel: 6,
+      coords: { x: 5, y: 1.5 }
     },
     naturesBounty: {
       name_en: "Nature's Bounty",

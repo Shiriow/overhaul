@@ -275,7 +275,7 @@ let skills = {
     backGuard: {
       name_en: "Mana Guard",
       name_jp: "バッグガード",
-      desc: "Reduces elemental damage a row for one turn.",
+      desc: "Reduces elemental damage to a row for one turn.",
       stats: [],
       dep: { frontGuard: 2 },
       maxLevel: 6,
@@ -1089,7 +1089,7 @@ let skills = {
     flameGrater: {
       name_en: "Flame Grater",
       name_jp: "卸し焔",
-      desc: "Deals melee cut+fire damage to one target. Critical hit if used during Upper Stance.",
+      desc: "Deals melee cut+fire damage to one target and reduces the targets defence for 3 turns. Critical hit if used during Upper Stance.",
       stats: ["STR"],
       dep: { helmSplitter: 3 },
       maxLevel: 6,
@@ -1107,7 +1107,7 @@ let skills = {
     lightningStab: {
       name_en: "Lightning Stab",
       name_jp: "雷耀突き",
-      desc: "Deals melee stab+volt damage to one target. Critical hit if used during Clear Stance.",
+      desc: "Deals melee stab+volt damage to one target. Attempts to inflict paralyze. Critical hit if used during Clear Stance.",
       stats: ["STR"],
       dep: { hazeSlash: 3 },
       maxLevel: 6,
@@ -1125,7 +1125,7 @@ let skills = {
     frigidSlash: {
       name_en: "Frigid Slash",
       name_jp: "抜刀氷雪",
-      desc: "Deals melee cut+ice damage to one target. Critical hit if used during Drawing Stance.",
+      desc: "Deals melee cut+ice damage to one target and increases the users evasion for that turn. Critical hit if used during Drawing Stance.",
       stats: ["STR"],
       dep: { horizontalSlice: 3 },
       maxLevel: 6,
@@ -1152,7 +1152,7 @@ let skills = {
     swallowStrike: {
       name_en: "Swallow Strike",
       name_jp: "ツバメがえし",
-      desc: "Requires any stance. Deals multiple instances of melee cut damage to one target. Removes stance after use, and disables skills on the next turn. Critical hit if used during Upper Stance.",
+      desc: "Requires any stance. Deals multiple instances of melee cut damage to one target. Removes stance after use. Critical hit if used during Upper Stance.",
       stats: ["STR"],
       dep: { flameGrater: 3 },
       maxLevel: 6,
@@ -1161,7 +1161,7 @@ let skills = {
     bluntingStab: {
       name_en: "Blunting Stab",
       name_jp: "鈍通し",
-      desc: "Requires any stance. Deals melee stab damage to one target. Attempts to inflict petrify. Removes stance after use, and disables skills on the next turn. Critical hit if used during Clear Stance.",
+      desc: "Requires any stance. Deals melee stab damage to one target. Attempts to inflict petrify. Removes stance after use. Critical hit if used during Clear Stance.",
       stats: ["STR", "LUC"],
       dep: { lightningStab: 3 },
       maxLevel: 6,
@@ -1170,29 +1170,29 @@ let skills = {
     petalScatter: {
       name_en: "Petal Scatter",
       name_jp: "散華",
-      desc: "Requires any stance. Deals ranged cut damage to all targets. Removes stance after use, and disables skills on the next turn. Critical hit if used during Drawing Stance. Deals less damage based on the number of targets.",
+      desc: "Requires any stance. Deals ranged cut damage to all targets. Removes stance after use. Critical hit if used during Drawing Stance. Deals less damage based on the number of targets.",
       stats: ["STR"],
       dep: { frigidSlash: 3 },
       maxLevel: 6,
       coords: { x: 4, y: 3 }
     },
     proofOfMastery: {
-      name_en: "Proof of Mastery",
+      name_en: "Earth Breaker",
       name_jp: "免許皆伝",
-      desc: "Increases the effect of all stances.",
+      desc: "Melee Cut attack to 1 enemy with splash damage, has a chance of stunning, and disables skills on the next turn.",
       stats: [],
-      dep: { },
+      dep: { swallowStrike: 2, bluntingStab: 2, petalScatter: 2 },
       maxLevel: 10,
-      coords: { x: 4, y: 4 }
+      coords: { x: 5, y: 2 }
     },
     risingSpirit: {
       name_en: "Rising Spirit",
       name_jp: "戦意高揚",
       desc: "At the end of the turn, if a stance is active, restores TP to the user.",
       stats: [],
-      dep: { proofOfMastery: 2 },
+      dep: { },
       maxLevel: 4,
-      coords: { x: 5, y: 4 }
+      coords: { x: 4, y: 4 }
     },
     speedUp: {
       name_en: "Speed Up",
@@ -1471,7 +1471,7 @@ let skills = {
     longThrust: {
       name_en: "Long Thrust",
       name_jp: "ロングスラスト",
-      desc: "Deals ranged stab damage to one target.",
+      desc: "Deals ranged damage to one target with the user's weapon. Pierces rows",
       stats: ["STR"],
       dep: { },
       maxLevel: 8,
@@ -1665,7 +1665,7 @@ let skills = {
       stats: [],
       dep: { legionCharge: 2 },
       maxLevel: 4,
-      coords: { x: 5, y: 3 }
+      coords: { x: 4, y: 3 }
     },
     blackSabbath: {
       name_en: "Black Sabbath",
@@ -2152,7 +2152,7 @@ let skills = {
     lastOrder: {
       name_en: "Last Order",
       name_jp: "ラストオーダー",
-      desc: "Removes all buffs from self to increase attack and defense for all allies this turn. Can only be used if the user has 3 buffs.",
+      desc: "Removes all buffs from self to increase attack and defense for own row this turn. Can only be used if the user has 3 buffs.",
       stats: [],
       dep: { pairOrder: 2, healOrder: 2 },
       maxLevel: 6,
@@ -2674,13 +2674,13 @@ let skills = {
       coords: { x: 1, y: 0 }
     },
     sympathyPain: {
-      name_en: "Sympathy Pain",
+      name_en: "Bolster",
       name_jp: "怪我の功名",
       desc: "Attempts to inflict ailments and binds on the user to all enemies. This will not remove them from the user.",
-      stats: ["LUC", "LUC"],
-      dep: { },
+      stats: [],
+      dep: { lullaby: 1 },
       maxLevel: 6,
-      coords: { x: 0, y: 1.5 }
+      coords: { x: 1, y: 2 }
     },
     strangeSeeds: {
       name_en: "Strange Seeds",
@@ -2696,18 +2696,18 @@ let skills = {
       name_jp: "鳴かずば討たれず",
       desc: "For 3 turns, decreases one ally's chance of being targeted.",
       stats: [],
-      dep: { sympathyPain: 1 },
+      dep: { flee: 1 },
       maxLevel: 6,
-      coords: { x: 1, y: 2 }
+      coords: { x: 1, y: 3 }
     },
     keenEye: {
-      name_en: "Keen Eye",
+      name_en: "Invigorate",
       name_jp: "探知マスター",
       desc: "For a set number of steps, displays treasure chests, hidden passages, staircases, FOEs and gather points on the minimap.",
       stats: [],
-      dep: { },
+      dep: { persistence: 1 },
       maxLevel: 6,
-      coords: { x: 0, y: 3 }
+      coords: { x: 4, y: 1 }
     },
     searchSkill: {
       name_en: "Search Skill",
@@ -2716,7 +2716,7 @@ let skills = {
       stats: [],
       dep: { keenEye: 2 },
       maxLevel: 8,
-      coords: { x: 1, y: 3 }
+      coords: { x: 1, y: 4 }
     },
     flee: {
       name_en: "Flee",
@@ -2725,7 +2725,7 @@ let skills = {
       stats: [],
       dep: { },
       maxLevel: 4,
-      coords: { x: 1, y: 4 }
+      coords: { x: 0, y: 4 }
     },
     slapAwake: {
       name_en: "Slap Awake",
@@ -2760,7 +2760,7 @@ let skills = {
       name_jp: "弱り目に祟り目",
       desc: "For 3 turns, decreases attack for all enemies. Effect is stronger against enemies with an ailment.",
       stats: [],
-      dep: { strangeSeeds: 3, playPossum: 1 },
+      dep: { strangeSeeds: 3, sympathyPain: 1 },
       maxLevel: 6,
       coords: { x: 2, y: 1.5 }
     },
@@ -2780,7 +2780,7 @@ let skills = {
       stats: [],
       dep: { },
       maxLevel: 4,
-      coords: { x: 3, y: 2.5 }
+      coords: { x: 3, y: 4 }
     },
     strokeOfLuck: {
       name_en: "Stroke of Luck",
@@ -2789,16 +2789,16 @@ let skills = {
       stats: [],
       dep: { searchSkill: 3 },
       maxLevel: 8,
-      coords: { x: 2, y: 3 }
+      coords: { x: 2, y: 4 }
     },
     rainOrShin: {
       name_en: "Rain or Shine",
       name_jp: "アメニモマケズ",
       desc: "For a set number of steps, nullifies damage tiles and muddy floors, and greatly reduces other sources of damage while exploring.",
       stats: [],
-      dep: { flee: 1 },
+      dep: {  },
       maxLevel: 6,
-      coords: { x: 2, y: 4 }
+      coords: { x: 2, y: 5 }
     },
     safeStroll: {
       name_en: "Safe Stroll",
@@ -2807,16 +2807,16 @@ let skills = {
       stats: [],
       dep: { rainOrShin: 2 },
       maxLevel: 6,
-      coords: { x: 3, y: 4 }
+      coords: { x: 3, y: 5 }
     },
     sharingIsCaring: {
       name_en: "Sharing is Caring",
       name_jp: "御裾分け",
       desc: "Consumes the user's TP to restore TP to other allies on the same row.",
       stats: [],
-      dep: { },
+      dep: { braveHeart: 1 },
       maxLevel: 8,
-      coords: { x: 2, y: 5 }
+      coords: { x: 3, y: 3 }
     },
     braveHeart: {
       name_en: "Brave Heart",
@@ -2825,14 +2825,14 @@ let skills = {
       stats: [],
       dep: { },
       maxLevel: 4,
-      coords: { x: 3, y: 5 }
+      coords: { x: 2, y: 3 }
     },
     survivalSkills: {
       name_en: "Survival Skills",
       name_jp: "生存の知恵",
       desc: "Restores HP and TP to all party members when gathering.",
       stats: [],
-      dep: { earthsBounty: 3 },
+      dep: { },
       maxLevel: 6,
       coords: { x: 2, y: 6 }
     },
@@ -2841,36 +2841,36 @@ let skills = {
       name_jp: "子守唄",
       desc: "Inflicts sleep on the user and attempts to inflict sleep on all enemies.",
       stats: ["LUC"],
-      dep: { persistence: 2 },
+      dep: { },
       maxLevel: 6,
-      coords: { x: 4, y: 1.5 }
+      coords: { x: 0, y: 1.5 }
     },
     songOfLabour: {
       name_en: "Song of Labour",
       name_jp: "労作歌",
       desc: "During exploration, restores TP to all allies every set number of steps taken.",
       stats: [],
-      dep: { lullaby: 3 },
+      dep: { sharingIsCaring: 3 },
       maxLevel: 8,
-      coords: { x: 5, y: 1.5 }
+      coords: { x: 4, y: 3 }
     },
     dissection: {
       name_en: "Dissection",
       name_jp: "解体の恩恵",
       desc: "When the user kills an enemy, restores Force to all party members.",
       stats: [],
-      dep: { wasteNot: 2 },
+      dep: { keenEye: 2, harvestFestival: 2 },
       maxLevel: 6,
-      coords: { x: 4, y: 2.5 }
+      coords: { x: 5, y: 1.5 }
     },
     harvestFestival: {
       name_en: "Harvest Festival",
       name_jp: "収穫祭",
       desc: "Deals melee cut damage to all enemies. Increases damage dealt and attempts to inflict instant death on enemy with binds.",
       stats: ["STR", "LUC"],
-      dep: { },
+      dep: { persistence: 1 },
       maxLevel: 10,
-      coords: { x: 4, y: 3.5 }
+      coords: { x: 4, y: 2 }
     },
     naturesBounty: {
       name_en: "Nature's Bounty",

@@ -313,7 +313,7 @@ let forward = {
     lullaby: { strangeSeeds: 1, sympathyPain: 1 },
     sympathyPain: { rottenEggs: 3 },
     strangeSeeds: { rottenEggs: 3 },
-    flee: { playPossom: 1 },
+    flee: { playPossum: 1 },
     playPossum: { },
     searchSkill: { strokeOfLuck: 3 },
     slapAwake: { },

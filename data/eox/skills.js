@@ -2716,7 +2716,7 @@ let skills = {
       stats: [],
       dep: { },
       maxLevel: 4,
-      coords: { x: 0, y: 4 }
+      coords: { x: 0, y: 3 }
     },
     playPossum: {
       name_en: "Play Possum",

@@ -2705,7 +2705,7 @@ let skills = {
       name_jp: "探索術",
       desc: "During exploration, provides a chance to receive gatherable items when walking.",
       stats: [],
-      dep: { keenEye: 2 },
+      dep: { },
       maxLevel: 8,
       coords: { x: 1, y: 4 }
     },

@@ -2694,7 +2694,7 @@ let skills = {
     sympathyPain: {
       name_en: "Bolster",
       name_jp: "怪我の功名",
-      desc: "Attempts to inflict ailments and binds on the user to all enemies. This will not remove them from the user.",
+      desc: "Charges up the whole party, increasing damage until the end of the of the next turn.",
       stats: [],
       dep: { lullaby: 1 },
       maxLevel: 6,
@@ -2758,7 +2758,7 @@ let skills = {
     rottenEggs: {
       name_en: "Rotten Eggs",
       name_jp: "弱り目に祟り目",
-      desc: "For 3 turns, decreases attack for all enemies. Effect is stronger against enemies with an ailment.",
+      desc: "For 3 turns, decreases attack for all enemies. Effect is stronger against enemies with an ailment or bind.",
       stats: [],
       dep: { strangeSeeds: 3, sympathyPain: 3 },
       maxLevel: 6,
@@ -2821,7 +2821,7 @@ let skills = {
     sharingIsCaring: {
       name_en: "Sharing is Caring",
       name_jp: "御裾分け",
-      desc: "Consumes the user's TP to restore TP to other allies on the same row.",
+      desc: "Consumes the user's TP to restore TP to the whole party.",
       stats: [],
       dep: { braveHeart: 1 },
       maxLevel: 8,
@@ -2848,7 +2848,7 @@ let skills = {
     keenEye: {
       name_en: "Invigorate",
       name_jp: "探知マスター",
-      desc: "For a set number of steps, displays treasure chests, hidden passages, staircases, FOEs and gather points on the minimap.",
+      desc: "Restores Force to one row.",
       stats: [],
       dep: { persistence: 2 },
       maxLevel: 6,

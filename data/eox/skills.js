@@ -429,7 +429,7 @@ let skills = {
     hpUp: {
       name_en: "Rampart",
       name_jp: "ＨＰブースト",
-      desc: "Reduces one instance of any damage against all party members. Higher levels upgrade reduction to null, then absorb.",
+      desc: "Reduces one instance of any damage against one party member. Higher levels upgrade reduction to null, then absorb.",
       stats: [],
       dep: { fireWall: 2, iceWall: 2, voltWall: 2 },
       maxLevel: 4,

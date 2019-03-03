@@ -4321,10 +4321,10 @@ let skills = {
       coords: { x: 5, y: 4.5 }
     },
     millionLash: {
-      name_en: "Million Lash",
+      name_en: "Breakfire Fist",
       name_jp: "ミリオンラッシュ",
-      desc: "Normal attacks may hit 2-4 times if two weapons are equipped. Enables sub-weapon when this skill is learned.",
-      stats: [],
+      desc: "Deals multiple instances of melee bash/fire damage to random targets in a row. Higher level increases the maximum number of attacks.",
+      stats: [STR],
       dep: { },
       maxLevel: 8,
       coords: { x: 4, y: 6 }
@@ -4343,7 +4343,7 @@ let skills = {
     infiniteMiasma: {
       name_en: "Infinite Miasma",
       name_jp: "無限兵装",
-      desc: "For 3 turns, Miasma Armor's duration will not decrease, and it cannot be removed.",
+      desc: "For 3 turns, Miasma Armor's duration will not decrease, and it cannot be removed. Using skills restore half of their TP costs.",
       unique: true,
       type: "Boost",
       stats: [],

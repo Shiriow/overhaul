@@ -4324,7 +4324,7 @@ let skills = {
       name_en: "Breakfire Fist",
       name_jp: "ミリオンラッシュ",
       desc: "Deals multiple instances of melee bash/fire damage to random targets in a row. Higher level increases the maximum number of attacks.",
-      stats: [STR],
+      stats: ["STR"],
       dep: { },
       maxLevel: 8,
       coords: { x: 4, y: 6 }

@@ -1516,7 +1516,7 @@ let skills = {
     spiritShield: {
       name_en: "Spirit Shield",
       name_jp: "不可視の霊盾",
-      desc: "Consumes the user's HP to increase the elemental defense of one row for a set number of turns.",
+      desc: "Consumes the user's HP to increase the elemental defense of the whole party for a set number of turns.",
       stats: [],
       dep: { },
       maxLevel: 4,
@@ -4510,7 +4510,7 @@ let skills = {
     spiritAbsorb: {
       name_en: "Spirit Absorb",
       name_jp: "生気吸収",
-      desc: "When the user uses a debuff skill, restores HP to the user. This restoration can heal beyond maximum HP. Overhealed HP will disappear at the end of the turn.",
+      desc: "When the user uses a debuff skill, restores HP to the whole party. This restoration can heal beyond maximum HP. Overhealed HP will disappear at the end of the turn.",
       stats: [],
       dep: { },
       maxLevel: 6,

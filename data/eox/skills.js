@@ -406,7 +406,7 @@ let skills = {
       stats: [],
       dep: { },
       maxLevel: 6,
-      coords: { x: 3, y: 4 }
+      coords: { x: 2, y: 4 }
     },
     iceWall: {
       name_en: "Ice Wall",
@@ -415,7 +415,7 @@ let skills = {
       stats: [],
       dep: { },
       maxLevel: 6,
-      coords: { x: 3, y: 5 }
+      coords: { x: 2, y: 5 }
     },
     voltWall: {
       name_en: "Volt Wall",
@@ -424,7 +424,7 @@ let skills = {
       stats: [],
       dep: { },
       maxLevel: 6,
-      coords: { x: 3, y: 6 }
+      coords: { x: 2, y: 6 }
     },
     hpUp: {
       name_en: "Rampart",

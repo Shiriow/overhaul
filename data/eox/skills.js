@@ -4154,7 +4154,7 @@ let skills = {
       desc: "Deals melee bash damage to one target. May follow up with Concussion, Arm Breaker, and Low Blow if the target does not have the respective bind. Follow-up skills deal reduced damage.",
       stats: ["STR", "LUC"],
       dep: { concussion: 2, armBreaker: 2, lowBlow: 2 },
-      maxLevel: 10,
+      maxLevel: 8,
       coords: { x: 1, y: 2 }
     },
     corkscrew: {
@@ -4172,7 +4172,7 @@ let skills = {
       desc: "Restores TP to the user when they inflict a bind, ailment or stun. Inflicting something on multiple enemies will not increase the effect of this skill.",
       stats: [],
       dep: { },
-      maxLevel: 4,
+      maxLevel: 6,
       coords: { x: 0, y: 4 }
     },
     doublePunch: {
@@ -4181,7 +4181,7 @@ let skills = {
       desc: "When any single-action, single-target Pugilist skill is used, or when Corkscrew is used via Added Blow, or when Cross Counter is used (despite what the description claims), if the skill fails to inflict their bind or ailment, there is a chance it will be repeated.",
       stats: [],
       dep: { },
-      maxLevel: 10,
+      maxLevel: 8,
       coords: { x: 0, y: 5 }
     },
     chop: {
@@ -4206,7 +4206,7 @@ let skills = {
     devilsFist: {
       name_en: "Devil's Fist",
       name_jp: "鬼人拳",
-      desc: "Consumes HP to deal melee bash damage to one target, with splash damage.",
+      desc: "Consumes HP to deal melee bash/ice damage to one target, with splash damage.",
       stats: ["STR"],
       dep: { },
       maxLevel: 8,
@@ -4227,7 +4227,7 @@ let skills = {
       desc: "When the user inflicts a bind on an enemy, there is a chance to follow up with Corkscrew.",
       stats: [],
       dep: { oneTwoPunch: 2, corkscrew: 2 },
-      maxLevel: 10,
+      maxLevel: 8,
       coords: { x: 2, y: 2.75 }
     },
     leadingBlow: {
@@ -4236,7 +4236,7 @@ let skills = {
       desc: "Deals melee bash damage to one target. For every bind the target has, follows up with the corresponding Pugilist skill. For any ailment the target has, follows up with Corkscrew.",
       stats: ["STR"],
       dep: { addedBlow: 2 },
-      maxLevel: 10,
+      maxLevel: 8,
       coords: { x: 3, y: 2.75 }
     },
     breather: {
@@ -4245,7 +4245,7 @@ let skills = {
       desc: "Removes binds and ailment from the user, and increases attack until the end of the next turn. Cannot be used if the user has no binds or ailments.",
       stats: [],
       dep: { },
-      maxLevel: 4,
+      maxLevel: 6,
       coords: { x: 2, y: 4 }
     },
     faultBlocker: {
@@ -4254,7 +4254,7 @@ let skills = {
       desc: "For 3 turns, increases ailment and bind resistance for the user's row.",
       stats: [],
       dep: { },
-      maxLevel: 4,
+      maxLevel: 6,
       coords: { x: 2, y: 5 }
     },
     clinch: {
@@ -4308,7 +4308,7 @@ let skills = {
       desc: "Until the end of the next turn, increases user's chance of inflicting binds and ailments.",
       stats: [],
       dep: { clinch: 3 },
-      maxLevel: 4,
+      maxLevel: 6,
       coords: { x: 4, y: 4.5 }
     },
     ragingWaves: {
@@ -4317,7 +4317,7 @@ let skills = {
       desc: "Increases damage dealt based on the number of binds and ailments the target has.",
       stats: [],
       dep: { meditation: 2 },
-      maxLevel: 10,
+      maxLevel: 8,
       coords: { x: 5, y: 4.5 }
     },
     millionLash: {

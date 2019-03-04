@@ -3161,7 +3161,7 @@ let skills = {
       desc: "After the user attacks this turn, all further attacks against enemies attacked by the user will have increased damage and accuracy.",
       stats: [],
       dep: { },
-      maxLevel: 4,
+      maxLevel: 6,
       coords: { x: 0, y: 1 }
     },
     sonicRaid: {
@@ -3179,7 +3179,7 @@ let skills = {
       desc: "Deals melee cut/stab+fire damage to one target. If the target is attacked again after, follows up with another attack of the same element. Chance of follow-up decreases with each hit.",
       stats: ["STR"],
       dep: { },
-      maxLevel: 10,
+      maxLevel: 8,
       coords: { x: 1, y: 2 }
     },
     freezingLink: {
@@ -3188,7 +3188,7 @@ let skills = {
       desc: "Deals melee cut/stab+ice damage to one target. If the target is attacked again after, follows up with another attack of the same element. Chance of follow-up decreases with each hit.",
       stats: ["STR"],
       dep: { },
-      maxLevel: 10,
+      maxLevel: 8,
       coords: { x: 1, y: 3 }
     },
     electricLink: {
@@ -3197,13 +3197,13 @@ let skills = {
       desc: "Deals melee cut/stab+volt damage to one target. If the target is attacked again after, follows up with another attack of the same element. Chance of follow-up decreases with each hit.",
       stats: ["STR"],
       dep: { },
-      maxLevel: 10,
+      maxLevel: 8,
       coords: { x: 1, y: 4 }
     },
     vanguard: {
       name_en: "Vanguard",
       name_jp: "ヴァンガード",
-      desc: "For 5 turns, decreases the user's physical defense, but increases physical attack and action speed.",
+      desc: "For 5 turns, increases the users attack and action speed.",
       stats: [],
       dep: { },
       maxLevel: 6,
@@ -3306,7 +3306,7 @@ let skills = {
       desc: "When attacking before any enemies act, increases damage and accuracy.",
       stats: [],
       dep: { },
-      maxLevel: 4,
+      maxLevel: 6,
       coords: { x: 2, y: 6 }
     },
     statusDefUp: {
@@ -3360,7 +3360,7 @@ let skills = {
       desc: "Deals melee bash damage to one target. Damage is increased if the target has a Break skill debuff. Multiple Break debuffs will not increase damage further. Damage is based on the user's shield's DEF.",
       stats: ["STR"],
       dep: { speedBreak: 2 },
-      maxLevel: 6,
+      maxLevel: 8,
       coords: { x: 4, y: 5 }
     },
     singleDevote: {
@@ -4422,7 +4422,7 @@ let skills = {
       desc: "When the user uses a debuff skill, there's a chance to cast Miasma Armor automatically.",
       stats: [],
       dep: { miasmaArmor: 2 },
-      maxLevel: 8,
+      maxLevel: 6,
       coords: { x: 1, y: 4 }
     },
     atonement: {
@@ -4513,7 +4513,7 @@ let skills = {
       desc: "When the user uses a debuff skill, restores HP to the whole party. This restoration can heal beyond maximum HP. Overhealed HP will disappear at the end of the turn.",
       stats: [],
       dep: { },
-      maxLevel: 6,
+      maxLevel: 8,
       coords: { x: 2, y: 6 }
     },
     statusAtkUp: {

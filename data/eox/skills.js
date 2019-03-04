@@ -3920,7 +3920,7 @@ let skills = {
       desc: "Deals melee cut damage to one target, and places the user in the overheat state for 7 turns. Cannot be used while overheated. Low action speed, and the user will take double damage until the skill activates.",
       stats: ["STR"],
       dep: { },
-      maxLevel: 10,
+      maxLevel: 8,
       coords: { x: 0, y: 4 }
     },
     heatSink: {

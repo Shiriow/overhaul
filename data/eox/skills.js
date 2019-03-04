@@ -4325,18 +4325,18 @@ let skills = {
       name_jp: "ミリオンラッシュ",
       desc: "Deals multiple instances of melee bash/fire damage to random targets in a row. Higher level increases the maximum number of attacks.",
       stats: ["STR"],
-      dep: { },
+      dep: { thunderFist: 3 },
       maxLevel: 8,
-      coords: { x: 4, y: 6 }
+      coords: { x: 5, y: 1 }
     },
    resonanceBlow: {
       name_en: "Resonance Blow",
       name_jp: "レゾナンスブロー",
       desc: "Deals multiple instances of melee bash damage to one target. The number of hits increases based on the number of turns since Resonance Blow was last used.",
       stats: ["STR"],
-      dep: { millionLash: 3 },
+      dep: { lashOut: 3 },
       maxLevel: 6,
-      coords: { x: 5, y: 6 }
+      coords: { x: 5, y: 2.75 }
     }
   },
   Harbinger: {

@@ -496,11 +496,11 @@ let forward = {
     clinch: { meditation: 3 },
     statusAtkUp: { },
     crossCounter: { },
-    thunderFist: { },
-    lashOut: { },
+    thunderFist: { millionLash:3 },
+    lashOut: { resonanceBlow: 3 },
     meditation: { ragingWaves: 2 },
     ragingWaves: { },
-    millionLash: { resonanceBlow: 3 },
+    millionLash: { },
     resonanceBlow: { }
   },
   Harbinger: {

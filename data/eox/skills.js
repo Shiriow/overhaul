@@ -3884,7 +3884,7 @@ let skills = {
       desc: "Activation skill. Deals melee cut damage to one target. Reduces overheat duration by 1 turn.",
       stats: ["STR"],
       dep: { },
-      maxLevel: 4,
+      maxLevel: 6,
       coords: { x: 0, y: 1 }
     },
     naturalEdge: {
@@ -3920,7 +3920,7 @@ let skills = {
       desc: "Deals melee cut damage to one target, and places the user in the overheat state for 7 turns. Cannot be used while overheated. Low action speed, and the user will take double damage until the skill activates.",
       stats: ["STR"],
       dep: { },
-      maxLevel: 8,
+      maxLevel: 10,
       coords: { x: 0, y: 4 }
     },
     heatSink: {
@@ -3975,7 +3975,7 @@ let skills = {
       desc: "Connecting skill. Deals melee cut damage to one target. Reduces duration of overheat by 2 turns. Can only be used if an activation skill was used on the previous turn.",
       stats: ["STR"],
       dep: { massiveEdge: 2 },
-      maxLevel: 4,
+      maxLevel: 6,
       coords: { x: 3, y: 1 }
     },
     tripEdge: {
@@ -4047,7 +4047,7 @@ let skills = {
       desc: "Terminating skill. Deals melee cut damage to one target. Until the end of the next turn, increases the user's attack. Can only be used if an activation skill or connecting skill was used on the previous turn.",
       stats: ["STR"],
       dep: { coolEdge: 2 },
-      maxLevel: 6,
+      maxLevel: 8,
       coords: { x: 4, y: 1 }
     },
     forceEdge: {

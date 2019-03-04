@@ -4204,7 +4204,7 @@ let skills = {
       coords: { x: 1, y: 6 }
     },
     devilsFist: {
-      name_en: "Devil's Fist",
+      name_en: "Glacial Fist",
       name_jp: "鬼人拳",
       desc: "Consumes HP to deal melee bash/ice damage to one target, with splash damage.",
       stats: ["STR"],

@@ -806,16 +806,16 @@ let skills = {
       stats: [],
       dep: { },
       maxLevel: 6,
-      coords: { x: 0, y: 5 }
+      coords: { x: 1, y: 5 }
     },
     sortingSkill: {
       name_en: "Sorting Skill",
       name_jp: "整頓術",
       desc: "Increases inventory size.",
       stats: [],
-      dep: { resuscitate: 3 },
+      dep: { },
       maxLevel: 10,
-      coords: { x: 1, y: 5 }
+      coords: { x: 1, y: 6 }
     },
     naturalInstinct: {
       name_en: "Natural Instinct",
@@ -886,7 +886,7 @@ let skills = {
       name_jp: "エフィシエント",
       desc: "For 5 turns, increases the HP restored by Medica and upgrades used by the user, and extends their range to one row.",
       stats: [],
-      dep: { },
+      dep: { resuscitate: 3 },
       maxLevel: 4,
       coords: { x: 2, y: 5 }
     },
@@ -942,7 +942,7 @@ let skills = {
       stats: [],
       dep: { },
       maxLevel: 8,
-      coords: { x: 4, y: 4 }
+      coords: { x: 4, y: 6 }
     },
     scapegoat: {
       name_en: "Scapegoat",
@@ -958,9 +958,9 @@ let skills = {
       name_jp: "奇襲",
       desc: "For a set number of steps, increases chance of preemptive attacks.",
       stats: [],
-      dep: { },
+      dep: { stalker: 1 },
       maxLevel: 6,
-      coords: { x: 4, y: 6 }
+      coords: { x: 4, y: 4 }
     }
   },
   Ronin: {

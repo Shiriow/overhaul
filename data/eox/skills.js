@@ -752,14 +752,14 @@ let skills = {
       stats: ["STR", "LUC"],
       dep: { },
       maxLevel: 8,
-      coords: { x: 0, y: 1.5 }
+      coords: { x: 0, y: 2 }
     },
     flameArrow: {
       name_en: "Flame Arrow",
       name_jp: "フレイムアロー",
       desc: "Deals ranged stab+fire damage to one target, with line-piercing effects.",
       stats: ["STR"],
-      dep: { powerShot: 3 },
+      dep: { },
       maxLevel: 8,
       coords: { x: 1, y: 1.5 }
     },
@@ -777,7 +777,7 @@ let skills = {
       name_jp: "チェインダンス",
       desc: "For one turn, increases the user's evasion and chance of being targeted.",
       stats: [],
-      dep: { blindArrow: 3 },
+      dep: { blindArrow: 1, patrol: 1, powerShot: 1 },
       maxLevel: 10,
       coords: { x: 1, y: 3 }
     },
@@ -795,7 +795,7 @@ let skills = {
       name_jp: "危機感知",
       desc: "There is a set chance that blindsides will be negated.",
       stats: [],
-      dep: { patrol: 2 },
+      dep: { },
       maxLevel: 6,
       coords: { x: 1, y: 4 }
     },

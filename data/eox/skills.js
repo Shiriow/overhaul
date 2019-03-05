@@ -891,20 +891,20 @@ let skills = {
       coords: { x: 2, y: 5 }
     },
     speedUp: {
-      name_en: "Speed Up",
+      name_en: "Sylphid",
       name_jp: "素早さブースト",
-      desc: "Increases accuracy, evasion and action speed.",
+      desc: "Enables counters on dodges, while also increasing accuracy, evasion and action speed.",
       stats: [],
-      dep: { },
+      dep: { trickStep: 2 },
       maxLevel: 8,
-      coords: { x: 2, y: 6 }
+      coords: { x: 3, y: 3 }
     },
     swapStep: {
       name_en: "Swap Step",
       name_jp: "アザーズステップ",
       desc: "Selected ally acts first this turn.",
       stats: [],
-      dep: { speedUp: 2 },
+      dep: { },
       maxLevel: 4,
       coords: { x: 3, y: 6 }
     },
@@ -931,17 +931,17 @@ let skills = {
       name_jp: "朧矢",
       desc: "Deals ranged stab damage to one target. Always hits. Can only be used if the user evaded an attack on the previous turn.",
       stats: ["STR"],
-      dep: { trickStep: 3 },
+      dep: { speedUp: 3 },
       maxLevel: 6,
       coords: { x: 4, y: 3 }
     },
     naturesBounty: {
-      name_en: "Nature's Bounty",
+      name_en: "Status ATK Up",
       name_jp: "自然の恩恵",
-      desc: "There is a chance to obtain extra rare items when gathering.",
+      desc: "Increases the chance of inflicting binds and ailments.",
       stats: [],
-      dep: { stalker: 2 },
-      maxLevel: 4,
+      dep: { },
+      maxLevel: 8,
       coords: { x: 4, y: 4 }
     },
     scapegoat: {

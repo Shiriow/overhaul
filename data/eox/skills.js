@@ -1306,7 +1306,7 @@ let skills = {
       desc: "User can dual-wield and use sword skills with staff. Increases maximum TP when a sword is equipped; increases damage when a staff is equipped. Normal attacks have a chance of being repeated",
       stats: [],
       dep: { },
-      maxLevel: 4,
+      maxLevel: 6,
       coords: { x: 1, y: 6 }
     },
     warRevive: {
@@ -1369,25 +1369,25 @@ let skills = {
       desc: "Increases the user's Force gain based on the number of enemies with binds.",
       stats: [],
       dep: { vampire: 2 },
-      maxLevel: 4,
+      maxLevel: 6,
       coords: { x: 2, y: 5 }
     },
     hpUp: {
-      name_en: "HP Up",
+      name_en: "Warmight",
       name_jp: "ＨＰブースト",
-      desc: "Increases maximum HP.",
+      desc: "Increases the targets attack for X turns.",
       stats: [],
       dep: { },
-      maxLevel: 8,
+      maxLevel: 6,
       coords: { x: 2, y: 6 }
     },
     statusDefUp: {
-      name_en: "Status DEF Up",
+      name_en: "Rockskin",
       name_jp: "抑制防御ブースト",
-      desc: "Decreases the chance of being inflicted with binds and ailments.",
+      desc: "Increases the targets defense for X turns.",
       stats: [],
       dep: { },
-      maxLevel: 8,
+      maxLevel: 6,
       coords: { x: 3, y: 6 }
     },
     warHealAll: {

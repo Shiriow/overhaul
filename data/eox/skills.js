@@ -1303,7 +1303,7 @@ let skills = {
     warEdgeMastery: {
       name_en: "War Edge Mastery",
       name_jp: "巫剣マスタリー",
-      desc: "User can dual-wield and use sword skills with staff. Increases maximum TP when a sword is equipped; increases damage when a staff is equipped. Normal attacks have a chance of being repeated",
+      desc: "User can dual-wield and use sword skills with staff. Increases maximum TP when a sword is equipped; increases damage when a staff is equipped. Normal attacks have a chance of being repeated.",
       stats: [],
       dep: { },
       maxLevel: 6,

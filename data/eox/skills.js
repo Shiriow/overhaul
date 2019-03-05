@@ -746,10 +746,10 @@ let skills = {
       coords: { x: 1, y: 0 }
     },
     powerShot: {
-      name_en: "Power Shot",
+      name_en: "Sleep Arrow",
       name_jp: "パワーショット",
-      desc: "Deals ranged stab damage to one target, with line-piercing effects.",
-      stats: ["STR"],
+      desc: "Deals ranged stab damage to one target. Attempts to inflict sleep.",
+      stats: ["STR", "LUC"],
       dep: { },
       maxLevel: 8,
       coords: { x: 0, y: 1.5 }
@@ -757,7 +757,7 @@ let skills = {
     flameArrow: {
       name_en: "Flame Arrow",
       name_jp: "フレイムアロー",
-      desc: "Deals ranged stab+fire damage to one target.",
+      desc: "Deals ranged stab+fire damage to one target, with line-piercing effects.",
       stats: ["STR"],
       dep: { powerShot: 3 },
       maxLevel: 8,
@@ -782,12 +782,12 @@ let skills = {
       coords: { x: 1, y: 3 }
     },
     patrol: {
-      name_en: "Patrol",
+      name_en: "Paralysis Arrow",
       name_jp: "警戒斥候",
-      desc: "For a set number of steps, nullifies damage tiles and muddy floors, and greatly reduces other sources of damage while exploring.",
-      stats: [],
+      desc: "Deals ranged stab damage to one target. Attempts to inflict paralysis.",
+      stats: ["STR", "LUC"],
       dep: { },
-      maxLevel: 6,
+      maxLevel: 8,
       coords: { x: 0, y: 4 }
     },
     riskPerception: {

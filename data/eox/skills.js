@@ -3917,7 +3917,7 @@ let skills = {
     assaultDrive: {
       name_en: "Assault Drive",
       name_jp: "アサルトドライブ",
-      desc: "Deals melee cut damage to one target, and places the user in the overheat state for 7 turns. Cannot be used while overheated. Low action speed, and the user will take double damage until the skill activates.",
+      desc: "Deals melee cut damage to one target, and places the user in the overheat state for 7 turns. Cannot be used while overheated.",
       stats: ["STR"],
       dep: { },
       maxLevel: 10,

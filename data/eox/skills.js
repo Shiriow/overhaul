@@ -4562,11 +4562,11 @@ let skills = {
       coords: { x: 4, y: 5 }
     },
     soulFixation: {
-      name_en: "Soul Fixation",
+      name_en: "Frigid Reap",
       name_jp: "霊魂固着",
       desc: "Requires Miasma Armor. Removes Miasma Armor to attempt to nullify instant death, stun and debuffs against all party members, up to a set number of times.",
       stats: [],
-      dep: { },
+      dep: { fatalReap: 2 },
       maxLevel: 6,
       coords: { x: 4, y: 4 }
     },

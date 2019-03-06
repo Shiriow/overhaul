@@ -526,7 +526,7 @@ let forward = {
     statusAtkUp: { },
     deathsAsylum: { },
     ephemeralReap: { },
-    fatalReap: { },
+    fatalReap: { soulFixation: 2 },
     miasmaWall: { residualMiasma: 2 },
     soulFixation: { },
     residualMiasma: { }

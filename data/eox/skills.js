@@ -4451,16 +4451,16 @@ let skills = {
       stats: [],
       dep: { slowingMiasma: 3 },
       maxLevel: 10,
-      coords: { x: 2, y: 1.5 }
+      coords: { x: 2, y: 1 }
     },
     arrestingMiasma: {
       name_en: "Arresting Miasma",
       name_jp: "縛弱の瘴気",
       desc: "For a set number of turns, decreases all enemies' resistance to and rate of recovery from binds.",
       stats: [],
-      dep: { wiltingMiasma: 3 },
+      dep: { slowingMiasma: 3 },
       maxLevel: 10,
-      coords: { x: 3, y: 1.5 }
+      coords: { x: 2, y: 2 }
     },
     darknessReap: {
       name_en: "Darkness Reap",
@@ -4487,7 +4487,7 @@ let skills = {
       stats: [],
       dep: { endlessShroud: 1 },
       maxLevel: 8,
-      coords: { x: 2, y: 4 }
+      coords: { x: 2, y: 6 }
     },
     soulTransfer: {
       name_en: "Soul Transfer",
@@ -4503,18 +4503,18 @@ let skills = {
       name_jp: "黒き波動",
       desc: "At the end of the turn, if Miasma Armor is active, restores TP to the user.",
       stats: [],
-      dep: { soulTransfer: 1 },
+      dep: { blackShroud: 2 },
       maxLevel: 4,
-      coords: { x: 3, y: 5 }
+      coords: { x: 3, y: 4 }
     },
     spiritAbsorb: {
       name_en: "Spirit Absorb",
       name_jp: "生気吸収",
       desc: "When the user uses a debuff skill, restores HP to the whole party. This restoration can heal beyond maximum HP. Overhealed HP will disappear at the end of the turn.",
       stats: [],
-      dep: { blackShroud: 2 },
+      dep: { endlessShroud: 1 },
       maxLevel: 8,
-      coords: { x: 3, y: 4 }
+      coords: { x: 2, y: 4 }
     },
     statusAtkUp: {
       name_en: "Status ATK Up",
@@ -4523,25 +4523,25 @@ let skills = {
       stats: [],
       dep: { },
       maxLevel: 8,
-      coords: { x: 3, y: 6 }
+      coords: { x: 3, y: 4 }
     },
     deathsAsylum: {
       name_en: "Death's Asylum",
       name_jp: "死の耐性",
       desc: "Provides a chance to nullify debuffs and ailments on the user as they are inflicted.",
       stats: [],
-      dep: { },
+      dep: { blackWave: 1 },
       maxLevel: 8,
-      coords: { x: 4, y: 1 }
+      coords: { x: 4, y: 6 }
     },
     ephemeralReap: {
       name_en: "Ephemeral Reap",
       name_jp: "泡沫の鎌",
       desc: "Deals multiple instances of melee cut damage to one target. Number of hits increases based on the number of debuffs on the target.",
       stats: ["STR"],
-      dep: { },
+      dep: { wiltingMiasma: 1, arrestingMiasma: 1 },
       maxLevel: 10,
-      coords: { x: 4, y: 2 }
+      coords: { x: 4, y: 1.5 }
     },
     fatalReap: {
       name_en: "Fatal Reap",

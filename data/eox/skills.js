@@ -869,7 +869,7 @@ let skills = {
       desc: "For a set number of turns, reduces the accuracy of one row of enemies.",
       stats: [],
       dep: { chainDance: 2 },
-      maxLevel: 10,
+      maxLevel: 8,
       coords: { x: 2, y: 3 }
     },
     stalker: {
@@ -932,7 +932,7 @@ let skills = {
       desc: "Deals ranged stab damage to one target. Always hits. Can only be used if the user evaded an attack on the previous turn.",
       stats: ["STR"],
       dep: { speedUp: 3 },
-      maxLevel: 6,
+      maxLevel: 8,
       coords: { x: 4, y: 3 }
     },
     naturesBounty: {

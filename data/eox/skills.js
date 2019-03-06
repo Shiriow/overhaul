@@ -4485,7 +4485,7 @@ let skills = {
       name_jp: "黒き衣",
       desc: "During Miasma Armor, increases defense.",
       stats: [],
-      dep: { endlessShroud: 1 },
+      dep: { },
       maxLevel: 8,
       coords: { x: 2, y: 6 }
     },

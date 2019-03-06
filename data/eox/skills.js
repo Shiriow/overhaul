@@ -4568,7 +4568,7 @@ let skills = {
       stats: [],
       dep: { fatalReap: 2 },
       maxLevel: 6,
-      coords: { x: 4, y: 4 }
+      coords: { x: 5, y: 3 }
     },
     residualMiasma: {
       name_en: "Residual Miasma",

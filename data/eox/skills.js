@@ -4505,7 +4505,7 @@ let skills = {
       stats: [],
       dep: { blackShroud: 2 },
       maxLevel: 4,
-      coords: { x: 3, y: 4 }
+      coords: { x: 3, y: 6 }
     },
     spiritAbsorb: {
       name_en: "Spirit Absorb",

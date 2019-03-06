@@ -4557,25 +4557,25 @@ let skills = {
       name_jp: "瘴気の防壁",
       desc: "Requires Miasma Armor. Removes Miasma Armor to attempt to nullify binds and ailments against all party members, up to a set number of times.",
       stats: [],
-      dep: { blackWave: 1 },
+      dep: { soulTransfer: 1 },
       maxLevel: 6,
-      coords: { x: 4, y: 4.5 }
+      coords: { x: 4, y: 5 }
     },
     soulFixation: {
       name_en: "Soul Fixation",
       name_jp: "霊魂固着",
       desc: "Requires Miasma Armor. Removes Miasma Armor to attempt to nullify instant death, stun and debuffs against all party members, up to a set number of times.",
       stats: [],
-      dep: { blackWave: 1 },
+      dep: { },
       maxLevel: 6,
-      coords: { x: 4, y: 5.5 }
+      coords: { x: 4, y: 4 }
     },
     residualMiasma: {
       name_en: "Residual Miasma",
       name_jp: "瘴気残留",
       desc: "Skills which remove Miasma Armor will instead reduce its duration by a set number of turns. If Miasma Armor's duration reaches 0 or less, it is removed.",
       stats: [],
-      dep: { miasmaWall: 2, soulFixation: 2 },
+      dep: { miasmaWall: 2 },
       maxLevel: 4,
       coords: { x: 5, y: 5 }
     }

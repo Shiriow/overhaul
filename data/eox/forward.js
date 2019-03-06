@@ -519,7 +519,7 @@ let forward = {
     arrestingMiasma: { },
     darknessReap: { chaosReap: 3 },
     chaosReap: { fatalReap: 2 },
-    blackShroud: { },
+    blackShroud: { spiritAbsorb: 2 },
     soulTransfer: { blackWave: 1 },
     blackWave: { miasmaWall: 1, soulFixation: 1 },
     spiritAbsorb: { },

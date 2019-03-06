@@ -4512,9 +4512,9 @@ let skills = {
       name_jp: "生気吸収",
       desc: "When the user uses a debuff skill, restores HP to the whole party. This restoration can heal beyond maximum HP. Overhealed HP will disappear at the end of the turn.",
       stats: [],
-      dep: { },
+      dep: { blackShroud: 2 },
       maxLevel: 8,
-      coords: { x: 2, y: 6 }
+      coords: { x: 3, y: 4 }
     },
     statusAtkUp: {
       name_en: "Status ATK Up",

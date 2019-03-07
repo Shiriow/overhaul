@@ -4002,7 +4002,7 @@ let skills = {
       desc: "Increases the damage of Drive skills. Increasing this skill's level will also reduce the duration of the overheat state.",
       stats: [],
       dep: { heatSink: 1, overheatGuard: 1 },
-      maxLevel: 10,
+      maxLevel: 8,
       coords: { x: 2, y: 4 }
     },
     flameDrive: {
@@ -4056,7 +4056,7 @@ let skills = {
       desc: "Connecting skill. Deals melee cut damage to one target. Restores Force to the user. Can only be used if an activation skill or connecting skill was used on the previous turn.",
       stats: ["STR"],
       dep: { impulseEdge: 2 },
-      maxLevel: 6,
+      maxLevel: 8,
       coords: { x: 4, y: 2 }
     },
     hpUp: {

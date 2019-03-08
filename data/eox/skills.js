@@ -650,18 +650,18 @@ let skills = {
       coords: { x: 3, y: 5 }
     },
     patrol: {
-      name_en: "Patrol",
+      name_en: "Mending Blow",
       name_jp: "警戒斥候",
-      desc: "For a set number of steps, nullifies damage tiles and muddy floors, and greatly reduces other sources of damage while exploring.",
+      desc: "Deal bash damage and heal self line.",
       stats: [],
       dep: { },
       maxLevel: 6,
       coords: { x: 2, y: 6 }
     },
     elemDefUp: {
-      name_en: "Elem DEF Up",
+      name_en: "Immunize",
       name_jp: "属性防御ブースト",
-      desc: "Increases elemental defense.",
+      desc: "Increases the party's Elem Defense and Ailment Defense for X turns.",
       stats: [],
       dep: { },
       maxLevel: 8,

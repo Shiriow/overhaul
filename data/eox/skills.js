@@ -2278,18 +2278,18 @@ let skills = {
       name_jp: "忍法　水鏡",
       desc: "Attempts to inflict the ailments and binds present on one enemy to all enemies.",
       stats: ["LUC"],
-      dep: { ninpoCaltrops: 2 },
+      dep: { foxDrop: 2 },
       maxLevel: 6,
-      coords: { x: 2, y: 1 }
+      coords: { x: 3, y: 1 }
     },
     foxDrop: {
       name_en: "Fox Drop",
       name_jp: "飯綱",
       desc: "Deals melee cut damage to one target. Attempts to inflict petrify.",
       stats: ["STR", "LUC"],
-      dep: { boneCrusher: 2 },
+      dep: { ninpoCaltrops: 2 },
       maxLevel: 8,
-      coords: { x: 2, y: 2 }
+      coords: { x: 2, y: 1 }
     },
     hawkStrike: {
       name_en: "Hawk Strike",
@@ -2298,7 +2298,7 @@ let skills = {
       stats: ["STR"],
       dep: { foxDrop: 3 },
       maxLevel: 8,
-      coords: { x: 3, y: 2 }
+      coords: { x: 2, y: 2 }
     },
     selfDestruct: {
       name_en: "Self-Destruct",
@@ -2314,7 +2314,7 @@ let skills = {
       name_jp: "忍法　分身",
       desc: "Consumes a percentage of the user's HP and TP to create a clone in an empty slot. Force Boost and Force Break are unusable while a clone is active.",
       stats: [],
-      dep: { selfDestruct: 2 },
+      dep: { },
       maxLevel: 10,
       coords: { x: 3, y: 3 }
     },
@@ -2323,16 +2323,16 @@ let skills = {
       name_jp: "首切",
       desc: "Normal attacks have a chance to inflict instant death.",
       stats: ["LUC"],
-      dep: { concealment: 3 },
+      dep: { },
       maxLevel: 8,
-      coords: { x: 2, y: 4 }
+      coords: { x: 3, y: 6 }
     },
     ninpoFlight: {
       name_en: "Ninpo: Flight",
       name_jp: "忍法　猿飛",
       desc: "This turn, the user has a high chance of evading physical attacks. Each time the user evades an attack, the evasion boost is reduced.",
       stats: [],
-      dep: { },
+      dep: { concealment: 3  },
       maxLevel: 10,
       coords: { x: 3, y: 4 }
     },

@@ -2307,7 +2307,7 @@ let skills = {
       stats: ["STR"],
       dep: { },
       maxLevel: 6,
-      coords: { x: 2, y: 3 }
+      coords: { x: 3, y: 5 }
     },
     ninpoClone: {
       name_en: "Ninpo: Clone",
@@ -2334,7 +2334,7 @@ let skills = {
       stats: [],
       dep: { concealment: 3  },
       maxLevel: 10,
-      coords: { x: 3, y: 4 }
+      coords: { x: 2, y: 4 }
     },
     autoMirage: {
       name_en: "Auto-Mirage",

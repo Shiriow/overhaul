@@ -1402,7 +1402,7 @@ let skills = {
     barrier: {
       name_en: "Barrier",
       name_jp: "巫術：結界",
-      desc: "For one turn, there is a chance to nullify binds, ailments and debuffs against all party members, up to a set number of times.",
+      desc: "For one turn, there is a chance to nullify binds and ailments against all party members, up to a set number of times.",
       stats: [],
       dep: { warHealAll: 3 },
       maxLevel: 10,
@@ -2823,7 +2823,7 @@ let skills = {
       name_jp: "御裾分け",
       desc: "Consumes the user's TP to restore TP to the whole party.",
       stats: [],
-      dep: { braveHeart: 1 },
+      dep: { braveHeart: 2 },
       maxLevel: 8,
       coords: { x: 3, y: 3 }
     },
@@ -2832,7 +2832,7 @@ let skills = {
       name_jp: "労作歌",
       desc: "During exploration, restores TP to all allies every set number of steps taken.",
       stats: [],
-      dep: { sharingIsCaring: 2 },
+      dep: { sharingIsCaring: 3 },
       maxLevel: 8,
       coords: { x: 4, y: 3 }
     },
@@ -4555,16 +4555,16 @@ let skills = {
     miasmaWall: {
       name_en: "Miasma Wall",
       name_jp: "瘴気の防壁",
-      desc: "Requires Miasma Armor. Removes Miasma Armor to attempt to nullify binds and ailments against all party members, up to a set number of times.",
+      desc: "Requires Miasma Armor. Removes Miasma Armor to attempt to nullify binds, ailments, instant death, stun and debuffs against all party members, up to a set number of times.",
       stats: [],
       dep: { soulTransfer: 1 },
-      maxLevel: 6,
+      maxLevel: 8,
       coords: { x: 4, y: 5 }
     },
     soulFixation: {
       name_en: "Frigid Reap",
       name_jp: "霊魂固着",
-      desc: "Requires Miasma Armor. Removes Miasma Armor to attempt to nullify instant death, stun and debuffs against all party members, up to a set number of times.",
+      desc: "",
       stats: [],
       dep: { fatalReap: 2 },
       maxLevel: 6,

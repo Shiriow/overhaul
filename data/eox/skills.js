@@ -706,8 +706,8 @@ let skills = {
     heavyStrike: {
       name_en: "Heavy Strike",
       name_jp: "ヘヴィストライク",
-      desc: "Deals melee bash damage to one target.",
-      stats: ["STR"],
+      desc: "Deals melee bash damage to one target. Attempts to inflict head bind.",
+      stats: ["STR", "LUC"],
       dep: { medicalRod: 3 },
       maxLevel: 10,
       coords: { x: 4, y: 5 }

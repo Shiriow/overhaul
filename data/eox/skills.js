@@ -1155,7 +1155,7 @@ let skills = {
       desc: "Requires any stance. Deals multiple instances of melee cut damage to one target. Removes stance after use. Critical hit if used during Upper Stance.",
       stats: ["STR"],
       dep: { flameGrater: 3 },
-      maxLevel: 6,
+      maxLevel: 8,
       coords: { x: 4, y: 1 }
     },
     bluntingStab: {
@@ -1164,7 +1164,7 @@ let skills = {
       desc: "Requires any stance. Deals melee stab damage to one target. Attempts to inflict petrify. Removes stance after use. Critical hit if used during Clear Stance.",
       stats: ["STR", "LUC"],
       dep: { lightningStab: 3 },
-      maxLevel: 6,
+      maxLevel: 8,
       coords: { x: 4, y: 2 }
     },
     petalScatter: {
@@ -1173,7 +1173,7 @@ let skills = {
       desc: "Requires any stance. Deals ranged cut damage to all targets. Removes stance after use. Critical hit if used during Drawing Stance. Deals less damage based on the number of targets.",
       stats: ["STR"],
       dep: { frigidSlash: 3 },
-      maxLevel: 6,
+      maxLevel: 8,
       coords: { x: 4, y: 3 }
     },
     proofOfMastery: {

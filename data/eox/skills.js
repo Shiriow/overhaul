@@ -4541,7 +4541,7 @@ let skills = {
       stats: ["STR"],
       dep: { wiltingMiasma: 1, arrestingMiasma: 1 },
       maxLevel: 10,
-      coords: { x: 3, y: 1.5 }
+      coords: { x: 4, y: 1.5 }
     },
     fatalReap: {
       name_en: "Fatal Reap",

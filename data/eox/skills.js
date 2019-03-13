@@ -2296,7 +2296,7 @@ let skills = {
       name_jp: "鷹乃羽",
       desc: "Deals multiple instances of melee cut damage to random targets.",
       stats: ["STR"],
-      dep: { foxDrop: 3 },
+      dep: { boneCrusher: 3 },
       maxLevel: 8,
       coords: { x: 2, y: 3 }
     },

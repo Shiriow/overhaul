@@ -276,7 +276,7 @@ let forward = {
     eyeForAnEye: { },
     schadenfreude: { drawingSlice: 2 },
     drawingSlice: { },
-    ninpoSmoke: { },
+    ninpoSmoke: { eyeForAnEye: 2 },
     smokePowder: { }
   },
   Zodiac: {

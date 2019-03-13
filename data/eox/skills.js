@@ -2216,7 +2216,7 @@ let skills = {
       stats: ["STR", "LUC"],
       dep: { },
       maxLevel: 8,
-      coords: { x: 0, y: 2 }
+      coords: { x: 0, y: 3 }
     },
     boneCrusher: {
       name_en: "Bone Crusher",
@@ -2225,7 +2225,7 @@ let skills = {
       stats: ["STR"],
       dep: { shadowBind: 3 },
       maxLevel: 8,
-      coords: { x: 1, y: 2 }
+      coords: { x: 1, y: 3 }
     },
     acrobatics: {
       name_en: "Acrobatics",
@@ -2234,7 +2234,7 @@ let skills = {
       stats: [],
       dep: { },
       maxLevel: 4,
-      coords: { x: 0, y: 4 }
+      coords: { x: 0, y: 2 }
     },
     concealment: {
       name_en: "Concealment",
@@ -2243,7 +2243,7 @@ let skills = {
       stats: [],
       dep: { acrobatics: 2 },
       maxLevel: 10,
-      coords: { x: 1, y: 4 }
+      coords: { x: 1, y: 2 }
     },
     ninpoMirage: {
       name_en: "Ninpo: Mirage",
@@ -2298,7 +2298,7 @@ let skills = {
       stats: ["STR"],
       dep: { foxDrop: 3 },
       maxLevel: 8,
-      coords: { x: 2, y: 2 }
+      coords: { x: 2, y: 3 }
     },
     selfDestruct: {
       name_en: "Self-Destruct",
@@ -2316,7 +2316,7 @@ let skills = {
       stats: [],
       dep: { },
       maxLevel: 10,
-      coords: { x: 3, y: 3 }
+      coords: { x: 3, y: 4 }
     },
     beheading: {
       name_en: "Beheading",
@@ -2334,7 +2334,7 @@ let skills = {
       stats: [],
       dep: { concealment: 3  },
       maxLevel: 10,
-      coords: { x: 2, y: 4 }
+      coords: { x: 2, y: 2 }
     },
     autoMirage: {
       name_en: "Auto-Mirage",
@@ -2368,9 +2368,9 @@ let skills = {
       name_jp: "意趣返し",
       desc: "If the user evaded an attack on the previous turn, increases chance of inflicting ailments",
       stats: [],
-      dep: { ninpoShock: 2 },
+      dep: { ninpoShock: 2, ninpoSmoke: 2 },
       maxLevel: 6,
-      coords: { x: 5, y: 1 }
+      coords: { x: 5, y: 1.5 }
     },
     schadenfreude: {
       name_en: "Schadenfreude",
@@ -2379,7 +2379,7 @@ let skills = {
       stats: ["STR"],
       dep: { hawkStrike: 2 },
       maxLevel: 8,
-      coords: { x: 4, y: 2 }
+      coords: { x: 4, y: 3 }
     },
     drawingSlice: {
       name_en: "Drawing Slice",
@@ -2388,7 +2388,7 @@ let skills = {
       stats: ["STR"],
       dep: { schadenfreude: 2, ninpoClone: 2 },
       maxLevel: 8,
-      coords: { x: 5, y: 2.5 }
+      coords: { x: 5, y: 3.5 }
     },
     ninpoSmoke: {
       name_en: "Ninpo: Smoke",
@@ -2397,7 +2397,7 @@ let skills = {
       stats: [],
       dep: { ninpoFlight: 2 },
       maxLevel: 10,
-      coords: { x: 4, y: 4 }
+      coords: { x: 4, y: 2 }
     },
     smokePowder: {
       name_en: "Smoke Powder",

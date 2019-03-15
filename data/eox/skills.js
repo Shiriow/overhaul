@@ -1091,7 +1091,7 @@ let skills = {
       name_jp: "横一文字",
       desc: "Requires any stance. Deals melee cut damage to one row. Reduces stance duration by 2 after use. Critical hit if used during Drawing Stance.",
       stats: ["STR"],
-      dep: { helmSplitter: 1 },
+      dep: { helmSplitter: 3 },
       maxLevel: 10,
       coords: { x: 3, y: 1.5 }
     },
@@ -1100,7 +1100,7 @@ let skills = {
       name_jp: "鞘撃",
       desc: "Deals melee bash damage to one target. Assumes Drawing Stance after use. Critical hit if used during Drawing Stance.",
       stats: ["STR"],
-      dep: { helmSplitter: 1 },
+      dep: { helmSplitter: 3 },
       maxLevel: 4,
       coords: { x: 3, y: 2.5 }
     },
@@ -1154,7 +1154,7 @@ let skills = {
       name_jp: "ツバメがえし",
       desc: "Requires any stance. Deals multiple instances of melee cut damage to one target. Removes stance after use. Critical hit if used during Upper Stance.",
       stats: ["STR"],
-      dep: { horizontalSlice: 3, sheathStrike:3 },
+      dep: { horizontalSlice: 2, sheathStrike:1 },
       maxLevel: 8,
       coords: { x: 4, y: 1.5 }
     },
@@ -1163,7 +1163,7 @@ let skills = {
       name_jp: "散華",
       desc: "Requires any stance. Deals ranged cut damage to all targets. Removes stance after use. Critical hit if used during Drawing Stance. Deals less damage based on the number of targets.",
       stats: ["STR"],
-      dep: { horizontalSlice: 3, sheathStrike:3 },
+      dep: { horizontalSlice: 2, sheathStrike:1 },
       maxLevel: 8,
       coords: { x: 4, y: 2.5 }
     },
@@ -1172,7 +1172,7 @@ let skills = {
       name_jp: "鈍通し",
       desc: "Requires any stance. Deals melee stab damage to one target. Attempts to inflict petrify. Removes stance after use. Critical hit if used during Clear Stance.",
       stats: ["STR", "LUC"],
-      dep: { flameGrater: 3, frigidSlash: 3, lightningStab: 3 },
+      dep: { flameGrater: 1, frigidSlash: 1, lightningStab: 1 },
       maxLevel: 8,
       coords: { x: 4, y: 5 }
     },
@@ -1183,7 +1183,7 @@ let skills = {
       stats: [],
       dep: { swallowStrike: 2, bluntingStab: 2, petalScatter: 2 },
       maxLevel: 10,
-      coords: { x: 5, y: 3 }
+      coords: { x: 5, y: 3.5 }
     },
     risingSpirit: {
       name_en: "Rising Spirit",

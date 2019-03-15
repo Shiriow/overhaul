@@ -1031,15 +1031,6 @@ let skills = {
       maxLevel: 8,
       coords: { x: 1, y: 6 }
     },
-    sheathStrike: {
-      name_en: "Sheath Strike",
-      name_jp: "鞘撃",
-      desc: "Deals melee bash damage to one target. Assumes Drawing Stance after use. Critical hit if used during Drawing Stance.",
-      stats: ["STR"],
-      dep: { drawingStance: 1 },
-      maxLevel: 4,
-      coords: { x: 3, y: 6 }
-    },
     airBlade: {
       name_en: "Air Blade",
       name_jp: "空刃",
@@ -1102,7 +1093,16 @@ let skills = {
       stats: ["STR"],
       dep: { helmSplitter: 1 },
       maxLevel: 10,
-      coords: { x: 3, y: 2 }
+      coords: { x: 3, y: 1.5 }
+    },
+    sheathStrike: {
+      name_en: "Mirror Moon",
+      name_jp: "鞘撃",
+      desc: "Deals melee bash damage to one target. Assumes Drawing Stance after use. Critical hit if used during Drawing Stance.",
+      stats: ["STR"],
+      dep: { helmSplitter: 1 },
+      maxLevel: 4,
+      coords: { x: 3, y: 2.5 }
     },
     flameGrater: {
       name_en: "Flame Grater",
@@ -1138,7 +1138,7 @@ let skills = {
       stats: [],
       dep: {  },
       maxLevel: 6,
-      coords: { x: 3, y: 3 }
+      coords: { x: 2, y: 4 }
     },
     physAtkUp: {
       name_en: "Phys ATK Up",

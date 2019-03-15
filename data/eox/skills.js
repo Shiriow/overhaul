@@ -1154,7 +1154,7 @@ let skills = {
       name_jp: "ツバメがえし",
       desc: "Requires any stance. Deals multiple instances of melee cut damage to one target. Removes stance after use. Critical hit if used during Upper Stance.",
       stats: ["STR"],
-      dep: { horizontalSlice: 3 },
+      dep: { horizontalSlice: 3, sheathStrike:3 },
       maxLevel: 8,
       coords: { x: 4, y: 1.5 }
     },
@@ -1163,7 +1163,7 @@ let skills = {
       name_jp: "散華",
       desc: "Requires any stance. Deals ranged cut damage to all targets. Removes stance after use. Critical hit if used during Drawing Stance. Deals less damage based on the number of targets.",
       stats: ["STR"],
-      dep: { horizontalSlice: 3 },
+      dep: { horizontalSlice: 3, sheathStrike:3 },
       maxLevel: 8,
       coords: { x: 4, y: 2.5 }
     },

@@ -993,7 +993,7 @@ let skills = {
       stats: [],
       dep: { },
       maxLevel: 8,
-      coords: { x: 0, y: 1 }
+      coords: { x: 0, y: 2 }
     },
     upwardSlash: {
       name_en: "Upward Slash",
@@ -1011,7 +1011,7 @@ let skills = {
       stats: [],
       dep: { },
       maxLevel: 8,
-      coords: { x: 0, y: 2 }
+      coords: { x: 0, y: 5 }
     },
     chargingThrust: {
       name_en: "Charging Thrust",
@@ -1020,16 +1020,16 @@ let skills = {
       stats: ["STR"],
       dep: { clearStance: 1 },
       maxLevel: 4,
-      coords: { x: 1, y: 2 }
+      coords: { x: 1, y: 5 }
     },
     drawingStance: {
       name_en: "Drawing Stance",
       name_jp: "居合の構え",
 	  desc: "Increases accuracy, evasion and action speed when Drawing Stance is active, and increases the duration of Drawing Stance. At the start of each battle, the user automatically assumes the stance with the highest skill level.",
       stats: [],
-      dep: { },
+      dep: { clearStance:1 },
       maxLevel: 8,
-      coords: { x: 0, y: 3 }
+      coords: { x: 1, y: 6 }
     },
     sheathStrike: {
       name_en: "Sheath Strike",
@@ -1038,25 +1038,25 @@ let skills = {
       stats: ["STR"],
       dep: { drawingStance: 1 },
       maxLevel: 4,
-      coords: { x: 1, y: 3 }
+      coords: { x: 3, y: 6 }
     },
     airBlade: {
       name_en: "Air Blade",
       name_jp: "空刃",
       desc: "Deals ranged cut damage to one target. Critical hit if used during any stance.",
       stats: ["STR"],
-      dep: { },
+      dep: { upperStance: 1 },
       maxLevel: 10,
-      coords: { x: 1, y: 4 }
+      coords: { x: 1, y: 2 }
     },
     armStrike: {
       name_en: "Arm Strike",
       name_jp: "小手討ち",
       desc: "Deals melee stab damage to one target. Attempts to inflict arm bind. Critical hit if used during any stance.",
       stats: ["STR", "LUC"],
-      dep: { },
+      dep: { clearStance:1 },
       maxLevel: 8,
-      coords: { x: 1, y: 5 }
+      coords: { x: 5, y: 5 }
     },
     mine: {
       name_en: "Mine",
@@ -1073,36 +1073,54 @@ let skills = {
       name_jp: "息吹",
       desc: "Restores HP to the user and allies adjacent to the user.",
       stats: [],
-      dep: { },
+      dep: { upperStance: 1 },
       maxLevel: 6,
-      coords: { x: 1, y: 6 }
+      coords: { x: 1, y: 3 }
     },
     helmSplitter: {
       name_en: "Helm Splitter",
       name_jp: "兜割り ",
       desc: "Requires any stance. Deals melee cut damage to one target. Low accuracy, ignores cut resistance. Reduces stance duration by 2 after use. Critical hit if used during Upper Stance.",
       stats: ["STR"],
-      dep: { upwardSlash: 1 },
+      dep: { upwardSlash: 1, breath:1, airBlade:1 },
       maxLevel: 10,
       coords: { x: 2, y: 1 }
-    },
-    flameGrater: {
-      name_en: "Flame Grater",
-      name_jp: "卸し焔",
-      desc: "Deals melee cut+fire damage to one target and reduces the targets defence for 3 turns. Critical hit if used during Upper Stance.",
-      stats: ["STR"],
-      dep: { helmSplitter: 3 },
-      maxLevel: 6,
-      coords: { x: 3, y: 1 }
     },
     hazeSlash: {
       name_en: "Haze Slash",
       name_jp: "霞斬り",
       desc: "Requires any stance. Deals melee cut damage to one target. Attempts to inflict sleep. Reduces stance duration by 2 after use. Critical hit if used during Clear Stance.",
       stats: ["STR", "LUC"],
-      dep: { chargingThrust: 1 },
+      dep: { chargingThrust: 1, armStrike:1, drawingStance:1 },
       maxLevel: 10,
-      coords: { x: 2, y: 2 }
+      coords: { x: 2, y: 5 }
+    },
+    horizontalSlice: {
+      name_en: "Horizontal Slice",
+      name_jp: "横一文字",
+      desc: "Requires any stance. Deals melee cut damage to one row. Reduces stance duration by 2 after use. Critical hit if used during Drawing Stance.",
+      stats: ["STR"],
+      dep: { helmSplitter: 1 },
+      maxLevel: 10,
+      coords: { x: 3, y: 2 }
+    },
+    flameGrater: {
+      name_en: "Flame Grater",
+      name_jp: "卸し焔",
+      desc: "Deals melee cut+fire damage to one target and reduces the targets defence for 3 turns. Critical hit if used during Upper Stance.",
+      stats: ["STR"],
+      dep: { hazeSlash: 3 },
+      maxLevel: 6,
+      coords: { x: 3, y: 4 }
+    },
+    frigidSlash: {
+      name_en: "Frigid Slash",
+      name_jp: "抜刀氷雪",
+      desc: "Deals melee cut+ice damage to one target and increases the users evasion for that turn. Critical hit if used during Drawing Stance.",
+      stats: ["STR"],
+      dep: { hazeSlash: 3 },
+      maxLevel: 6,
+      coords: { x: 3, y: 5 }
     },
     lightningStab: {
       name_en: "Lightning Stab",
@@ -1111,34 +1129,16 @@ let skills = {
       stats: ["STR"],
       dep: { hazeSlash: 3 },
       maxLevel: 6,
-      coords: { x: 3, y: 2 }
-    },
-    horizontalSlice: {
-      name_en: "Horizontal Slice",
-      name_jp: "横一文字",
-      desc: "Requires any stance. Deals melee cut damage to one row. Reduces stance duration by 2 after use. Critical hit if used during Drawing Stance.",
-      stats: ["STR"],
-      dep: { sheathStrike: 1 },
-      maxLevel: 10,
-      coords: { x: 2, y: 3 }
-    },
-    frigidSlash: {
-      name_en: "Frigid Slash",
-      name_jp: "抜刀氷雪",
-      desc: "Deals melee cut+ice damage to one target and increases the users evasion for that turn. Critical hit if used during Drawing Stance.",
-      stats: ["STR"],
-      dep: { horizontalSlice: 3 },
-      maxLevel: 6,
-      coords: { x: 3, y: 3 }
+      coords: { x: 3, y: 6 }
     },
     duel: {
       name_en: "Duel",
       name_jp: "果し合い",
       desc: "Increases damage when attacking enemies that the user attacked last turn.",
       stats: [],
-      dep: { airBlade: 2, armStrike: 2 },
+      dep: {  },
       maxLevel: 6,
-      coords: { x: 2, y: 4.5 }
+      coords: { x: 3, y: 3 }
     },
     physAtkUp: {
       name_en: "Phys ATK Up",
@@ -1147,34 +1147,34 @@ let skills = {
       stats: [],
       dep: { },
       maxLevel: 8,
-      coords: { x: 2, y: 6 }
+      coords: { x: 2, y: 3 }
     },
     swallowStrike: {
       name_en: "Swallow Strike",
       name_jp: "ツバメがえし",
       desc: "Requires any stance. Deals multiple instances of melee cut damage to one target. Removes stance after use. Critical hit if used during Upper Stance.",
       stats: ["STR"],
-      dep: { flameGrater: 3 },
+      dep: { horizontalSlice: 3 },
       maxLevel: 8,
-      coords: { x: 4, y: 1 }
-    },
-    bluntingStab: {
-      name_en: "Blunting Stab",
-      name_jp: "鈍通し",
-      desc: "Requires any stance. Deals melee stab damage to one target. Attempts to inflict petrify. Removes stance after use. Critical hit if used during Clear Stance.",
-      stats: ["STR", "LUC"],
-      dep: { lightningStab: 3 },
-      maxLevel: 8,
-      coords: { x: 4, y: 2 }
+      coords: { x: 4, y: 1.5 }
     },
     petalScatter: {
       name_en: "Petal Scatter",
       name_jp: "散華",
       desc: "Requires any stance. Deals ranged cut damage to all targets. Removes stance after use. Critical hit if used during Drawing Stance. Deals less damage based on the number of targets.",
       stats: ["STR"],
-      dep: { frigidSlash: 3 },
+      dep: { horizontalSlice: 3 },
       maxLevel: 8,
-      coords: { x: 4, y: 3 }
+      coords: { x: 4, y: 2.5 }
+    },
+    bluntingStab: {
+      name_en: "Blunting Stab",
+      name_jp: "鈍通し",
+      desc: "Requires any stance. Deals melee stab damage to one target. Attempts to inflict petrify. Removes stance after use. Critical hit if used during Clear Stance.",
+      stats: ["STR", "LUC"],
+      dep: { flameGrater: 3, frigidSlash: 3, lightningStab: 3 },
+      maxLevel: 8,
+      coords: { x: 4, y: 5 }
     },
     proofOfMastery: {
       name_en: "Earth Breaker",

@@ -1183,7 +1183,7 @@ let skills = {
       stats: [],
       dep: { swallowStrike: 2, bluntingStab: 2, petalScatter: 2 },
       maxLevel: 10,
-      coords: { x: 5, y: 2 }
+      coords: { x: 5, y: 3 }
     },
     risingSpirit: {
       name_en: "Rising Spirit",
@@ -1201,7 +1201,7 @@ let skills = {
       stats: [],
       dep: { },
       maxLevel: 8,
-      coords: { x: 4, y: 5 }
+      coords: { x: 4, y: 6 }
     }
   },
   "War Magus": {

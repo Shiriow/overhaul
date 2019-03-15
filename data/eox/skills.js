@@ -1020,10 +1020,10 @@ let skills = {
       stats: ["STR"],
       dep: { clearStance: 1 },
       maxLevel: 4,
-      coords: { x: 1, y: 5 }
+      coords: { x: 1, y: 4 }
     },
     drawingStance: {
-      name_en: "Drawing Stance",
+      name_en: "High Ground",
       name_jp: "居合の構え",
 	  desc: "Increases accuracy, evasion and action speed when Drawing Stance is active, and increases the duration of Drawing Stance. At the start of each battle, the user automatically assumes the stance with the highest skill level.",
       stats: [],
@@ -1056,7 +1056,7 @@ let skills = {
       stats: ["STR", "LUC"],
       dep: { clearStance:1 },
       maxLevel: 8,
-      coords: { x: 5, y: 5 }
+      coords: { x: 1, y: 5 }
     },
     mine: {
       name_en: "Mine",
@@ -1084,7 +1084,7 @@ let skills = {
       stats: ["STR"],
       dep: { upwardSlash: 1, breath:1, airBlade:1 },
       maxLevel: 10,
-      coords: { x: 2, y: 1 }
+      coords: { x: 2, y: 2 }
     },
     hazeSlash: {
       name_en: "Haze Slash",

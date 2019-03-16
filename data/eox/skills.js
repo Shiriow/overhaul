@@ -1004,6 +1004,15 @@ let skills = {
       maxLevel: 4,
       coords: { x: 1, y: 1 }
     },
+    drawingStance: {
+      name_en: "High Ground",
+      name_jp: "居合の構え",
+	  desc: "Increases accuracy, evasion and action speed when Drawing Stance is active, and increases the duration of Drawing Stance. At the start of each battle, the user automatically assumes the stance with the highest skill level.",
+      stats: [],
+      dep: { upperStance:1 },
+      maxLevel: 8,
+      coords: { x: 1, y: 3 }
+    },
     clearStance: {
       name_en: "Clear Stance",
       name_jp: "青眼の構え",
@@ -1021,15 +1030,6 @@ let skills = {
       dep: { clearStance: 1 },
       maxLevel: 4,
       coords: { x: 1, y: 4 }
-    },
-    drawingStance: {
-      name_en: "High Ground",
-      name_jp: "居合の構え",
-	  desc: "Increases accuracy, evasion and action speed when Drawing Stance is active, and increases the duration of Drawing Stance. At the start of each battle, the user automatically assumes the stance with the highest skill level.",
-      stats: [],
-      dep: { clearStance:1 },
-      maxLevel: 8,
-      coords: { x: 1, y: 6 }
     },
     airBlade: {
       name_en: "Air Blade",
@@ -1049,6 +1049,15 @@ let skills = {
       maxLevel: 8,
       coords: { x: 1, y: 5 }
     },
+    breath: {
+      name_en: "Breath",
+      name_jp: "息吹",
+      desc: "Restores HP to the user and allies adjacent to the user.",
+      stats: [],
+      dep: { clearStance: 1 },
+      maxLevel: 6,
+      coords: { x: 1, y: 6 }
+    },
     mine: {
       name_en: "Mine",
       name_jp: "採掘",
@@ -1058,15 +1067,6 @@ let skills = {
       dep: { },
       maxLevel: 1,
       coords: { x: 0, y: 6 }
-    },
-    breath: {
-      name_en: "Breath",
-      name_jp: "息吹",
-      desc: "Restores HP to the user and allies adjacent to the user.",
-      stats: [],
-      dep: { upperStance: 1 },
-      maxLevel: 6,
-      coords: { x: 1, y: 3 }
     },
     helmSplitter: {
       name_en: "Helm Splitter",

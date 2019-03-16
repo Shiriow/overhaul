@@ -1192,7 +1192,7 @@ let skills = {
       stats: [],
       dep: { },
       maxLevel: 4,
-      coords: { x: 4, y: 4 }
+      coords: { x: 4, y: 0 }
     },
     speedUp: {
       name_en: "Speed Up",
@@ -1201,7 +1201,7 @@ let skills = {
       stats: [],
       dep: { },
       maxLevel: 8,
-      coords: { x: 4, y: 6 }
+      coords: { x: 5, y: 0 }
     }
   },
   "War Magus": {

@@ -114,11 +114,11 @@ let forward = {
   Ronin: {
     peerless: { issen: 0 },
     issen: { },
-    upperStance: { upwardSlash: 1, airBlade:1, breath:1 },
+    upperStance: { upwardSlash: 1, airBlade:1, drawingStance:1 },
     upwardSlash: { helmSplitter: 1 },
     airBlade: { helmSplitter: 1 },
     drawingStance: { helmSplitter: 1 },
-    clearStance: { chargingThrust: 1, armStrike:1, drawingStance:1 },
+    clearStance: { chargingThrust: 1, armStrike:1, breath:1 },
     chargingThrust: { hazeSlash: 1 },
     breath: { hazeSlash: 1 },
     armStrike: { hazeSlash: 1 },

@@ -1138,7 +1138,7 @@ let skills = {
       stats: [],
       dep: {  },
       maxLevel: 6,
-      coords: { x: 2, y: 4 }
+      coords: { x: 2, y: 0 }
     },
     physAtkUp: {
       name_en: "Phys ATK Up",
@@ -1147,7 +1147,7 @@ let skills = {
       stats: [],
       dep: { },
       maxLevel: 8,
-      coords: { x: 2, y: 3 }
+      coords: { x: 3, y: 0 }
     },
     swallowStrike: {
       name_en: "Swallow Strike",

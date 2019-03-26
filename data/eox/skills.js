@@ -931,18 +931,18 @@ let skills = {
       name_jp: "朧矢",
       desc: "Deals ranged stab damage to one target. Always hits. Can only be used if the user evaded an attack on the previous turn.",
       stats: ["STR"],
-      dep: { speedUp: 3 },
+      dep: { naturesBounty: 3, sagittariusShot:1 },
       maxLevel: 8,
-      coords: { x: 4, y: 3 }
+      coords: { x: 5, y: 2.5 }
     },
     naturesBounty: {
-      name_en: "Status ATK Up",
+      name_en: "Eye for an Eye",
       name_jp: "自然の恩恵",
       desc: "Increases the chance of inflicting binds and ailments.",
       stats: [],
-      dep: { },
+      dep: { speedUp: 3},
       maxLevel: 8,
-      coords: { x: 4, y: 6 }
+      coords: { x: 4, y: 3 }
     },
     scapegoat: {
       name_en: "Scapegoat",
@@ -2216,7 +2216,7 @@ let skills = {
       stats: ["STR", "LUC"],
       dep: { },
       maxLevel: 8,
-      coords: { x: 0, y: 3 }
+      coords: { x: 0, y: 2 }
     },
     boneCrusher: {
       name_en: "Bone Crusher",
@@ -2225,7 +2225,7 @@ let skills = {
       stats: ["STR"],
       dep: { shadowBind: 3 },
       maxLevel: 8,
-      coords: { x: 1, y: 3 }
+      coords: { x: 1, y: 2 }
     },
     acrobatics: {
       name_en: "Acrobatics",
@@ -2234,7 +2234,7 @@ let skills = {
       stats: [],
       dep: { },
       maxLevel: 4,
-      coords: { x: 0, y: 2 }
+      coords: { x: 0, y: 4 }
     },
     concealment: {
       name_en: "Concealment",
@@ -2243,7 +2243,7 @@ let skills = {
       stats: [],
       dep: { acrobatics: 2 },
       maxLevel: 10,
-      coords: { x: 1, y: 2 }
+      coords: { x: 1, y: 4 }
     },
     ninpoMirage: {
       name_en: "Ninpo: Mirage",
@@ -2298,7 +2298,7 @@ let skills = {
       stats: ["STR"],
       dep: { boneCrusher: 3 },
       maxLevel: 8,
-      coords: { x: 2, y: 3 }
+      coords: { x: 2, y: 2 }
     },
     selfDestruct: {
       name_en: "Self-Destruct",
@@ -2379,7 +2379,7 @@ let skills = {
       stats: ["STR"],
       dep: { hawkStrike: 2 },
       maxLevel: 8,
-      coords: { x: 4, y: 3 }
+      coords: { x: 4, y: 2 }
     },
     drawingSlice: {
       name_en: "Drawing Slice",
@@ -2388,7 +2388,7 @@ let skills = {
       stats: ["STR"],
       dep: { schadenfreude: 2, ninpoClone: 2 },
       maxLevel: 8,
-      coords: { x: 5, y: 3.5 }
+      coords: { x: 5, y: 2.5 }
     },
     ninpoSmoke: {
       name_en: "Ninpo: Smoke",

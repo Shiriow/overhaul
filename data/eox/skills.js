@@ -2230,16 +2230,16 @@ let skills = {
     acrobatics: {
       name_en: "Acrobatics",
       name_jp: "軽業",
-      desc: "When the user evades an attack, their TP is restored.",
+      desc: "Increases evasion, and when the user evades an attack, their TP is restored.",
       stats: [],
       dep: { },
-      maxLevel: 4,
+      maxLevel: 10,
       coords: { x: 0, y: 4 }
     },
     concealment: {
-      name_en: "Concealment",
+      name_en: "Dodge Boon",
       name_jp: "潜伏",
-      desc: "Increases evasion.",
+      desc: "Increases force whenever the user dodges an attack.",
       stats: [],
       dep: { acrobatics: 2 },
       maxLevel: 10,
@@ -2316,10 +2316,10 @@ let skills = {
       stats: [],
       dep: { },
       maxLevel: 10,
-      coords: { x: 3, y: 4 }
+      coords: { x: 3, y: 3 }
     },
     beheading: {
-      name_en: "Beheading",
+      name_en: "Auto-Clone",
       name_jp: "首切",
       desc: "Normal attacks have a chance to inflict instant death.",
       stats: ["LUC"],

@@ -2323,18 +2323,18 @@ let skills = {
       name_jp: "首切",
       desc: "Normal attacks have a chance to inflict instant death.",
       stats: ["LUC"],
-      dep: { },
+      dep: { ninpoClone:3 },
       maxLevel: 8,
-      coords: { x: 3, y: 6 }
+      coords: { x: 5, y: 3.5 }
     },
     ninpoFlight: {
-      name_en: "Ninpo: Flight",
+      name_en: "Lure",
       name_jp: "忍法　猿飛",
       desc: "This turn, the user has a high chance of evading physical attacks. Each time the user evades an attack, the evasion boost is reduced.",
       stats: [],
-      dep: { concealment: 3  },
+      dep: { ninpoSmoke: 3  },
       maxLevel: 10,
-      coords: { x: 2, y: 2 }
+      coords: { x: 4, y: 4 }
     },
     autoMirage: {
       name_en: "Auto-Mirage",
@@ -2364,7 +2364,7 @@ let skills = {
       coords: { x: 4, y: 1 }
     },
     eyeForAnEye: {
-      name_en: "Eye for an Eye",
+      name_en: "Soul Liberator",
       name_jp: "意趣返し",
       desc: "If the user evaded an attack on the previous turn, increases chance of inflicting ailments",
       stats: [],
@@ -2395,9 +2395,9 @@ let skills = {
       name_jp: "忍法　雲隠",
       desc: "Consumes the user's HP to greatly increase their evasion for 3 turns.",
       stats: [],
-      dep: { ninpoFlight: 2 },
+      dep: { concealment: 2 },
       maxLevel: 10,
-      coords: { x: 4, y: 2 }
+      coords: { x: 4, y: 4 }
     },
     smokePowder: {
       name_en: "Smoke Powder",

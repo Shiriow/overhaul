@@ -2368,7 +2368,7 @@ let skills = {
       name_jp: "意趣返し",
       desc: "If the user evaded an attack on the previous turn, increases chance of inflicting ailments",
       stats: [],
-      dep: { ninpoShock: 2, ninpoSmoke: 2 },
+      dep: { ninpoShock: 2, schadenfreude: 2 },
       maxLevel: 6,
       coords: { x: 5, y: 1.5 }
     },

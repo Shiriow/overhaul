@@ -2397,7 +2397,7 @@ let skills = {
       stats: [],
       dep: { concealment: 2 },
       maxLevel: 10,
-      coords: { x: 4, y: 4 }
+      coords: { x: 2, y: 4 }
     },
     smokePowder: {
       name_en: "Smoke Powder",

@@ -3155,23 +3155,14 @@ let skills = {
       maxLevel: 0,
       coords: { x: 1, y: 0 }
     },
-    vanguard: {
-      name_en: "Vanguard",
-      name_jp: "ヴァンガード",
-      desc: "For 5 turns, increases the users attack and action speed.",
-      stats: [],
-      dep: { },
-      maxLevel: 6,
-      coords: { x: 0, y: 1 }
-    },
     proficiency: {
       name_en: "Proficiency",
       name_jp: "剣士の心得",
       desc: "After the user attacks this turn, all further attacks against enemies attacked by the user will have increased damage and accuracy.",
       stats: [],
-      dep: { vanguard:1 },
+      dep: { },
       maxLevel: 6,
-      coords: { x: 1, y: 1 }
+      coords: { x: 1, y: 6 }
     },
     sonicRaid: {
       name_en: "Sonic Raid",
@@ -3180,7 +3171,7 @@ let skills = {
       stats: ["STR"],
       dep: { },
       maxLevel: 8,
-      coords: { x: 1, y: 2 }
+      coords: { x: 1, y: 1 }
     },
     blazingLink: {
       name_en: "Blazing Link",
@@ -3189,7 +3180,7 @@ let skills = {
       stats: ["STR"],
       dep: { },
       maxLevel: 8,
-      coords: { x: 1, y: 3 }
+      coords: { x: 1, y: 2 }
     },
     freezingLink: {
       name_en: "Freezing Link",
@@ -3198,7 +3189,7 @@ let skills = {
       stats: ["STR"],
       dep: { },
       maxLevel: 8,
-      coords: { x: 1, y: 4 }
+      coords: { x: 1, y: 3 }
     },
     electricLink: {
       name_en: "Electric Link",
@@ -3207,7 +3198,16 @@ let skills = {
       stats: ["STR"],
       dep: { },
       maxLevel: 8,
-      coords: { x: 1, y: 5 }
+      coords: { x: 1, y: 4 }
+    },
+    vanguard: {
+      name_en: "Vanguard",
+      name_jp: "ヴァンガード",
+      desc: "For 5 turns, increases the users attack and action speed.",
+      stats: [],
+      dep: { },
+      maxLevel: 6,
+      coords: { x: 0, y: 5 }
     },
     powerBreak: {
       name_en: "Power Break",
@@ -3216,7 +3216,7 @@ let skills = {
       stats: ["STR"],
       dep: { },
       maxLevel: 6,
-      coords: { x: 1, y: 6 }
+      coords: { x: 1, y: 5 }
     },
     mine: {
       name_en: "Mine",
@@ -3235,7 +3235,7 @@ let skills = {
       stats: [],
       dep: { },
       maxLevel: 8,
-      coords: { x: 0, y: 2 }
+      coords: { x: 0, y: 1 }
     },
     doubleStrike: {
       name_en: "Double Strike",
@@ -3244,7 +3244,7 @@ let skills = {
       stats: ["STR"],
       dep: { sonicRaid: 2 },
       maxLevel: 8,
-      coords: { x: 2, y: 2 }
+      coords: { x: 2, y: 1 }
     },
     spiralSlice: {
       name_en: "Spiral Slice",
@@ -3253,7 +3253,7 @@ let skills = {
       stats: ["STR"],
       dep: { doubleStrike: 3 },
       maxLevel: 8,
-      coords: { x: 3, y: 1.5 }
+      coords: { x: 3, y: 0.5 }
     },
     penetrate: {
       name_en: "Penetrate",
@@ -3262,7 +3262,7 @@ let skills = {
       stats: ["STR"],
       dep: { doubleStrike: 3 },
       maxLevel: 8,
-      coords: { x: 3, y: 2.5 }
+      coords: { x: 3, y: 1.5 }
     },
     improvedLink: {
       name_en: "Improved Link",
@@ -3271,7 +3271,7 @@ let skills = {
       stats: [],
       dep: { blazingLink: 3, freezingLink: 3, electricLink: 3 },
       maxLevel: 4,
-      coords: { x: 2, y: 4 }
+      coords: { x: 2, y: 3 }
     },
     linkSmash: {
       name_en: "Link Smash",
@@ -3280,7 +3280,7 @@ let skills = {
       stats: [],
       dep: { improvedLink: 1 },
       maxLevel: 10,
-      coords: { x: 3, y: 4 }
+      coords: { x: 3, y: 3 }
     },
     guardBreak: {
       name_en: "Guard Break",
@@ -3289,7 +3289,7 @@ let skills = {
       stats: ["STR"],
       dep: { powerBreak: 2 },
       maxLevel: 6,
-      coords: { x: 2, y: 6 }
+      coords: { x: 2, y: 5 }
     },
     speedBreak: {
       name_en: "Speed Break",
@@ -3298,7 +3298,7 @@ let skills = {
       stats: ["STR"],
       dep: { guardBreak: 2 },
       maxLevel: 6,
-      coords: { x: 3, y: 6 }
+      coords: { x: 3, y: 5 }
     },
     initiative: {
       name_en: "Initiative",
@@ -3307,7 +3307,7 @@ let skills = {
       stats: [],
       dep: { proficiency: 2 },
       maxLevel: 6,
-      coords: { x: 2, y: 1 }
+      coords: { x: 2, y: 6 }
     },
     swordTempest: {
       name_en: "Sword Tempest",
@@ -3316,7 +3316,7 @@ let skills = {
       stats: ["STR"],
       dep: { spiralSlice: 2 },
       maxLevel: 8,
-      coords: { x: 4, y: 1.5 }
+      coords: { x: 4, y: 0.5 }
     },
     swiftStab: {
       name_en: "Swift Stab",
@@ -3325,7 +3325,7 @@ let skills = {
       stats: ["STR"],
       dep: { penetrate: 2 },
       maxLevel: 8,
-      coords: { x: 4, y: 2.5 }
+      coords: { x: 4, y: 1.5 }
     },
     statusDefUp: {
       name_en: "Defiance",
@@ -3334,7 +3334,7 @@ let skills = {
       stats: [],
       dep: { swordTempest:1, swiftStab:1 },
       maxLevel: 8,
-      coords: { x: 5, y: 2 }
+      coords: { x: 5, y: 1 }
     },
     linkMastery: {
       name_en: "Link Mastery",
@@ -3343,7 +3343,7 @@ let skills = {
       stats: [],
       dep: { linkSmash: 2 },
       maxLevel: 10,
-      coords: { x: 4, y: 4 }
+      coords: { x: 4, y: 3 }
     },
     linkEnd: {
       name_en: "Link End",
@@ -3352,7 +3352,7 @@ let skills = {
       stats: ["STR"],
       dep: { linkMastery: 2 },
       maxLevel: 6,
-      coords: { x: 5, y: 4 }
+      coords: { x: 5, y: 3 }
     },
     fullBreak: {
       name_en: "Full Break",
@@ -3361,7 +3361,7 @@ let skills = {
       stats: ["STR"],
       dep: { speedBreak: 2 },
       maxLevel: 8,
-      coords: { x: 4, y: 6 }
+      coords: { x: 4, y: 5 }
     },
     singleDevote: {
       name_en: "Single Devote",
@@ -3370,7 +3370,7 @@ let skills = {
       stats: [],
       dep: { initiative: 2 },
       maxLevel: 6,
-      coords: { x: 4, y: 1 }
+      coords: { x: 4, y: 6 }
     }
   },
   Nightseeker: {

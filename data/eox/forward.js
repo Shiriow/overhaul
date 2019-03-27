@@ -371,7 +371,7 @@ let forward = {
     blazingLink: { improvedLink: 3 },
     freezingLink: { improvedLink: 3 },
     electricLink: { improvedLink: 3 },
-    vanguard: { proficiency:1 },
+    vanguard: { },
     powerBreak: { guardBreak: 2 },
     mine: { },
     physDefUp: { },

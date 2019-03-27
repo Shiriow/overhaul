@@ -1073,7 +1073,7 @@ let skills = {
       name_jp: "兜割り ",
       desc: "Requires any stance. Deals melee cut damage to one target. Low accuracy, ignores cut resistance. Reduces stance duration by 2 after use. Critical hit if used during Upper Stance.",
       stats: ["STR"],
-      dep: { upwardSlash: 1, breath:1, airBlade:1 },
+      dep: { upwardSlash: 1, drawingStance:1, airBlade:1 },
       maxLevel: 10,
       coords: { x: 2, y: 2 }
     },
@@ -1082,7 +1082,7 @@ let skills = {
       name_jp: "霞斬り",
       desc: "Requires any stance. Deals melee cut damage to one target. Attempts to inflict sleep. Reduces stance duration by 2 after use. Critical hit if used during Clear Stance.",
       stats: ["STR", "LUC"],
-      dep: { chargingThrust: 1, armStrike:1, drawingStance:1 },
+      dep: { chargingThrust: 1, armStrike:1, breath:1 },
       maxLevel: 10,
       coords: { x: 2, y: 5 }
     },
@@ -2422,10 +2422,10 @@ let skills = {
       coords: { x: 0, y: 0 }
     },
     astralSign: {
-      name_en: "Astral Sign",
+      name_en: "Conversion",
       name_jp: "アストロサイン",
-      desc: "Deals ranged fire+ice+volt damage to all enemies. On this turn, all allies' TP cost will be reduced to 0.",
-      stats: ["INT"],
+      desc: "Restores TP to the user. This can restore TP over maximum TP. The overhealed TP will disappear at the end of battle, or when the user dies.",
+      stats: [],
       unique: true,
       type: "Break",
       dep: { astrologersAxis: 0 },
@@ -2506,7 +2506,7 @@ let skills = {
       coords: { x: 0, y: 6 }
     },
     horoscope: {
-      name_en: "Horoscope",
+      name_en: "???",
       name_jp: "星体観測",
       desc: "For a set number of turns, reduces encounter rate.",
       stats: [],
@@ -2587,10 +2587,10 @@ let skills = {
       coords: { x: 2, y: 5 }
     },
     ethericShoot: {
-      name_en: "Etheric Shoot",
+      name_en: "Etheric Siphon",
       name_jp: "エーテルシュート",
-      desc: "Deals ranged, INT-based damage to one enemy with the user's weapon.",
-      stats: ["INT"],
+      desc: "When the user hits an enemy's weakness, their Force gauge is increased.",
+      stats: [],
       dep: { darkEther: 2 },
       maxLevel: 8,
       coords: { x: 3, y: 5 }
@@ -2629,10 +2629,10 @@ let skills = {
       stats: [],
       dep: { fireProphecy: 1, iceProphecy: 1, voltProphecy: 1 },
       maxLevel: 6,
-      coords: { x: 5, y: 2 }
+      coords: { x: 5, y: 1.5 }
     },
     spreadEther: {
-      name_en: "Spread Ether",
+      name_en: "???",
       name_jp: "多段式エーテル",
       desc: "Until the end of the next turn, Zodiac attack skills will deal reduced damage, but hit random targets 2-5 times. Meteor will instead hit 6-15 times.",
       stats: [],
@@ -2645,9 +2645,9 @@ let skills = {
       name_jp: "メテオ",
       desc: "Deals 2-5 instances of ranged bash damage to random targets.",
       stats: ["INT"],
-      dep: { horoscope: 3, ethericShoot: 2 },
+      dep: { fireProphecy: 1, iceProphecy: 1, voltProphecy: 1 },
       maxLevel: 10,
-      coords: { x: 4, y: 5.5 }
+      coords: { x: 5, y: 2.5 }
     }
   },
   Farmer: {
@@ -3868,10 +3868,10 @@ let skills = {
       coords: { x: 0, y: 0 }
     },
     conversion: {
-      name_en: "Conversion",
+      name_en: "Overdrive",
       name_jp: "コンバージョン",
-      desc: "Restores TP to the user. This can restore TP over maximum TP. The overhealed TP will disappear at the end of battle, or when the user dies.",
-      stats: [],
+      desc: "Deals ranged cut/almighty damage to all enemies, and restores TP to the user based on damage dealt.",
+      stats: ["STR"],
       unique: true,
       type: "Break",
       dep: { ignition: 0 },

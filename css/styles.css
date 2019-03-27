@@ -250,3 +250,26 @@ td {
   height: 20px;
   margin: 2px;
 }
+
+.skill-available{
+background-color: #024486;
+}
+.skill-info{
+background-color: #014486;
+}
+
+.skill-unavailable{
+background-color: #394b61;
+}
+
+.blue-theme {
+    --body-background: #18515f;
+    --header-background: #002a2b6e;
+    --available-highlight: #a3dad4;
+    --available-background: #024486;
+    --available-midtone: #3873b3;
+    --unavailable-highlight: #A9A9A9;
+    --unavailable-background: #394B61;
+    --unavailable-midtone: #778898;
+
+}

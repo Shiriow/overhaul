@@ -366,7 +366,7 @@ let forward = {
   Landsknecht: {
     trinity: { fullCharge: 0 },
     fullCharge: { },
-    proficiency: { },
+    proficiency: { initiative: 2 },
     sonicRaid: { doubleStrike: 2 },
     blazingLink: { improvedLink: 3 },
     freezingLink: { improvedLink: 3 },
@@ -382,7 +382,7 @@ let forward = {
     linkSmash: { linkMastery: 2 },
     guardBreak: { speedBreak: 2 },
     speedBreak: { fullBreak: 2 },
-    initiative: { },
+    initiative: { singleDevote: 2 },
     statusDefUp: { },
     swordTempest: { statusDefUp:1 },
     swiftStab: { statusDefUp:1 },

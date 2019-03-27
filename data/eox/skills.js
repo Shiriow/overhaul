@@ -3162,7 +3162,7 @@ let skills = {
       stats: [],
       dep: { },
       maxLevel: 6,
-      coords: { x: 0, y: 1 }
+      coords: { x: 1, y: 6 }
     },
     sonicRaid: {
       name_en: "Sonic Raid",
@@ -3235,7 +3235,7 @@ let skills = {
       stats: [],
       dep: { },
       maxLevel: 8,
-      coords: { x: 1, y: 6 }
+      coords: { x: 0, y: 1 }
     },
     doubleStrike: {
       name_en: "Double Strike",
@@ -3305,7 +3305,7 @@ let skills = {
       name_jp: "先駆けの功名",
       desc: "When attacking before any enemies act, increases damage and accuracy.",
       stats: [],
-      dep: { },
+      dep: { proficiency: 2 },
       maxLevel: 6,
       coords: { x: 2, y: 6 }
     },
@@ -3368,7 +3368,7 @@ let skills = {
       name_jp: "シングルデボート",
       desc: "Increases damage when fewer elements are used in an attack.",
       stats: [],
-      dep: { },
+      dep: { initiative: 2 },
       maxLevel: 6,
       coords: { x: 4, y: 6 }
     }

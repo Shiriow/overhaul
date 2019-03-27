@@ -3309,19 +3309,10 @@ let skills = {
       maxLevel: 6,
       coords: { x: 2, y: 6 }
     },
-    statusDefUp: {
-      name_en: "Status DEF Up",
-      name_jp: "抑制防御ブースト",
-      desc: "Decreases the chance of being inflicted with binds and ailments.",
-      stats: [],
-      dep: { },
-      maxLevel: 8,
-      coords: { x: 3, y: 6 }
-    },
     swordTempest: {
       name_en: "Sword Tempest",
       name_jp: "ソードテンペスト",
-      desc: "Deals melee cut damage to one target. High power at the cost of speed.",
+      desc: "Deals melee cut damage to one target next turn. High power at the cost of speed.",
       stats: ["STR"],
       dep: { spiralSlice: 2 },
       maxLevel: 8,
@@ -3330,11 +3321,20 @@ let skills = {
     swiftStab: {
       name_en: "Swift Stab",
       name_jp: "ハヤブサ突き",
-      desc: "Deals multiple instances of melee stab damage to random targets.",
+      desc: "Deals multiple instances of melee stab damage to random targets. Cannot be used next turn.",
       stats: ["STR"],
       dep: { penetrate: 2 },
       maxLevel: 8,
       coords: { x: 4, y: 1.5 }
+    },
+    statusDefUp: {
+      name_en: "Defiance",
+      name_jp: "抑制防御ブースト",
+      desc: "Increases damage when dual-wielding.",
+      stats: [],
+      dep: { swordTempest:1, swiftStab:1 },
+      maxLevel: 8,
+      coords: { x: 5, y: 1 }
     },
     linkMastery: {
       name_en: "Link Mastery",

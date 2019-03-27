@@ -2441,28 +2441,28 @@ let skills = {
       maxLevel: 8,
       coords: { x: 0, y: 2 }
     },
-    fireStar: {
-      name_en: "Fire Star",
-      name_jp: "炎の星術",
-      desc: "Deals ranged fire damage to one target, with splash damage.",
+    binaryFire: {
+      name_en: "Binary Fire",
+      name_jp: "炎の連星術",
+      desc: "Deals ranged fire damage to all enemies.",
       stats: ["INT"],
       dep: { ethericGleam: 1 },
       maxLevel: 10,
       coords: { x: 1, y: 1 }
     },
-    iceStar: {
-      name_en: "Ice Star",
-      name_jp: "氷の星術",
-      desc: "Deals ranged ice damage to one target, with line-piercing effects.",
+    binaryIce: {
+      name_en: "Binary Ice",
+      name_jp: "氷の連星術",
+      desc: "Deals ranged ice damage to all enemies.",
       stats: ["INT"],
       dep: { ethericGleam: 1 },
       maxLevel: 10,
       coords: { x: 1, y: 2 }
     },
-    voltStar: {
-      name_en: "Volt Star",
-      name_jp: "雷の星術",
-      desc: "Deals ranged volt damage to one row.",
+    binaryVolt: {
+      name_en: "Binary Volt",
+      name_jp: "雷の連星術",
+      desc: "Deals ranged volt damage to all enemies.",
       stats: ["INT"],
       dep: { ethericGleam: 1 },
       maxLevel: 10,
@@ -2532,30 +2532,30 @@ let skills = {
       maxLevel: 8,
       coords: { x: 3, y: 0 }
     },
-    binaryFire: {
-      name_en: "Binary Fire",
-      name_jp: "炎の連星術",
-      desc: "Deals ranged fire damage to all enemies.",
+    fireStar: {
+      name_en: "Astral Fire",
+      name_jp: "炎の星術",
+      desc: "Deals ranged fire damage to one target, with splash damage.",
       stats: ["INT"],
-      dep: { fireStar: 3 },
+      dep: { binaryFire: 3 },
       maxLevel: 10,
       coords: { x: 2, y: 1 }
     },
-    binaryIce: {
-      name_en: "Binary Ice",
-      name_jp: "氷の連星術",
-      desc: "Deals ranged ice damage to all enemies.",
+    iceStar: {
+      name_en: "Umbral Ice",
+      name_jp: "氷の星術",
+      desc: "Deals ranged ice damage to one target, with line-piercing effects.",
       stats: ["INT"],
-      dep: { iceStar: 3 },
+      dep: { binaryIce: 3 },
       maxLevel: 10,
       coords: { x: 2, y: 2 }
     },
-    binaryVolt: {
-      name_en: "Binary Volt",
-      name_jp: "雷の連星術",
-      desc: "Deals ranged volt damage to all enemies.",
+    voltStar: {
+      name_en: "Solstice Volt",
+      name_jp: "雷の星術",
+      desc: "Deals ranged volt damage to one row.",
       stats: ["INT"],
-      dep: { voltStar: 3 },
+      dep: { binaryVolt: 3 },
       maxLevel: 10,
       coords: { x: 2, y: 3 }
     },
@@ -2600,7 +2600,7 @@ let skills = {
       name_jp: "炎の先見術",
       desc: "Prevents fire-elemental attacks from one enemy. If an attack is prevented, increases the user's attack until the end of the next turn.",
       stats: [],
-      dep: { binaryFire: 2 },
+      dep: { fireStar: 2 },
       maxLevel: 4,
       coords: { x: 4, y: 1 }
     },
@@ -2609,7 +2609,7 @@ let skills = {
       name_jp: "氷の先見術",
       desc: "Prevents ice-elemental attacks from one enemy. If an attack is prevented, increases the user's attack until the end of the next turn.",
       stats: [],
-      dep: { binaryIce: 2 },
+      dep: { iceStar: 2 },
       maxLevel: 4,
       coords: { x: 4, y: 2 }
     },
@@ -2618,7 +2618,7 @@ let skills = {
       name_jp: "雷の先見術",
       desc: "Prevents volt-elemental attacks from one enemy. If an attack is prevented, increases the user's attack until the end of the next turn.",
       stats: [],
-      dep: { binaryVolt: 2 },
+      dep: { voltStar: 2 },
       maxLevel: 4,
       coords: { x: 4, y: 3 }
     },

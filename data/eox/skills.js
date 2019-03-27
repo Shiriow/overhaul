@@ -938,7 +938,7 @@ let skills = {
     naturesBounty: {
       name_en: "Eye for an Eye",
       name_jp: "自然の恩恵",
-      desc: "Increases the chance of inflicting binds and ailments.",
+      desc: "If the user evaded an attack on the previous turn, increases chance of inflicting ailments",
       stats: [],
       dep: { speedUp: 3},
       maxLevel: 8,
@@ -2318,24 +2318,6 @@ let skills = {
       maxLevel: 10,
       coords: { x: 3, y: 3 }
     },
-    beheading: {
-      name_en: "Auto-Clone",
-      name_jp: "首切",
-      desc: "Normal attacks have a chance to inflict instant death.",
-      stats: ["LUC"],
-      dep: { ninpoClone:3 },
-      maxLevel: 8,
-      coords: { x: 5, y: 3.5 }
-    },
-    ninpoFlight: {
-      name_en: "Lure",
-      name_jp: "忍法　猿飛",
-      desc: "This turn, the user has a high chance of evading physical attacks. Each time the user evades an attack, the evasion boost is reduced.",
-      stats: [],
-      dep: { ninpoSmoke: 3  },
-      maxLevel: 10,
-      coords: { x: 4, y: 4 }
-    },
     autoMirage: {
       name_en: "Auto-Mirage",
       name_jp: "先制陽炎",
@@ -2363,15 +2345,6 @@ let skills = {
       maxLevel: 6,
       coords: { x: 4, y: 1 }
     },
-    eyeForAnEye: {
-      name_en: "Soul Liberator",
-      name_jp: "意趣返し",
-      desc: "If the user evaded an attack on the previous turn, increases chance of inflicting ailments",
-      stats: [],
-      dep: { ninpoShock: 2, schadenfreude: 2 },
-      maxLevel: 6,
-      coords: { x: 5, y: 1.5 }
-    },
     schadenfreude: {
       name_en: "Schadenfreude",
       name_jp: "幸災楽禍",
@@ -2380,6 +2353,33 @@ let skills = {
       dep: { hawkStrike: 2 },
       maxLevel: 8,
       coords: { x: 4, y: 2 }
+    },
+    ninpoSmoke: {
+      name_en: "Ninpo: Smoke",
+      name_jp: "忍法　雲隠",
+      desc: "Consumes the user's HP to greatly increase their evasion for 3 turns.",
+      stats: [],
+      dep: { concealment: 2 },
+      maxLevel: 10,
+      coords: { x: 2, y: 4 }
+    },
+    ninpoFlight: {
+      name_en: "Lure",
+      name_jp: "忍法　猿飛",
+      desc: "This turn, every time the user dodges an attack, members in the same row will individually counter with an attack using their equipped weapon.",
+      stats: [],
+      dep: { ninpoSmoke: 3  },
+      maxLevel: 10,
+      coords: { x: 4, y: 4 }
+    },
+    eyeForAnEye: {
+      name_en: "Soul Liberator",
+      name_jp: "意趣返し",
+      desc: "Deals melee cut damage to one target. If the target has a status ailment, increases damage dealt and dispels it after dealing damage.",
+      stats: ["STR"],
+      dep: { ninpoShock: 2, schadenfreude: 2 },
+      maxLevel: 6,
+      coords: { x: 5, y: 1.5 }
     },
     drawingSlice: {
       name_en: "Drawing Slice",
@@ -2390,14 +2390,14 @@ let skills = {
       maxLevel: 8,
       coords: { x: 5, y: 2.5 }
     },
-    ninpoSmoke: {
-      name_en: "Ninpo: Smoke",
-      name_jp: "忍法　雲隠",
-      desc: "Consumes the user's HP to greatly increase their evasion for 3 turns.",
+    beheading: {
+      name_en: "Auto-Clone",
+      name_jp: "首切",
+      desc: "If Ninpo: Clone is learned, there is a chance to automatically cast it at the start of battle. Cannot activate if another ally activated it first.",
       stats: [],
-      dep: { concealment: 2 },
-      maxLevel: 10,
-      coords: { x: 2, y: 4 }
+      dep: { ninpoClone:3 },
+      maxLevel: 8,
+      coords: { x: 5, y: 3.5 }
     },
     smokePowder: {
       name_en: "Smoke Powder",

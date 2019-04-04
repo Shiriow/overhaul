@@ -668,7 +668,7 @@ let skills = {
       coords: { x: 3, y: 6 }
     },
     partyHeal: {
-      name_en: "Party Heal",
+      name_en: "???",
       name_jp: "エリアヒール",
       desc: "Restores HP to all party members.",
       stats: ["WIS"],
@@ -1391,7 +1391,7 @@ let skills = {
       coords: { x: 3, y: 6 }
     },
     warHealAll: {
-      name_en: "War Heal All",
+      name_en: "???",
       name_jp: "巫術：再生陣",
       desc: "Restores HP to all party members at the start of the turn, then at the end of the turn.",
       stats: ["WIS"],
@@ -3105,7 +3105,7 @@ let skills = {
       coords: { x: 5, y: 2 }
     },
     curseStrike: {
-      name_en: "Curse Strike",
+      name_en: "???",
       name_jp: "祟り打ち",
       desc: "Deals melee bash damage to one target. Attempts to inflict curse and arm bind.",
       stats: ["STR", "LUC"],
@@ -3605,7 +3605,7 @@ let skills = {
       coords: { x: 4, y: 5 }
     },
     autoSpread: {
-      name_en: "Auto-Spread",
+      name_en: "???",
       name_jp: "先制スプレッド",
       desc: "If Spread Throw is learned, there is a chance to automatically cast it at the start of battle. Cannot activate if another ally activated it first.",
       stats: [],
@@ -3810,7 +3810,7 @@ let skills = {
       coords: { x: 4, y: 1 }
     },
     circleMastery: {
-      name_en: "Circle Mastery",
+      name_en: "???",
       name_jp: "方陣マスタリ",
       desc: "Increases the power of Dismiss skills.",
       stats: [],
@@ -3942,7 +3942,7 @@ let skills = {
       coords: { x: 1, y: 4.5 }
     },
     avenger: {
-      name_en: "Avenger",
+      name_en: "???",
       name_jp: "アベンジャー",
       desc: "When an ally dies, restores HP to the user.",
       stats: [],
@@ -4069,7 +4069,7 @@ let skills = {
       coords: { x: 4, y: 3 }
     },
     accelDrive: {
-      name_en: "Accel Drive",
+      name_en: "Drive Recoil",
       name_jp: "アクセルドライブ",
       desc: "Deals melee cut+almighty damage to one target, and places the user in the overheat state for 9 turns. Cannot be used while overheated. Low action speed, and the user will take double damage until the skill activates.",
       stats: ["STR"],

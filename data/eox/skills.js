@@ -1390,23 +1390,14 @@ let skills = {
       maxLevel: 6,
       coords: { x: 3, y: 6 }
     },
-    warHealAll: {
-      name_en: "???",
-      name_jp: "巫術：再生陣",
-      desc: "Restores HP to all party members at the start of the turn, then at the end of the turn.",
-      stats: ["WIS"],
-      dep: { artery: 2, warResponse: 2 },
-      maxLevel: 10,
-      coords: { x: 4, y: 1.5 }
-    },
     barrier: {
       name_en: "Barrier",
       name_jp: "巫術：結界",
       desc: "For one turn, there is a chance to nullify binds and ailments against all party members, up to a set number of times.",
       stats: [],
-      dep: { warHealAll: 3 },
+      dep: {  artery: 2, warResponse: 2 },
       maxLevel: 10,
-      coords: { x: 5, y: 1.5 }
+      coords: { x: 4, y: 1.5 }
     },
     ailingSlash: {
       name_en: "Ailing Slash",
@@ -1416,6 +1407,15 @@ let skills = {
       dep: { legcut: 3 },
       maxLevel: 6,
       coords: { x: 4, y: 3.5 }
+    },
+    warHealAll: {
+      name_en: "Scorpion",
+      name_jp: "巫術：再生陣",
+      desc: "Deals melee cut damage to one enemy, with double damage splash damage to adjacent enemies. If adjacent enemies have ailments, attempts to petrify the target.",
+      stats: ["STR"],
+      dep: { ailingSlash: 2 },
+      maxLevel: 10,
+      coords: { x: 5, y: 3.5 }
     },
     spiritDrain: {
       name_en: "Spirit Drain",
@@ -1818,22 +1818,22 @@ let skills = {
       maxLevel: 10,
       coords: { x: 2, y: 2 }
     },
+    chargedShot: {
+      name_en: "Clean Shot",
+      name_jp: "チャージショット",
+      desc: "Deals ranged stab damage to one target. Low action speed, and the user will take double damage until the skill activates.",
+      stats: ["STR"],
+      dep: { headSnipe: 2 },
+      maxLevel: 10,
+      coords: { x: 3, y: 2 }
+    },
     actQuick: {
       name_en: "Act Quick",
       name_jp: "クイックアクト",
       desc: "Until the end of the next turn, reduces TP usage and increases action speed.",
       stats: [],
       dep: { },
-      maxLevel: 4,
-      coords: { x: 2, y: 3 }
-    },
-    chargedShot: {
-      name_en: "Charged Shot",
-      name_jp: "チャージショット",
-      desc: "Deals ranged stab damage to one target. Low action speed, and the user will take double damage until the skill activates.",
-      stats: ["STR"],
-      dep: { actQuick: 2 },
-      maxLevel: 10,
+      maxLevel: 6,
       coords: { x: 3, y: 3 }
     },
     preemptiveShell: {
@@ -1886,7 +1886,7 @@ let skills = {
       name_jp: "チャージフレイム",
       desc: "Deals ranged stab+fire damage to one target. Low action speed, and the user will take double damage until the skill activates.",
       stats: ["STR"],
-      dep: { chargedShot: 3 },
+      dep: { actQuick: 3 },
       maxLevel: 6,
       coords: { x: 4, y: 2 }
     },
@@ -1895,7 +1895,7 @@ let skills = {
       name_jp: "チャージアイス",
       desc: "Deals ranged stab+ice damage to one target. Low action speed, and the user will take double damage until the skill activates.",
       stats: ["STR"],
-      dep: { chargedShot: 3 },
+      dep: { actQuick: 3 },
       maxLevel: 6,
       coords: { x: 4, y: 3 }
     },
@@ -1904,7 +1904,7 @@ let skills = {
       name_jp: "チャージサンダー",
       desc: "Deals ranged stab+volt damage to one target. Low action speed, and the user will take double damage until the skill activates.",
       stats: ["STR"],
-      dep: { chargedShot: 3 },
+      dep: { actQuick: 3 },
       maxLevel: 6,
       coords: { x: 4, y: 4 }
     },
@@ -2307,7 +2307,7 @@ let skills = {
       stats: ["STR"],
       dep: { },
       maxLevel: 6,
-      coords: { x: 3, y: 5 }
+      coords: { x: 3, y: 6 }
     },
     ninpoClone: {
       name_en: "Ninpo: Clone",
@@ -2406,7 +2406,7 @@ let skills = {
       stats: [],
       dep: { },
       maxLevel: 4,
-      coords: { x: 4, y: 5 }
+      coords: { x: 4, y: 6 }
     }
   },
   Zodiac: {

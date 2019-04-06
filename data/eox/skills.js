@@ -726,7 +726,7 @@ let skills = {
     illusionStep: {
       name_en: "Illusion Step",
       name_jp: "夢幻陣形",
-      desc: "For 3 turns, increases all party members' action speed and evasion.",
+      desc: "For 3 turns, increases all party members' evasion and user's chance of being targeted.",
       stats: [],
       unique: true,
       type: "Boost",
@@ -2172,7 +2172,7 @@ let skills = {
     insolence: {
       name_en: "Insolence",
       name_jp: "不忍",
-      desc: "For 3 turns, increases the user's evasion and chance of being targeted.",
+      desc: "For 3 turns, increases the user's damage, evasion and chance of being targeted.",
       stats: [],
       unique: true,
       type: "Boost",
@@ -2756,7 +2756,7 @@ let skills = {
       coords: { x: 1, y: 6 }
     },
     rottenEggs: {
-      name_en: "Rotten Eggs",
+      name_en: "???",
       name_jp: "弱り目に祟り目",
       desc: "For 3 turns, decreases attack for all enemies. Effect is stronger against enemies with an ailment or bind.",
       stats: [],
@@ -2792,7 +2792,7 @@ let skills = {
       coords: { x: 2, y: 4 }
     },
     rainOrShin: {
-      name_en: "Rain or Shine",
+      name_en: "???",
       name_jp: "アメニモマケズ",
       desc: "For a set number of steps, nullifies damage tiles and muddy floors, and greatly reduces other sources of damage while exploring.",
       stats: [],
@@ -3207,7 +3207,7 @@ let skills = {
       stats: [],
       dep: { },
       maxLevel: 6,
-      coords: { x: 0, y: 5 }
+      coords: { x: 0, y: 1 }
     },
     powerBreak: {
       name_en: "Power Break",
@@ -3215,6 +3215,15 @@ let skills = {
       desc: "Deals melee bash damage to one target. Decreases their attack for 3 turns. Damage is based on the user's shield's DEF.",
       stats: ["STR"],
       dep: { },
+      maxLevel: 6,
+      coords: { x: 0, y: 5 }
+    },
+    guardBreak: {
+      name_en: "Guard Break",
+      name_jp: "ガードブレイク",
+      desc: "Deals melee bash damage to one target. Decreases their defense for 3 turns. Damage is based on the user's shield's DEF.",
+      stats: ["STR"],
+      dep: { powerBreak: 2 },
       maxLevel: 6,
       coords: { x: 1, y: 5 }
     },
@@ -3227,15 +3236,6 @@ let skills = {
       dep: { },
       maxLevel: 1,
       coords: { x: 0, y: 6 }
-    },
-    physDefUp: {
-      name_en: "Phys DEF Up",
-      name_jp: "物理防御ブースト",
-      desc: "Increases physical defense.",
-      stats: [],
-      dep: { },
-      maxLevel: 8,
-      coords: { x: 0, y: 1 }
     },
     doubleStrike: {
       name_en: "Double Strike",
@@ -3282,15 +3282,6 @@ let skills = {
       maxLevel: 10,
       coords: { x: 3, y: 3 }
     },
-    guardBreak: {
-      name_en: "Guard Break",
-      name_jp: "ガードブレイク",
-      desc: "Deals melee bash damage to one target. Decreases their defense for 3 turns. Damage is based on the user's shield's DEF.",
-      stats: ["STR"],
-      dep: { powerBreak: 2 },
-      maxLevel: 6,
-      coords: { x: 2, y: 5 }
-    },
     speedBreak: {
       name_en: "Speed Break",
       name_jp: "スピードブレイク",
@@ -3298,6 +3289,15 @@ let skills = {
       stats: ["STR"],
       dep: { guardBreak: 2 },
       maxLevel: 6,
+      coords: { x: 2, y: 5 }
+    },
+    physDefUp: {
+      name_en: "Swordbreaker",
+      name_jp: "物理防御ブースト",
+      desc: "Increases physical defense.",
+      stats: ["STR"],
+      dep: { speedBreak: 2 },
+      maxLevel: 8,
       coords: { x: 3, y: 5 }
     },
     initiative: {
@@ -3359,7 +3359,7 @@ let skills = {
       name_jp: "フルブレイク",
       desc: "Deals melee bash damage to one target. Damage is increased if the target has a Break skill debuff. Multiple Break debuffs will not increase damage further. Damage is based on the user's shield's DEF.",
       stats: ["STR"],
-      dep: { speedBreak: 2 },
+      dep: { physDefUp: 2 },
       maxLevel: 8,
       coords: { x: 4, y: 5 }
     },
@@ -3605,9 +3605,9 @@ let skills = {
       coords: { x: 4, y: 5 }
     },
     autoSpread: {
-      name_en: "???",
+      name_en: "Perseverance",
       name_jp: "先制スプレッド",
-      desc: "If Spread Throw is learned, there is a chance to automatically cast it at the start of battle. Cannot activate if another ally activated it first.",
+      desc: "Increases the chance of inflicting an ailment/bind if the user failed to inflict one last turn.",
       stats: [],
       dep: { spreadThrow: 2 },
       maxLevel: 6,
@@ -3758,7 +3758,7 @@ let skills = {
     charmEye: {
       name_en: "Charm Eye",
       name_jp: "魅了の邪眼",
-      desc: "For 3 turns, decreases attack for all enemies.",
+      desc: "For 3 turns, decreases attack for all enemies. Effect is stronger against enemies with an ailment or bind.",
       stats: [],
       dep: { },
       maxLevel: 6,
@@ -3767,7 +3767,7 @@ let skills = {
     atrophicEye: {
       name_en: "Atrophic Eye",
       name_jp: "衰身の邪眼",
-      desc: "For 3 turns, decreases defense for all enemies.",
+      desc: "For 3 turns, decreases defense for all enemies. Effect is stronger against enemies with an ailment or bind.",
       stats: [],
       dep: { charmEye: 2 },
       maxLevel: 6,

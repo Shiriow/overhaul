@@ -2366,7 +2366,7 @@ let skills = {
     ninpoFlight: {
       name_en: "Lure",
       name_jp: "忍法　猿飛",
-      desc: "This turn, every time the user dodges an attack, members in the same row will individually counter with an attack using their equipped weapon.",
+      desc: "This turn, every time the users target dodges an attack, members in the same row will individually counter with an attack using their equipped weapon.",
       stats: [],
       dep: { ninpoSmoke: 3  },
       maxLevel: 10,
@@ -3156,7 +3156,7 @@ let skills = {
       coords: { x: 1, y: 0 }
     },
     proficiency: {
-      name_en: "Proficiency",
+      name_en: "Blitzkrieg",
       name_jp: "剣士の心得",
       desc: "After the user attacks this turn, all further attacks against enemies attacked by the user will have increased damage and accuracy.",
       stats: [],
@@ -3701,7 +3701,7 @@ let skills = {
       coords: { x: 0, y: 4 }
     },
     proficiency: {
-      name_en: "Proficiency",
+      name_en: "Circle Reclamation",
       name_jp: "方陣師の心得",
       desc: "Restores TP to the user when a circle is dismissed or times out.",
       stats: [],

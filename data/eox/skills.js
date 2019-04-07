@@ -2938,7 +2938,7 @@ let skills = {
       desc: "This turn, when the selected ally is attacked, all front row allies will counterattack with their weapons. Does not activate against counterattacks.",
       stats: ["STR"],
       dep: { },
-      maxLevel: 6,
+      maxLevel: 8,
       coords: { x: 1, y: 2 }
     },
     boltSlash: {
@@ -3050,15 +3050,6 @@ let skills = {
       maxLevel: 6,
       coords: { x: 3, y: 4 }
     },
-    reincarnation: {
-      name_en: "Reincarnation",
-      name_jp: "仮死再生",
-      desc: "On the turn when the user's HP reaches 0, there is a chance that they may revive at the end of that turn.",
-      stats: [],
-      dep: { ritualSuicide: 2 },
-      maxLevel: 10,
-      coords: { x: 3, y: 6 }
-    },
     fellingBird: {
       name_en: "Felling Bird",
       name_jp: "飛鳥落とし",
@@ -3076,6 +3067,15 @@ let skills = {
       dep: { },
       maxLevel: 6,
       coords: { x: 2, y: 6 }
+    },
+    curseStrike: {
+      name_en: "???",
+      name_jp: "祟り打ち",
+      desc: "Deals melee bash damage to one target. Attempts to inflict curse and arm bind.",
+      stats: ["STR", "LUC"],
+      dep: { greatGeneral: 2 },
+      maxLevel: 8,
+      coords: { x: 2, y: 5 }
     },
     fiveRingSword: {
       name_en: "Five-Ring Sword",
@@ -3104,30 +3104,30 @@ let skills = {
       maxLevel: 10,
       coords: { x: 5, y: 2 }
     },
-    curseStrike: {
-      name_en: "???",
-      name_jp: "祟り打ち",
-      desc: "Deals melee bash damage to one target. Attempts to inflict curse and arm bind.",
-      stats: ["STR", "LUC"],
-      dep: { bloodyLance: 2 },
-      maxLevel: 8,
-      coords: { x: 4, y: 4 }
+    reincarnation: {
+      name_en: "Reincarnation",
+      name_jp: "仮死再生",
+      desc: "On the turn when the user's HP reaches 0, there is a chance that they may revive at the end of that turn.",
+      stats: [],
+      dep: { ritualSuicide: 2 },
+      maxLevel: 10,
+      coords: { x: 4, y: 6 }
     },
     mercyKill: {
       name_en: "Mercy Kill",
       name_jp: "介錯",
       desc: "When any enemy or ally is attacked, and their HP falls below a set percentage, there is a chance to inflict instant death to them.",
       stats: [],
-      dep: { curseStrike: 3 },
+      dep: { bloodyLance: 3 },
       maxLevel: 4,
-      coords: { x: 5, y: 4 }
+      coords: { x: 4, y: 4 }
     },
     foreHonor: {
       name_en: "Fore Honor",
       name_jp: "先陣の名誉",
       desc: "For 3 turns, increases one ally's physical attack and action speed, but decreases their physical defense.",
       stats: [],
-      dep: { greatGeneral: 2 },
+      dep: { curseStrike: 2 },
       maxLevel: 6,
       coords: { x: 4, y: 5 }
     }

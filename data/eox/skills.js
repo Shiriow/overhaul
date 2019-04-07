@@ -1505,7 +1505,7 @@ let skills = {
       coords: { x: 1, y: 2 }
     },
     legionThrust: {
-      name_en: "Legion Thrust",
+      name_en: "???",
       name_jp: "レギオンスラスト",
       desc: "Consumes the HP of all allies other than the user to deal melee stab damage to the enemy front row.",
       stats: ["STR"],
@@ -1542,7 +1542,7 @@ let skills = {
       coords: { x: 0, y: 6 }
     },
     hpUp: {
-      name_en: "HP Up",
+      name_en: "???",
       name_jp: "ＨＰブースト",
       desc: "Increases maximum HP.",
       stats: [],
@@ -1560,7 +1560,7 @@ let skills = {
       coords: { x: 2, y: 1 }
     },
     drainingBurst: {
-      name_en: "Draining Burst",
+      name_en: "???",
       name_jp: "シングルバースト",
       desc: "Consumes the user's HP to deal melee stab damage to all enemies.",
       stats: ["STR"],
@@ -1623,7 +1623,7 @@ let skills = {
       coords: { x: 2, y: 5 }
     },
     physDefUp: {
-      name_en: "Phys DEF Up",
+      name_en: "???",
       name_jp: "物理防御ブースト",
       desc: "Increases physical defense.",
       stats: [],
@@ -1677,7 +1677,7 @@ let skills = {
       coords: { x: 4, y: 1 }
     },
     physAtkUp: {
-      name_en: "Phys ATK Up",
+      name_en: "???",
       name_jp: "物理攻撃ブースト",
       desc: "Increases physical attack.",
       stats: [],

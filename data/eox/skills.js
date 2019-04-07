@@ -2938,7 +2938,7 @@ let skills = {
       desc: "This turn, when the selected ally is attacked, all front row allies will counterattack with their weapons. Does not activate against counterattacks.",
       stats: ["STR"],
       dep: { },
-      maxLevel: 6,
+      maxLevel: 8,
       coords: { x: 1, y: 2 }
     },
     boltSlash: {

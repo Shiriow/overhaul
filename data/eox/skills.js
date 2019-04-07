@@ -3442,7 +3442,7 @@ let skills = {
       coords: { x: 0, y: 4 }
     },
     proficiency: {
-      name_en: "Proficiency",
+      name_en: "Trance",
       name_jp: "夜賊の心得",
       desc: "Increases damage dealt to enemies with ailments.",
       stats: [],

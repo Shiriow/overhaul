@@ -737,7 +737,7 @@ let skills = {
     mirageArrow: {
       name_en: "Mirage Arrow",
       name_jp: "ミラージュアロー",
-      desc: "Deals ranged stab damage to one target. Decreases their accuracy and action speed for 3 turns.",
+      desc: "Deals ranged stab damage to one target. Decreases their accuracy and make them act last for 3 turns.",
       stats: ["STR"],
       unique: true,
       type: "Break",

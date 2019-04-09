@@ -3069,10 +3069,10 @@ let skills = {
       coords: { x: 2, y: 6 }
     },
     curseStrike: {
-      name_en: "???",
+      name_en: "Unified Spirit",
       name_jp: "祟り打ち",
-      desc: "Deals melee bash damage to one target. Attempts to inflict curse and arm bind.",
-      stats: ["STR", "LUC"],
+      desc: "For a set number of turns, imbues one row of allies' weapons with fire/ice/volt, and increases their elemental defense.",
+      stats: [],
       dep: { greatGeneral: 2 },
       maxLevel: 8,
       coords: { x: 2, y: 5 }
@@ -3203,7 +3203,7 @@ let skills = {
     vanguard: {
       name_en: "Vanguard",
       name_jp: "ヴァンガード",
-      desc: "For 5 turns, increases the users attack and action speed.",
+      desc: "For 5 turns, increases the users attack, action speed and imbues the users weapons with fire/ice/volt.",
       stats: [],
       dep: { },
       maxLevel: 6,

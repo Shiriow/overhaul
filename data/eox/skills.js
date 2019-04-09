@@ -1219,7 +1219,7 @@ let skills = {
     fairyRobe: {
       name_en: "Fairy Robe",
       name_jp: "大巫術：精霊衣",
-      desc: "Removes ailments and binds from all party members, and restores their HP. This turn, negates all binds, ailments, stun, instant death and debuffs against all party members.",
+      desc: "Removes ailments, binds and debuffs from all party members, and restores their HP. This turn, negates all binds, ailments, stun, instant death and debuffs against all party members.",
       stats: ["WIS"],
       unique: true,
       type: "Break",
@@ -1427,7 +1427,7 @@ let skills = {
       coords: { x: 4, y: 5 }
     },
     plague: {
-      name_en: "Plague",
+      name_en: "???",
       name_jp: "発疫",
       desc: "User's normal attack attempts to inflict poison, paralyze, blind, sleep and curse.",
       stats: ["LUC"],
@@ -1436,7 +1436,7 @@ let skills = {
       coords: { x: 5, y: 5 }
     },
     physAtkUp: {
-      name_en: "Phys ATK Up",
+      name_en: "???",
       name_jp: "物理攻撃ブースト",
       desc: "Increases physical attack.",
       stats: [],

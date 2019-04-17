@@ -962,7 +962,248 @@ let skills = {
       maxLevel: 6,
       coords: { x: 4, y: 4 }
     }
-  },
+  },Ronin: {
+    peerless: {
+      name_en: "Peerless",
+      name_jp: "無双",
+      desc: "For 3 turns, stance duration will not decrease, and stances cannot be removed. In addition, the user gains the effect of all stances.",
+      stats: [],
+      unique: true,
+      type: "Boost",
+      dep: { },
+      maxLevel: 0,
+      coords: { x: 0, y: 0 }
+    },
+    issen: {
+      name_en: "Issen",
+      name_jp: "一閃",
+      desc: "Deals ranged cut damage to all enemies. Attempts to inflict instant death. Chance of instant death is increased against targets at low HP.",
+      stats: ["STR", "LUC"],
+      unique: true,
+      type: "Break",
+      dep: { peerless: 0 },
+      maxLevel: 0,
+      coords: { x: 1, y: 0 }
+    },
+    upperStance: {
+      name_en: "Upper Stance",
+      name_jp: "上段の構え",
+	    desc: "Increases attack when Upper Stance is active, and increases the duration of Upper Stance. At the start of each battle, the user automatically assumes the stance with the highest skill level.",
+      stats: [],
+      dep: { },
+      maxLevel: 8,
+      coords: { x: 0, y: 1 }
+    },
+    airBlade: {
+      name_en: "Air Blade",
+      name_jp: "空刃",
+      desc: "Deals ranged cut damage to one target. Critical hit if used during any stance.",
+      stats: ["STR"],
+      dep: { upperStance: 1 },
+      maxLevel: 10,
+      coords: { x: 1, y: 1 }
+    },
+    upwardSlash: {
+      name_en: "High Ground",
+      name_jp: "逆袈裟",
+      desc: "Deals melee cut damage to one target. Assumes Upper Stance after use. Critical hit if used during Upper Stance.",
+      stats: ["STR"],
+      dep: { upperStance: 1 },
+      maxLevel: 4,
+      coords: { x: 1, y: 2 }
+    },
+    clearStance: {
+      name_en: "Clear Stance",
+      name_jp: "青眼の構え",
+  	  desc: "Increases defense and Ronin skills' infliction rate when Clear Stance is active, and increases the duration of Clear Stance. At the start of each battle, the user automatically assumes the stance with the highest skill level.",
+      stats: [],
+      dep: { },
+      maxLevel: 8,
+      coords: { x: 0, y: 3 }
+    },
+    armStrike: {
+      name_en: "Arm Strike",
+      name_jp: "小手討ち",
+      desc: "Deals melee stab damage to one target. Attempts to inflict arm bind. Critical hit if used during any stance.",
+      stats: ["STR", "LUC"],
+      dep: { clearStance: 1 },
+      maxLevel: 8,
+      coords: { x: 1, y: 3 }
+    },
+    breath: {
+      name_en: "Breath",
+      name_jp: "息吹",
+      desc: "Restores HP to the user and allies adjacent to the user.",
+      stats: [],
+      dep: { clearStance: 1 },
+      maxLevel: 6,
+      coords: { x: 1, y: 4 }
+    },
+    drawingStance: {
+      name_en: "Drawing Stance",
+      name_jp: "居合の構え",
+	    desc: "Increases accuracy, evasion and action speed when Drawing Stance is active, and increases the duration of Drawing Stance. At the start of each battle, the user automatically assumes the stance with the highest skill level.",
+      stats: [],
+      dep: { },
+      maxLevel: 8,
+      coords: { x: 0, y: 5 }
+    },
+    chargingThrust: {
+      name_en: "???",
+      name_jp: "貫突",
+      desc: "Deals melee stab damage to one target. Assumes Clear Stance after use. Critical hit if used during Clear Stance.",
+      stats: ["STR"],
+      dep: { drawingStance: 1 },
+      maxLevel: 4,
+      coords: { x: 1, y: 5 }
+    },
+    sheathStrike: {
+      name_en: "???",
+      name_jp: "鞘撃",
+      desc: "Deals melee bash damage to one target. Assumes Drawing Stance after use. Critical hit if used during Drawing Stance.",
+      stats: ["STR"],
+      dep: { drawingStance: 1 },
+      maxLevel: 4,
+      coords: { x: 1, y: 6 }
+    },
+    mine: {
+      name_en: "Mine",
+      name_jp: "採掘",
+      desc: "Occasionally gains more items when using Mine points.",
+      stats: [],
+      unique: true,
+      dep: { },
+      maxLevel: 1,
+      coords: { x: 0, y: 6 }
+    },
+    helmSplitter: {
+      name_en: "Helm Splitter",
+      name_jp: "兜割り ",
+      desc: "Requires any stance. Deals melee cut damage to one target. Low accuracy, ignores cut resistance. Reduces stance duration by 2 after use. Critical hit if used during Upper Stance.",
+      stats: ["STR"],
+      dep: { airBlade: 1, upwardSlash: 1 },
+      maxLevel: 10,
+      coords: { x: 2, y: 1.5 }
+    },
+    flameGrater: {
+      name_en: "Flame Grater",
+      name_jp: "卸し焔",
+      desc: "Deals melee cut+fire damage to one target and reduces the targets defence for 3 turns. Critical hit if used during Upper Stance.",
+      stats: ["STR"],
+      dep: { helmSplitter: 3 },
+      maxLevel: 6,
+      coords: { x: 3, y: 1.5 }
+    },
+    hazeSlash: {
+      name_en: "Haze Slash",
+      name_jp: "霞斬り",
+      desc: "Requires any stance. Deals melee cut damage to one target. Attempts to inflict sleep. Reduces stance duration by 2 after use. Critical hit if used during Clear Stance.",
+      stats: ["STR", "LUC"],
+      dep: { armStrike: 1, breath: 1 },
+      maxLevel: 10,
+      coords: { x: 2, y: 3.5 }
+    },
+    lightningStab: {
+      name_en: "Lightning Stab",
+      name_jp: "雷耀突き",
+      desc: "Deals melee stab+volt damage to one target. Attempts to inflict paralyze. Critical hit if used during Clear Stance.",
+      stats: ["STR"],
+      dep: { hazeSlash: 3 },
+      maxLevel: 6,
+      coords: { x: 3, y: 3.5 }
+    },
+    horizontalSlice: {
+      name_en: "Horizontal Slice",
+      name_jp: "横一文字",
+      desc: "Requires any stance. Deals melee cut damage to one row. Reduces stance duration by 2 after use. Critical hit if used during Drawing Stance.",
+      stats: ["STR"],
+      dep: { chargingThrust:1, sheathStrike: 1 },
+      maxLevel: 10,
+      coords: { x: 2, y: 5.5 }
+    },
+    frigidSlash: {
+      name_en: "Frigid Slash",
+      name_jp: "抜刀氷雪",
+      desc: "Deals melee cut+ice damage to one target and increases the users evasion for that turn. Critical hit if used during Drawing Stance.",
+      stats: ["STR"],
+      dep: { horizontalSlice: 3 },
+      maxLevel: 6,
+      coords: { x: 3, y: 5.5 }
+    },
+    duel: {
+      name_en: "Duel",
+      name_jp: "果し合い",
+      desc: "Increases damage when attacking enemies that the user attacked last turn.",
+      stats: [],
+      dep: { },
+      maxLevel: 6,
+      coords: { x: 2, y: 0 }
+    },
+    physAtkUp: {
+      name_en: "Phys ATK Up",
+      name_jp: "物理攻撃ブースト",
+      desc: "Increases physical attack.",
+      stats: [],
+      dep: { },
+      maxLevel: 8,
+      coords: { x: 3, y: 0 }
+    },
+    swallowStrike: {
+      name_en: "Swallow Strike",
+      name_jp: "ツバメがえし",
+      desc: "Requires any stance. Deals multiple instances of melee cut damage to one target. Removes stance after use. Critical hit if used during Upper Stance.",
+      stats: ["STR"],
+      dep: { flameGrater: 3 },
+      maxLevel: 8,
+      coords: { x: 4, y: 1.5 }
+    },
+    bluntingStab: {
+      name_en: "Blunting Stab",
+      name_jp: "鈍通し",
+      desc: "Requires any stance. Deals melee stab damage to one target. Attempts to inflict petrify. Removes stance after use. Critical hit if used during Clear Stance.",
+      stats: ["STR", "LUC"],
+      dep: { lightningStab: 3 },
+      maxLevel: 8,
+      coords: { x: 4, y: 3.5 }
+    },
+    petalScatter: {
+      name_en: "Petal Scatter",
+      name_jp: "散華",
+      desc: "Requires any stance. Deals ranged cut damage to all targets. Removes stance after use. Critical hit if used during Drawing Stance. Deals less damage based on the number of targets.",
+      stats: ["STR"],
+      dep: { frigidSlash: 3 },
+      maxLevel: 8,
+      coords: { x: 4, y: 5.5 }
+    },
+    proofOfMastery: {
+      name_en: "Earth Breaker",
+      name_jp: "免許皆伝",
+      desc: "Melee Cut attack to 1 enemy with splash damage, has a chance of stunning, and disables skills on the next turn.",
+      stats: [],
+      dep: { swallowStrike: 2, bluntingStab: 2, petalScatter: 2 },
+      maxLevel: 10,
+      coords: { x: 5, y: 3.5 }
+    },
+    risingSpirit: {
+      name_en: "Rising Spirit",
+      name_jp: "戦意高揚",
+      desc: "At the end of the turn, if a stance is active, restores TP to the user.",
+      stats: [],
+      dep: { },
+      maxLevel: 4,
+      coords: { x: 4, y: 0 }
+    },
+    speedUp: {
+      name_en: "Speed Up",
+      name_jp: "素早さブースト",
+      desc: "Increases accuracy, evasion and action speed.",
+      stats: [],
+      dep: { },
+      maxLevel: 8,
+      coords: { x: 5, y: 0 }
+    }
+},
+/*
   Ronin: {
     peerless: {
       name_en: "Peerless",
@@ -1204,6 +1445,7 @@ let skills = {
       coords: { x: 5, y: 0 }
     }
   },
+*/
   "War Magus": {
     warEdgePower: {
       name_en: "War Edge Power",
@@ -2623,9 +2865,9 @@ let skills = {
       coords: { x: 4, y: 3 }
     },
     freeEnergy: {
-      name_en: "Free Energy",
+      name_en: "Pulsar Feedback",
       name_jp: "ＴＰカット",
-      desc: "Provides a chance to reduce the user's TP usage to 0.",
+      desc: "Provides a chance to refund the user's TP usage.",
       stats: [],
       dep: { fireProphecy: 1, iceProphecy: 1, voltProphecy: 1 },
       maxLevel: 6,

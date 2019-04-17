@@ -114,6 +114,35 @@ let forward = {
   Ronin: {
     peerless: { issen: 0 },
     issen: { },
+    upperStance: { airBlade: 1, upwardSlash: 1 },
+    airBlade: { helmSplitter: 1 },
+    upwardSlash: { helmSplitter: 1 },
+    clearStance: { armStrike: 1, breath: 1 },
+    armStrike: { hazeSlash: 1 },
+    breath: { hazeSlash: 1 },
+    drawingStance: { sheathStrike: 1, chargingThrust: 1 },
+    chargingThrust: { horizontalSlice: 1 },
+    sheathStrike: { horizontalSlice: 1 },
+    mine: { },
+    helmSplitter: { flameGrater: 3 },
+    flameGrater: { swallowStrike: 3 },
+    hazeSlash: { lightningStab: 3 },
+    lightningStab: { bluntingStab: 3 },
+    horizontalSlice: { frigidSlash: 3 },
+    frigidSlash: { petalScatter: 3 },
+    duel: { },
+    physAtkUp: { },
+    swallowStrike: { proofOfMastery: 2 },
+    bluntingStab: { proofOfMastery: 2 },
+    petalScatter: { proofOfMastery: 2 },
+    proofOfMastery: { },
+    risingSpirit: { },
+    speedUp: { }
+},
+/*
+  Ronin: {
+    peerless: { issen: 0 },
+    issen: { },
     upperStance: { upwardSlash: 1, airBlade:1, drawingStance:1 },
     upwardSlash: { helmSplitter: 1 },
     airBlade: { helmSplitter: 1 },
@@ -139,6 +168,7 @@ let forward = {
     risingSpirit: { },
     speedUp: { }
   },
+*/
   "War Magus": {
     warEdgePower: { fairyRobe: 0 },
     fairyRobe: { },

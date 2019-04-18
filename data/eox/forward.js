@@ -114,17 +114,6 @@ let forward = {
   Ronin: {
     peerless: { issen: 0 },
     issen: { },
-<<<<<<< HEAD
-    upperStance: { airBlade: 1, upwardSlash: 1 },
-    airBlade: { helmSplitter: 1 },
-    upwardSlash: { helmSplitter: 1 },
-    clearStance: { armStrike: 1, breath: 1 },
-    armStrike: { hazeSlash: 1 },
-    breath: { hazeSlash: 1 },
-    drawingStance: { sheathStrike: 1, chargingThrust: 1 },
-    chargingThrust: { horizontalSlice: 1 },
-    sheathStrike: { horizontalSlice: 1 },
-=======
     upperStance: { airBlade: 1, chargingThrust: 1 },
     airBlade: { helmSplitter: 1 },
     chargingThrust: { helmSplitter: 1 },
@@ -134,7 +123,6 @@ let forward = {
     drawingStance: { upwardSlash: 1, breath: 1 },
     upwardSlash: { horizontalSlice: 1 },
     breath: { horizontalSlice: 1 },
->>>>>>> 3270b38714053d5e8d78252ef4703104a72abc97
     mine: { },
     helmSplitter: { flameGrater: 3 },
     flameGrater: { swallowStrike: 3 },

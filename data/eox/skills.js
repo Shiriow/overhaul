@@ -997,16 +997,16 @@ let skills = {
     airBlade: {
       name_en: "Air Blade",
       name_jp: "空刃",
-      desc: "Deals ranged cut damage to one target. Critical hit if used during any stance.",
+      desc: "Deals ranged cut damage to one target. Critical hit if used during ??? stance.",
       stats: ["STR"],
       dep: { upperStance: 1 },
       maxLevel: 10,
       coords: { x: 1, y: 1 }
     },
-    upwardSlash: {
-      name_en: "High Ground",
-      name_jp: "逆袈裟",
-      desc: "Deals melee cut damage to one target. Assumes Upper Stance after use. Critical hit if used during Upper Stance.",
+    chargingThrust: {
+      name_en: "???",
+      name_jp: "貫突",
+      desc: "Assumes ??? Stance after use.",
       stats: ["STR"],
       dep: { upperStance: 1 },
       maxLevel: 4,
@@ -1024,19 +1024,19 @@ let skills = {
     armStrike: {
       name_en: "Arm Strike",
       name_jp: "小手討ち",
-      desc: "Deals melee stab damage to one target. Attempts to inflict arm bind. Critical hit if used during any stance.",
+      desc: "Deals melee stab damage to one target. Attempts to inflict arm bind. Critical hit if used during ??? stance.",
       stats: ["STR", "LUC"],
       dep: { clearStance: 1 },
       maxLevel: 8,
       coords: { x: 1, y: 3 }
     },
-    breath: {
-      name_en: "Breath",
-      name_jp: "息吹",
-      desc: "Restores HP to the user and allies adjacent to the user.",
-      stats: [],
+    sheathStrike: {
+      name_en: "???",
+      name_jp: "鞘撃",
+      desc: "Assumes ??? Stance after use.",
+      stats: ["STR"],
       dep: { clearStance: 1 },
-      maxLevel: 6,
+      maxLevel: 4,
       coords: { x: 1, y: 4 }
     },
     drawingStance: {
@@ -1048,22 +1048,22 @@ let skills = {
       maxLevel: 8,
       coords: { x: 0, y: 5 }
     },
-    chargingThrust: {
-      name_en: "???",
-      name_jp: "貫突",
-      desc: "Deals melee stab damage to one target. Assumes Clear Stance after use. Critical hit if used during Clear Stance.",
+    upwardSlash: {
+      name_en: "High Ground",
+      name_jp: "逆袈裟",
+      desc: "Deals melee cut damage to one target and increases the users line attack for 3 turns. Assumes ??? Stance after use. Critical hit if used during ??? Stance.",
       stats: ["STR"],
       dep: { drawingStance: 1 },
       maxLevel: 4,
       coords: { x: 1, y: 5 }
     },
-    sheathStrike: {
-      name_en: "???",
-      name_jp: "鞘撃",
-      desc: "Deals melee bash damage to one target. Assumes Drawing Stance after use. Critical hit if used during Drawing Stance.",
-      stats: ["STR"],
+    breath: {
+      name_en: "Breath",
+      name_jp: "息吹",
+      desc: "Deals melee cut damage to one target and restores HP to the users line based on damage done. Assumes ??? Stance after use. ",
+      stats: [],
       dep: { drawingStance: 1 },
-      maxLevel: 4,
+      maxLevel: 6,
       coords: { x: 1, y: 6 }
     },
     mine: {
@@ -1079,16 +1079,16 @@ let skills = {
     helmSplitter: {
       name_en: "Helm Splitter",
       name_jp: "兜割り ",
-      desc: "Requires any stance. Deals melee cut damage to one target. Low accuracy, ignores cut resistance. Reduces stance duration by 2 after use. Critical hit if used during Upper Stance.",
+      desc: "Requires any stance. Deals melee cut damage to one target. Low accuracy, ignores cut resistance. Assumes Drawing Stance after use. Critical hit if used during Upper Stance.",
       stats: ["STR"],
-      dep: { airBlade: 1, upwardSlash: 1 },
+      dep: { airBlade: 1, chargingThrust: 1 },
       maxLevel: 10,
       coords: { x: 2, y: 1.5 }
     },
     flameGrater: {
       name_en: "Flame Grater",
       name_jp: "卸し焔",
-      desc: "Deals melee cut+fire damage to one target and reduces the targets defence for 3 turns. Critical hit if used during Upper Stance.",
+      desc: "Deals melee cut+fire damage to one target and sets up a counter. Assumes Clear Stance after use. Critical hit if used during Upper Stance.",
       stats: ["STR"],
       dep: { helmSplitter: 3 },
       maxLevel: 6,
@@ -1097,16 +1097,16 @@ let skills = {
     hazeSlash: {
       name_en: "Haze Slash",
       name_jp: "霞斬り",
-      desc: "Requires any stance. Deals melee cut damage to one target. Attempts to inflict sleep. Reduces stance duration by 2 after use. Critical hit if used during Clear Stance.",
+      desc: "Requires any stance. Deals melee cut damage to one target. Attempts to inflict sleep. Assumes Upper Stance after use. Critical hit if used during Clear Stance.",
       stats: ["STR", "LUC"],
-      dep: { armStrike: 1, breath: 1 },
+      dep: { armStrike: 1, sheathStrike: 1 },
       maxLevel: 10,
       coords: { x: 2, y: 3.5 }
     },
     lightningStab: {
       name_en: "Lightning Stab",
       name_jp: "雷耀突き",
-      desc: "Deals melee stab+volt damage to one target. Attempts to inflict paralyze. Critical hit if used during Clear Stance.",
+      desc: "Deals melee stab+volt damage to one target and reduces the targets attack for that turn. Assumes Drawing Stance after use. Critical hit if used during Clear Stance.",
       stats: ["STR"],
       dep: { hazeSlash: 3 },
       maxLevel: 6,
@@ -1115,16 +1115,16 @@ let skills = {
     horizontalSlice: {
       name_en: "Horizontal Slice",
       name_jp: "横一文字",
-      desc: "Requires any stance. Deals melee cut damage to one row. Reduces stance duration by 2 after use. Critical hit if used during Drawing Stance.",
+      desc: "Requires any stance. Deals melee cut damage to one row and reduces their Evasion for X turns. Assumes Upper Stance after use. Critical hit if used during Drawing Stance.",
       stats: ["STR"],
-      dep: { chargingThrust:1, sheathStrike: 1 },
+      dep: { upwardSlash:1, breath: 1 },
       maxLevel: 10,
       coords: { x: 2, y: 5.5 }
     },
     frigidSlash: {
       name_en: "Frigid Slash",
       name_jp: "抜刀氷雪",
-      desc: "Deals melee cut+ice damage to one target and increases the users evasion for that turn. Critical hit if used during Drawing Stance.",
+      desc: "Deals melee cut+ice damage to one target and increases the users line Ailment/Bind Chance for X turns. Critical hit if used during Drawing Stance.",
       stats: ["STR"],
       dep: { horizontalSlice: 3 },
       maxLevel: 6,

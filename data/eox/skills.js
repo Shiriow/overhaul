@@ -1005,9 +1005,9 @@ let skills = {
       coords: { x: 1, y: 1 }
     },
     chargingThrust: {
-      name_en: "???",
+      name_en: "Delayed Strike",
       name_jp: "貫突",
-      desc: "Assumes ??? Stance after use.",
+      desc: "Deals melee cut damage to one target, and attack again X turns later. Assumes ??? Stance after use. Critical hit if used during ??? stance.",
       stats: ["STR"],
       dep: { upperStance: 1 },
       maxLevel: 6,
@@ -1032,9 +1032,9 @@ let skills = {
       coords: { x: 1, y: 3 }
     },
     sheathStrike: {
-      name_en: "???",
+      name_en: "Enduring Cut",
       name_jp: "鞘撃",
-      desc: "Assumes ??? Stance after use.",
+      desc: "Deals melee cut damage to one target. Reduces users damage taken until the end of next turn. Assumes ??? Stance after use. Critical hit if used during ??? stance.",
       stats: ["STR"],
       dep: { clearStance: 1 },
       maxLevel: 6,

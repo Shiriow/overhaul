@@ -1001,7 +1001,7 @@ let skills = {
       desc: "Deals ranged cut damage to one target. Critical hit if used during ??? stance.",
       stats: ["STR"],
       dep: { upperStance: 1 },
-      maxLevel: 10,
+      maxLevel: 6,
       coords: { x: 1, y: 1 }
     },
     chargingThrust: {
@@ -1010,7 +1010,7 @@ let skills = {
       desc: "Assumes ??? Stance after use.",
       stats: ["STR"],
       dep: { upperStance: 1 },
-      maxLevel: 4,
+      maxLevel: 6,
       coords: { x: 1, y: 2 }
     },
     clearStance: {
@@ -1028,7 +1028,7 @@ let skills = {
       desc: "Deals melee stab damage to one target. Attempts to inflict arm bind. Critical hit if used during ??? stance.",
       stats: ["STR", "LUC"],
       dep: { clearStance: 1 },
-      maxLevel: 8,
+      maxLevel: 6,
       coords: { x: 1, y: 3 }
     },
     sheathStrike: {
@@ -1037,7 +1037,7 @@ let skills = {
       desc: "Assumes ??? Stance after use.",
       stats: ["STR"],
       dep: { clearStance: 1 },
-      maxLevel: 4,
+      maxLevel: 6,
       coords: { x: 1, y: 4 }
     },
     drawingStance: {
@@ -1055,7 +1055,7 @@ let skills = {
       desc: "Deals melee cut damage to one target and increases the users line attack for 3 turns. Assumes ??? Stance after use. Critical hit if used during ??? Stance.",
       stats: ["STR"],
       dep: { drawingStance: 1 },
-      maxLevel: 4,
+      maxLevel: 6,
       coords: { x: 1, y: 5 }
     },
     breath: {
@@ -2732,7 +2732,7 @@ let skills = {
     ethericReturn: {
       name_en: "Etheric Return",
       name_jp: "リターンエーテル",
-      desc: "When the user kills an enemy, their TP is restored.",
+      desc: "Restores TP to the user when hitting a weakness.",
       stats: [],
       dep: { singularity: 3 },
       maxLevel: 4,
@@ -2778,7 +2778,7 @@ let skills = {
     fireStar: {
       name_en: "Astral Fire",
       name_jp: "炎の星術",
-      desc: "Deals ranged fire damage to one target, with splash damage.",
+      desc: "Deals ranged fire damage to one target. Assumes a damage increase Stance.",
       stats: ["INT"],
       dep: { binaryFire: 3 },
       maxLevel: 10,
@@ -2787,7 +2787,7 @@ let skills = {
     iceStar: {
       name_en: "Umbral Ice",
       name_jp: "氷の星術",
-      desc: "Deals ranged ice damage to one target, with line-piercing effects.",
+      desc: "Deals ranged ice damage to one target. Recovers some TP and removes stance after use",
       stats: ["INT"],
       dep: { binaryIce: 3 },
       maxLevel: 10,
@@ -2796,7 +2796,7 @@ let skills = {
     voltStar: {
       name_en: "Solstice Volt",
       name_jp: "雷の星術",
-      desc: "Deals ranged volt damage to one row.",
+      desc: "Deals ranged volt damage to one target. Removes stance after use.",
       stats: ["INT"],
       dep: { binaryVolt: 3 },
       maxLevel: 10,
@@ -2877,7 +2877,7 @@ let skills = {
     spreadEther: {
       name_en: "???",
       name_jp: "多段式エーテル",
-      desc: "Until the end of the next turn, Zodiac attack skills will deal reduced damage, but hit random targets 2-5 times. Meteor will instead hit 6-15 times.",
+      desc: "",
       stats: [],
       dep: { antiEther: 2 },
       maxLevel: 6,
@@ -4325,7 +4325,7 @@ let skills = {
     absorber: {
       name_en: "Absorber",
       name_jp: "コンバーター",
-      desc: "Restores TP to the user when hitting a weakness.",
+      desc: "When the user kills an enemy, their TP is restored.",
       stats: [],
       dep: { },
       maxLevel: 6,

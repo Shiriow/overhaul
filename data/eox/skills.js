@@ -1049,20 +1049,20 @@ let skills = {
       maxLevel: 8,
       coords: { x: 0, y: 5 }
     },
-    upwardSlash: {
-      name_en: "Bloody Blade",
-      name_jp: "逆袈裟",
-      desc: "Deals melee cut damage to one target and increases the users line attack for 3 turns. Assumes ??? Stance after use. Critical hit if used during ??? Stance.",
-      stats: ["STR"],
-      dep: { drawingStance: 1 },
-      maxLevel: 6,
-      coords: { x: 1, y: 5 }
-    },
     breath: {
       name_en: "Drain Slice",
       name_jp: "息吹",
       desc: "Deals melee cut damage to one target and restores HP to the users line based on damage done. Assumes ??? Stance after use. ",
       stats: [],
+      dep: { drawingStance: 1 },
+      maxLevel: 6,
+      coords: { x: 1, y: 5 }
+    },
+    upwardSlash: {
+      name_en: "Bloody Blade",
+      name_jp: "逆袈裟",
+      desc: "Deals melee cut damage to one target and increases the users line attack for 3 turns. Assumes ??? Stance after use. Critical hit if used during ??? Stance.",
+      stats: ["STR"],
       dep: { drawingStance: 1 },
       maxLevel: 6,
       coords: { x: 1, y: 6 }

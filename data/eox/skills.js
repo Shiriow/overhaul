@@ -998,7 +998,7 @@ let skills = {
     airBlade: {
       name_en: "Air Blade",
       name_jp: "空刃",
-      desc: "Deals ranged cut damage to one target. Critical hit if used during ??? stance.",
+      desc: "Deals ranged cut damage to one target. Assumes Upper Stance after use. Critical hit if used during Upper stance and 50% chance of critical hit in the others.",
       stats: ["STR"],
       dep: { upperStance: 1 },
       maxLevel: 6,
@@ -1007,7 +1007,7 @@ let skills = {
     chargingThrust: {
       name_en: "Delayed Strike",
       name_jp: "貫突",
-      desc: "Deals melee cut damage to one target, and attack again X turns later. Assumes ??? Stance after use. Critical hit if used during ??? stance.",
+      desc: "Deals melee cut damage to one target, and attack again X turns later. Assumes Upper Stance after use. Critical hit if used during Upper stance and 50% chance of critical hit in the others.",
       stats: ["STR"],
       dep: { upperStance: 1 },
       maxLevel: 6,
@@ -1025,7 +1025,7 @@ let skills = {
     armStrike: {
       name_en: "Arm Strike",
       name_jp: "小手討ち",
-      desc: "Deals melee stab damage to one target. Attempts to inflict arm bind. Critical hit if used during ??? stance.",
+      desc: "Deals melee stab damage to one target. Attempts to inflict arm bind. Assumes Clear Stance after use. Critical hit if used during Clear stance and 50% chance of critical hit in the others.",
       stats: ["STR", "LUC"],
       dep: { clearStance: 1 },
       maxLevel: 6,
@@ -1034,7 +1034,7 @@ let skills = {
     sheathStrike: {
       name_en: "Enduring Cut",
       name_jp: "鞘撃",
-      desc: "Deals melee cut damage to one target. Reduces users damage taken until the end of next turn. Assumes ??? Stance after use. Critical hit if used during ??? stance.",
+      desc: "Deals melee cut damage to one target. Reduces users damage taken until the end of next turn. Assumes Clear Stance after use. Critical hit if used during Clear Stance and 50% chance of critical hit in the others.",
       stats: ["STR"],
       dep: { clearStance: 1 },
       maxLevel: 6,
@@ -1052,7 +1052,7 @@ let skills = {
     breath: {
       name_en: "Drain Slice",
       name_jp: "息吹",
-      desc: "Deals melee cut damage to one target and restores HP to the users line based on damage done. Assumes ??? Stance after use. ",
+      desc: "Deals melee cut damage to one target and restores HP to the users line based on damage done. Assumes Drawing Stance after use. Critical hit if used during Drawing Stance and 50% chance of critical hit in the others.",
       stats: [],
       dep: { drawingStance: 1 },
       maxLevel: 6,
@@ -1061,7 +1061,7 @@ let skills = {
     upwardSlash: {
       name_en: "Bloody Blade",
       name_jp: "逆袈裟",
-      desc: "Deals melee cut damage to one target and increases the users line attack for 3 turns. Assumes ??? Stance after use. Critical hit if used during ??? Stance.",
+      desc: "Deals melee cut damage to one target and increases the users line attack for 3 turns.  Assumes Drawing Stance after use. Critical hit if used during Drawing Stance and 50% chance of critical hit in the others.",
       stats: ["STR"],
       dep: { drawingStance: 1 },
       maxLevel: 6,

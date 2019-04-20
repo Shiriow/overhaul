@@ -1116,7 +1116,7 @@ let skills = {
     horizontalSlice: {
       name_en: "Horizontal Slice",
       name_jp: "横一文字",
-      desc: "Requires any stance. Deals melee cut damage to one row and reduces their Evasion for X turns. Assumes Upper Stance after use. Critical hit if used during Drawing Stance.",
+      desc: "Requires any stance. Deals melee cut damage to one row and reduces their Ailment and Bind Resistance for 3 turns. Assumes Clear Stance after use. Critical hit if used during Drawing Stance.",
       stats: ["STR"],
       dep: { upwardSlash:1, breath: 1 },
       maxLevel: 10,
@@ -1125,7 +1125,7 @@ let skills = {
     frigidSlash: {
       name_en: "Frigid Slash",
       name_jp: "抜刀氷雪",
-      desc: "Deals melee cut+ice damage to one target and increases the users line Ailment/Bind Chance for X turns. Critical hit if used during Drawing Stance.",
+      desc: "Deals melee cut+ice damage to one target and decreases their Evasion for 3 turns.  Assumes Upper Stance after use. Critical hit if used during Drawing Stance.",
       stats: ["STR"],
       dep: { horizontalSlice: 3 },
       maxLevel: 6,

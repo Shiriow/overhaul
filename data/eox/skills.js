@@ -1052,7 +1052,7 @@ let skills = {
     breath: {
       name_en: "Drain Slice",
       name_jp: "息吹",
-      desc: "Deals melee cut damage to one target and restores HP to the users line based on damage done. Assumes Drawing Stance after use. Critical hit if used during Drawing Stance and 50% chance of critical hit in the others.",
+      desc: "Deals melee cut damage to one target and restores HP to the users line based on their Max HP. Assumes Drawing Stance after use. Critical hit if used during Drawing Stance and 50% chance of critical hit in the others.",
       stats: [],
       dep: { drawingStance: 1 },
       maxLevel: 6,
@@ -1125,7 +1125,7 @@ let skills = {
     frigidSlash: {
       name_en: "Frigid Slash",
       name_jp: "抜刀氷雪",
-      desc: "Deals melee cut+ice damage to one target and decreases their Evasion for 3 turns.  Assumes Upper Stance after use. Critical hit if used during Drawing Stance.",
+      desc: "Deals ranged cut+ice damage to one target and decreases their Evasion for 3 turns.  Assumes Upper Stance after use. Critical hit if used during Drawing Stance.",
       stats: ["STR"],
       dep: { horizontalSlice: 3 },
       maxLevel: 6,
@@ -2437,7 +2437,7 @@ let skills = {
     ninpoDaggers: {
       name_en: "Ninpo: Daggers",
       name_jp: "忍法　含針",
-      desc: "Deals ranged stab damage to a set number of random targets. Can hit each target once at most. Attempts to inflict sleep.",
+      desc: "Deals ranged stab damage to a set number of random targets. Can hit each target once at most. Attempts to inflict poison.",
       stats: ["STR", "LUC"],
       dep: { },
       maxLevel: 10,
@@ -2446,7 +2446,7 @@ let skills = {
     ninpoCaltrops: {
       name_en: "Ninpo: Caltrops",
       name_jp: "忍法　撒菱",
-      desc: "This turn, when the selected row is attacked, counterattack with ranged slash damage and attempt to inflict poison.",
+      desc: "This turn, when the selected row is attacked, counterattack with ranged slash damage and attempt to inflict sleep.",
       stats: ["STR", "LUC"],
       dep: { ninpoDaggers: 3 },
       maxLevel: 6,

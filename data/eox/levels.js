@@ -102,8 +102,9 @@ let levels = {
       "Force Restore": ["10%", "13%", "16%", "25%"]
     },
     newChallenger: {
-      "Maximum Battles": ["1", "1", "1", "1", "1", "3"],
-      "Continue Chance": ["0%", "0%", "0%", "0%", "0%", "10%"],
+      TP: ["3", "3", "3", "3", "3", "5"],
+      "Minimum Battles": ["1", "1", "1", "1", "1", "3"],
+      "Maximum Battles": ["3", "4", "5", "6", "7", "10"],
       "Rare Breed Chance": ["+3%", "+4%", "+5%", "+6%", "+7%", "+10%"]
     },
     thickShadow: {

@@ -4233,7 +4233,7 @@ let skills = {
     impulseEdge: {
       name_en: "Impulse Edge",
       name_jp: "インパルスエッジ",
-      desc: "Activation skill. Deals melee cut damage to one target. Restores TP to the user. Can only be used if an activation skill was used on the previous turn.",
+      desc: "Connecting skill. Deals melee cut damage to one target. Restores TP to the user. Can only be used if an activation skill was used on the previous turn.",
       stats: ["STR"],
       dep: { tripEdge: 2 },
       maxLevel: 8,
@@ -4276,7 +4276,7 @@ let skills = {
       coords: { x: 3, y: 5 }
     },
     statusDefUp: {
-      name_en: "Status DEF Up",
+      name_en: "Drive Mastery",
       name_jp: "抑制防御ブースト",
       desc: "Decreases the chance of being inflicted with binds and ailments.",
       stats: [],
@@ -4303,7 +4303,7 @@ let skills = {
       coords: { x: 4, y: 2 }
     },
     hpUp: {
-      name_en: "HP Up",
+      name_en: "Wide Effect",
       name_jp: "ＨＰブースト",
       desc: "Increases maximum HP.",
       stats: [],
@@ -4521,7 +4521,7 @@ let skills = {
     crossCounter: {
       name_en: "Cross Counter",
       name_jp: "クロスカウンター",
-      desc: "This turn, when a party member on the user's row is attacked, counterattacks with melee bash damage and attempts to inflict the corresponding bind on the target. Does not activate if the counterattack cannot reach the enemy.",
+      desc: "This turn, when a party member on the user's row is attacked, counterattacks with melee damage with the users weapon and attempts to inflict the corresponding bind on the target. Does not activate if the counterattack cannot reach the enemy.",
       stats: ["STR", "LUC"],
       dep: { },
       maxLevel: 6,
@@ -4793,7 +4793,16 @@ let skills = {
       stats: ["STR", "LUC"],
       dep: { chaosReap: 2 },
       maxLevel: 8,
-      coords: { x: 4, y: 3 }
+      coords: { x: 4, y: 2.5 }
+    },
+    soulFixation: {
+      name_en: "Frigid Reap",
+      name_jp: "霊魂固着",
+      desc: "",
+      stats: [],
+      dep: { chaosReap: 2 },
+      maxLevel: 6,
+      coords: { x: 4, y: 3.5 }
     },
     miasmaWall: {
       name_en: "Miasma Wall",
@@ -4803,15 +4812,6 @@ let skills = {
       dep: { soulTransfer: 1 },
       maxLevel: 8,
       coords: { x: 4, y: 5 }
-    },
-    soulFixation: {
-      name_en: "Frigid Reap",
-      name_jp: "霊魂固着",
-      desc: "",
-      stats: [],
-      dep: { fatalReap: 2 },
-      maxLevel: 6,
-      coords: { x: 5, y: 3 }
     },
     residualMiasma: {
       name_en: "Residual Miasma",

@@ -125,7 +125,7 @@ let skills = {
     shockSpark: {
       name_en: "Shock Spark",
       name_jp: "ショックスパーク",
-      desc: "Deals melee cut damage to one target, and follows up with ranged volt damage to all enemies. The higher the target's cut resistance is, the higher the volt damage will be.",
+      desc: "Deals melee cut damage to one target, and follows up with ranged volt damage. The higher the target's cut resistance is, the higher the volt damage will be.",
       stats: ["STR"],
       dep: { freezingSlash: 2 },
       maxLevel: 8,
@@ -2064,7 +2064,7 @@ let skills = {
     chargedShot: {
       name_en: "Clean Shot",
       name_jp: "チャージショット",
-      desc: "Deals ranged stab damage to one target. Low action speed, and the user will take double damage until the skill activates.",
+      desc: "Deals ranged stab damage to one target. Deals more damage if target is bound. Low action speed, and the user will take double damage until the skill activates.",
       stats: ["STR"],
       dep: { headSnipe: 2 },
       maxLevel: 10,
@@ -2127,7 +2127,7 @@ let skills = {
     chargedFire: {
       name_en: "Charged Fire",
       name_jp: "チャージフレイム",
-      desc: "Deals ranged stab+fire damage to one target. Low action speed, and the user will take double damage until the skill activates.",
+      desc: "Deals ranged stab+fire damage to one target. Low action speed, and the user will take double damage until the skill activates. Cannot be used again next turn, shares a cooldown with the other Charged Shots.",
       stats: ["STR"],
       dep: { actQuick: 3 },
       maxLevel: 6,
@@ -2136,7 +2136,7 @@ let skills = {
     chargedIce: {
       name_en: "Charged Ice",
       name_jp: "チャージアイス",
-      desc: "Deals ranged stab+ice damage to one target. Low action speed, and the user will take double damage until the skill activates.",
+      desc: "Deals ranged stab+ice damage to one target. Low action speed, and the user will take double damage until the skill activates. Cannot be used again next turn, shares a cooldown with the other Charged Shots.",
       stats: ["STR"],
       dep: { actQuick: 3 },
       maxLevel: 6,
@@ -2145,7 +2145,7 @@ let skills = {
     chargedVolt: {
       name_en: "Charged Volt",
       name_jp: "チャージサンダー",
-      desc: "Deals ranged stab+volt damage to one target. Low action speed, and the user will take double damage until the skill activates.",
+      desc: "Deals ranged stab+volt damage to one target. Low action speed, and the user will take double damage until the skill activates. Cannot be used again next turn, shares a cooldown with the other Charged Shots.",
       stats: ["STR"],
       dep: { actQuick: 3 },
       maxLevel: 6,
@@ -2778,7 +2778,7 @@ let skills = {
     fireStar: {
       name_en: "Astral Fire",
       name_jp: "炎の星術",
-      desc: "Deals ranged fire damage to one target. Assumes a damage increase Stance.",
+      desc: "Deals ranged fire damage to one target. Assumes a damage increasing Stance.",
       stats: ["INT"],
       dep: { binaryFire: 3 },
       maxLevel: 10,
@@ -3317,7 +3317,7 @@ let skills = {
       desc: "For a set number of turns, imbues one row of allies' weapons with fire/ice/volt, and increases their elemental defense.",
       stats: [],
       dep: { greatGeneral: 2 },
-      maxLevel: 8,
+      maxLevel: 6,
       coords: { x: 2, y: 5 }
     },
     fiveRingSword: {
@@ -3510,7 +3510,7 @@ let skills = {
     improvedLink: {
       name_en: "Improved Link",
       name_jp: "リンクプラス",
-      desc: "For 3 turns, increases the number of follow-ups that can be made from link skills used by the user, as well as their chance of follow-up. Each action may trigger at most 4 link follow-ups.",
+      desc: "For 3 turns, increases the number and chance of follow-ups that can be made from link skills used by the user, as well as their attack power. Each action may trigger at most 4 link follow-ups.",
       stats: [],
       dep: { blazingLink: 3, freezingLink: 3, electricLink: 3 },
       maxLevel: 4,
@@ -3901,7 +3901,7 @@ let skills = {
     chainCircle: {
       name_en: "Chain Circle",
       name_jp: "腕封の方陣",
-      desc: "Activates a circle that attempts to inflict arm bind on all enemies at the end of each turn for 3 turns. Existing circle will be overwritten, and the circle is removed if the user dies.",
+      desc: "Activates a circle that attempts to inflict arm bind on all enemies on cast and at the end of each turn for 3 turns. Existing circle will be overwritten, and the circle is removed if the user dies.",
       stats: ["LUC"],
       dep: { },
       maxLevel: 8,
@@ -3910,7 +3910,7 @@ let skills = {
     snareCircle: {
       name_en: "Snare Circle",
       name_jp: "脚封の方陣",
-      desc: "Activates a circle that attempts to inflict leg bind on all enemies at the end of each turn for 3 turns. Existing circle will be overwritten, and the circle is removed if the user dies.",
+      desc: "Activates a circle that attempts to inflict leg bind on all enemies on cast and at the end of each turn for 3 turns. Existing circle will be overwritten, and the circle is removed if the user dies.",
       stats: ["LUC"],
       dep: { chainCircle: 2 },
       maxLevel: 8,
@@ -3919,7 +3919,7 @@ let skills = {
     nerveCircle: {
       name_en: "Nerve Circle",
       name_jp: "麻痺の方陣",
-      desc: "Activates a circle that attempts to inflict paralysis on all enemies at the end of each turn for 3 turns. Existing circle will be overwritten, and the circle is removed if the user dies.",
+      desc: "Activates a circle that attempts to inflict paralysis on all enemies on cast and at the end of each turn for 3 turns. Existing circle will be overwritten, and the circle is removed if the user dies.",
       stats: ["LUC"],
       dep: { },
       maxLevel: 8,
@@ -3928,7 +3928,7 @@ let skills = {
     curseCircle: {
       name_en: "Curse Circle",
       name_jp: "呪いの方陣",
-      desc: "Activates a circle that attempts to inflict curse on all enemies at the end of each turn for 3 turns. Existing circle will be overwritten, and the circle is removed if the user dies.",
+      desc: "Activates a circle that attempts to inflict curse on all enemies on cast and at the end of each turn for 3 turns. Existing circle will be overwritten, and the circle is removed if the user dies.",
       stats: ["LUC"],
       dep: { nerveCircle: 2 },
       maxLevel: 8,
@@ -3983,7 +3983,7 @@ let skills = {
     hoodCircle: {
       name_en: "Hood Circle",
       name_jp: "頭封の方陣",
-      desc: "Activates a circle that attempts to inflict head bind on all enemies at the end of each turn for 3 turns. Existing circle will be overwritten, and the circle is removed if the user dies.",
+      desc: "Activates a circle that attempts to inflict head bind on all enemies on cast and at the end of each turn for 3 turns. Existing circle will be overwritten, and the circle is removed if the user dies.",
       stats: ["LUC"],
       dep: { snareCircle: 2 },
       maxLevel: 8,
@@ -3992,7 +3992,7 @@ let skills = {
     sleepCircle: {
       name_en: "Sleep Circle",
       name_jp: "催眠の方陣",
-      desc: "Activates a circle that attempts to inflict sleep on all enemies at the end of each turn for 3 turns. Existing circle will be overwritten, and the circle is removed if the user dies.",
+      desc: "Activates a circle that attempts to inflict sleep on all enemies on cast and at the end of each turn for 3 turns. Existing circle will be overwritten, and the circle is removed if the user dies.",
       stats: ["LUC"],
       dep: { curseCircle: 2 },
       maxLevel: 8,
@@ -4064,7 +4064,7 @@ let skills = {
     poisonCircle: {
       name_en: "Poison Circle",
       name_jp: "毒の方陣",
-      desc: "Activates a circle that attempts to inflict poison on all enemies at the end of each turn for 3 turns. Existing circle will be overwritten, and the circle is removed if the user dies.",
+      desc: "Activates a circle that attempts to inflict poison on all enemies on cast and at the end of each turn for 3 turns. Existing circle will be overwritten, and the circle is removed if the user dies.",
       stats: ["LUC"],
       dep: { sleepCircle: 2 },
       maxLevel: 8,
@@ -4073,7 +4073,7 @@ let skills = {
     chaosCircle: {
       name_en: "Chaos Circle",
       name_jp: "幻惑の方陣",
-      desc: "Activates a circle that attempts to inflict panic on all enemies at the end of each turn for 3 turns. Existing circle will be overwritten, and the circle is removed if the user dies.",
+      desc: "Activates a circle that attempts to inflict panic on all enemies on cast and at the end of each turn for 3 turns. Existing circle will be overwritten, and the circle is removed if the user dies.",
       stats: ["LUC"],
       dep: { sleepCircle: 2 },
       maxLevel: 8,
@@ -4729,7 +4729,7 @@ let skills = {
       desc: "During Miasma Armor, increases defense.",
       stats: [],
       dep: { },
-      maxLevel: 8,
+      maxLevel: 6,
       coords: { x: 2, y: 6 }
     },
     soulTransfer: {
@@ -4738,7 +4738,7 @@ let skills = {
       desc: "Requires Miasma Armor. Removes Miasma Armor to attempt to revive all party members.",
       stats: ["WIS"],
       dep: { atonement: 3 },
-      maxLevel: 6,
+      maxLevel: 8,
       coords: { x: 2, y: 5 }
     },
     blackWave: {
@@ -4753,7 +4753,7 @@ let skills = {
     spiritAbsorb: {
       name_en: "Spirit Absorb",
       name_jp: "生気吸収",
-      desc: "When the user uses a debuff skill, restores HP to the whole party. This restoration can heal beyond maximum HP. Overhealed HP will disappear at the end of the turn.",
+      desc: "When the user uses a debuff skill, restores HP to the whole party.",
       stats: [],
       dep: { endlessShroud: 1 },
       maxLevel: 8,

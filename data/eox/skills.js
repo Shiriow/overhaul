@@ -1089,7 +1089,7 @@ let skills = {
     flameGrater: {
       name_en: "Flame Grater",
       name_jp: "卸し焔",
-      desc: "Deals melee cut+fire damage to one target and sets up a counter. Assumes Clear Stance after use. Critical hit if used during Upper Stance.",
+      desc: "Deals melee cut+fire damage to one target and sets up a line counter. Assumes Clear Stance after use. Critical hit if used during Upper Stance.",
       stats: ["STR"],
       dep: { helmSplitter: 3 },
       maxLevel: 6,
@@ -3446,7 +3446,7 @@ let skills = {
     vanguard: {
       name_en: "Vanguard",
       name_jp: "ヴァンガード",
-      desc: "For 5 turns, increases the users attack, action speed and imbues the users weapons with fire/ice/volt.",
+      desc: "For 5 turns, increases the users attack and action speed.",
       stats: [],
       dep: { },
       maxLevel: 6,
@@ -3510,7 +3510,7 @@ let skills = {
     improvedLink: {
       name_en: "Improved Link",
       name_jp: "リンクプラス",
-      desc: "For 3 turns, increases the number and chance of follow-ups that can be made from link skills used by the user, as well as their attack power. Each action may trigger at most 4 link follow-ups.",
+      desc: "For 3 turns, increases the number and chance of follow-ups that can be made from link skills used by the user. Each action may trigger at most 4 link follow-ups.",
       stats: [],
       dep: { blazingLink: 3, freezingLink: 3, electricLink: 3 },
       maxLevel: 4,
@@ -3535,7 +3535,7 @@ let skills = {
       coords: { x: 2, y: 5 }
     },
     physDefUp: {
-      name_en: "Swordbreaker",
+      name_en: "???",
       name_jp: "物理防御ブースト",
       desc: "Increases physical defense.",
       stats: ["STR"],
@@ -4424,7 +4424,7 @@ let skills = {
       desc: "When any single-action, single-target Pugilist skill is used, or when Corkscrew is used via Added Blow, or when Cross Counter is used (despite what the description claims), if the skill fails to inflict their bind or ailment, there is a chance it will be repeated.",
       stats: [],
       dep: { },
-      maxLevel: 8,
+      maxLevel: 6,
       coords: { x: 0, y: 5 }
     },
     chop: {
@@ -4524,7 +4524,7 @@ let skills = {
       desc: "This turn, when a party member on the user's row is attacked, counterattacks with melee damage with the users weapon and attempts to inflict the corresponding bind on the target. Does not activate if the counterattack cannot reach the enemy.",
       stats: ["STR", "LUC"],
       dep: { },
-      maxLevel: 6,
+      maxLevel: 8,
       coords: { x: 3, y: 6 }
     },
     thunderFist: {

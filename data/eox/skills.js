@@ -2253,7 +2253,7 @@ let skills = {
       desc: "At the end of the turn, if the user's HP is full, restores HP to all party members. Only one instance of this skill can activate per turn.",
       stats: [],
       dep: { },
-      maxLevel: 4,
+      maxLevel: 6,
       coords: { x: 0, y: 5 }
     },
     monarchMarch: {
@@ -2281,7 +2281,7 @@ let skills = {
       desc: "Removes the oldest buff and debuff from one ally, and restores HP and TP to them based on the number of removals.",
       stats: [],
       dep: { },
-      maxLevel: 6,
+      maxLevel: 8,
       coords: { x: 1, y: 6 }
     },
     majesty: {
@@ -2335,7 +2335,7 @@ let skills = {
       desc: "For a set number of turns, one row of allies may negate binds or ailments once.",
       stats: [],
       dep: { rallyOrder: 2, protectOrder: 2 },
-      maxLevel: 8,
+      maxLevel: 10,
       coords: { x: 3, y: 4 }
     },
     pairOrder: {

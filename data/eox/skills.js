@@ -1089,7 +1089,7 @@ let skills = {
     flameGrater: {
       name_en: "Flame Grater",
       name_jp: "卸し焔",
-      desc: "Deals melee cut+fire damage to one target and sets up a counter. Assumes Clear Stance after use. Critical hit if used during Upper Stance.",
+      desc: "Deals melee cut+fire damage to one target and sets up a line counter. Assumes Clear Stance after use. Critical hit if used during Upper Stance.",
       stats: ["STR"],
       dep: { helmSplitter: 3 },
       maxLevel: 6,
@@ -2253,7 +2253,7 @@ let skills = {
       desc: "At the end of the turn, if the user's HP is full, restores HP to all party members. Only one instance of this skill can activate per turn.",
       stats: [],
       dep: { },
-      maxLevel: 4,
+      maxLevel: 6,
       coords: { x: 0, y: 5 }
     },
     monarchMarch: {
@@ -2281,7 +2281,7 @@ let skills = {
       desc: "Removes the oldest buff and debuff from one ally, and restores HP and TP to them based on the number of removals.",
       stats: [],
       dep: { },
-      maxLevel: 6,
+      maxLevel: 8,
       coords: { x: 1, y: 6 }
     },
     majesty: {
@@ -2335,7 +2335,7 @@ let skills = {
       desc: "For a set number of turns, one row of allies may negate binds or ailments once.",
       stats: [],
       dep: { rallyOrder: 2, protectOrder: 2 },
-      maxLevel: 8,
+      maxLevel: 10,
       coords: { x: 3, y: 4 }
     },
     pairOrder: {
@@ -3446,7 +3446,7 @@ let skills = {
     vanguard: {
       name_en: "Vanguard",
       name_jp: "ヴァンガード",
-      desc: "For 5 turns, increases the users attack, action speed and imbues the users weapons with fire/ice/volt.",
+      desc: "For 5 turns, increases the users attack and action speed.",
       stats: [],
       dep: { },
       maxLevel: 6,
@@ -3510,7 +3510,7 @@ let skills = {
     improvedLink: {
       name_en: "Improved Link",
       name_jp: "リンクプラス",
-      desc: "For 3 turns, increases the number and chance of follow-ups that can be made from link skills used by the user, as well as their attack power. Each action may trigger at most 4 link follow-ups.",
+      desc: "For 3 turns, increases the number and chance of follow-ups that can be made from link skills used by the user. Each action may trigger at most 4 link follow-ups.",
       stats: [],
       dep: { blazingLink: 3, freezingLink: 3, electricLink: 3 },
       maxLevel: 4,
@@ -3535,7 +3535,7 @@ let skills = {
       coords: { x: 2, y: 5 }
     },
     physDefUp: {
-      name_en: "Swordbreaker",
+      name_en: "???",
       name_jp: "物理防御ブースト",
       desc: "Increases physical defense.",
       stats: ["STR"],
@@ -4233,7 +4233,7 @@ let skills = {
     impulseEdge: {
       name_en: "Impulse Edge",
       name_jp: "インパルスエッジ",
-      desc: "Activation skill. Deals melee cut damage to one target. Restores TP to the user. Can only be used if an activation skill was used on the previous turn.",
+      desc: "Connecting skill. Deals melee cut damage to one target. Restores TP to the user. Can only be used if an activation skill was used on the previous turn.",
       stats: ["STR"],
       dep: { tripEdge: 2 },
       maxLevel: 8,
@@ -4276,7 +4276,7 @@ let skills = {
       coords: { x: 3, y: 5 }
     },
     statusDefUp: {
-      name_en: "Status DEF Up",
+      name_en: "Drive Mastery",
       name_jp: "抑制防御ブースト",
       desc: "Decreases the chance of being inflicted with binds and ailments.",
       stats: [],
@@ -4303,7 +4303,7 @@ let skills = {
       coords: { x: 4, y: 2 }
     },
     hpUp: {
-      name_en: "HP Up",
+      name_en: "Wide Effect",
       name_jp: "ＨＰブースト",
       desc: "Increases maximum HP.",
       stats: [],
@@ -4424,7 +4424,7 @@ let skills = {
       desc: "When any single-action, single-target Pugilist skill is used, or when Corkscrew is used via Added Blow, or when Cross Counter is used (despite what the description claims), if the skill fails to inflict their bind or ailment, there is a chance it will be repeated.",
       stats: [],
       dep: { },
-      maxLevel: 8,
+      maxLevel: 6,
       coords: { x: 0, y: 5 }
     },
     chop: {
@@ -4521,10 +4521,10 @@ let skills = {
     crossCounter: {
       name_en: "Cross Counter",
       name_jp: "クロスカウンター",
-      desc: "This turn, when a party member on the user's row is attacked, counterattacks with melee bash damage and attempts to inflict the corresponding bind on the target. Does not activate if the counterattack cannot reach the enemy.",
+      desc: "This turn, when a party member on the user's row is attacked, counterattacks with melee damage with the users weapon and attempts to inflict the corresponding bind on the target. Does not activate if the counterattack cannot reach the enemy.",
       stats: ["STR", "LUC"],
       dep: { },
-      maxLevel: 6,
+      maxLevel: 8,
       coords: { x: 3, y: 6 }
     },
     thunderFist: {
@@ -4793,7 +4793,16 @@ let skills = {
       stats: ["STR", "LUC"],
       dep: { chaosReap: 2 },
       maxLevel: 8,
-      coords: { x: 4, y: 3 }
+      coords: { x: 4, y: 2.5 }
+    },
+    soulFixation: {
+      name_en: "Frigid Reap",
+      name_jp: "霊魂固着",
+      desc: "",
+      stats: [],
+      dep: { chaosReap: 2 },
+      maxLevel: 6,
+      coords: { x: 4, y: 3.5 }
     },
     miasmaWall: {
       name_en: "Miasma Wall",
@@ -4803,15 +4812,6 @@ let skills = {
       dep: { soulTransfer: 1 },
       maxLevel: 8,
       coords: { x: 4, y: 5 }
-    },
-    soulFixation: {
-      name_en: "Frigid Reap",
-      name_jp: "霊魂固着",
-      desc: "",
-      stats: [],
-      dep: { fatalReap: 2 },
-      maxLevel: 6,
-      coords: { x: 5, y: 3 }
     },
     residualMiasma: {
       name_en: "Residual Miasma",

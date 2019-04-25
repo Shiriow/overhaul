@@ -548,7 +548,7 @@ let forward = {
     wiltingMiasma: { ephemeralReap: 1 },
     arrestingMiasma: { ephemeralReap: 1 },
     darknessReap: { chaosReap: 3 },
-    chaosReap: { fatalReap: 2 },
+    chaosReap: { fatalReap: 2, soulFixation: 2  },
     blackShroud: { blackWave: 2 },
     soulTransfer: { miasmaWall: 1 },
     blackWave: { deathsAsylum: 1 },
@@ -556,7 +556,7 @@ let forward = {
     statusAtkUp: { },
     deathsAsylum: { },
     ephemeralReap: { },
-    fatalReap: { soulFixation: 2 },
+    fatalReap: { },
     miasmaWall: { residualMiasma: 2 },
     soulFixation: { },
     residualMiasma: { }

@@ -2582,7 +2582,7 @@ let skills = {
     ninpoShock: {
       name_en: "Ninpo: Shock",
       name_jp: "忍法　驚忍",
-      desc: "Attempts to inflict panic on all enemies.",
+      desc: "Attempts to inflict panic on one enemy.",
       stats: ["LUC"],
       dep: { ninpoMirror: 2 },
       maxLevel: 6,

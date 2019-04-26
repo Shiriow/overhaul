@@ -773,9 +773,9 @@ let skills = {
       coords: { x: 0, y: 3 }
     },
     chainDance: {
-      name_en: "Chain Dance",
+      name_en: "Chain Thrust",
       name_jp: "チェインダンス",
-      desc: "For one turn, increases the user's evasion and chance of being targeted.",
+      desc: "Deals ranged stab damage to one target and, for that turn, increases the user's evasion and chance of being targeted.",
       stats: [],
       dep: { blindArrow: 1, patrol: 1, powerShot: 1 },
       maxLevel: 10,
@@ -893,7 +893,7 @@ let skills = {
     speedUp: {
       name_en: "Sylphid",
       name_jp: "素早さブースト",
-      desc: "Enables counters on dodges, while also increasing accuracy, evasion and action speed.",
+      desc: "When an attack is dodged, the user has a chance to counter-attack the source of the attack.",
       stats: [],
       dep: { trickStep: 2 },
       maxLevel: 8,
@@ -902,11 +902,11 @@ let skills = {
     swapStep: {
       name_en: "Swap Step",
       name_jp: "アザーズステップ",
-      desc: "Selected ally acts first this turn.",
+      desc: "Selected ally has a chance to act first this turn.",
       stats: [],
       dep: { },
-      maxLevel: 4,
-      coords: { x: 3, y: 6 }
+      maxLevel: 6,
+      coords: { x: 3, y: 5 }
     },
     disablingShot: {
       name_en: "Disabling Shot",

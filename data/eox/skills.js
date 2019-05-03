@@ -2780,27 +2780,27 @@ let skills = {
       name_jp: "炎の星術",
       desc: "Deals ranged fire damage to one target. Assumes a damage increasing Stance.",
       stats: ["INT"],
-      dep: { binaryFire: 3 },
+      dep: { binaryFire: 3, binaryIce: 3, binaryVolt: 3 },
       maxLevel: 10,
-      coords: { x: 2, y: 1 }
+      coords: { x: 2, y: 2 }
     },
     iceStar: {
       name_en: "Umbral Ice",
       name_jp: "氷の星術",
       desc: "Deals ranged ice damage to one target. Recovers some TP and removes stance after use",
       stats: ["INT"],
-      dep: { binaryIce: 3 },
+      dep: { fireStar: 2 },
       maxLevel: 10,
-      coords: { x: 2, y: 2 }
+      coords: { x: 3, y: 1.5 }
     },
     voltStar: {
       name_en: "Solstice Volt",
       name_jp: "雷の星術",
       desc: "Deals ranged volt damage to one target. Removes stance after use.",
       stats: ["INT"],
-      dep: { binaryVolt: 3 },
+      dep: { fireStar: 2 },
       maxLevel: 10,
-      coords: { x: 2, y: 3 }
+      coords: { x: 3, y: 2.5 }
     },
     restoreEther: {
       name_en: "Restore Ether",
@@ -2843,7 +2843,7 @@ let skills = {
       name_jp: "炎の先見術",
       desc: "Prevents fire-elemental attacks from one enemy. If an attack is prevented, increases the user's attack until the end of the next turn.",
       stats: [],
-      dep: { fireStar: 2 },
+      dep: { iceStar: 2, voltStar: 2  },
       maxLevel: 4,
       coords: { x: 4, y: 1 }
     },
@@ -2852,7 +2852,7 @@ let skills = {
       name_jp: "氷の先見術",
       desc: "Prevents ice-elemental attacks from one enemy. If an attack is prevented, increases the user's attack until the end of the next turn.",
       stats: [],
-      dep: { iceStar: 2 },
+      dep: { iceStar: 2, voltStar: 2  },
       maxLevel: 4,
       coords: { x: 4, y: 2 }
     },
@@ -2861,7 +2861,7 @@ let skills = {
       name_jp: "雷の先見術",
       desc: "Prevents volt-elemental attacks from one enemy. If an attack is prevented, increases the user's attack until the end of the next turn.",
       stats: [],
-      dep: { voltStar: 2 },
+      dep: { iceStar: 2, voltStar: 2 },
       maxLevel: 4,
       coords: { x: 4, y: 3 }
     },

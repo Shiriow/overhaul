@@ -101,7 +101,7 @@ let forward = {
     dropShot: { sagittariusShot: 3 },
     trickStep: { speedUp: 2 },
     stalker: { sneakAttack: 1 },
-    efficiency: { },
+    efficiency: { swapStep: 2 },
     speedUp: { naturesBounty: 3 },
     swapStep: { },
     disablingShot: { },

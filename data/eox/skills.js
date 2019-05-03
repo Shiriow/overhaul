@@ -904,7 +904,7 @@ let skills = {
       name_jp: "アザーズステップ",
       desc: "Selected ally has a chance to act first this turn.",
       stats: [],
-      dep: { },
+      dep: { efficiency: 2 },
       maxLevel: 6,
       coords: { x: 3, y: 5 }
     },

@@ -400,7 +400,7 @@ let skills = {
       coords: { x: 2, y: 3 }
     },
     fireWall: {
-      name_en: "Fire Wall",
+      name_en: "???",
       name_jp: "ファイアガード",
       desc: "Reduces one instance of fire damage against all party members. Higher levels upgrade reduction to null, then absorb.",
       stats: [],
@@ -409,16 +409,16 @@ let skills = {
       coords: { x: 3, y: 4 }
     },
     iceWall: {
-      name_en: "Ice Wall",
+      name_en: "Elemental Wall",
       name_jp: "フリーズガード",
-      desc: "Reduces one instance of ice damage against all party members. Higher levels upgrade reduction to null, then absorb.",
+      desc: "Reduces one instance of elemental damage against all party members. Higher levels upgrade reduction to null, then absorb.",
       stats: [],
       dep: { },
-      maxLevel: 6,
+      maxLevel: 10,
       coords: { x: 3, y: 5 }
     },
     voltWall: {
-      name_en: "Volt Wall",
+      name_en: "???",
       name_jp: "ショックガード",
       desc: "Reduces one instance of volt damage against all party members. Higher levels upgrade reduction to null, then absorb.",
       stats: [],
@@ -2839,7 +2839,7 @@ let skills = {
       coords: { x: 3, y: 5 }
     },
     fireProphecy: {
-      name_en: "Fire Prophecy",
+      name_en: "???",
       name_jp: "炎の先見術",
       desc: "Prevents fire-elemental attacks from one enemy. If an attack is prevented, increases the user's attack until the end of the next turn.",
       stats: [],
@@ -2848,16 +2848,16 @@ let skills = {
       coords: { x: 4, y: 1 }
     },
     iceProphecy: {
-      name_en: "Ice Prophecy",
+      name_en: "Prophecy",
       name_jp: "氷の先見術",
-      desc: "Prevents ice-elemental attacks from one enemy. If an attack is prevented, increases the user's attack until the end of the next turn.",
+      desc: "Prevents elemental attacks from one enemy. If an attack is prevented, increases the user's attack until the end of the next turn.",
       stats: [],
       dep: { iceStar: 2, voltStar: 2  },
-      maxLevel: 4,
+      maxLevel: 10,
       coords: { x: 4, y: 2 }
     },
     voltProphecy: {
-      name_en: "Volt Prophecy",
+      name_en: "???",
       name_jp: "雷の先見術",
       desc: "Prevents volt-elemental attacks from one enemy. If an attack is prevented, increases the user's attack until the end of the next turn.",
       stats: [],

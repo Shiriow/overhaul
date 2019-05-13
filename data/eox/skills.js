@@ -778,7 +778,7 @@ let skills = {
       desc: "Deals ranged stab damage to one target and, for that turn, increases the user's evasion and chance of being targeted.",
       stats: [],
       dep: { blindArrow: 1, patrol: 1, powerShot: 1 },
-      maxLevel: 10,
+      maxLevel: 8,
       coords: { x: 1, y: 3 }
     },
     patrol: {
@@ -851,7 +851,7 @@ let skills = {
       desc: "Deals 2 instances of ranged stab damage to one enemy.",
       stats: ["STR"],
       dep: { flameArrow: 3 },
-      maxLevel: 10,
+      maxLevel: 8,
       coords: { x: 2, y: 2 }
     },
     dropShot: {
@@ -923,7 +923,7 @@ let skills = {
       desc: "On the third turn after using this skill, ranged stab damage is dealt to one target at the start of that turn. Attempts to inflict stun. Ineffective if the user dies before the skill activates.",
       stats: ["STR"],
       dep: { dropShot: 3 },
-      maxLevel: 10,
+      maxLevel: 8,
       coords: { x: 4, y: 2 }
     },
     hazyShot: {
@@ -932,7 +932,7 @@ let skills = {
       desc: "Deals ranged stab damage to one target. Always hits. Can only be used if the user evaded an attack on the previous turn.",
       stats: ["STR"],
       dep: { naturesBounty: 3, sagittariusShot:1 },
-      maxLevel: 8,
+      maxLevel: 6,
       coords: { x: 5, y: 2.5 }
     },
     naturesBounty: {
@@ -1007,7 +1007,7 @@ let skills = {
     chargingThrust: {
       name_en: "Delayed Strike",
       name_jp: "貫突",
-      desc: "Deals melee cut damage to one target, and attack again X turns later. Assumes Upper Stance after use. Critical hit if used during Upper stance and 50% chance of critical hit in the others.",
+      desc: "Deals melee cut damage to one target, and attack again 2 turns later. Assumes Upper Stance after use. Critical hit if used during Upper stance and 50% chance of critical hit in the others.",
       stats: ["STR"],
       dep: { upperStance: 1 },
       maxLevel: 6,
@@ -1141,9 +1141,9 @@ let skills = {
       coords: { x: 2, y: 0 }
     },
     physAtkUp: {
-      name_en: "Phys ATK Up",
+      name_en: "Mirror Moon",
       name_jp: "物理攻撃ブースト",
-      desc: "Increases physical attack.",
+      desc: "On this turn, when the user is attacked with physical damage, there is a chance they will nullify the damage and counterattack the source. Each time the user counters, the chance to counter again is reduced by 35%.",
       stats: [],
       dep: { },
       maxLevel: 8,
@@ -1152,7 +1152,7 @@ let skills = {
     swallowStrike: {
       name_en: "Swallow Strike",
       name_jp: "ツバメがえし",
-      desc: "Requires any stance. Deals multiple instances of melee cut damage to one target. Removes stance after use. Critical hit if used during Upper Stance.",
+      desc: "Requires any stance. Deals multiple instances of melee cut damage to one target. Removes stance after use. Critical hit if used during Upper Stance. This skill cannot be used again for a set number of turns.",
       stats: ["STR"],
       dep: { flameGrater: 3 },
       maxLevel: 8,
@@ -1161,7 +1161,7 @@ let skills = {
     bluntingStab: {
       name_en: "Blunting Stab",
       name_jp: "鈍通し",
-      desc: "Requires any stance. Deals melee stab damage to one target. Attempts to inflict petrify. Removes stance after use. Critical hit if used during Clear Stance.",
+      desc: "Requires any stance. Deals melee stab damage to one target. Attempts to inflict petrify. Removes stance after use. Critical hit if used during Clear Stance. This skill cannot be used again for a set number of turns.",
       stats: ["STR", "LUC"],
       dep: { lightningStab: 3 },
       maxLevel: 8,
@@ -1170,7 +1170,7 @@ let skills = {
     petalScatter: {
       name_en: "Petal Scatter",
       name_jp: "散華",
-      desc: "Requires any stance. Deals ranged cut damage to all targets. Removes stance after use. Critical hit if used during Drawing Stance. Deals less damage based on the number of targets.",
+      desc: "Requires any stance. Deals ranged cut damage to all targets. Removes stance after use. Critical hit if used during Drawing Stance. Deals less damage based on the number of targets. This skill cannot be used again for a set number of turns.",
       stats: ["STR"],
       dep: { frigidSlash: 3 },
       maxLevel: 8,
@@ -2435,18 +2435,18 @@ let skills = {
       coords: { x: 1, y: 0 }
     },
     ninpoDaggers: {
-      name_en: "Ninpo: Daggers",
+      name_en: "Ninpo: Scorpio",
       name_jp: "忍法　含針",
       desc: "Deals ranged stab damage to a set number of random targets. Can hit each target once at most. Attempts to inflict poison.",
       stats: ["STR", "LUC"],
       dep: { },
-      maxLevel: 10,
+      maxLevel: 8,
       coords: { x: 0, y: 1 }
     },
     ninpoCaltrops: {
-      name_en: "Ninpo: Caltrops",
+      name_en: "Ninpo: Needles",
       name_jp: "忍法　撒菱",
-      desc: "This turn, when the selected row is attacked, counterattack with ranged slash damage and attempt to inflict sleep.",
+      desc: "This turn, when the selected row is attacked, counterattack with ranged stab damage and attempt to inflict sleep.",
       stats: ["STR", "LUC"],
       dep: { ninpoDaggers: 3 },
       maxLevel: 6,
@@ -2480,12 +2480,12 @@ let skills = {
       coords: { x: 0, y: 4 }
     },
     concealment: {
-      name_en: "Dodge Boon",
+      name_en: "Shade Shift",
       name_jp: "潜伏",
       desc: "Increases force whenever the user dodges an attack.",
       stats: [],
       dep: { acrobatics: 2 },
-      maxLevel: 10,
+      maxLevel: 6,
       coords: { x: 1, y: 4 }
     },
     ninpoMirage: {
@@ -2558,7 +2558,7 @@ let skills = {
       desc: "Consumes a percentage of the user's HP and TP to create a clone in an empty slot. Force Boost and Force Break are unusable while a clone is active.",
       stats: [],
       dep: { },
-      maxLevel: 10,
+      maxLevel: 8,
       coords: { x: 3, y: 3 }
     },
     autoMirage: {
@@ -2585,7 +2585,7 @@ let skills = {
       desc: "Attempts to inflict panic on one enemy.",
       stats: ["LUC"],
       dep: { ninpoMirror: 2 },
-      maxLevel: 6,
+      maxLevel: 8,
       coords: { x: 4, y: 1 }
     },
     schadenfreude: {
@@ -2603,25 +2603,34 @@ let skills = {
       desc: "Consumes the user's HP to greatly increase their evasion for 3 turns.",
       stats: [],
       dep: { concealment: 2 },
-      maxLevel: 10,
+      maxLevel: 8,
       coords: { x: 2, y: 4 }
     },
     ninpoFlight: {
+      name_en: "Ninpo: Flight",
+      name_jp: "忍法　猿飛",
+      desc: "This turn, the users target has a high chance of evading physical attacks. Each time they evade an attack, the evasion boost is reduced.",
+      stats: [],
+      dep: { ninpoSmoke: 3 },
+      maxLevel: 8,
+      coords: { x: 3, y: 4 }
+    },
+    smokePowder: {
       name_en: "Lure",
       name_jp: "忍法　猿飛",
       desc: "This turn, every time the users target dodges an attack, members in the same row will individually counter with an attack using their equipped weapon.",
       stats: [],
-      dep: { ninpoSmoke: 3  },
-      maxLevel: 10,
+      dep: { ninpoFlight: 3 },
+      maxLevel: 8,
       coords: { x: 4, y: 4 }
     },
     eyeForAnEye: {
-      name_en: "Soul Liberator",
+      name_en: "Falling Bloom",
       name_jp: "意趣返し",
-      desc: "Deals melee cut damage to one target. If the target has a status ailment, increases damage dealt and dispels it after dealing damage.",
+      desc: "Deals melee cut+almighty damage to one target. Low accuracy.",
       stats: ["STR"],
       dep: { ninpoShock: 2, schadenfreude: 2 },
-      maxLevel: 6,
+      maxLevel: 8,
       coords: { x: 5, y: 1.5 }
     },
     drawingSlice: {
@@ -2638,18 +2647,9 @@ let skills = {
       name_jp: "首切",
       desc: "If Ninpo: Clone is learned, there is a chance to automatically cast it at the start of battle. Cannot activate if another ally activated it first.",
       stats: [],
-      dep: { ninpoClone:3 },
-      maxLevel: 8,
+      dep: { ninpoClone: 2 },
+      maxLevel: 6,
       coords: { x: 5, y: 3.5 }
-    },
-    smokePowder: {
-      name_en: "Smoke Powder",
-      name_jp: "煙の末",
-      desc: "Reduces TP cost. Will not reduce cost to 0.",
-      stats: [],
-      dep: { },
-      maxLevel: 4,
-      coords: { x: 4, y: 6 }
     }
   },
   Zodiac: {

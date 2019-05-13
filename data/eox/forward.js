@@ -301,7 +301,7 @@ let forward = {
     beheading: { },
     autoMirage: { },
     statusAtkUp: { },
-    ninpoFlight: { },
+    ninpoFlight: { smokePowder: 3 },
     ninpoShock: { eyeForAnEye: 2 },
     eyeForAnEye: { },
     schadenfreude: { drawingSlice: 2, eyeForAnEye: 2  },

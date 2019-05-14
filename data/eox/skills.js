@@ -726,7 +726,7 @@ let skills = {
     illusionStep: {
       name_en: "Illusion Step",
       name_jp: "夢幻陣形",
-      desc: "For 3 turns, increases all party members' evasion and user's chance of being targeted.",
+      desc: "For 3 turns, increases the user's evasion and chance of being targeted.",
       stats: [],
       unique: true,
       type: "Boost",
@@ -779,7 +779,25 @@ let skills = {
       stats: [],
       dep: { blindArrow: 1, patrol: 1, powerShot: 1 },
       maxLevel: 8,
-      coords: { x: 1, y: 3 }
+      coords: { x: 1, y: 2.5 }
+    },/*
+    sortingSkill: {
+      name_en: "Sorting Skill",
+      name_jp: "整頓術",
+      desc: "Increases inventory size.",
+      stats: [],
+      dep: { },
+      maxLevel: 10,
+      coords: { x: 1, y: 6 }
+    },*/
+    sortingSkill: {
+      name_en: "Dodge Boon",
+      name_jp: "整頓術",
+      desc: "Increases force whenever the user dodges an attack.",
+      stats: [],
+      dep: { blindArrow: 1, patrol: 1, powerShot: 1 },
+      maxLevel: 6,
+      coords: { x: 1, y: 3.5 }
     },
     patrol: {
       name_en: "Paralysis Arrow",
@@ -797,7 +815,7 @@ let skills = {
       stats: [],
       dep: { },
       maxLevel: 6,
-      coords: { x: 1, y: 4 }
+      coords: { x: 1, y: 4.5 }
     },
     resuscitate: {
       name_en: "Resuscitate",
@@ -806,16 +824,7 @@ let skills = {
       stats: [],
       dep: { },
       maxLevel: 6,
-      coords: { x: 1, y: 5 }
-    },
-    sortingSkill: {
-      name_en: "Sorting Skill",
-      name_jp: "整頓術",
-      desc: "Increases inventory size.",
-      stats: [],
-      dep: { },
-      maxLevel: 10,
-      coords: { x: 1, y: 6 }
+      coords: { x: 1, y: 5.5 }
     },
     naturalInstinct: {
       name_en: "Natural Instinct",
@@ -862,13 +871,22 @@ let skills = {
       dep: { multiShot: 3 },
       maxLevel: 8,
       coords: { x: 3, y: 2 }
-    },
+    },/*
     trickStep: {
       name_en: "Trick Step",
       name_jp: "トリックステップ",
       desc: "For a set number of turns, reduces the accuracy of one row of enemies.",
       stats: [],
       dep: { chainDance: 2 },
+      maxLevel: 8,
+      coords: { x: 2, y: 3 }
+    },*/
+    trickStep: {
+      name_en: "Step Dance",
+      name_jp: "トリックステップ",
+      desc: "Increase the users evasion for a number of turns.",
+      stats: [],
+      dep: { chainDance: 2, sortingSkill: 2 },
       maxLevel: 8,
       coords: { x: 2, y: 3 }
     },
@@ -879,7 +897,7 @@ let skills = {
       stats: [],
       dep: { riskPerception: 1 },
       maxLevel: 6,
-      coords: { x: 2, y: 4 }
+      coords: { x: 2, y: 4.5 }
     },
     efficiency: {
       name_en: "Efficiency",
@@ -888,7 +906,7 @@ let skills = {
       stats: [],
       dep: { resuscitate: 3 },
       maxLevel: 4,
-      coords: { x: 2, y: 5 }
+      coords: { x: 2, y: 5.5 }
     },
     speedUp: {
       name_en: "Sylphid",
@@ -906,7 +924,7 @@ let skills = {
       stats: [],
       dep: { efficiency: 2 },
       maxLevel: 6,
-      coords: { x: 3, y: 5 }
+      coords: { x: 3, y: 5.5 }
     },
     disablingShot: {
       name_en: "Disabling Shot",
@@ -951,7 +969,7 @@ let skills = {
       stats: [],
       dep: { },
       maxLevel: 6,
-      coords: { x: 4, y: 5 }
+      coords: { x: 4, y: 5.5 }
     },
     sneakAttack: {
       name_en: "Sneak Attack",
@@ -960,7 +978,7 @@ let skills = {
       stats: [],
       dep: { stalker: 1 },
       maxLevel: 6,
-      coords: { x: 4, y: 4 }
+      coords: { x: 4, y: 4.5 }
     }
   },
   Ronin: {
@@ -2415,7 +2433,7 @@ let skills = {
     insolence: {
       name_en: "Insolence",
       name_jp: "不忍",
-      desc: "For 3 turns, increases the user's damage, evasion and chance of being targeted.",
+      desc: "For 3 turns, increases all party members' evasion and user's chance of being targeted.",
       stats: [],
       unique: true,
       type: "Boost",
@@ -2473,19 +2491,19 @@ let skills = {
     acrobatics: {
       name_en: "Acrobatics",
       name_jp: "軽業",
-      desc: "Increases evasion, and when the user evades an attack, their TP is restored.",
+      desc: "When the user evades an attack, their TP is restored.",
       stats: [],
       dep: { },
-      maxLevel: 10,
+      maxLevel: 6,
       coords: { x: 0, y: 4 }
     },
     concealment: {
-      name_en: "Shade Shift",
+      name_en: "Concealment",
       name_jp: "潜伏",
-      desc: "Increases force whenever the user dodges an attack.",
+      desc: "Increases evasion.",
       stats: [],
       dep: { acrobatics: 2 },
-      maxLevel: 6,
+      maxLevel: 10,
       coords: { x: 1, y: 4 }
     },
     ninpoMirage: {
@@ -2596,11 +2614,20 @@ let skills = {
       dep: { hawkStrike: 2 },
       maxLevel: 8,
       coords: { x: 4, y: 2 }
-    },
+    },/*
     ninpoSmoke: {
       name_en: "Ninpo: Smoke",
       name_jp: "忍法　雲隠",
-      desc: "Consumes the user's HP to greatly increase their evasion for 3 turns.",
+      desc: "Consumes the user's HP to greatly increase their evasion for a number of turns.",
+      stats: [],
+      dep: { concealment: 2 },
+      maxLevel: 8,
+      coords: { x: 2, y: 4 }
+    },*/
+    ninpoSmoke: {
+      name_en: "Phantom Knives",
+      name_jp: "忍法　雲隠",
+      desc: "Consumes the user's HP to reduce the accuracy of one row of enemies.",
       stats: [],
       dep: { concealment: 2 },
       maxLevel: 8,
@@ -2636,7 +2663,7 @@ let skills = {
     drawingSlice: {
       name_en: "Drawing Slice",
       name_jp: "多元抜刀",
-      desc: "Deals multiple instances of melee damage to random targets, based on the number of clones active. All clones will disappear after use.",
+      desc: "Deals multiple instances of melee damage to random targets. All clones will disappear after use.",
       stats: ["STR"],
       dep: { schadenfreude: 2, ninpoClone: 2 },
       maxLevel: 8,

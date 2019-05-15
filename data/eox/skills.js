@@ -745,15 +745,6 @@ let skills = {
       maxLevel: 0,
       coords: { x: 1, y: 0 }
     },
-    powerShot: {
-      name_en: "Sleep Arrow",
-      name_jp: "パワーショット",
-      desc: "Deals ranged stab damage to one target. Attempts to inflict sleep.",
-      stats: ["STR", "LUC"],
-      dep: { },
-      maxLevel: 8,
-      coords: { x: 0, y: 2 }
-    },
     flameArrow: {
       name_en: "Flame Arrow",
       name_jp: "フレイムアロー",
@@ -763,6 +754,15 @@ let skills = {
       maxLevel: 8,
       coords: { x: 1, y: 1.5 }
     },
+    powerShot: {
+      name_en: "Sleep Arrow",
+      name_jp: "パワーショット",
+      desc: "Deals ranged stab damage to one target. Attempts to inflict sleep.",
+      stats: ["STR", "LUC"],
+      dep: { },
+      maxLevel: 8,
+      coords: { x: 0, y: 2.5 }
+    },
     blindArrow: {
       name_en: "Blind Arrow",
       name_jp: "ブラインドアロー",
@@ -770,7 +770,16 @@ let skills = {
       stats: ["STR", "LUC"],
       dep: { },
       maxLevel: 8,
-      coords: { x: 0, y: 3 }
+      coords: { x: 0, y: 3.5 }
+    },
+    patrol: {
+      name_en: "Paralysis Arrow",
+      name_jp: "警戒斥候",
+      desc: "Deals ranged stab damage to one target. Attempts to inflict paralysis.",
+      stats: ["STR", "LUC"],
+      dep: { },
+      maxLevel: 8,
+      coords: { x: 0, y: 4.5 }
     },
     chainDance: {
       name_en: "Chain Thrust",
@@ -779,7 +788,7 @@ let skills = {
       stats: [],
       dep: { blindArrow: 1, patrol: 1, powerShot: 1 },
       maxLevel: 8,
-      coords: { x: 1, y: 2.5 }
+      coords: { x: 1, y: 3 }
     },/*
     sortingSkill: {
       name_en: "Sorting Skill",
@@ -791,22 +800,13 @@ let skills = {
       coords: { x: 1, y: 6 }
     },*/
     sortingSkill: {
-      name_en: "Dodge Boon",
+      name_en: "Mist Step",
       name_jp: "整頓術",
       desc: "Increases force whenever the user dodges an attack.",
       stats: [],
       dep: { blindArrow: 1, patrol: 1, powerShot: 1 },
       maxLevel: 6,
-      coords: { x: 1, y: 3.5 }
-    },
-    patrol: {
-      name_en: "Paralysis Arrow",
-      name_jp: "警戒斥候",
-      desc: "Deals ranged stab damage to one target. Attempts to inflict paralysis.",
-      stats: ["STR", "LUC"],
-      dep: { },
-      maxLevel: 8,
-      coords: { x: 0, y: 4 }
+      coords: { x: 1, y: 4 }
     },
     riskPerception: {
       name_en: "Risk Perception",
@@ -815,7 +815,7 @@ let skills = {
       stats: [],
       dep: { },
       maxLevel: 6,
-      coords: { x: 1, y: 4.5 }
+      coords: { x: 1, y: 5 }
     },
     resuscitate: {
       name_en: "Resuscitate",
@@ -824,7 +824,7 @@ let skills = {
       stats: [],
       dep: { },
       maxLevel: 6,
-      coords: { x: 1, y: 5.5 }
+      coords: { x: 1, y: 6 }
     },
     naturalInstinct: {
       name_en: "Natural Instinct",
@@ -882,13 +882,13 @@ let skills = {
       coords: { x: 2, y: 3 }
     },*/
     trickStep: {
-      name_en: "Step Dance",
+      name_en: "Fan Dance",
       name_jp: "トリックステップ",
       desc: "Increase the users evasion for a number of turns.",
       stats: [],
       dep: { chainDance: 2, sortingSkill: 2 },
       maxLevel: 8,
-      coords: { x: 2, y: 3 }
+      coords: { x: 2, y: 3.5 }
     },
     stalker: {
       name_en: "Stalker",
@@ -897,7 +897,7 @@ let skills = {
       stats: [],
       dep: { riskPerception: 1 },
       maxLevel: 6,
-      coords: { x: 2, y: 4.5 }
+      coords: { x: 2, y: 5 }
     },
     efficiency: {
       name_en: "Efficiency",
@@ -906,7 +906,7 @@ let skills = {
       stats: [],
       dep: { resuscitate: 3 },
       maxLevel: 4,
-      coords: { x: 2, y: 5.5 }
+      coords: { x: 2, y: 6 }
     },
     speedUp: {
       name_en: "Sylphid",
@@ -915,7 +915,7 @@ let skills = {
       stats: [],
       dep: { trickStep: 2 },
       maxLevel: 8,
-      coords: { x: 3, y: 3 }
+      coords: { x: 3, y: 3.5 }
     },
     swapStep: {
       name_en: "Swap Step",
@@ -924,7 +924,7 @@ let skills = {
       stats: [],
       dep: { efficiency: 2 },
       maxLevel: 6,
-      coords: { x: 3, y: 5.5 }
+      coords: { x: 3, y: 6 }
     },
     disablingShot: {
       name_en: "Disabling Shot",
@@ -951,7 +951,7 @@ let skills = {
       stats: ["STR"],
       dep: { naturesBounty: 3, sagittariusShot:1 },
       maxLevel: 6,
-      coords: { x: 5, y: 2.5 }
+      coords: { x: 5, y: 2.75 }
     },
     naturesBounty: {
       name_en: "Eye for an Eye",
@@ -960,7 +960,7 @@ let skills = {
       stats: [],
       dep: { speedUp: 3},
       maxLevel: 8,
-      coords: { x: 4, y: 3 }
+      coords: { x: 4, y: 3.5 }
     },
     scapegoat: {
       name_en: "Scapegoat",
@@ -969,7 +969,7 @@ let skills = {
       stats: [],
       dep: { },
       maxLevel: 6,
-      coords: { x: 4, y: 5.5 }
+      coords: { x: 4, y: 6 }
     },
     sneakAttack: {
       name_en: "Sneak Attack",
@@ -978,7 +978,7 @@ let skills = {
       stats: [],
       dep: { stalker: 1 },
       maxLevel: 6,
-      coords: { x: 4, y: 4.5 }
+      coords: { x: 4, y: 5 }
     }
   },
   Ronin: {

@@ -472,7 +472,7 @@ let skills = {
       coords: { x: 4, y: 3 }
     },
     fullGuard: {
-      name_en: "Full Guard",
+      name_en: "Sentinel Guard",
       name_jp: "フルガード",
       desc: "Reduces all damage to all party members for one turn. Cannot be used again for a set number of turns.",
       stats: [],
@@ -805,7 +805,7 @@ let skills = {
       desc: "Increases force whenever the user dodges an attack.",
       stats: [],
       dep: { blindArrow: 1, patrol: 1, powerShot: 1 },
-      maxLevel: 6,
+      maxLevel: 8,
       coords: { x: 1, y: 4 }
     },
     riskPerception: {
@@ -911,10 +911,10 @@ let skills = {
     speedUp: {
       name_en: "Sylphid",
       name_jp: "素早さブースト",
-      desc: "When an attack is dodged, the user has a chance to counter-attack the source of the attack.",
+      desc: "When an attack is dodged, the user has a chance to counter-attack the source of the attack. Chance decreases by 40% per dodge.",
       stats: [],
       dep: { trickStep: 2 },
-      maxLevel: 8,
+      maxLevel: 10,
       coords: { x: 3, y: 3.5 }
     },
     swapStep: {

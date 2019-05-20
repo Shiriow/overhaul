@@ -1880,13 +1880,13 @@ let skills = {
       desc: "When the user loses HP, there is a chance that they will automatically attack with their weapon.",
       stats: [],
       dep: { bloodVeil: 2 },
-      maxLevel: 6,
+      maxLevel: 8,
       coords: { x: 2, y: 5 }
     },
     physDefUp: {
-      name_en: "???",
+      name_en: "Abyssal Killer",
       name_jp: "物理防御ブースト",
-      desc: "Increases physical defense.",
+      desc: "When cast, the user will endure fatal damage once. If the user endured a fatal hit through Abyssal Killer, their damage on the next turn is increased by a base multiplier, multiplied by the square root of the square root of the precentage of the user's maxHP the endured hit would've overkilled them by.",
       stats: [],
       dep: { },
       maxLevel: 8,
@@ -1938,9 +1938,9 @@ let skills = {
       coords: { x: 4, y: 1 }
     },
     physAtkUp: {
-      name_en: "???",
+      name_en: "Death's Edge",
       name_jp: "物理攻撃ブースト",
-      desc: "Increases physical attack.",
+      desc: "Deals STR-based melee bash damage to one enemy. Deals more damage the less HP the entire party has. Both the party's current average precentage of HP remaining as well as the raw amount of HP missing are taken into account by this.",
       stats: [],
       dep: { },
       maxLevel: 8,
@@ -2321,7 +2321,7 @@ let skills = {
       coords: { x: 3, y: 0 }
     },
     elementalBombI: {
-      name_en: "Elemental Bomb I",
+      name_en: "Elemental Bomb",
       name_jp: "エレメントボムⅠ",
       desc: "Removes elemental imbue from one ally to deal ranged damage of that element to all enemies.",
       stats: ["INT"],
@@ -2384,9 +2384,9 @@ let skills = {
       coords: { x: 4, y: 0 }
     },
     elementalBombII: {
-      name_en: "Elemental Bomb II",
+      name_en: "Regal Radiance",
       name_jp: "エレメントボムⅡ",
-      desc: "Removes elemental imbue from one ally to deal 3 instances of ranged damage of that element to random enemies.",
+      desc: "Removes elemental imbue from one ally to force them to attack with that element to all enemies.",
       stats: ["INT"],
       dep: { elementalBombI: 3 },
       maxLevel: 10,
@@ -2692,6 +2692,16 @@ let skills = {
       coords: { x: 0, y: 0 }
     },
     astralSign: {
+      name_en: "Astrosign",
+      name_jp: "アストロサイン",
+      desc: "Deals ranged fire+ice+volt damage to all enemies. On this turn, all allies' TP cost will be reduced to 0.",
+      stats: ["INT"],
+      unique: true,
+      type: "Break",
+      dep: { astrologersAxis: 0 },
+      maxLevel: 0,
+      coords: { x: 1, y: 0 }
+  /*astralSign: {
       name_en: "Conversion",
       name_jp: "アストロサイン",
       desc: "Restores TP to the user. This can restore TP over maximum TP. The overhealed TP will disappear at the end of battle, or when the user dies.",
@@ -2700,7 +2710,7 @@ let skills = {
       type: "Break",
       dep: { astrologersAxis: 0 },
       maxLevel: 0,
-      coords: { x: 1, y: 0 }
+      coords: { x: 1, y: 0 }*/
     },
     ethericGleam: {
       name_en: "Etheric Gleam",
@@ -2775,26 +2785,17 @@ let skills = {
       maxLevel: 1,
       coords: { x: 0, y: 6 }
     },
-    horoscope: {
-      name_en: "???",
-      name_jp: "星体観測",
-      desc: "For a set number of turns, reduces encounter rate.",
-      stats: [],
-      dep: { },
-      maxLevel: 6,
-      coords: { x: 1, y: 6 }
-    },
     etherMastery: {
-      name_en: "Ether Mastery",
+      name_en: "Nebula Resurgence",
       name_jp: "エーテルマスター",
-      desc: "Increases damage of Zodiac attack skills.",
+      desc: "Increases damage depending on how low the users TP is.",
       stats: [],
       dep: { },
       maxLevel: 8,
-      coords: { x: 2, y: 0 }
+      coords: { x: 2, y: 6 }
     },
     tpUp: {
-      name_en: "TP Up",
+      name_en: "???",
       name_jp: "ＴＰブースト",
       desc: "Increases maximum TP.",
       stats: [],
@@ -2805,7 +2806,7 @@ let skills = {
     fireStar: {
       name_en: "Astral Fire",
       name_jp: "炎の星術",
-      desc: "Deals ranged fire damage to one target. Assumes a damage increasing Stance.",
+      desc: "Deals ranged fire damage to one target. Applies Astral Fire on the user, increasing damage for 3 turns. This skill cannot be used again for 3 turns.",
       stats: ["INT"],
       dep: { binaryFire: 3, binaryIce: 3, binaryVolt: 3 },
       maxLevel: 10,
@@ -2814,7 +2815,7 @@ let skills = {
     iceStar: {
       name_en: "Umbral Ice",
       name_jp: "氷の星術",
-      desc: "Deals ranged ice damage to one target. Recovers some TP and removes stance after use",
+      desc: "Deals ranged ice damage to one target. Recovers some TP and removes Astral Fire after use.",
       stats: ["INT"],
       dep: { fireStar: 2 },
       maxLevel: 10,
@@ -2823,28 +2824,37 @@ let skills = {
     voltStar: {
       name_en: "Solstice Volt",
       name_jp: "雷の星術",
-      desc: "Deals ranged volt damage to one target. Removes stance after use.",
+      desc: "Deals ranged volt damage to one target, and ignores resistances. Removes Astral Fire after use.",
       stats: ["INT"],
       dep: { fireStar: 2 },
       maxLevel: 10,
       coords: { x: 3, y: 2.5 }
+    },
+    ethericShoot: {
+      name_en: "Etheric Shoot",
+      name_jp: "エーテルシュート",
+      desc: "Deals ranged, INT-based damage to one enemy with the user's weapon.",
+      stats: [],
+      dep: { focusEther: 2 },
+      maxLevel: 8,
+      coords: { x: 2, y: 4 }
     },
     restoreEther: {
       name_en: "Restore Ether",
       name_jp: "レストアエーテル",
       desc: "Increases attack based on the number of TP spent on the previous turn. Does not activate if TP spent last turn is too low.",
       stats: [],
-      dep: { focusEther: 2 },
-      maxLevel: 6,
-      coords: { x: 2, y: 4 }
+      dep: { darkEther: 2 },
+      maxLevel: 10,
+      coords: { x: 3, y: 5 }
     },
     antiEther: {
       name_en: "Anti-Ether",
       name_jp: "アンチエーテル",
       desc: "Provides a chance to nullify elemental attacks against the user's row.",
       stats: [],
-      dep: { restoreEther: 2 },
-      maxLevel: 6,
+      dep: { ethericShoot: 2 },
+      maxLevel: 8,
       coords: { x: 3, y: 4 }
     },
     darkEther: {
@@ -2856,17 +2866,8 @@ let skills = {
       maxLevel: 6,
       coords: { x: 2, y: 5 }
     },
-    ethericShoot: {
-      name_en: "Etheric Siphon",
-      name_jp: "エーテルシュート",
-      desc: "When the user hits an enemy's weakness, their Force gauge is increased.",
-      stats: [],
-      dep: { darkEther: 2 },
-      maxLevel: 8,
-      coords: { x: 3, y: 5 }
-    },
     fireProphecy: {
-      name_en: "???",
+      name_en: "Flame Veil",
       name_jp: "炎の先見術",
       desc: "Prevents fire-elemental attacks from one enemy. If an attack is prevented, increases the user's attack until the end of the next turn.",
       stats: [],
@@ -2875,7 +2876,7 @@ let skills = {
       coords: { x: 4, y: 1 }
     },
     iceProphecy: {
-      name_en: "Prophecy",
+      name_en: "Freeze Veil",
       name_jp: "氷の先見術",
       desc: "Prevents elemental attacks from one enemy. If an attack is prevented, increases the user's attack until the end of the next turn.",
       stats: [],
@@ -2884,7 +2885,7 @@ let skills = {
       coords: { x: 4, y: 2 }
     },
     voltProphecy: {
-      name_en: "???",
+      name_en: "Shock Veil",
       name_jp: "雷の先見術",
       desc: "Prevents volt-elemental attacks from one enemy. If an attack is prevented, increases the user's attack until the end of the next turn.",
       stats: [],
@@ -2892,23 +2893,32 @@ let skills = {
       maxLevel: 4,
       coords: { x: 4, y: 3 }
     },
-    freeEnergy: {
-      name_en: "Pulsar Feedback",
-      name_jp: "ＴＰカット",
-      desc: "Provides a chance to refund the user's TP usage.",
+    horoscope: {
+      name_en: "Prophecy",
+      name_jp: "氷の先見術",
+      desc: "Prevents elemental attacks from one enemy. If an attack is prevented, increases the user's attack until the end of the next turn.",
       stats: [],
       dep: { fireProphecy: 1, iceProphecy: 1, voltProphecy: 1 },
       maxLevel: 6,
       coords: { x: 5, y: 1.5 }
     },
     spreadEther: {
-      name_en: "???",
+      name_en: "Etheric Siphon",
       name_jp: "多段式エーテル",
-      desc: "",
+      desc: "When the user hits an enemy's weakness, their Force gauge is increased.",
       stats: [],
       dep: { antiEther: 2 },
       maxLevel: 6,
       coords: { x: 4, y: 4 }
+    },
+    freeEnergy: {
+      name_en: "Pulsar Feedback",
+      name_jp: "ＴＰカット",
+      desc: "Provides a chance to refund the user's TP usage.",
+      stats: [],
+      dep: { restoreEther : 2 },
+      maxLevel: 6,
+      coords: { x: 4, y: 5 }
     },
     meteor: {
       name_en: "Meteor",
@@ -3062,11 +3072,11 @@ let skills = {
       coords: { x: 2, y: 4 }
     },
     rainOrShin: {
-      name_en: "???",
+      name_en: "Bandage",
       name_jp: "アメニモマケズ",
-      desc: "For a set number of steps, nullifies damage tiles and muddy floors, and greatly reduces other sources of damage while exploring.",
+      desc: "Restores HP to one ally and removes their ailments/binds.",
       stats: [],
-      dep: {  },
+      dep: { },
       maxLevel: 6,
       coords: { x: 2, y: 5 }
     },
@@ -4001,7 +4011,7 @@ let skills = {
     dismissBlow: {
       name_en: "Dismiss Blow",
       name_jp: "破陣：亜空絞破",
-      desc: "Dismisses the current circle to deal ranged almighty damage to one target.",
+      desc: "Dismisses the current circle to deal ranged bash+almighty damage to one target.",
       stats: ["INT"],
       dep: { dismissRevive: 3 },
       maxLevel: 10,
@@ -4073,7 +4083,7 @@ let skills = {
     dismissBlast: {
       name_en: "Dismiss Blast",
       name_jp: "破陣：亜空鳴動",
-      desc: "Dismisses the current circle to deal ranged almighty damage to all enemies.",
+      desc: "Dismisses the current circle to deal ranged bash+almighty damage to all enemies.",
       stats: ["INT"],
       dep: { dismissBlow: 2 },
       maxLevel: 10,
@@ -4350,7 +4360,7 @@ let skills = {
       coords: { x: 4, y: 4 }
     },
     absorber: {
-      name_en: "Absorber",
+      name_en: "Finisher",
       name_jp: "コンバーター",
       desc: "When the user kills an enemy, their TP is restored.",
       stats: [],

@@ -652,7 +652,7 @@ let skills = {
     patrol: {
       name_en: "Mending Blow",
       name_jp: "警戒斥候",
-      desc: "Deal bash damage and heal self line.",
+      desc: "Deal melee bash damage to one target. Restores HP to the users row.",
       stats: [],
       dep: { },
       maxLevel: 6,
@@ -661,7 +661,7 @@ let skills = {
     elemDefUp: {
       name_en: "Immunize",
       name_jp: "属性防御ブースト",
-      desc: "Increases the party's Elem Defense and Ailment Defense for X turns.",
+      desc: "Increases the party's Elemental Defense and Ailment Defense for a number of turns.",
       stats: [],
       dep: { },
       maxLevel: 8,
@@ -706,7 +706,7 @@ let skills = {
     heavyStrike: {
       name_en: "Heavy Strike",
       name_jp: "ヘヴィストライク",
-      desc: "Deals melee bash damage to one target. Attempts to inflict head bind.",
+      desc: "Deals melee bash damage to one target. Attempts to stun.",
       stats: ["STR", "LUC"],
       dep: { medicalRod: 3 },
       maxLevel: 10,

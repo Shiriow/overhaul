@@ -400,7 +400,7 @@ let skills = {
       coords: { x: 2, y: 3 }
     },
     fireWall: {
-      name_en: "???",
+      name_en: "*???",
       name_jp: "ファイアガード",
       desc: "Reduces one instance of fire damage against all party members. Higher levels upgrade reduction to null, then absorb.",
       stats: [],
@@ -409,7 +409,7 @@ let skills = {
       coords: { x: 3, y: 4 }
     },
     iceWall: {
-      name_en: "Elemental Wall",
+      name_en: "*Elemental Wall",
       name_jp: "フリーズガード",
       desc: "Reduces one instance of elemental damage against all party members. Higher levels upgrade reduction to null, then absorb.",
       stats: [],
@@ -418,7 +418,7 @@ let skills = {
       coords: { x: 3, y: 5 }
     },
     voltWall: {
-      name_en: "???",
+      name_en: "*???",
       name_jp: "ショックガード",
       desc: "Reduces one instance of volt damage against all party members. Higher levels upgrade reduction to null, then absorb.",
       stats: [],
@@ -472,7 +472,7 @@ let skills = {
       coords: { x: 4, y: 3 }
     },
     fullGuard: {
-      name_en: "Sentinel Guard",
+      name_en: "*Sentinel Guard",
       name_jp: "フルガード",
       desc: "Reduces all damage to all party members for one turn. Cannot be used again for a set number of turns.",
       stats: [],
@@ -650,7 +650,7 @@ let skills = {
       coords: { x: 3, y: 5 }
     },
     patrol: {
-      name_en: "Mending Blow",
+      name_en: "*Mending Blow",
       name_jp: "警戒斥候",
       desc: "Deal melee bash damage to one target. Restores HP to the users row.",
       stats: [],
@@ -659,7 +659,7 @@ let skills = {
       coords: { x: 2, y: 6 }
     },
     elemDefUp: {
-      name_en: "Immunize",
+      name_en: "*Immunize",
       name_jp: "属性防御ブースト",
       desc: "Increases the party's Elemental Defense and Ailment Defense for a number of turns.",
       stats: [],
@@ -668,7 +668,7 @@ let skills = {
       coords: { x: 3, y: 6 }
     },
     partyHeal: {
-      name_en: "???",
+      name_en: "*???",
       name_jp: "エリアヒール",
       desc: "Restores HP to all party members.",
       stats: ["WIS"],
@@ -704,7 +704,7 @@ let skills = {
       coords: { x: 4, y: 4 }
     },
     heavyStrike: {
-      name_en: "Heavy Strike",
+      name_en: "*Heavy Strike",
       name_jp: "ヘヴィストライク",
       desc: "Deals melee bash damage to one target. Attempts to stun.",
       stats: ["STR", "LUC"],
@@ -1016,7 +1016,7 @@ let skills = {
     airBlade: {
       name_en: "Air Blade",
       name_jp: "空刃",
-      desc: "Deals ranged cut damage to one target. Assumes Upper Stance after use. Critical hit if used during Upper stance and 50% chance of critical hit in the others.",
+      desc: "Deals ranged cut damage to one target. Assumes Upper Stance after use. Critical hit if used during Upper stance and 50% chance of critical hit in the other stances.",
       stats: ["STR"],
       dep: { upperStance: 1 },
       maxLevel: 6,
@@ -1025,7 +1025,7 @@ let skills = {
     chargingThrust: {
       name_en: "Delayed Strike",
       name_jp: "貫突",
-      desc: "Deals melee cut damage to one target, and attack again 2 turns later. Assumes Upper Stance after use. Critical hit if used during Upper stance and 50% chance of critical hit in the others.",
+      desc: "Deals melee cut damage to one target, and attack again 2 turns later. Assumes Upper Stance after use. Critical hit if used during Upper stance and 50% chance of critical hit in the other stances.",
       stats: ["STR"],
       dep: { upperStance: 1 },
       maxLevel: 6,
@@ -1043,7 +1043,7 @@ let skills = {
     armStrike: {
       name_en: "Arm Strike",
       name_jp: "小手討ち",
-      desc: "Deals melee stab damage to one target. Attempts to inflict arm bind. Assumes Clear Stance after use. Critical hit if used during Clear stance and 50% chance of critical hit in the others.",
+      desc: "Deals melee stab damage to one target. Attempts to inflict arm bind. Assumes Clear Stance after use. Critical hit if used during Clear stance and 50% chance of critical hit in the other stances.",
       stats: ["STR", "LUC"],
       dep: { clearStance: 1 },
       maxLevel: 6,
@@ -1052,7 +1052,7 @@ let skills = {
     sheathStrike: {
       name_en: "Enduring Cut",
       name_jp: "鞘撃",
-      desc: "Deals melee cut damage to one target. Reduces users damage taken until the end of next turn. Assumes Clear Stance after use. Critical hit if used during Clear Stance and 50% chance of critical hit in the others.",
+      desc: "Deals melee cut damage to one target. Reduces users damage taken until the end of next turn. Assumes Clear Stance after use. Critical hit if used during Clear Stance and 50% chance of critical hit in the other stances.",
       stats: ["STR"],
       dep: { clearStance: 1 },
       maxLevel: 6,
@@ -1070,7 +1070,7 @@ let skills = {
     breath: {
       name_en: "Drain Slice",
       name_jp: "息吹",
-      desc: "Deals melee cut damage to one target and restores HP to the users line based on their Max HP. Assumes Drawing Stance after use. Critical hit if used during Drawing Stance and 50% chance of critical hit in the others.",
+      desc: "Deals melee cut damage to one target and restores HP to the users line based on their Max HP. Assumes Drawing Stance after use. Critical hit if used during Drawing Stance and 50% chance of critical hit in the other stances.",
       stats: [],
       dep: { drawingStance: 1 },
       maxLevel: 6,
@@ -1079,7 +1079,7 @@ let skills = {
     upwardSlash: {
       name_en: "Bloody Blade",
       name_jp: "逆袈裟",
-      desc: "Deals melee cut damage to one target and increases the users line attack for 3 turns.  Assumes Drawing Stance after use. Critical hit if used during Drawing Stance and 50% chance of critical hit in the others.",
+      desc: "Deals melee cut damage to one target and increases the users line attack for 3 turns.  Assumes Drawing Stance after use. Critical hit if used during Drawing Stance and 50% chance of critical hit in the other stances.",
       stats: ["STR"],
       dep: { drawingStance: 1 },
       maxLevel: 6,
@@ -1634,7 +1634,7 @@ let skills = {
       coords: { x: 2, y: 5 }
     },
     hpUp: {
-      name_en: "Warmight",
+      name_en: "*Warmight",
       name_jp: "ＨＰブースト",
       desc: "Increases the targets attack for X turns.",
       stats: [],
@@ -1643,7 +1643,7 @@ let skills = {
       coords: { x: 2, y: 6 }
     },
     statusDefUp: {
-      name_en: "Rockskin",
+      name_en: "*Rockskin",
       name_jp: "抑制防御ブースト",
       desc: "Increases the targets defense for X turns.",
       stats: [],
@@ -1670,7 +1670,7 @@ let skills = {
       coords: { x: 4, y: 3.5 }
     },
     warHealAll: {
-      name_en: "Scorpion",
+      name_en: "*Scorpion",
       name_jp: "巫術：再生陣",
       desc: "Deals melee cut damage to one enemy, with double damage splash damage to adjacent enemies. If adjacent enemies have ailments, attempts to petrify the target.",
       stats: ["STR"],
@@ -1688,7 +1688,7 @@ let skills = {
       coords: { x: 4, y: 5 }
     },
     plague: {
-      name_en: "???",
+      name_en: "*???",
       name_jp: "発疫",
       desc: "User's normal attack attempts to inflict poison, paralyze, blind, sleep and curse.",
       stats: ["LUC"],
@@ -1697,7 +1697,7 @@ let skills = {
       coords: { x: 5, y: 5 }
     },
     physAtkUp: {
-      name_en: "???",
+      name_en: "*???",
       name_jp: "物理攻撃ブースト",
       desc: "Increases physical attack.",
       stats: [],
@@ -1766,7 +1766,7 @@ let skills = {
       coords: { x: 1, y: 2 }
     },
     legionThrust: {
-      name_en: "???",
+      name_en: "*???",
       name_jp: "レギオンスラスト",
       desc: "Consumes the HP of all allies other than the user to deal melee stab damage to the enemy front row.",
       stats: ["STR"],
@@ -1803,7 +1803,7 @@ let skills = {
       coords: { x: 0, y: 6 }
     },
     hpUp: {
-      name_en: "???",
+      name_en: "*???",
       name_jp: "ＨＰブースト",
       desc: "Increases maximum HP.",
       stats: [],
@@ -1821,7 +1821,7 @@ let skills = {
       coords: { x: 2, y: 1 }
     },
     drainingBurst: {
-      name_en: "???",
+      name_en: "*???",
       name_jp: "シングルバースト",
       desc: "Consumes the user's HP to deal melee stab damage to all enemies.",
       stats: ["STR"],
@@ -1884,7 +1884,7 @@ let skills = {
       coords: { x: 2, y: 5 }
     },
     physDefUp: {
-      name_en: "Abyssal Killer",
+      name_en: "*Abyssal Killer",
       name_jp: "物理防御ブースト",
       desc: "When cast, the user will endure fatal damage once. If the user endured a fatal hit through Abyssal Killer, their damage on the next turn is increased by a base multiplier, multiplied by the square root of the square root of the precentage of the user's maxHP the endured hit would've overkilled them by.",
       stats: [],
@@ -1938,7 +1938,7 @@ let skills = {
       coords: { x: 4, y: 1 }
     },
     physAtkUp: {
-      name_en: "Death's Edge",
+      name_en: "*Death's Edge",
       name_jp: "物理攻撃ブースト",
       desc: "Deals STR-based melee bash damage to one enemy. Deals more damage the less HP the entire party has. Both the party's current average precentage of HP remaining as well as the raw amount of HP missing are taken into account by this.",
       stats: [],
@@ -2384,7 +2384,7 @@ let skills = {
       coords: { x: 4, y: 0 }
     },
     elementalBombII: {
-      name_en: "Regal Radiance",
+      name_en: "*Regal Radiance",
       name_jp: "エレメントボムⅡ",
       desc: "Removes elemental imbue from one ally to force them to attack with that element to all enemies.",
       stats: ["INT"],
@@ -2722,7 +2722,7 @@ let skills = {
       coords: { x: 0, y: 2 }
     },
     binaryFire: {
-      name_en: "Binary Fire",
+      name_en: "*Binary Fire",
       name_jp: "炎の連星術",
       desc: "Deals ranged fire damage to all enemies.",
       stats: ["INT"],
@@ -2731,7 +2731,7 @@ let skills = {
       coords: { x: 1, y: 1 }
     },
     binaryIce: {
-      name_en: "Binary Ice",
+      name_en: "*Binary Ice",
       name_jp: "氷の連星術",
       desc: "Deals ranged ice damage to all enemies.",
       stats: ["INT"],
@@ -2740,7 +2740,7 @@ let skills = {
       coords: { x: 1, y: 2 }
     },
     binaryVolt: {
-      name_en: "Binary Volt",
+      name_en: "*Binary Volt",
       name_jp: "雷の連星術",
       desc: "Deals ranged volt damage to all enemies.",
       stats: ["INT"],
@@ -2767,7 +2767,7 @@ let skills = {
       coords: { x: 1, y: 4 }
     },
     ethericReturn: {
-      name_en: "Etheric Return",
+      name_en: "*Etheric Return",
       name_jp: "リターンエーテル",
       desc: "Restores TP to the user when hitting a weakness.",
       stats: [],
@@ -2786,7 +2786,7 @@ let skills = {
       coords: { x: 0, y: 6 }
     },
     etherMastery: {
-      name_en: "Nebula Resurgence",
+      name_en: "*Nebula Resurgence",
       name_jp: "エーテルマスター",
       desc: "Increases damage depending on how low the users TP is.",
       stats: [],
@@ -2795,7 +2795,7 @@ let skills = {
       coords: { x: 2, y: 6 }
     },
     tpUp: {
-      name_en: "???",
+      name_en: "*???",
       name_jp: "ＴＰブースト",
       desc: "Increases maximum TP.",
       stats: [],
@@ -2804,7 +2804,7 @@ let skills = {
       coords: { x: 3, y: 0 }
     },
     fireStar: {
-      name_en: "Astral Fire",
+      name_en: "*Astral Fire",
       name_jp: "炎の星術",
       desc: "Deals ranged fire damage to one target. Applies Astral Fire on the user, increasing damage for 3 turns. This skill cannot be used again for 3 turns.",
       stats: ["INT"],
@@ -2813,7 +2813,7 @@ let skills = {
       coords: { x: 2, y: 2 }
     },
     iceStar: {
-      name_en: "Umbral Ice",
+      name_en: "*Umbral Ice",
       name_jp: "氷の星術",
       desc: "Deals ranged ice damage to one target. Recovers some TP and removes Astral Fire after use.",
       stats: ["INT"],
@@ -2822,7 +2822,7 @@ let skills = {
       coords: { x: 3, y: 1.5 }
     },
     voltStar: {
-      name_en: "Solstice Volt",
+      name_en: "*Solstice Volt",
       name_jp: "雷の星術",
       desc: "Deals ranged volt damage to one target, and ignores resistances. Removes Astral Fire after use.",
       stats: ["INT"],
@@ -2831,7 +2831,7 @@ let skills = {
       coords: { x: 3, y: 2.5 }
     },
     ethericShoot: {
-      name_en: "Etheric Shoot",
+      name_en: "*Etheric Shoot",
       name_jp: "エーテルシュート",
       desc: "Deals ranged, INT-based damage to one enemy with the user's weapon.",
       stats: [],
@@ -2840,7 +2840,7 @@ let skills = {
       coords: { x: 2, y: 4 }
     },
     restoreEther: {
-      name_en: "Restore Ether",
+      name_en: "*Restore Ether",
       name_jp: "レストアエーテル",
       desc: "Increases attack based on the number of TP spent on the previous turn. Does not activate if TP spent last turn is too low.",
       stats: [],
@@ -2849,7 +2849,7 @@ let skills = {
       coords: { x: 3, y: 5 }
     },
     antiEther: {
-      name_en: "Anti-Ether",
+      name_en: "*Anti-Ether",
       name_jp: "アンチエーテル",
       desc: "Provides a chance to nullify elemental attacks against the user's row.",
       stats: [],
@@ -2867,7 +2867,7 @@ let skills = {
       coords: { x: 2, y: 5 }
     },
     fireProphecy: {
-      name_en: "Flame Veil",
+      name_en: "*Flame Veil",
       name_jp: "炎の先見術",
       desc: "Prevents fire-elemental attacks from one enemy. If an attack is prevented, increases the user's attack until the end of the next turn.",
       stats: [],
@@ -2876,7 +2876,7 @@ let skills = {
       coords: { x: 4, y: 1 }
     },
     iceProphecy: {
-      name_en: "Freeze Veil",
+      name_en: "*Freeze Veil",
       name_jp: "氷の先見術",
       desc: "Prevents elemental attacks from one enemy. If an attack is prevented, increases the user's attack until the end of the next turn.",
       stats: [],
@@ -2885,7 +2885,7 @@ let skills = {
       coords: { x: 4, y: 2 }
     },
     voltProphecy: {
-      name_en: "Shock Veil",
+      name_en: "*Shock Veil",
       name_jp: "雷の先見術",
       desc: "Prevents volt-elemental attacks from one enemy. If an attack is prevented, increases the user's attack until the end of the next turn.",
       stats: [],
@@ -2894,7 +2894,7 @@ let skills = {
       coords: { x: 4, y: 3 }
     },
     horoscope: {
-      name_en: "Prophecy",
+      name_en: "*Prophecy",
       name_jp: "氷の先見術",
       desc: "Prevents elemental attacks from one enemy. If an attack is prevented, increases the user's attack until the end of the next turn.",
       stats: [],
@@ -2903,7 +2903,7 @@ let skills = {
       coords: { x: 5, y: 1.5 }
     },
     spreadEther: {
-      name_en: "Etheric Siphon",
+      name_en: "*Etheric Siphon",
       name_jp: "多段式エーテル",
       desc: "When the user hits an enemy's weakness, their Force gauge is increased.",
       stats: [],
@@ -2912,7 +2912,7 @@ let skills = {
       coords: { x: 4, y: 4 }
     },
     freeEnergy: {
-      name_en: "Pulsar Feedback",
+      name_en: "*Pulsar Feedback",
       name_jp: "ＴＰカット",
       desc: "Provides a chance to refund the user's TP usage.",
       stats: [],
@@ -2921,9 +2921,9 @@ let skills = {
       coords: { x: 4, y: 5 }
     },
     meteor: {
-      name_en: "Meteor",
+      name_en: "*Meteor",
       name_jp: "メテオ",
-      desc: "Deals 2-5 instances of ranged bash damage to random targets.",
+      desc: "Deals 2-5 instances of ranged bash damage to random targets. If the user used an elemental attack on the last turn, also follow ups with an additional 2-5 instances of the same element",
       stats: ["INT"],
       dep: { fireProphecy: 1, iceProphecy: 1, voltProphecy: 1 },
       maxLevel: 10,
@@ -3036,7 +3036,7 @@ let skills = {
       coords: { x: 1, y: 6 }
     },
     rottenEggs: {
-      name_en: "???",
+      name_en: "*???",
       name_jp: "弱り目に祟り目",
       desc: "For 3 turns, decreases attack for all enemies. Effect is stronger against enemies with an ailment or bind.",
       stats: [],
@@ -3072,7 +3072,7 @@ let skills = {
       coords: { x: 2, y: 4 }
     },
     rainOrShin: {
-      name_en: "Bandage",
+      name_en: "*Bandage",
       name_jp: "アメニモマケズ",
       desc: "Restores HP to one ally and removes their ailments/binds.",
       stats: [],
@@ -3213,7 +3213,7 @@ let skills = {
       coords: { x: 1, y: 1 }
     },
     counterCommand: {
-      name_en: "Counter Command",
+      name_en: "*Counter Command",
       name_jp: "斬月居合陣",
       desc: "This turn, when the selected ally is attacked, all front row allies will counterattack with their weapons. Does not activate against counterattacks.",
       stats: ["STR"],
@@ -3240,12 +3240,12 @@ let skills = {
       coords: { x: 1, y: 4 }
     },
     greatGeneral: {
-      name_en: "Great General",
+      name_en: "*Great General",
       name_jp: "大武辺者",
       desc: "For 3 turns, increases one ally's physical attack and chance of being targeted.",
       stats: [],
       dep: { },
-      maxLevel: 6,
+      maxLevel: 8,
       coords: { x: 1, y: 5 }
     },
     assassinGathering: {
@@ -3572,7 +3572,7 @@ let skills = {
       coords: { x: 2, y: 5 }
     },
     physDefUp: {
-      name_en: "???",
+      name_en: "*???",
       name_jp: "物理防御ブースト",
       desc: "Increases physical defense.",
       stats: ["STR"],
@@ -3590,7 +3590,7 @@ let skills = {
       coords: { x: 2, y: 6 }
     },
     swordTempest: {
-      name_en: "Sword Tempest",
+      name_en: "*Sword Tempest",
       name_jp: "ソードテンペスト",
       desc: "Deals melee cut damage to one target next turn. High power at the cost of speed.",
       stats: ["STR"],
@@ -3599,7 +3599,7 @@ let skills = {
       coords: { x: 4, y: 0.5 }
     },
     swiftStab: {
-      name_en: "Swift Stab",
+      name_en: "*Swift Stab",
       name_jp: "ハヤブサ突き",
       desc: "Deals multiple instances of melee stab damage to random targets. Cannot be used next turn.",
       stats: ["STR"],
@@ -3608,7 +3608,7 @@ let skills = {
       coords: { x: 4, y: 1.5 }
     },
     statusDefUp: {
-      name_en: "Defiance",
+      name_en: "*Defiance",
       name_jp: "抑制防御ブースト",
       desc: "Increases damage when dual-wielding.",
       stats: [],
@@ -3635,7 +3635,7 @@ let skills = {
       coords: { x: 5, y: 3 }
     },
     fullBreak: {
-      name_en: "Full Break",
+      name_en: "*Full Break",
       name_jp: "フルブレイク",
       desc: "Deals melee bash damage to one target. Damage is increased if the target has a Break skill debuff. Multiple Break debuffs will not increase damage further. Damage is based on the user's shield's DEF.",
       stats: ["STR"],
@@ -3731,9 +3731,9 @@ let skills = {
       coords: { x: 1, y: 4 }
     },
     decoySign: {
-      name_en: "Decoy Sign",
+      name_en: "*Decoy Sign",
       name_jp: "デコイサイン",
-      desc: "For 3 turns, increases one ally's chance of being targeted.",
+      desc: "For a set amount of turns, increases one ally's chance of being targeted and allows them to counter attack when hit.",
       stats: [],
       dep: { },
       maxLevel: 4,
@@ -3885,7 +3885,7 @@ let skills = {
       coords: { x: 4, y: 5 }
     },
     autoSpread: {
-      name_en: "Perseverance",
+      name_en: "*Perseverance",
       name_jp: "先制スプレッド",
       desc: "Increases the chance of inflicting an ailment/bind if the user failed to inflict one last turn.",
       stats: [],
@@ -4036,7 +4036,7 @@ let skills = {
       coords: { x: 2, y: 3 }
     },
     charmEye: {
-      name_en: "Charm Eye",
+      name_en: "!Charm Eye",
       name_jp: "魅了の邪眼",
       desc: "For 3 turns, decreases attack for all enemies. Effect is stronger against enemies with an ailment or bind.",
       stats: [],
@@ -4045,7 +4045,7 @@ let skills = {
       coords: { x: 2, y: 4 }
     },
     atrophicEye: {
-      name_en: "Atrophic Eye",
+      name_en: "!Atrophic Eye",
       name_jp: "衰身の邪眼",
       desc: "For 3 turns, decreases defense for all enemies. Effect is stronger against enemies with an ailment or bind.",
       stats: [],
@@ -4063,7 +4063,7 @@ let skills = {
       coords: { x: 2, y: 5 }
     },
     tameGround: {
-      name_en: "Tame Ground",
+      name_en: "*???",
       name_jp: "地脈操作",
       desc: "For a set number of steps, nullifies damage tiles and muddy floors, and greatly reduces other sources of damage while exploring.",
       stats: [],
@@ -4090,7 +4090,7 @@ let skills = {
       coords: { x: 4, y: 1 }
     },
     circleMastery: {
-      name_en: "???",
+      name_en: "*???",
       name_jp: "方陣マスタリ",
       desc: "Increases the power of Dismiss skills.",
       stats: [],
@@ -4222,7 +4222,7 @@ let skills = {
       coords: { x: 1, y: 4.5 }
     },
     avenger: {
-      name_en: "???",
+      name_en: "*???",
       name_jp: "アベンジャー",
       desc: "When an ally dies, restores HP to the user.",
       stats: [],
@@ -4313,7 +4313,7 @@ let skills = {
       coords: { x: 3, y: 5 }
     },
     statusDefUp: {
-      name_en: "Drive Mastery",
+      name_en: "*Drive Mastery",
       name_jp: "抑制防御ブースト",
       desc: "Decreases the chance of being inflicted with binds and ailments.",
       stats: [],
@@ -4340,7 +4340,7 @@ let skills = {
       coords: { x: 4, y: 2 }
     },
     hpUp: {
-      name_en: "Wide Effect",
+      name_en: "*Wide Effect",
       name_jp: "ＨＰブースト",
       desc: "Increases maximum HP.",
       stats: [],
@@ -4349,7 +4349,7 @@ let skills = {
       coords: { x: 4, y: 3 }
     },
     accelDrive: {
-      name_en: "Drive Recoil",
+      name_en: "*Drive Recoil",
       name_jp: "アクセルドライブ",
       desc: "Deals melee cut+almighty damage to one target, and places the user in the overheat state for 9 turns. Cannot be used while overheated. Low action speed, and the user will take double damage until the skill activates.",
       stats: ["STR"],
@@ -4360,7 +4360,7 @@ let skills = {
       coords: { x: 4, y: 4 }
     },
     absorber: {
-      name_en: "Finisher",
+      name_en: "*Finisher",
       name_jp: "コンバーター",
       desc: "When the user kills an enemy, their TP is restored.",
       stats: [],
@@ -4824,25 +4824,25 @@ let skills = {
       coords: { x: 4, y: 1.5 }
     },
     fatalReap: {
-      name_en: "Fatal Reap",
+      name_en: "*Fatal Reap",
       name_jp: "死の鎌",
-      desc: "Deals melee cut damage to one target. Attempts to inflict instant death.",
+      desc: "Deals melee cut damage to one target. Attempts to inflict instant death. If the target is asleep, the damage and instant death chance rises.",
       stats: ["STR", "LUC"],
       dep: { chaosReap: 2 },
       maxLevel: 8,
       coords: { x: 4, y: 2.5 }
     },
     soulFixation: {
-      name_en: "Frigid Reap",
+      name_en: "*Frigid Reap",
       name_jp: "霊魂固着",
-      desc: "",
+      desc: "Deals melee cut + ice damage to one row. Deals a follow-up attack on enemies that have ailments. The follow-up attack deals double damage.",
       stats: [],
       dep: { chaosReap: 2 },
       maxLevel: 6,
       coords: { x: 4, y: 3.5 }
     },
     miasmaWall: {
-      name_en: "Miasma Wall",
+      name_en: "*Miasma Wall",
       name_jp: "瘴気の防壁",
       desc: "Requires Miasma Armor. Removes Miasma Armor to attempt to nullify binds, ailments, instant death, stun and debuffs against all party members, up to a set number of times.",
       stats: [],

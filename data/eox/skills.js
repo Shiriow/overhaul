@@ -2869,7 +2869,7 @@ let skills = {
     fireProphecy: {
       name_en: "*Flame Veil",
       name_jp: "炎の先見術",
-      desc: "Prevents fire-elemental attacks from one enemy. If an attack is prevented, increases the user's attack until the end of the next turn.",
+      desc: "Places a Flame Veil on an ally, which automatically counterattacks enemies who attack that ally with Fire damage.",
       stats: [],
       dep: { iceStar: 2, voltStar: 2  },
       maxLevel: 4,
@@ -2878,7 +2878,7 @@ let skills = {
     iceProphecy: {
       name_en: "*Freeze Veil",
       name_jp: "氷の先見術",
-      desc: "Prevents elemental attacks from one enemy. If an attack is prevented, increases the user's attack until the end of the next turn.",
+      desc: "Places a Freeze Veil on an ally, which automatically counterattacks enemies who attack that ally with Ice damage.",
       stats: [],
       dep: { iceStar: 2, voltStar: 2  },
       maxLevel: 10,
@@ -2887,7 +2887,7 @@ let skills = {
     voltProphecy: {
       name_en: "*Shock Veil",
       name_jp: "雷の先見術",
-      desc: "Prevents volt-elemental attacks from one enemy. If an attack is prevented, increases the user's attack until the end of the next turn.",
+      desc: "Places a Shock Veil on an ally, which automatically counterattacks enemies who attack that ally with Volt damage.",
       stats: [],
       dep: { iceStar: 2, voltStar: 2 },
       maxLevel: 4,

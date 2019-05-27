@@ -366,7 +366,7 @@ let skills = {
     shieldRush: {
       name_en: "Shield Rush",
       name_jp: "シールドラッシュ",
-      desc: "Deals melee bash damage to all enemies, and reduces their physical attack for 3 turns. Damage is based on the user's shield's DEF.",
+      desc: "Deals melee bash damage to all enemies, and reduces their physical attack for a set number of turns. Damage is based on the user's shield's DEF.",
       stats: ["STR"],
       dep: { shieldSmite: 3 },
       maxLevel: 8,
@@ -474,7 +474,7 @@ let skills = {
     fullGuard: {
       name_en: "*Sentinel Guard",
       name_jp: "フルガード",
-      desc: "Reduces all damage to all party members for one turn. Cannot be used again for a set number of turns.",
+      desc: "Reduces all damage to all party members and sets their defensive values to the user's for one turn. Disables guard skills for one turn after use.",
       stats: [],
       dep: { healGuard: 2 },
       maxLevel: 10,
@@ -661,7 +661,7 @@ let skills = {
     elemDefUp: {
       name_en: "*Immunize",
       name_jp: "属性防御ブースト",
-      desc: "Increases the party's Elemental Defense and Ailment Defense for a number of turns.",
+      desc: "Increases the party's Elemental Defense and Ailment Defense for a set number of turns.",
       stats: [],
       dep: { },
       maxLevel: 8,
@@ -884,7 +884,7 @@ let skills = {
     trickStep: {
       name_en: "Fan Dance",
       name_jp: "トリックステップ",
-      desc: "Increase the users evasion for a number of turns.",
+      desc: "Increase the users evasion for a set number of turns.",
       stats: [],
       dep: { chainDance: 2, sortingSkill: 2 },
       maxLevel: 8,
@@ -1079,7 +1079,7 @@ let skills = {
     upwardSlash: {
       name_en: "Bloody Blade",
       name_jp: "逆袈裟",
-      desc: "Deals melee cut damage to one target and increases the users line attack for 3 turns.  Assumes Drawing Stance after use. Critical hit if used during Drawing Stance and 50% chance of critical hit in the other stances.",
+      desc: "Deals melee cut damage to one target and increases the users row attack for 3 turns.  Assumes Drawing Stance after use. Critical hit if used during Drawing Stance and 50% chance of critical hit in the other stances.",
       stats: ["STR"],
       dep: { drawingStance: 1 },
       maxLevel: 6,
@@ -1170,7 +1170,7 @@ let skills = {
     swallowStrike: {
       name_en: "Swallow Strike",
       name_jp: "ツバメがえし",
-      desc: "Requires any stance. Deals multiple instances of melee cut damage to one target. Removes stance after use. Critical hit if used during Upper Stance. This skill cannot be used again for a set number of turns.",
+      desc: "Requires any stance. Deals multiple instances of melee cut damage to one target. Removes stance after use. Critical hit if used during Upper Stance. This skill, and the other stance removal skills, cannot be used again for 3 turns.",
       stats: ["STR"],
       dep: { flameGrater: 3 },
       maxLevel: 8,
@@ -1179,7 +1179,7 @@ let skills = {
     bluntingStab: {
       name_en: "Blunting Stab",
       name_jp: "鈍通し",
-      desc: "Requires any stance. Deals melee stab damage to one target. Attempts to inflict petrify. Removes stance after use. Critical hit if used during Clear Stance. This skill cannot be used again for a set number of turns.",
+      desc: "Requires any stance. Deals melee stab damage to one target. Attempts to inflict petrify. Removes stance after use. Critical hit if used during Clear Stance. This skill, and the other stance removal skills, cannot be used again for 3 turns.",
       stats: ["STR", "LUC"],
       dep: { lightningStab: 3 },
       maxLevel: 8,
@@ -1188,7 +1188,7 @@ let skills = {
     petalScatter: {
       name_en: "Petal Scatter",
       name_jp: "散華",
-      desc: "Requires any stance. Deals ranged cut damage to all targets. Removes stance after use. Critical hit if used during Drawing Stance. Deals less damage based on the number of targets. This skill cannot be used again for a set number of turns.",
+      desc: "Requires any stance. Deals ranged cut damage to all targets. Removes stance after use. Critical hit if used during Drawing Stance. Deals less damage based on the number of targets. This skill, and the other stance removal skills, cannot be used again for 3 turns.",
       stats: ["STR"],
       dep: { frigidSlash: 3 },
       maxLevel: 8,
@@ -1518,7 +1518,7 @@ let skills = {
     strengthSlash: {
       name_en: "Strength Slash",
       name_jp: "巫剣：霊攻衰斬",
-      desc: "Deals melee cut+almighty damage to one target. If the target has an ailment, decreases their attack for 7 turns.",
+      desc: "Deals melee cut+almighty damage to one target. If the target has an ailment, decreases their attack for a set number of turns.",
       stats: ["STR"],
       dep: { randomDisease: 1 },
       maxLevel: 6,
@@ -1527,7 +1527,7 @@ let skills = {
     guardSlash: {
       name_en: "Guard Slash",
       name_jp: "巫剣：霊防衰斬",
-      desc: "Deals melee cut+almighty damage to one target. If the target has an ailment, decreases their defense for 7 turns.",
+      desc: "Deals melee cut+almighty damage to one target. If the target has an ailment, decreases their defense for a set number of turns.",
       stats: ["STR"],
       dep: { randomDisease: 1 },
       maxLevel: 6,
@@ -1582,7 +1582,7 @@ let skills = {
     artery: {
       name_en: "Artery",
       name_jp: "巫術：脈動",
-      desc: "For 3 turns, automatically restores HP for all party members when they act, once per turn.",
+      desc: "For a set number of turns, automatically restores HP for all party members when they act, once per turn.",
       stats: ["WIS"],
       dep: { warRevive: 2 },
       maxLevel: 6,
@@ -1591,7 +1591,7 @@ let skills = {
     warResponse: {
       name_en: "War Response",
       name_jp: "巫術：呼応",
-      desc: "For 3 turns, automatically restores HP for all party members when the debuffed enemy acts, once per turn.",
+      desc: "For a set number of turns, automatically restores HP for all party members when the debuffed enemy acts, once per turn.",
       stats: ["WIS"],
       dep: { warRevive: 2 },
       maxLevel: 6,
@@ -1636,7 +1636,7 @@ let skills = {
     hpUp: {
       name_en: "*Warmight",
       name_jp: "ＨＰブースト",
-      desc: "Increases the targets attack for X turns.",
+      desc: "Increases the targets attack for a set number of turns.",
       stats: [],
       dep: { },
       maxLevel: 6,
@@ -1645,7 +1645,7 @@ let skills = {
     statusDefUp: {
       name_en: "*Rockskin",
       name_jp: "抑制防御ブースト",
-      desc: "Increases the targets defense for X turns.",
+      desc: "Increases the targets defense for a set number of turns.",
       stats: [],
       dep: { },
       maxLevel: 6,
@@ -2036,7 +2036,7 @@ let skills = {
     popFlares: {
       name_en: "Pop Flares",
       name_jp: "照明弾",
-      desc: "For 3 turns, increases accuracy for all allies.",
+      desc: "For a set number of turns, increases accuracy for all allies.",
       stats: [],
       dep: { },
       maxLevel: 6,
@@ -2618,7 +2618,7 @@ let skills = {
     ninpoSmoke: {
       name_en: "Ninpo: Smoke",
       name_jp: "忍法　雲隠",
-      desc: "Consumes the user's HP to greatly increase their evasion for a number of turns.",
+      desc: "Consumes the user's HP to greatly increase their evasion for a set number of turns.",
       stats: [],
       dep: { concealment: 2 },
       maxLevel: 8,
@@ -3001,7 +3001,7 @@ let skills = {
     playPossum: {
       name_en: "Play Possum",
       name_jp: "鳴かずば討たれず",
-      desc: "For 3 turns, decreases one ally's chance of being targeted.",
+      desc: "For a set number of turns, decreases one ally's chance of being targeted.",
       stats: [],
       dep: { flee: 1 },
       maxLevel: 6,
@@ -3038,7 +3038,7 @@ let skills = {
     rottenEggs: {
       name_en: "*???",
       name_jp: "弱り目に祟り目",
-      desc: "For 3 turns, decreases attack for all enemies. Effect is stronger against enemies with an ailment or bind.",
+      desc: "For a set number of turns, decreases attack for all enemies. Effect is stronger against enemies with an ailment or bind.",
       stats: [],
       dep: { strangeSeeds: 3, sympathyPain: 3 },
       maxLevel: 6,
@@ -3242,7 +3242,7 @@ let skills = {
     greatGeneral: {
       name_en: "*Great General",
       name_jp: "大武辺者",
-      desc: "For 3 turns, increases one ally's physical attack and chance of being targeted.",
+      desc: "For a set number of turns, increases one ally's physical attack and chance of being targeted.",
       stats: [],
       dep: { },
       maxLevel: 8,
@@ -3405,7 +3405,7 @@ let skills = {
     foreHonor: {
       name_en: "Fore Honor",
       name_jp: "先陣の名誉",
-      desc: "For 3 turns, increases one ally's physical attack and action speed, but decreases their physical defense.",
+      desc: "For a set number of turns, increases one ally's physical attack and action speed, but decreases their physical defense.",
       stats: [],
       dep: { curseStrike: 2 },
       maxLevel: 6,
@@ -3936,36 +3936,36 @@ let skills = {
       coords: { x: 1, y: 1 }
     },
     chainCircle: {
-      name_en: "Chain Circle",
+      name_en: "*Chain Circle",
       name_jp: "腕封の方陣",
-      desc: "Activates a circle that attempts to inflict arm bind on all enemies on cast and at the end of each turn for 3 turns. Existing circle will be overwritten, and the circle is removed if the user dies.",
+      desc: "Activates a circle that attempts to inflict arm bind on one enemy on cast and all enemies at the end of each turn for 3 turns. Existing circle will be overwritten, and the circle is removed if the user dies.",
       stats: ["LUC"],
       dep: { },
       maxLevel: 8,
       coords: { x: 0, y: 2 }
     },
     snareCircle: {
-      name_en: "Snare Circle",
+      name_en: "*Snare Circle",
       name_jp: "脚封の方陣",
-      desc: "Activates a circle that attempts to inflict leg bind on all enemies on cast and at the end of each turn for 3 turns. Existing circle will be overwritten, and the circle is removed if the user dies.",
+      desc: "Activates a circle that attempts to inflict leg bind on one enemy on cast and all enemies at the end of each turn for 3 turns. Existing circle will be overwritten, and the circle is removed if the user dies.",
       stats: ["LUC"],
       dep: { chainCircle: 2 },
       maxLevel: 8,
       coords: { x: 1, y: 2 }
     },
     nerveCircle: {
-      name_en: "Nerve Circle",
+      name_en: "*Nerve Circle",
       name_jp: "麻痺の方陣",
-      desc: "Activates a circle that attempts to inflict paralysis on all enemies on cast and at the end of each turn for 3 turns. Existing circle will be overwritten, and the circle is removed if the user dies.",
+      desc: "Activates a circle that attempts to inflict paralysis on one enemy on cast and all enemies at the end of each turn for 3 turns. Existing circle will be overwritten, and the circle is removed if the user dies.",
       stats: ["LUC"],
       dep: { },
       maxLevel: 8,
       coords: { x: 0, y: 3 }
     },
     curseCircle: {
-      name_en: "Curse Circle",
+      name_en: "*Curse Circle",
       name_jp: "呪いの方陣",
-      desc: "Activates a circle that attempts to inflict curse on all enemies on cast and at the end of each turn for 3 turns. Existing circle will be overwritten, and the circle is removed if the user dies.",
+      desc: "Activates a circle that attempts to inflict curse on one enemy on cast and all enemies at the end of each turn for 3 turns. Existing circle will be overwritten, and the circle is removed if the user dies.",
       stats: ["LUC"],
       dep: { nerveCircle: 2 },
       maxLevel: 8,
@@ -4018,18 +4018,18 @@ let skills = {
       coords: { x: 3, y: 1 }
     },
     hoodCircle: {
-      name_en: "Hood Circle",
+      name_en: "*Hood Circle",
       name_jp: "頭封の方陣",
-      desc: "Activates a circle that attempts to inflict head bind on all enemies on cast and at the end of each turn for 3 turns. Existing circle will be overwritten, and the circle is removed if the user dies.",
+      desc: "Activates a circle that attempts to inflict head bind on one enemy on cast and all enemies at the end of each turn for 3 turns. Existing circle will be overwritten, and the circle is removed if the user dies.",
       stats: ["LUC"],
       dep: { snareCircle: 2 },
       maxLevel: 8,
       coords: { x: 2, y: 2 }
     },
     sleepCircle: {
-      name_en: "Sleep Circle",
+      name_en: "*Sleep Circle",
       name_jp: "催眠の方陣",
-      desc: "Activates a circle that attempts to inflict sleep on all enemies on cast and at the end of each turn for 3 turns. Existing circle will be overwritten, and the circle is removed if the user dies.",
+      desc: "Activates a circle that attempts to inflict sleep on one enemy on cast and all enemies at the end of each turn for 3 turns. Existing circle will be overwritten, and the circle is removed if the user dies.",
       stats: ["LUC"],
       dep: { curseCircle: 2 },
       maxLevel: 8,
@@ -4063,9 +4063,9 @@ let skills = {
       coords: { x: 2, y: 5 }
     },
     tameGround: {
-      name_en: "*???",
+      name_en: "*Nova Circle",
       name_jp: "地脈操作",
-      desc: "For a set number of steps, nullifies damage tiles and muddy floors, and greatly reduces other sources of damage while exploring.",
+      desc: "Activates a circle that deals damage to one enemy on cast and all enemies at the end of each turn for 3 turns. Existing circle will be overwritten, and the circle is removed if the user dies.",
       stats: [],
       dep: { },
       maxLevel: 6,
@@ -4099,18 +4099,18 @@ let skills = {
       coords: { x: 5, y: 1 }
     },
     poisonCircle: {
-      name_en: "Poison Circle",
+      name_en: "*Poison Circle",
       name_jp: "毒の方陣",
-      desc: "Activates a circle that attempts to inflict poison on all enemies on cast and at the end of each turn for 3 turns. Existing circle will be overwritten, and the circle is removed if the user dies.",
+      desc: "Activates a circle that attempts to inflict poison on one enemy on cast and all enemies at the end of each turn for 3 turns. Existing circle will be overwritten, and the circle is removed if the user dies.",
       stats: ["LUC"],
       dep: { sleepCircle: 2 },
       maxLevel: 8,
       coords: { x: 4, y: 2.5 }
     },
     chaosCircle: {
-      name_en: "Chaos Circle",
+      name_en: "*Chaos Circle",
       name_jp: "幻惑の方陣",
-      desc: "Activates a circle that attempts to inflict panic on all enemies on cast and at the end of each turn for 3 turns. Existing circle will be overwritten, and the circle is removed if the user dies.",
+      desc: "Activates a circle that attempts to inflict panic on one enemy on cast and all enemies at the end of each turn for 3 turns. Existing circle will be overwritten, and the circle is removed if the user dies.",
       stats: ["LUC"],
       dep: { sleepCircle: 2 },
       maxLevel: 8,
@@ -4531,7 +4531,7 @@ let skills = {
     faultBlocker: {
       name_en: "Fault Blocker",
       name_jp: "アームブロック",
-      desc: "For 3 turns, increases ailment and bind resistance for the user's row.",
+      desc: "For a set number of turns, increases ailment and bind resistance for the user's row.",
       stats: [],
       dep: { },
       maxLevel: 6,

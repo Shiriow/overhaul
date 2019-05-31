@@ -264,7 +264,7 @@ let skills = {
       coords: { x: 1, y: 0 }
     },
     frontGuard: {
-      name_en: "Line Guard",
+      name_en: "*Line Guard",
       name_jp: "フロントガード",
       desc: "Reduces physical damage to a row for one turn.",
       stats: [],
@@ -273,18 +273,18 @@ let skills = {
       coords: { x: 0, y: 1 }
     },
     backGuard: {
-      name_en: "Mana Guard",
+      name_en: "*Counter Guard",
       name_jp: "バッグガード",
-      desc: "Reduces elemental damage to a row for one turn.",
+      desc: "Reduces physical damage to a row for one turn. If Counter Guard is activated by enemy damage, the user will use their shield to counterattack the source of the damage.",
       stats: [],
       dep: { frontGuard: 2 },
       maxLevel: 6,
       coords: { x: 1, y: 1 }
     },
     cellDivide: {
-      name_en: "Cell Divide",
+      name_en: "*Cell Divide",
       name_jp: "セルディバイド",
-      desc: "Covers one ally for one turn.",
+      desc: "Covers one ally until the end of the next turn.",
       stats: [],
       dep: { },
       maxLevel: 6,
@@ -300,9 +300,9 @@ let skills = {
       coords: { x: 1, y: 2 }
     },
     shieldSmite: {
-      name_en: "Shield Smite",
+      name_en: "*Shield Swipe",
       name_jp: "シールドスマイト",
-      desc: "Deals melee bash damage to one target. Attempts to inflict arm bind. Damage is based on the user's shield's DEF.",
+      desc: "Deals melee bash damage to one target while using last turns Guard. Damage is based on the user's shield's DEF.",
       stats: ["STR", "LUC"],
       dep: { },
       maxLevel: 6,
@@ -315,7 +315,7 @@ let skills = {
       stats: [],
       dep: { },
       maxLevel: 8,
-      coords: { x: 0, y: 4 }
+      coords: { x: 0, y: 5 }
     },
     preProvoke: {
       name_en: "Pre-Provoke",
@@ -324,7 +324,7 @@ let skills = {
       stats: [],
       dep: { provoke: 2 },
       maxLevel: 6,
-      coords: { x: 1, y: 4 }
+      coords: { x: 1, y: 5 }
     },
     healingWall: {
       name_en: "Healing Wall",
@@ -333,7 +333,7 @@ let skills = {
       stats: [],
       dep: { },
       maxLevel: 8,
-      coords: { x: 0, y: 5 }
+      coords: { x: 0, y: 4 }
     },
     chop: {
       name_en: "Chop",
@@ -346,7 +346,7 @@ let skills = {
       coords: { x: 0, y: 6 }
     },
     recoveryGuard: {
-      name_en: "Recovery Guard",
+      name_en: "*Recovery Guard",
       name_jp: "リカバリーガード",
       desc: "Removes binds from one row, and reduces physical damage to that row for one turn.",
       stats: [],
@@ -360,11 +360,11 @@ let skills = {
       desc: "There is a chance for the user to survive fatal damage at 1 HP. Can activate once per battle at most.",
       stats: [],
       dep: { fortify: 1 },
-      maxLevel: 10,
+      maxLevel: 8,
       coords: { x: 2, y: 2 }
     },
     shieldRush: {
-      name_en: "Shield Rush",
+      name_en: "*Shield Rush",
       name_jp: "シールドラッシュ",
       desc: "Deals melee bash damage to all enemies, and reduces their physical attack for a set number of turns. Damage is based on the user's shield's DEF.",
       stats: ["STR"],
@@ -373,9 +373,9 @@ let skills = {
       coords: { x: 1, y: 3 }
     },
     keepGuard: {
-      name_en: "Keep Guard",
+      name_en: "*Keep Guard",
       name_jp: "キープガード",
-      desc: "Reduces all damage to one ally until the end of the next turn, and disables all Guard skills until then.",
+      desc: "Reduces physical damage to a row for one turn. Then use Front Guard next turn.",
       stats: [],
       dep: { recoveryGuard: 2 },
       maxLevel: 6,
@@ -387,7 +387,7 @@ let skills = {
       desc: "Deals melee bash damage to one target. Deals more damage when low health and drains HP. Damage is based on the user's shield's DEF.",
       stats: ["STR"],
       dep: { elemDefUp: 3 },
-      maxLevel: 8,
+      maxLevel: 6,
       coords: { x: 3, y: 3 }
     },
     elemDefUp: {
@@ -400,11 +400,29 @@ let skills = {
       coords: { x: 2, y: 3 }
     },
     fireWall: {
-      name_en: "*???",
+      name_en: "*Swordbreaker",
       name_jp: "ファイアガード",
-      desc: "Reduces one instance of fire damage against all party members. Higher levels upgrade reduction to null, then absorb.",
+      desc: "Provides a chance to lower damage dealt to your row.",
       stats: [],
-      dep: { },
+      dep: { healingWall: 3 },
+      maxLevel: 8,
+      coords: { x: 1, y: 4 }
+    },
+    voltWall: {
+      name_en: "*Fight or Flight",
+      name_jp: "ショックガード",
+      desc: "Increases the users damage for their next attack after activating a Guard skill.",
+      stats: [],
+      dep: { fireWall: 3 },
+      maxLevel: 6,
+      coords: { x: 2, y: 4 }
+    },
+    hpUp: {
+      name_en: "*Rampart",
+      name_jp: "ＨＰブースト",
+      desc: "Attempts to nullify physical attacks directed at the user's row for one turn. Each time an attack is nullified, the chance of it triggering again on that turn is reduced.",
+      stats: [],
+      dep: { voltWall: 3 },
       maxLevel: 6,
       coords: { x: 3, y: 4 }
     },
@@ -413,62 +431,44 @@ let skills = {
       name_jp: "フリーズガード",
       desc: "Reduces one instance of elemental damage against all party members. Higher levels upgrade reduction to null, then absorb.",
       stats: [],
-      dep: { },
+      dep: { hpUp: 3 },
       maxLevel: 10,
-      coords: { x: 3, y: 5 }
-    },
-    voltWall: {
-      name_en: "*???",
-      name_jp: "ショックガード",
-      desc: "Reduces one instance of volt damage against all party members. Higher levels upgrade reduction to null, then absorb.",
-      stats: [],
-      dep: { },
-      maxLevel: 6,
-      coords: { x: 3, y: 6 }
-    },
-    hpUp: {
-      name_en: "Rampart",
-      name_jp: "ＨＰブースト",
-      desc: "Reduces one instance of any damage against one party member. Higher levels upgrade reduction to null, then absorb.",
-      stats: [],
-      dep: { fireWall: 2, iceWall: 2, voltWall: 2 },
-      maxLevel: 4,
-      coords: { x: 4, y: 5 }
+      coords: { x: 4, y: 4 }
     },
     healGuard: {
-      name_en: "Heal Guard",
+      name_en: "*Heal Guard",
       name_jp: "ヒールガード",
       desc: "Restores HP for one row, and reduces physical damage to that row for one turn.",
       stats: ["WIS"],
       dep: { keepGuard: 2 },
-      maxLevel: 8,
+      maxLevel: 6,
       coords: { x: 4, y: 1 }
     },
     lineDivide: {
-      name_en: "Line Divide",
+      name_en: "*Line Divide",
       name_jp: "ラインディバイド",
       desc: "Covers one row for one turn.",
       stats: [],
       dep: { aegis: 3 },
       maxLevel: 8,
-      coords: { x: 4, y: 2 }
+      coords: { x: 3, y: 2 }
     },
     autoguard: {
-      name_en: "Autoguard",
+      name_en: "*Autoguard",
       name_jp: "オートガード",
       desc: "When the user is attacked, there is a chance to automatically reduce the damage.",
       stats: [],
       dep: { lineDivide: 3 },
       maxLevel: 10,
-      coords: { x: 5, y: 2 }
+      coords: { x: 4, y: 2 }
     },
     shieldFlare: {
-      name_en: "Shield Flare",
+      name_en: "*Shield Flare",
       name_jp: "シールドフレア",
-      desc: "Until the end of the next turn, when the user is attacked, they will counterattack with ranged fire damage. Damage is based on the user's shield's DEF.",
+      desc: "Until the end of the next turn, when the user is attacked, they will counterattack with ranged fire damage. Ignores resistances. Damage is based on the user's shield's DEF.",
       stats: ["STR"],
       dep: { physDefUp: 3 },
-      maxLevel: 6,
+      maxLevel: 8,
       coords: { x: 4, y: 3 }
     },
     fullGuard: {
@@ -1159,9 +1159,9 @@ let skills = {
       coords: { x: 2, y: 0 }
     },
     physAtkUp: {
-      name_en: "Mirror Moon",
+      name_en: "*Mirror Moon",
       name_jp: "物理攻撃ブースト",
-      desc: "On this turn, when the user is attacked with physical damage, there is a chance they will nullify the damage and counterattack the source. Each time the user counters, the chance to counter again is reduced by 35%.",
+      desc: "On this turn, when the user is attacked with physical damage, there is a chance they will nullify the damage and counterattack the source.",
       stats: [],
       dep: { },
       maxLevel: 8,
@@ -2713,9 +2713,9 @@ let skills = {
       coords: { x: 1, y: 0 }*/
     },
     ethericGleam: {
-      name_en: "Etheric Gleam",
+      name_en: "*Etheric Gleam",
       name_jp: "エーテルの輝き",
-      desc: "For a set number of turns, increases elemental attack for one row.",
+      desc: "For a set number of turns, increases elemental attack and defense for one row.",
       stats: [],
       dep: { },
       maxLevel: 8,
@@ -4288,7 +4288,7 @@ let skills = {
     flameDrive: {
       name_en: "Flame Drive",
       name_jp: "フレイムドライブ",
-      desc: "Deals melee cut+fire damage to one target, and places the user in the overheat state for 8 turns. Cannot be used while overheated. Low action speed, and the user will take double damage until the skill activates.",
+      desc: "Deals melee cut+fire damage to one target, and places the user in the overheat state for 8 turns. Cannot be used while overheated. Low action speed, and the user will take extra damage until the skill activates.",
       stats: ["STR"],
       dep: { intercooler: 3 },
       maxLevel: 6,
@@ -4297,7 +4297,7 @@ let skills = {
     freezeDrive: {
       name_en: "Freeze Drive",
       name_jp: "フリーズドライブ",
-      desc: "Deals melee cut+ice damage to one target, and places the user in the overheat state for 8 turns. Cannot be used while overheated. Low action speed, and the user will take double damage until the skill activates.",
+      desc: "Deals melee cut+ice damage to one target, and places the user in the overheat state for 8 turns. Cannot be used while overheated. Low action speed, and the user will take extra damage until the skill activates.",
       stats: ["STR"],
       dep: { intercooler: 3 },
       maxLevel: 6,
@@ -4306,7 +4306,7 @@ let skills = {
     shockDrive: {
       name_en: "Shock Drive",
       name_jp: "ショックドライブ",
-      desc: "Deals melee cut+volt damage to one target, and places the user in the overheat state for 8 turns. Cannot be used while overheated. Low action speed, and the user will take double damage until the skill activates.",
+      desc: "Deals melee cut+volt damage to one target, and places the user in the overheat state for 8 turns. Cannot be used while overheated. Low action speed, and the user will take extra damage until the skill activates.",
       stats: ["STR"],
       dep: { intercooler: 3 },
       maxLevel: 6,
@@ -4315,7 +4315,7 @@ let skills = {
     statusDefUp: {
       name_en: "*Drive Mastery",
       name_jp: "抑制防御ブースト",
-      desc: "Decreases the chance of being inflicted with binds and ailments.",
+      desc: "Increases your damage for the rest of combat (or until you are killed) every time your Driveblade overheats.",
       stats: [],
       dep: { },
       maxLevel: 8,
@@ -4342,7 +4342,7 @@ let skills = {
     hpUp: {
       name_en: "*Wide Effect",
       name_jp: "ＨＰブースト",
-      desc: "Increases maximum HP.",
+      desc: "Single-target skills have a chance to affect neighboring enemies. The chance is rolled for each enemy individually if there are two enemies next to the target, rather than once for both.",
       stats: [],
       dep: { },
       maxLevel: 8,
@@ -4351,7 +4351,7 @@ let skills = {
     accelDrive: {
       name_en: "*Drive Recoil",
       name_jp: "アクセルドライブ",
-      desc: "Deals melee cut+almighty damage to one target, and places the user in the overheat state for 9 turns. Cannot be used while overheated. Low action speed, and the user will take double damage until the skill activates.",
+      desc: "Deals melee cut damage to one target. If the user used an elemental attack on the last turn, also adds a follow-up attack of that element. Low action speed, and the user will take extra damage until the skill activates.",
       stats: ["STR"],
       weapon: ["Drive Blade"],
       bodyParts: ["Arms"],

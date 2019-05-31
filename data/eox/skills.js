@@ -272,14 +272,50 @@ let skills = {
       maxLevel: 6,
       coords: { x: 0, y: 1 }
     },
+    keepGuard: {
+      name_en: "*Keep Guard",
+      name_jp: "キープガード",
+      desc: "Reduces physical damage to a row for one turn. Then use Front Guard next turn.",
+      stats: [],
+      dep: { frontGuard: 2 },
+      maxLevel: 6,
+      coords: { x: 1, y: 1 }
+    },
+    recoveryGuard: {
+      name_en: "*Recovery Guard",
+      name_jp: "リカバリーガード",
+      desc: "Removes binds from one row, and reduces physical damage to that row for one turn.",
+      stats: [],
+      dep: { keepGuard: 1 },
+      maxLevel: 6,
+      coords: { x: 2, y: 1 }
+    },
     backGuard: {
       name_en: "*Counter Guard",
       name_jp: "バッグガード",
       desc: "Reduces physical damage to a row for one turn. If Counter Guard is activated by enemy damage, the user will use their shield to counterattack the source of the damage.",
       stats: [],
-      dep: { frontGuard: 2 },
+      dep: { recoveryGuard: 2 },
       maxLevel: 6,
-      coords: { x: 1, y: 1 }
+      coords: { x: 3, y: 1 }
+    },
+    healGuard: {
+      name_en: "*Heal Guard",
+      name_jp: "ヒールガード",
+      desc: "Restores HP for one row, and reduces physical damage to that row for one turn.",
+      stats: ["WIS"],
+      dep: { backGuard: 2 },
+      maxLevel: 6,
+      coords: { x: 4, y: 1 }
+    },
+    fullGuard: {
+      name_en: "*Sentinel Guard",
+      name_jp: "フルガード",
+      desc: "Reduces all damage to all party members and sets their defensive values to the user's for one turn. Disables guard skills for one turn after use.",
+      stats: [],
+      dep: { healGuard: 2 },
+      maxLevel: 10,
+      coords: { x: 5, y: 1 }
     },
     cellDivide: {
       name_en: "*Cell Divide",
@@ -345,15 +381,6 @@ let skills = {
       maxLevel: 1,
       coords: { x: 0, y: 6 }
     },
-    recoveryGuard: {
-      name_en: "*Recovery Guard",
-      name_jp: "リカバリーガード",
-      desc: "Removes binds from one row, and reduces physical damage to that row for one turn.",
-      stats: [],
-      dep: { backGuard: 1 },
-      maxLevel: 6,
-      coords: { x: 2, y: 1 }
-    },
     aegis: {
       name_en: "Aegis",
       name_jp: "決死の覚悟",
@@ -372,19 +399,10 @@ let skills = {
       maxLevel: 8,
       coords: { x: 1, y: 3 }
     },
-    keepGuard: {
-      name_en: "*Keep Guard",
-      name_jp: "キープガード",
-      desc: "Reduces physical damage to a row for one turn. Then use Front Guard next turn.",
-      stats: [],
-      dep: { recoveryGuard: 2 },
-      maxLevel: 6,
-      coords: { x: 3, y: 1 }
-    },
     physDefUp: {
       name_en: "Shield Siphon",
       name_jp: "物理防御ブースト",
-      desc: "Deals melee bash damage to one target. Deals more damage when low health and drains HP. Damage is based on the user's shield's DEF.",
+      desc: "Deals melee bash damage to one target. Doubles damage when lower health than your target and drains HP. Damage is based on the user's shield's DEF.",
       stats: ["STR"],
       dep: { elemDefUp: 3 },
       maxLevel: 6,
@@ -435,15 +453,6 @@ let skills = {
       maxLevel: 10,
       coords: { x: 4, y: 4 }
     },
-    healGuard: {
-      name_en: "*Heal Guard",
-      name_jp: "ヒールガード",
-      desc: "Restores HP for one row, and reduces physical damage to that row for one turn.",
-      stats: ["WIS"],
-      dep: { keepGuard: 2 },
-      maxLevel: 6,
-      coords: { x: 4, y: 1 }
-    },
     lineDivide: {
       name_en: "*Line Divide",
       name_jp: "ラインディバイド",
@@ -470,15 +479,6 @@ let skills = {
       dep: { physDefUp: 3 },
       maxLevel: 8,
       coords: { x: 4, y: 3 }
-    },
-    fullGuard: {
-      name_en: "*Sentinel Guard",
-      name_jp: "フルガード",
-      desc: "Reduces all damage to all party members and sets their defensive values to the user's for one turn. Disables guard skills for one turn after use.",
-      stats: [],
-      dep: { healGuard: 2 },
-      maxLevel: 10,
-      coords: { x: 5, y: 1 }
     }
   },
   Medic: {

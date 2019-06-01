@@ -432,7 +432,7 @@ let skills = {
       desc: "Increases the users damage for their next attack after activating a Guard skill.",
       stats: [],
       dep: { fireWall: 3 },
-      maxLevel: 6,
+      maxLevel: 8,
       coords: { x: 2, y: 4 }
     },
     hpUp: {
@@ -1688,9 +1688,9 @@ let skills = {
       coords: { x: 4, y: 5 }
     },
     plague: {
-      name_en: "*???",
+      name_en: "*Curse Cut",
       name_jp: "発疫",
-      desc: "User's normal attack attempts to inflict poison, paralyze, blind, sleep and curse.",
+      desc: "Deals melee cut+almighty damage to one target and attempt to inflict curse. If sucessful, or if the target is already cursed, ???.",
       stats: ["LUC"],
       dep: { spiritDrain: 3 },
       maxLevel: 4,
@@ -2489,12 +2489,12 @@ let skills = {
       coords: { x: 1, y: 2 }
     },
     acrobatics: {
-      name_en: "Acrobatics",
+      name_en: "*Acrobatics",
       name_jp: "軽業",
       desc: "When the user evades an attack, their TP is restored.",
       stats: [],
       dep: { },
-      maxLevel: 6,
+      maxLevel: 8,
       coords: { x: 0, y: 4 }
     },
     concealment: {
@@ -2634,12 +2634,12 @@ let skills = {
       coords: { x: 2, y: 4 }
     },
     ninpoFlight: {
-      name_en: "Ninpo: Flight",
+      name_en: "*Ninpo: Flight",
       name_jp: "忍法　猿飛",
       desc: "This turn, the users target has a high chance of evading physical attacks. Each time they evade an attack, the evasion boost is reduced.",
       stats: [],
       dep: { ninpoSmoke: 3 },
-      maxLevel: 8,
+      maxLevel: 6,
       coords: { x: 3, y: 4 }
     },
     smokePowder: {
@@ -3713,9 +3713,9 @@ let skills = {
       coords: { x: 1, y: 3 }
     },
     iceKnife: {
-      name_en: "Ice Knife",
+      name_en: "*Ice Knife",
       name_jp: "アイスブラッシュ",
-      desc: "Deals cut+ice damage to one target.",
+      desc: "Deals ranged cut+ice damage to one target.",
       stats: ["STR"],
       dep: { },
       maxLevel: 8,
@@ -3938,7 +3938,7 @@ let skills = {
     chainCircle: {
       name_en: "*Chain Circle",
       name_jp: "腕封の方陣",
-      desc: "Activates a circle that attempts to inflict arm bind on one enemy on cast and all enemies at the end of each turn for 3 turns. Existing circle will be overwritten, and the circle is removed if the user dies.",
+      desc: "Attempts to inflict arm bind on one enemy. Then, activates a circle that attempts to inflict arm bind on all enemies at the end of each turn for 3 turns. Existing circle will be overwritten, and the circle is removed if the user dies.",
       stats: ["LUC"],
       dep: { },
       maxLevel: 8,
@@ -3947,7 +3947,7 @@ let skills = {
     snareCircle: {
       name_en: "*Snare Circle",
       name_jp: "脚封の方陣",
-      desc: "Activates a circle that attempts to inflict leg bind on one enemy on cast and all enemies at the end of each turn for 3 turns. Existing circle will be overwritten, and the circle is removed if the user dies.",
+      desc: "Attempts to inflict leg bind on one enemy. Then, activates a circle that attempts to inflict leg bind on all enemies at the end of each turn for 3 turns. Existing circle will be overwritten, and the circle is removed if the user dies.",
       stats: ["LUC"],
       dep: { chainCircle: 2 },
       maxLevel: 8,
@@ -3956,16 +3956,16 @@ let skills = {
     nerveCircle: {
       name_en: "*Nerve Circle",
       name_jp: "麻痺の方陣",
-      desc: "Activates a circle that attempts to inflict paralysis on one enemy on cast and all enemies at the end of each turn for 3 turns. Existing circle will be overwritten, and the circle is removed if the user dies.",
+      desc: "Attempts to inflict paralysis on one enemy. Then, activates a circle that attempts to inflict paralysis on all enemies at the end of each turn for 3 turns. Existing circle will be overwritten, and the circle is removed if the user dies.",
       stats: ["LUC"],
       dep: { },
       maxLevel: 8,
       coords: { x: 0, y: 3 }
     },
     curseCircle: {
-      name_en: "*Curse Circle",
+      name_en: "*Blind Circle",
       name_jp: "呪いの方陣",
-      desc: "Activates a circle that attempts to inflict curse on one enemy on cast and all enemies at the end of each turn for 3 turns. Existing circle will be overwritten, and the circle is removed if the user dies.",
+      desc: "Attempts to inflict blind on one enemy. Then, activates a circle that attempts to inflict blind on all enemies at the end of each turn for 3 turns. Existing circle will be overwritten, and the circle is removed if the user dies.",
       stats: ["LUC"],
       dep: { nerveCircle: 2 },
       maxLevel: 8,
@@ -4020,7 +4020,7 @@ let skills = {
     hoodCircle: {
       name_en: "*Hood Circle",
       name_jp: "頭封の方陣",
-      desc: "Activates a circle that attempts to inflict head bind on one enemy on cast and all enemies at the end of each turn for 3 turns. Existing circle will be overwritten, and the circle is removed if the user dies.",
+      desc: "Attempts to inflict head bind on one enemy. Then, activates a circle that attempts to inflict head bind on all enemies at the end of each turn for 3 turns. Existing circle will be overwritten, and the circle is removed if the user dies.",
       stats: ["LUC"],
       dep: { snareCircle: 2 },
       maxLevel: 8,
@@ -4029,7 +4029,7 @@ let skills = {
     sleepCircle: {
       name_en: "*Sleep Circle",
       name_jp: "催眠の方陣",
-      desc: "Activates a circle that attempts to inflict sleep on one enemy on cast and all enemies at the end of each turn for 3 turns. Existing circle will be overwritten, and the circle is removed if the user dies.",
+      desc: "Attempts to inflict sleep on one enemy. Then, activates a circle that attempts to inflict sleep on all enemies at the end of each turn for 3 turns. Existing circle will be overwritten, and the circle is removed if the user dies.",
       stats: ["LUC"],
       dep: { curseCircle: 2 },
       maxLevel: 8,
@@ -4065,7 +4065,7 @@ let skills = {
     tameGround: {
       name_en: "*Nova Circle",
       name_jp: "地脈操作",
-      desc: "Activates a circle that deals damage to one enemy on cast and all enemies at the end of each turn for 3 turns. Existing circle will be overwritten, and the circle is removed if the user dies.",
+      desc: "Deal ranged damage to one target. Then, activates a circle that deals damage to all enemies at the end of each turn for 3 turns. Existing circle will be overwritten, and the circle is removed if the user dies.",
       stats: [],
       dep: { },
       maxLevel: 6,
@@ -4101,7 +4101,7 @@ let skills = {
     poisonCircle: {
       name_en: "*Poison Circle",
       name_jp: "毒の方陣",
-      desc: "Activates a circle that attempts to inflict poison on one enemy on cast and all enemies at the end of each turn for 3 turns. Existing circle will be overwritten, and the circle is removed if the user dies.",
+      desc: "Attempts to inflict poison on one enemy. Then, activates a circle that attempts to inflict poison on all enemies at the end of each turn for 3 turns. Existing circle will be overwritten, and the circle is removed if the user dies.",
       stats: ["LUC"],
       dep: { sleepCircle: 2 },
       maxLevel: 8,
@@ -4110,7 +4110,7 @@ let skills = {
     chaosCircle: {
       name_en: "*Chaos Circle",
       name_jp: "幻惑の方陣",
-      desc: "Activates a circle that attempts to inflict panic on one enemy on cast and all enemies at the end of each turn for 3 turns. Existing circle will be overwritten, and the circle is removed if the user dies.",
+      desc: "Attempts to inflict panic on one enemy. Then, activates a circle that attempts to inflict panic on all enemies at the end of each turn for 3 turns. Existing circle will be overwritten, and the circle is removed if the user dies.",
       stats: ["LUC"],
       dep: { sleepCircle: 2 },
       maxLevel: 8,

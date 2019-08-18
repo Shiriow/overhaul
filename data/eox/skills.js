@@ -4895,7 +4895,7 @@ let skills = {
     fortify: {
       name_en: "Ice Vein",
       name_jp: "渾身ディフェンス",
-      desc: "Ice AoE+Leg bind.",
+      desc: "Ice AoE + Leg bind.",
       stats: [],
       dep: { cellDivide: 2 },
       maxLevel: 8,
@@ -4992,9 +4992,9 @@ let skills = {
       coords: { x: 0, y: 3 }
     },
     fireWall: {
-      name_en: "Crimson Cleanse",
+      name_en: "Phlebotomy",
       name_jp: "ファイアガード",
-      desc: "Sacrifices allies health to dispel their Ailments and Binds.",
+      desc: "Sacrifices allies health to dispel their Ailments and Binds. Crimson Cleanse",
       stats: [],
       dep: { healingWall: 3 },
       maxLevel: 8,

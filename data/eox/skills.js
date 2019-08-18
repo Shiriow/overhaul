@@ -4859,5 +4859,246 @@ let skills = {
       maxLevel: 4,
       coords: { x: 5, y: 5 }
     }
+  },
+  Vampire: {
+    shieldProtect: {
+      name_en: "Immortal Flesh",
+      name_jp: "大盾の守護",
+      desc: "For 3 turns, increases damage reduction from shield skills and increases aggro chance.",
+      stats: [],
+      unique: true,
+      type: "Boost",
+      dep: { },
+      maxLevel: 0,
+      coords: { x: 0, y: 0 }
+    },
+    perfectDefense: {
+      name_en: "Death March",
+      name_jp: "完全防御",
+      desc: "This turn, completely negates all damaging attacks against the party.",
+      stats: [],
+      unique: true,
+      type: "Break",
+      dep: { shieldProtect: 0 },
+      maxLevel: 0,
+      coords: { x: 1, y: 0 }
+    },
+    cellDivide: {
+      name_en: "Bite",
+      name_jp: "セルディバイド",
+      desc: "Atk + Drain + Overheal.",
+      stats: [],
+      dep: { },
+      maxLevel: 6,
+      coords: { x: 0, y: 1 }
+    },
+    fortify: {
+      name_en: "Ice Vein",
+      name_jp: "渾身ディフェンス",
+      desc: "Ice AoE+Leg bind.",
+      stats: [],
+      dep: { cellDivide: 2 },
+      maxLevel: 8,
+      coords: { x: 1, y: 1 }
+    },
+    aegis: {
+      name_en: "Life Siphon",
+      name_jp: "決死の覚悟",
+      desc: "Life Drain.",
+      stats: [],
+      dep: { fortify: 1 },
+      maxLevel: 8,
+      coords: { x: 2, y: 1 }
+    },
+    lineDivide: {
+      name_en: "Metamorphosis",
+      name_jp: "オートガード",
+      desc: "Hides the user from the battle for the current turn. At the end of the turn, they will reenter battle and deal STR based melee cut damage to one enemy. Temporal Miasma. Mist Form",
+      stats: [],
+      dep: { aegis: 3 },
+      maxLevel: 8,
+      coords: { x: 3, y: 1 }
+    },
+    autoguard: {
+      name_en: "Bloody Catastrophe",
+      name_jp: "ラインディバイド",
+      desc: "Lowers all damage to the user for this turn. At the end of the turn, deals melee Cut damage to all enemies. Every time the user is damaged between the cast time and the attack, the damage is multiplied by 1.25x. The damage is capped at 3x the base damage.",
+      stats: [],
+      dep: { lineDivide: 3, backGuard:3 },
+      maxLevel: 10,
+      coords: { x: 4, y: 1.5 }
+    },
+    frontGuard: {
+      name_en: "Bare Fangs",
+      name_jp: "フロントガード",
+      desc: "Aggro + Counter + HPDrain.",
+      stats: [],
+      dep: { },
+      maxLevel: 6,
+      coords: { x: 0, y: 2 }
+    },
+    keepGuard: {
+      name_en: "Bloodbath",
+      name_jp: "キープガード",
+      desc: "Aggro + Counter + Lineheal.",
+      stats: [],
+      dep: { frontGuard: 2 },
+      maxLevel: 6,
+      coords: { x: 1, y: 2 }
+    },
+    recoveryGuard: {
+      name_en: "Blood Pact",
+      name_jp: "リカバリーガード",
+      desc: "Places a buff on the user that lowers all damage done to them, in addition to making them take damage in place of party members below 50% HP for a set amount of turns, and for a certain amount of times per turn. Every time the user takes damage for another party member, the chance of them taking damage again on that turn is reduced. Protection Vow.",
+      stats: [],
+      dep: { keepGuard: 1 },
+      maxLevel: 10,
+      coords: { x: 2, y: 2 }
+    },
+    backGuard: {
+      name_en: "Crimson Oath",
+      name_jp: "バッグガード",
+      desc: "Covers an ally while healing them.",
+      stats: [],
+      dep: { recoveryGuard: 2 },
+      maxLevel: 6,
+      coords: { x: 3, y: 2 }
+    },
+    healGuard: {
+      name_en: "Rise from the Dead",
+      name_jp: "ヒールガード",
+      desc: "At the end of the turn, the user has a chance of automatically reviving.",
+      stats: ["WIS"],
+      dep: { backGuard: 2, hpUp:3 },
+      maxLevel: 6,
+      coords: { x: 4, y: 2.5 }
+    },
+    fullGuard: {
+      name_en: "Regeneration",
+      name_jp: "フルガード",
+      desc: "Chance to heal after losing health. Judgment",
+      stats: [],
+      dep: { healGuard: 2 },
+      maxLevel: 10,
+      coords: { x: 5, y: 2 }
+    },
+    healingWall: {
+      name_en: "Blood Transfer",
+      name_jp: "ヒールウォール",
+      desc: "Sacrifice users health to heal a line.",
+      stats: [],
+      dep: { },
+      maxLevel: 8,
+      coords: { x: 0, y: 3 }
+    },
+    fireWall: {
+      name_en: "Crimson Cleanse",
+      name_jp: "ファイアガード",
+      desc: "Sacrifices allies health to dispel their Ailments and Binds.",
+      stats: [],
+      dep: { healingWall: 3 },
+      maxLevel: 8,
+      coords: { x: 1, y: 3 }
+    },
+    voltWall: {
+      name_en: "Rebirth Ritual",
+      name_jp: "ショックガード",
+      desc: "Sacrifices the partys health to revive an ally. Under the Zenith",
+      stats: [],
+      dep: { fireWall: 3 },
+      maxLevel: 8,
+      coords: { x: 2, y: 3 }
+    },
+    hpUp: {
+      name_en: "Blood Gather",
+      name_jp: "ＨＰブースト",
+      desc: "Prayer.",
+      stats: [],
+      dep: { voltWall: 3 },
+      maxLevel: 6,
+      coords: { x: 3, y: 3 }
+    },
+    iceWall: {
+      name_en: "Brief Immortality",
+      name_jp: "フリーズガード",
+      desc: "Consumes the users and targets health to make that ally survive fatal damage for that turn.",
+      stats: [],
+      dep: { healGuard:3 },
+      maxLevel: 10,
+      coords: { x: 5, y: 3 }
+    },
+    shieldSmite: {
+      name_en: "Vampiric Spirit",
+      name_jp: "シールドスマイト",
+      desc: "Buff: Holy Crown + MaxHP.",
+      stats: ["STR", "LUC"],
+      dep: { },
+      maxLevel: 6,
+      coords: { x: 0, y: 4 }
+    },
+    shieldRush: {
+      name_en: "Sanguine Tide",
+      name_jp: "シールドラッシュ",
+      desc: "AoE Regen Buff + ??? Debuff on user. Blood Offering.",
+      stats: ["STR"],
+      dep: { shieldSmite: 3 },
+      maxLevel: 8,
+      coords: { x: 1, y: 4 }
+    },
+    elemDefUp: {
+      name_en: "Scarlet Boon",
+      name_jp: "属性防御ブースト",
+      desc: "Echoing Rondo on self line.",
+      stats: ["STR"],
+      dep: { shieldRush: 3 },
+      maxLevel: 8,
+      coords: { x: 2, y: 4 }
+    },
+    physDefUp: {
+      name_en: "Feast",
+      name_jp: "物理防御ブースト",
+      desc: "Regen to user, AtkUp + HPRecoil to target, Blood Surge/Frenzy.",
+      stats: ["STR"],
+      dep: { elemDefUp: 3 },
+      maxLevel: 6,
+      coords: { x: 3, y: 4 }
+    },
+    shieldFlare: {
+      name_en: "Vampiric Grace",
+      name_jp: "シールドフレア",
+      desc: "Gives a chance for the user to survive fatal damage at 1 HP if they have a buff on, in exchange for losing their oldest applied buff. Soul Grace.",
+      stats: ["STR"],
+      dep: { physDefUp: 3, preProvoke:3 },
+      maxLevel: 8,
+      coords: { x: 4, y: 4.5 }
+    },
+    provoke: {
+      name_en: "Vitality Drain",
+      name_jp: "挑発",
+      desc: "Def Buff + Def Debuff.",
+      stats: [],
+      dep: { },
+      maxLevel: 8,
+      coords: { x: 1, y: 5 }
+    },
+    preProvoke: {
+      name_en: "Vigor Drain",
+      name_jp: "先制挑発",
+      desc: "Atk Buff + Atk Debuff.",
+      stats: [],
+      dep: { provoke: 2 },
+      maxLevel: 6,
+      coords: { x: 2, y: 5 }
+    },
+    chop: {
+      name_en: "Chop",
+      name_jp: "伐採",
+      desc: "Occasionally gains more items when using Chop points.",
+      stats: [],
+      unique: true,
+      dep: { },
+      maxLevel: 1,
+      coords: { x: 0, y: 6 }
+    }
   }
 };

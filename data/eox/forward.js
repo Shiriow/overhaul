@@ -560,5 +560,33 @@ let forward = {
     miasmaWall: { residualMiasma: 2 },
     soulFixation: { },
     residualMiasma: { }
+  },
+  Vampire: {
+    shieldProtect: { perfectDefense: 0 },
+    perfectDefense: { },
+    frontGuard: { keepGuard: 2 },
+    keepGuard: { recoveryGuard: 1 },
+    cellDivide: { fortify: 2 },
+    fortify: { aegis: 1 },
+    shieldSmite: { shieldRush: 3 },
+    provoke: { preProvoke: 2 },
+    preProvoke: { shieldFlare:3 },
+    healingWall: { fireWall: 3 },
+    chop: { },
+    recoveryGuard: { backGuard: 2 },
+    aegis: { lineDivide: 3 },
+    shieldRush: { elemDefUp: 3 },
+    backGuard: { healGuard: 2, autoguard:3 },
+    physDefUp: { shieldFlare: 3 },
+    elemDefUp: { physDefUp: 3 },
+    fireWall: { voltWall: 3 },
+    voltWall: { hpUp: 3 },
+    hpUp: { healGuard:3 },
+    iceWall: { },
+    healGuard: { fullGuard: 2, iceWall:3, },
+    lineDivide: { autoguard: 3 },
+    autoguard: { },
+    shieldFlare: { },
+    fullGuard: { }
   }
 };

@@ -5012,7 +5012,7 @@ let skills = {
     feast: {
       name_en: "Feast",
       name_jp: "物理防御ブースト",
-      desc: "Grants a buff to the target that increases their damage and lose HP whenever they act. Also grants the user a buff that restores HP at the end of their turn. Blood Surge/Frenzy.",
+      desc: "Grants a buff to the target that increases their damage and makes them lose HP whenever they act. Also grants the user a buff that restores HP at the end of their turn. Blood Surge/Frenzy.",
       stats: ["STR"],
       dep: { scarletBoon: 3 },
       maxLevel: 6,
@@ -5021,7 +5021,7 @@ let skills = {
     vitalityDrain: {
       name_en: "Vitality Drain",
       name_jp: "挑発",
-      desc: "Inflicts a Defense debuff on the target and grants the user a Defense buff.",
+      desc: "For a set number of turns, decreases an enemy's defense and increases the user's defense.",
       stats: [],
       dep: { },
       maxLevel: 8,
@@ -5030,7 +5030,7 @@ let skills = {
     vigorDrain: {
       name_en: "Vigor Drain",
       name_jp: "先制挑発",
-      desc: "Inflicts a Attack debuff on the target and grants the user a Attack buff.",
+      desc: "For a set number of turns, decreases an enemy's attack and increases the user's attack.",
       stats: [],
       dep: { vitalityDrain: 3 },
       maxLevel: 6,

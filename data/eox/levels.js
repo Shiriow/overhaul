@@ -2546,7 +2546,7 @@ let levels = {
     },
     bareFangs: {
     },
-    bloodbath: {
+    crimsonShower: {
     },
     bloodPact: {
     },
@@ -2554,13 +2554,13 @@ let levels = {
     },
     bloodyCatastrophe: {
     },
-    bloodTransfer: {
+    transfusion: {
     },
     phlebotomy: {
     },
     rebirthRitual: {
     },
-    bloodGather: {
+    unscathedBody: {
       "Static Restore": ["1", "2", "3", "4"],
       "Percent Restore": ["1%", "1%", "1%", "2%"]
     },
@@ -2568,7 +2568,7 @@ let levels = {
       Chance: ["9%", "11%", "13%", "15%", "17%", "19%", "21%", "24%", "28%", "33%"],
       "Revive Restore": ["1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1"]
     },
-    regeneration: {
+    underTheZenith: {
     },
     briefImmortality: {
     },
@@ -2576,7 +2576,11 @@ let levels = {
     },
     sanguineTide: {
     },
-    scarletBoon: {
+    umbralVeil: {
+      TP: ["3", "3", "3", "3", "3", "5"],
+      Speed: ["300%", "300%", "300%", "300%", "300%", "300%"],
+      Aggro: ["-60%", "-65%", "-70%", "-75%", "-80%", "-95%"],
+      Duration: ["3", "3", "3", "4", "4", "5"]
     },
     feast: {
     },

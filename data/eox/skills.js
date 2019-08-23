@@ -4913,14 +4913,14 @@ let skills = {
     bareFangs: {
       name_en: "Bare Fangs",
       name_jp: "フロントガード",
-      desc: "This turn, whenever the user is attacked, counterattack with melee damage and restore their HP based on damage dealt. Also increases the users aggro for that turn.",
+      desc: "This turn, whenever the user is attacked, counterattack with melee damage and restore their HP. Also increases the users aggro for that turn.",
       stats: [],
       dep: { },
       maxLevel: 6,
       coords: { x: 0, y: 2 }
     },
-    bloodbath: {
-      name_en: "Bloodbath",
+    crimsonShower: {
+      name_en: "Crimson Shower",
       name_jp: "キープガード",
       desc: "This turn, whenever the user is attacked, automatically restore their lines HP. Also increases the users aggro for that turn.",
       stats: [],
@@ -4933,7 +4933,7 @@ let skills = {
       name_jp: "リカバリーガード",
       desc: "Places a buff on the user that lowers all damage done to them, in addition to making them take damage in place of party members below 50% HP for a set amount of turns, and for a certain amount of times per turn. Every time the user takes damage for another party member, the chance of them taking damage again on that turn is reduced.",
       stats: [],
-      dep: { bloodbath: 3 },
+      dep: { crimsonShower: 3 },
       maxLevel: 10,
       coords: { x: 2, y: 2 }
     },
@@ -4946,8 +4946,8 @@ let skills = {
       maxLevel: 6,
       coords: { x: 3, y: 2.5 }
     },
-    bloodTransfer: {
-      name_en: "Blood Transfer",
+    transfusion: {
+      name_en: "Transfusion",
       name_jp: "ヒールウォール",
       desc: "Consumes the users HP to heal a line.",
       stats: [],
@@ -4958,9 +4958,9 @@ let skills = {
     phlebotomy: {
       name_en: "Phlebotomy",
       name_jp: "ファイアガード",
-      desc: "Consumes all party members HP to dispel a line of allies Ailments and Binds.",
+      desc: "Consumes users HP to dispel a line of allies Ailments and Binds.",
       stats: [],
-      dep: { bloodTransfer: 3 },
+      dep: { transfusion: 3 },
       maxLevel: 8,
       coords: { x: 1, y: 3 }
     },
@@ -4973,7 +4973,7 @@ let skills = {
       maxLevel: 8,
       coords: { x: 2, y: 3 }
     },
-    bloodGather: {
+    unscathedBody: {
       name_en: "Unscathed Body",
       name_jp: "ＨＰブースト",
       desc: "If the user is in the front row and at full HP, their TP is restored at the end of the turn.",
@@ -4985,7 +4985,7 @@ let skills = {
     vampiricSpirit: {
       name_en: "Vampiric Spirit",
       name_jp: "シールドスマイト",
-      desc: "Grants the user a buff that increases their maximum HP and health recovered.",
+      desc: "Heals the user at the end of the turn, while also granting them a buff that increases their maximum HP.",
       stats: ["STR", "LUC"],
       dep: { },
       maxLevel: 6,
@@ -5000,7 +5000,7 @@ let skills = {
       maxLevel: 8,
       coords: { x: 1, y: 4 }
     },
-    scarletBoon: {
+    umbralVeil: {
       name_en: "Umbral Veil",
       name_jp: "属性防御ブースト",
       desc: "Places a buff on the allies of the users line that reduces their chance of being targetted.",
@@ -5012,9 +5012,9 @@ let skills = {
     feast: {
       name_en: "Feast",
       name_jp: "物理防御ブースト",
-      desc: "Grants a buff to the target that increases their damage and makes them lose HP whenever they act. Also grants the user a buff that restores HP at the end of their turn.",
+      desc: "For a set number of turns, one ally ally will have increased attack, but lose HP every time they act. Also grants the user a buff that restores HP at the end of their turn.",
       stats: ["STR"],
-      dep: { scarletBoon: 3 },
+      dep: { umbralVeil: 3 },
       maxLevel: 6,
       coords: { x: 3, y: 4 }
     },
@@ -5063,10 +5063,10 @@ let skills = {
       maxLevel: 6,
       coords: { x: 4, y: 2.5 }
     },
-    regeneration: {
+    underTheZenith: {
       name_en: "Under the Zenith",
       name_jp: "フルガード",
-      desc: "Gives the user a chance to recover their HP after losing health.",
+      desc: "Gives a chance to heal the user at the end of the turn if their HP is below a certain threshold.",
       stats: [],
       dep: { riseFromTheDead: 3 },
       maxLevel: 10,
@@ -5075,7 +5075,7 @@ let skills = {
     briefImmortality: {
       name_en: "Brief Immortality",
       name_jp: "フリーズガード",
-      desc: "Consumes the users and targets health to make the ally survive fatal damage once for that turn.",
+      desc: "Consumes the users HP to make the ally survive fatal damage once for this turn.",
       stats: [],
       dep: { riseFromTheDead:3 },
       maxLevel: 10,

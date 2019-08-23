@@ -4904,7 +4904,7 @@ let skills = {
     lifeSiphon: {
       name_en: "Life Siphon",
       name_jp: "決死の覚悟",
-      desc: "Deals ranged Almighty damage to all enemies. Heals the party for 25% of the damage dealt.",
+      desc: "Deals ranged Almighty damage to all enemies. Heals the user for 25% of the damage dealt.",
       stats: [],
       dep: { iceVein: 3 },
       maxLevel: 8,
@@ -4931,7 +4931,7 @@ let skills = {
     bloodPact: {
       name_en: "Blood Pact",
       name_jp: "リカバリーガード",
-      desc: "Places a buff on the user that lowers all damage done to them, in addition to making them take damage in place of party members below 50% HP for a set amount of turns, and for a certain amount of times per turn. Every time the user takes damage for another party member, the chance of them taking damage again on that turn is reduced. Protection Vow.",
+      desc: "Places a buff on the user that lowers all damage done to them, in addition to making them take damage in place of party members below 50% HP for a set amount of turns, and for a certain amount of times per turn. Every time the user takes damage for another party member, the chance of them taking damage again on that turn is reduced.",
       stats: [],
       dep: { bloodbath: 3 },
       maxLevel: 10,
@@ -4942,9 +4942,9 @@ let skills = {
       name_jp: "バッグガード",
       desc: "Covers one ally and heals them.",
       stats: [],
-      dep: { bloodPact: 3 },
+      dep: { bloodPact: 3, rebirthRitual:3 },
       maxLevel: 6,
-      coords: { x: 3, y: 2 }
+      coords: { x: 3, y: 2.5 }
     },
     bloodTransfer: {
       name_en: "Blood Transfer",
@@ -4958,7 +4958,7 @@ let skills = {
     phlebotomy: {
       name_en: "Phlebotomy",
       name_jp: "ファイアガード",
-      desc: "Consumes all party members HP to dispel a line of allies Ailments and Binds. Crimson Cleanse",
+      desc: "Consumes all party members HP to dispel a line of allies Ailments and Binds.",
       stats: [],
       dep: { bloodTransfer: 3 },
       maxLevel: 8,
@@ -4967,20 +4967,20 @@ let skills = {
     rebirthRitual: {
       name_en: "Rebirth Ritual",
       name_jp: "ショックガード",
-      desc: "Consumes the partys HP to revive an ally with overhealed health. Under the Zenith",
+      desc: "Consumes the partys HP to revive an ally with overhealed health.",
       stats: [],
       dep: { phlebotomy: 3 },
       maxLevel: 8,
       coords: { x: 2, y: 3 }
     },
     bloodGather: {
-      name_en: "???",
+      name_en: "Unscathed Body",
       name_jp: "ＨＰブースト",
       desc: "If the user is in the front row and at full HP, their TP is restored at the end of the turn.",
       stats: [],
-      dep: { rebirthRitual: 3 },
+      dep: { crimsonOath: 3 },
       maxLevel: 6,
-      coords: { x: 3, y: 3 }
+      coords: { x: 4, y: 3.5 }
     },
     vampiricSpirit: {
       name_en: "Vampiric Spirit",
@@ -4994,16 +4994,16 @@ let skills = {
     sanguineTide: {
       name_en: "Sanguine Tide",
       name_jp: "シールドラッシュ",
-      desc: "Grants the user a buff that has a chance to nullify Ailments, Binds and Debuffs for a set number of turns and lose HP whenever they act. Also grants a buff to the rest of the party that restores HP at the end of their turn. Blood Offering.",
+      desc: "Grants the user a buff that has a chance to nullify Ailments, Binds and Debuffs for a set number of turns and lose HP whenever they act. Also grants a buff to the rest of the party that restores HP at the end of their turn.",
       stats: ["STR"],
       dep: { vampiricSpirit: 3 },
       maxLevel: 8,
       coords: { x: 1, y: 4 }
     },
     scarletBoon: {
-      name_en: "Scarlet Boon",
+      name_en: "Umbral Veil",
       name_jp: "属性防御ブースト",
-      desc: "Places a buff on the users line that heals them whenever another party member is healed. Echoing Rondo",
+      desc: "Places a buff on the allies of the users line that reduces their chance of being targetted.",
       stats: ["STR"],
       dep: { sanguineTide: 3 },
       maxLevel: 8,
@@ -5012,7 +5012,7 @@ let skills = {
     feast: {
       name_en: "Feast",
       name_jp: "物理防御ブースト",
-      desc: "Grants a buff to the target that increases their damage and makes them lose HP whenever they act. Also grants the user a buff that restores HP at the end of their turn. Blood Surge/Frenzy.",
+      desc: "Grants a buff to the target that increases their damage and makes them lose HP whenever they act. Also grants the user a buff that restores HP at the end of their turn.",
       stats: ["STR"],
       dep: { scarletBoon: 3 },
       maxLevel: 6,
@@ -5039,7 +5039,7 @@ let skills = {
     metamorphosis: {
       name_en: "Metamorphosis",
       name_jp: "オートガード",
-      desc: "Hides the user from the battle for the current turn. At the end of the turn, they will reenter battle and deal STR based melee cut damage to one enemy. Temporal Miasma. Mist Form",
+      desc: "Hides the user from the battle for the current turn. At the end of the turn, they will reenter battle and deal STR based melee cut damage to one enemy.",
       stats: [],
       dep: { lifeSiphon: 3 },
       maxLevel: 8,
@@ -5059,14 +5059,14 @@ let skills = {
       name_jp: "ヒールガード",
       desc: "At the end of the turn, the user has a chance of automatically reviving.",
       stats: ["WIS"],
-      dep: { crimsonOath: 3, bloodGather:3 },
+      dep: { crimsonOath: 3 },
       maxLevel: 6,
       coords: { x: 4, y: 2.5 }
     },
     regeneration: {
-      name_en: "Regeneration",
+      name_en: "Under the Zenith",
       name_jp: "フルガード",
-      desc: "Gives the user a chance to recover their HP after losing health. Judgment",
+      desc: "Gives the user a chance to recover their HP after losing health.",
       stats: [],
       dep: { riseFromTheDead: 3 },
       maxLevel: 10,
@@ -5084,7 +5084,7 @@ let skills = {
     vampiricGrace: {
       name_en: "Vampiric Grace",
       name_jp: "シールドフレア",
-      desc: "Gives a chance for the user to survive fatal damage at 1 HP if they have a buff on, in exchange for losing their oldest applied buff. Soul Grace.",
+      desc: "Gives a chance for the user to survive fatal damage at 1 HP if they have a buff on, in exchange for losing their oldest applied buff.",
       stats: ["STR"],
       dep: { feast: 3, vigorDrain:3 },
       maxLevel: 8,

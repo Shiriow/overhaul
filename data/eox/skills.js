@@ -1222,249 +1222,6 @@ let skills = {
       coords: { x: 5, y: 0 }
     }
 },
-/*
-  Ronin: {
-    peerless: {
-      name_en: "Peerless",
-      name_jp: "無双",
-      desc: "For 3 turns, stance duration will not decrease, and stances cannot be removed. In addition, the user gains the effect of all stances.",
-      stats: [],
-      unique: true,
-      type: "Boost",
-      dep: { },
-      maxLevel: 0,
-      coords: { x: 0, y: 0 }
-    },
-    issen: {
-      name_en: "Issen",
-      name_jp: "一閃",
-      desc: "Deals ranged cut damage to all enemies. Attempts to inflict instant death. Chance of instant death is increased against targets at low HP.",
-      stats: ["STR", "LUC"],
-      unique: true,
-      type: "Break",
-      dep: { peerless: 0 },
-      maxLevel: 0,
-      coords: { x: 1, y: 0 }
-    },
-    upperStance: {
-      name_en: "Upper Stance",
-      name_jp: "上段の構え",
-	  desc: "Increases attack when Upper Stance is active, and increases the duration of Upper Stance. At the start of each battle, the user automatically assumes the stance with the highest skill level.",
-      stats: [],
-      dep: { },
-      maxLevel: 8,
-      coords: { x: 0, y: 2 }
-    },
-    upwardSlash: {
-      name_en: "Upward Slash",
-      name_jp: "逆袈裟",
-      desc: "Deals melee cut damage to one target. Assumes Upper Stance after use. Critical hit if used during Upper Stance.",
-      stats: ["STR"],
-      dep: { upperStance: 1 },
-      maxLevel: 4,
-      coords: { x: 1, y: 1 }
-    },
-    drawingStance: {
-      name_en: "High Ground",
-      name_jp: "居合の構え",
-	  desc: "Increases accuracy, evasion and action speed when Drawing Stance is active, and increases the duration of Drawing Stance. At the start of each battle, the user automatically assumes the stance with the highest skill level.",
-      stats: [],
-      dep: { upperStance:1 },
-      maxLevel: 8,
-      coords: { x: 1, y: 3 }
-    },
-    clearStance: {
-      name_en: "Clear Stance",
-      name_jp: "青眼の構え",
-	  desc: "Increases defense and Ronin skills' infliction rate when Clear Stance is active, and increases the duration of Clear Stance. At the start of each battle, the user automatically assumes the stance with the highest skill level.",
-      stats: [],
-      dep: { },
-      maxLevel: 8,
-      coords: { x: 0, y: 5 }
-    },
-    chargingThrust: {
-      name_en: "Charging Thrust",
-      name_jp: "貫突",
-      desc: "Deals melee stab damage to one target. Assumes Clear Stance after use. Critical hit if used during Clear Stance.",
-      stats: ["STR"],
-      dep: { clearStance: 1 },
-      maxLevel: 4,
-      coords: { x: 1, y: 4 }
-    },
-    airBlade: {
-      name_en: "Air Blade",
-      name_jp: "空刃",
-      desc: "Deals ranged cut damage to one target. Critical hit if used during any stance.",
-      stats: ["STR"],
-      dep: { upperStance: 1 },
-      maxLevel: 10,
-      coords: { x: 1, y: 2 }
-    },
-    armStrike: {
-      name_en: "Arm Strike",
-      name_jp: "小手討ち",
-      desc: "Deals melee stab damage to one target. Attempts to inflict arm bind. Critical hit if used during any stance.",
-      stats: ["STR", "LUC"],
-      dep: { clearStance:1 },
-      maxLevel: 8,
-      coords: { x: 1, y: 5 }
-    },
-    breath: {
-      name_en: "Breath",
-      name_jp: "息吹",
-      desc: "Restores HP to the user and allies adjacent to the user.",
-      stats: [],
-      dep: { clearStance: 1 },
-      maxLevel: 6,
-      coords: { x: 1, y: 6 }
-    },
-    mine: {
-      name_en: "Mine",
-      name_jp: "採掘",
-      desc: "Occasionally gains more items when using Mine points.",
-      stats: [],
-      unique: true,
-      dep: { },
-      maxLevel: 1,
-      coords: { x: 0, y: 6 }
-    },
-    helmSplitter: {
-      name_en: "Helm Splitter",
-      name_jp: "兜割り ",
-      desc: "Requires any stance. Deals melee cut damage to one target. Low accuracy, ignores cut resistance. Reduces stance duration by 2 after use. Critical hit if used during Upper Stance.",
-      stats: ["STR"],
-      dep: { upwardSlash: 1, drawingStance:1, airBlade:1 },
-      maxLevel: 10,
-      coords: { x: 2, y: 2 }
-    },
-    hazeSlash: {
-      name_en: "Haze Slash",
-      name_jp: "霞斬り",
-      desc: "Requires any stance. Deals melee cut damage to one target. Attempts to inflict sleep. Reduces stance duration by 2 after use. Critical hit if used during Clear Stance.",
-      stats: ["STR", "LUC"],
-      dep: { chargingThrust: 1, armStrike:1, breath:1 },
-      maxLevel: 10,
-      coords: { x: 2, y: 5 }
-    },
-    horizontalSlice: {
-      name_en: "Horizontal Slice",
-      name_jp: "横一文字",
-      desc: "Requires any stance. Deals melee cut damage to one row. Reduces stance duration by 2 after use. Critical hit if used during Drawing Stance.",
-      stats: ["STR"],
-      dep: { helmSplitter: 3 },
-      maxLevel: 10,
-      coords: { x: 3, y: 1.5 }
-    },
-    sheathStrike: {
-      name_en: "Mirror Moon",
-      name_jp: "鞘撃",
-      desc: "Deals melee bash damage to one target. Assumes Drawing Stance after use. Critical hit if used during Drawing Stance.",
-      stats: ["STR"],
-      dep: { helmSplitter: 3 },
-      maxLevel: 4,
-      coords: { x: 3, y: 2.5 }
-    },
-    flameGrater: {
-      name_en: "Flame Grater",
-      name_jp: "卸し焔",
-      desc: "Deals melee cut+fire damage to one target and reduces the targets defence for 3 turns. Critical hit if used during Upper Stance.",
-      stats: ["STR"],
-      dep: { hazeSlash: 3 },
-      maxLevel: 6,
-      coords: { x: 3, y: 4 }
-    },
-    frigidSlash: {
-      name_en: "Frigid Slash",
-      name_jp: "抜刀氷雪",
-      desc: "Deals melee cut+ice damage to one target and increases the users evasion for that turn. Critical hit if used during Drawing Stance.",
-      stats: ["STR"],
-      dep: { hazeSlash: 3 },
-      maxLevel: 6,
-      coords: { x: 3, y: 5 }
-    },
-    lightningStab: {
-      name_en: "Lightning Stab",
-      name_jp: "雷耀突き",
-      desc: "Deals melee stab+volt damage to one target. Attempts to inflict paralyze. Critical hit if used during Clear Stance.",
-      stats: ["STR"],
-      dep: { hazeSlash: 3 },
-      maxLevel: 6,
-      coords: { x: 3, y: 6 }
-    },
-    duel: {
-      name_en: "Duel",
-      name_jp: "果し合い",
-      desc: "Increases damage when attacking enemies that the user attacked last turn.",
-      stats: [],
-      dep: {  },
-      maxLevel: 6,
-      coords: { x: 2, y: 0 }
-    },
-    physAtkUp: {
-      name_en: "Phys ATK Up",
-      name_jp: "物理攻撃ブースト",
-      desc: "Increases physical attack.",
-      stats: [],
-      dep: { },
-      maxLevel: 8,
-      coords: { x: 3, y: 0 }
-    },
-    swallowStrike: {
-      name_en: "Swallow Strike",
-      name_jp: "ツバメがえし",
-      desc: "Requires any stance. Deals multiple instances of melee cut damage to one target. Removes stance after use. Critical hit if used during Upper Stance.",
-      stats: ["STR"],
-      dep: { horizontalSlice: 2, sheathStrike:1 },
-      maxLevel: 8,
-      coords: { x: 4, y: 1.5 }
-    },
-    petalScatter: {
-      name_en: "Petal Scatter",
-      name_jp: "散華",
-      desc: "Requires any stance. Deals ranged cut damage to all targets. Removes stance after use. Critical hit if used during Drawing Stance. Deals less damage based on the number of targets.",
-      stats: ["STR"],
-      dep: { horizontalSlice: 2, sheathStrike:1 },
-      maxLevel: 8,
-      coords: { x: 4, y: 2.5 }
-    },
-    bluntingStab: {
-      name_en: "Blunting Stab",
-      name_jp: "鈍通し",
-      desc: "Requires any stance. Deals melee stab damage to one target. Attempts to inflict petrify. Removes stance after use. Critical hit if used during Clear Stance.",
-      stats: ["STR", "LUC"],
-      dep: { flameGrater: 1, frigidSlash: 1, lightningStab: 1 },
-      maxLevel: 8,
-      coords: { x: 4, y: 5 }
-    },
-    proofOfMastery: {
-      name_en: "Earth Breaker",
-      name_jp: "免許皆伝",
-      desc: "Melee Cut attack to 1 enemy with splash damage, has a chance of stunning, and disables skills on the next turn.",
-      stats: [],
-      dep: { swallowStrike: 2, bluntingStab: 2, petalScatter: 2 },
-      maxLevel: 10,
-      coords: { x: 5, y: 3.5 }
-    },
-    risingSpirit: {
-      name_en: "Rising Spirit",
-      name_jp: "戦意高揚",
-      desc: "At the end of the turn, if a stance is active, restores TP to the user.",
-      stats: [],
-      dep: { },
-      maxLevel: 4,
-      coords: { x: 4, y: 0 }
-    },
-    speedUp: {
-      name_en: "Speed Up",
-      name_jp: "素早さブースト",
-      desc: "Increases accuracy, evasion and action speed.",
-      stats: [],
-      dep: { },
-      maxLevel: 8,
-      coords: { x: 5, y: 0 }
-    }
-  },
-*/
   "War Magus": {
     warEdgePower: {
       name_en: "War Edge Power",
@@ -1488,13 +1245,13 @@ let skills = {
       maxLevel: 0,
       coords: { x: 1, y: 0 }
     },
-    warHeal: {
-      name_en: "War Heal",
-      name_jp: "巫術：再生",
-      desc: "Restores HP to one ally at the start of the turn, then at the end of the turn.",
-      stats: ["WIS"],
+    warEdgeMastery: {
+      name_en: "War Edge Mastery",
+      name_jp: "巫剣マスタリー",
+      desc: "User can dual-wield and use sword skills with staff. Increases maximum TP when a sword is equipped; increases damage when a staff is equipped. Normal attacks have a chance of being repeated.",
+      stats: [],
       dep: { },
-      maxLevel: 10,
+      maxLevel: 4,
       coords: { x: 0, y: 1.5 }
     },
     warHealLine: {
@@ -1502,73 +1259,9 @@ let skills = {
       name_jp: "巫術：再生帯",
       desc: "Restores HP to one row at the start of the turn, then at the end of the turn.",
       stats: ["WIS"],
-      dep: { warHeal: 2 },
+      dep: { },
       maxLevel: 10,
       coords: { x: 1, y: 1.5 }
-    },
-    randomDisease: {
-      name_en: "Random Disease",
-      name_jp: "巫術：乱疫",
-      desc: "Attempts to inflict one of poison, paralyze, blind, sleep or curse on every target.",
-      stats: ["LUC"],
-      dep: { },
-      maxLevel: 8,
-      coords: { x: 0, y: 3.5 }
-    },
-    strengthSlash: {
-      name_en: "Strength Slash",
-      name_jp: "巫剣：霊攻衰斬",
-      desc: "Deals melee cut+almighty damage to one target. If the target has an ailment, decreases their attack for a set number of turns.",
-      stats: ["STR"],
-      dep: { randomDisease: 1 },
-      maxLevel: 6,
-      coords: { x: 1, y: 3 }
-    },
-    guardSlash: {
-      name_en: "Guard Slash",
-      name_jp: "巫剣：霊防衰斬",
-      desc: "Deals melee cut+almighty damage to one target. If the target has an ailment, decreases their defense for a set number of turns.",
-      stats: ["STR"],
-      dep: { randomDisease: 1 },
-      maxLevel: 6,
-      coords: { x: 1, y: 4 }
-    },
-    displace: {
-      name_en: "Displace",
-      name_jp: "巫術：転移",
-      desc: "Removes ailments and binds from one ally, and attempts to inflict them on one enemy.",
-      stats: ["LUC"],
-      dep: { },
-      maxLevel: 4,
-      coords: { x: 0, y: 5 }
-    },
-    vampire: {
-      name_en: "Vampire",
-      name_jp: "吸命",
-      desc: "When the user deals damage to an enemy with an ailment, restores HP to the user's row. Can only activate once per turn.",
-      stats: ["WIS"],
-      dep: { },
-      maxLevel: 6,
-      coords: { x: 1, y: 5 }
-    },
-    take: {
-      name_en: "Take",
-      name_jp: "採取",
-      desc: "Occasionally gains more items when using Mine points.",
-      stats: [],
-      unique: true,
-      dep: { },
-      maxLevel: 1,
-      coords: { x: 0, y: 6 }
-    },
-    warEdgeMastery: {
-      name_en: "War Edge Mastery",
-      name_jp: "巫剣マスタリー",
-      desc: "User can dual-wield and use sword skills with staff. Increases maximum TP when a sword is equipped; increases damage when a staff is equipped. Normal attacks have a chance of being repeated.",
-      stats: [],
-      dep: { },
-      maxLevel: 6,
-      coords: { x: 1, y: 6 }
     },
     warRevive: {
       name_en: "War Revive",
@@ -1597,6 +1290,51 @@ let skills = {
       maxLevel: 6,
       coords: { x: 3, y: 2 }
     },
+    pandemonium: {
+      name_en: "*Pandemonium",
+      name_jp: "ＨＰブースト",
+      desc: "Increases the targets attack and defense for a set number of turns.",
+      stats: [],
+      dep: { artery: 2, warResponse: 2  },
+      maxLevel: 6,
+      coords: { x: 4, y: 1.5 }
+    },
+    barrier: {
+      name_en: "Barrier",
+      name_jp: "巫術：結界",
+      desc: "For one turn, there is a chance to nullify binds and ailments against all party members, up to a set number of times.",
+      stats: [],
+      dep: { pandemonium: 2 },
+      maxLevel: 10,
+      coords: { x: 5, y: 1.5 }
+    },
+    drippingSlash: {
+      name_en: "Dripping Slash",
+      name_jp: "巫術：乱疫",
+      desc: "Deals melee cut+almighty damage to one target. Attempts to inflict one of poison, paralyze, blind, sleep or curse.",
+      stats: ["LUC"],
+      dep: { },
+      maxLevel: 8,
+      coords: { x: 0, y: 3.5 }
+    },
+    strengthSlash: {
+      name_en: "Strength Slash",
+      name_jp: "巫剣：霊攻衰斬",
+      desc: "Deals melee cut+almighty damage to one target. If the target has an ailment, decreases their attack for a set number of turns.",
+      stats: ["STR"],
+      dep: { drippingSlash: 1 },
+      maxLevel: 6,
+      coords: { x: 1, y: 3 }
+    },
+    guardSlash: {
+      name_en: "Guard Slash",
+      name_jp: "巫剣：霊防衰斬",
+      desc: "Deals melee cut+almighty damage to one target. If the target has an ailment, decreases their defense for a set number of turns.",
+      stats: ["STR"],
+      dep: { drippingSlash: 1 },
+      maxLevel: 6,
+      coords: { x: 1, y: 4 }
+    },
     headcut: {
       name_en: "Headcut",
       name_jp: "巫剣：霊封頭斬",
@@ -1624,42 +1362,6 @@ let skills = {
       maxLevel: 8,
       coords: { x: 3, y: 3.5 }
     },
-    rouse: {
-      name_en: "Rouse",
-      name_jp: "奮起",
-      desc: "Increases the user's Force gain based on the number of enemies with binds.",
-      stats: [],
-      dep: { vampire: 2 },
-      maxLevel: 6,
-      coords: { x: 2, y: 5 }
-    },
-    hpUp: {
-      name_en: "*Warmight",
-      name_jp: "ＨＰブースト",
-      desc: "Increases the targets attack for a set number of turns.",
-      stats: [],
-      dep: { },
-      maxLevel: 6,
-      coords: { x: 2, y: 6 }
-    },
-    statusDefUp: {
-      name_en: "*Rockskin",
-      name_jp: "抑制防御ブースト",
-      desc: "Increases the targets defense for a set number of turns.",
-      stats: [],
-      dep: { },
-      maxLevel: 6,
-      coords: { x: 3, y: 6 }
-    },
-    barrier: {
-      name_en: "Barrier",
-      name_jp: "巫術：結界",
-      desc: "For one turn, there is a chance to nullify binds and ailments against all party members, up to a set number of times.",
-      stats: [],
-      dep: {  artery: 2, warResponse: 2 },
-      maxLevel: 10,
-      coords: { x: 4, y: 1.5 }
-    },
     ailingSlash: {
       name_en: "Ailing Slash",
       name_jp: "巫剣：霊攻大斬",
@@ -1669,41 +1371,96 @@ let skills = {
       maxLevel: 6,
       coords: { x: 4, y: 3.5 }
     },
-    warHealAll: {
+    harvestFestival: {
+      name_en: "Harvest Festival",
+      name_jp: "巫術：再生",
+      desc: "Deals melee cut damage to all enemies. Increases damage dealt and attempts to inflict instant death on enemy with binds.",
+      stats: ["WIS"],
+      dep: { ailingSlash: 2 },
+      maxLevel: 10,
+      coords: { x: 5, y: 3 }
+    },
+    scorpion: {
       name_en: "*Scorpion",
       name_jp: "巫術：再生陣",
-      desc: "Deals melee cut damage to one enemy, with double damage splash damage to adjacent enemies. If adjacent enemies have ailments, attempts to petrify the target.",
+      desc: "Deals melee cut damage to one enemy, with double splash damage to adjacent enemies. If adjacent enemies have ailments, attempts to petrify the target.",
       stats: ["STR"],
       dep: { ailingSlash: 2 },
       maxLevel: 10,
-      coords: { x: 5, y: 3.5 }
+      coords: { x: 5, y: 4 }
+    },
+    leeches: {
+      name_en: "Leeches",
+      name_jp: "吸命",
+      desc: "When the user deals damage to an enemy with an ailment, restores HP to the user's row. Can only activate once per turn.",
+      stats: ["WIS"],
+      dep: { },
+      maxLevel: 6,
+      coords: { x: 1, y: 5.5 }
+    },
+    rouse: {
+      name_en: "Rouse",
+      name_jp: "奮起",
+      desc: "Increases the user's Force gain based on the number of enemies with binds.",
+      stats: [],
+      dep: { leeches: 2 },
+      maxLevel: 6,
+      coords: { x: 2, y: 5 }
+    },
+    bindCut: {
+      name_en: "*Bind Cut",
+      name_jp: "物理攻撃ブースト",
+      desc: "Deals melee cut+almighty damage to one target. If target is bound, increases the user's Force.",
+      stats: [],
+      dep: { leeches: 2 },
+      maxLevel: 8,
+      coords: { x: 2, y: 6 }
+    },
+    dissection: {
+      name_en: "*Dissection",
+      name_jp: "抑制防御ブースト",
+      desc: "When the user kills an enemy, restores Force to all party members.",
+      stats: [],
+      dep: { rouse: 3, bindCut: 3 },
+      maxLevel: 6,
+      coords: { x: 3, y: 5.5 }
     },
     spiritDrain: {
       name_en: "Spirit Drain",
       name_jp: "吸気",
       desc: "When the user deals damage to an enemy with both an ailment and a bind, restores TP to the user's row. Can only activate once per turn.",
       stats: ["WIS"],
-      dep: { rouse: 2 },
+      dep: { dissection: 2 },
       maxLevel: 6,
-      coords: { x: 4, y: 5 }
+      coords: { x: 4, y: 5.5 }
     },
-    plague: {
+    curseCut: {
       name_en: "*Curse Cut",
       name_jp: "発疫",
-      desc: "Deals melee cut+almighty damage to one target and attempt to inflict curse. If sucessful, or if the target is already cursed, ???.",
+      desc: "Deals melee cut+almighty damage to one target and attempt to inflict curse. If sucessful, or if the target is already cursed, restores Force to the users row.",
       stats: ["LUC"],
       dep: { spiritDrain: 3 },
-      maxLevel: 4,
-      coords: { x: 5, y: 5 }
-    },
-    physAtkUp: {
-      name_en: "*???",
-      name_jp: "物理攻撃ブースト",
-      desc: "Increases physical attack.",
-      stats: [],
-      dep: { },
       maxLevel: 8,
-      coords: { x: 4, y: 6 }
+      coords: { x: 5, y: 5.5 }
+    },
+    displace: {
+      name_en: "Displace",
+      name_jp: "巫術：転移",
+      desc: "Removes ailments and binds from one ally, and attempts to inflict them on one enemy.",
+      stats: ["LUC"],
+      dep: { },
+      maxLevel: 4,
+      coords: { x: 0, y: 5 }
+    },
+    take: {
+      name_en: "Take",
+      name_jp: "採取",
+      desc: "Occasionally gains more items when using Mine points.",
+      stats: [],
+      unique: true,
+      dep: { },
+      maxLevel: 1,
+      coords: { x: 0, y: 6 }
     }
   },
   Highlander: {
@@ -3683,7 +3440,7 @@ let skills = {
       stats: ["STR", "LUC"],
       dep: { },
       maxLevel: 6,
-      coords: { x: 0, y: 1.5 }
+      coords: { x: 0, y: 1 }
     },
     sleepThrow: {
       name_en: "Sleep Throw",
@@ -3692,71 +3449,7 @@ let skills = {
       stats: ["STR", "LUC"],
       dep: { sandThrow: 2 },
       maxLevel: 6,
-      coords: { x: 1, y: 1.5 }
-    },
-    shadowCloak: {
-      name_en: "Shadow Cloak",
-      name_jp: "ハイドクローク",
-      desc: "For 3 turns, negates one physical attack made against the user.",
-      stats: [],
-      dep: { },
-      maxLevel: 4,
-      coords: { x: 0, y: 3 }
-    },
-    bidingSlice: {
-      name_en: "Biding Slice",
-      name_jp: "ディレスタブ",
-      desc: "Deals melee cut damage to one target. If the user is not damaged until the end of the turn, deals melee cut damage to the same target again.",
-      stats: ["STR"],
-      dep: { shadowCloak: 1 },
-      maxLevel: 8,
-      coords: { x: 1, y: 3 }
-    },
-    iceKnife: {
-      name_en: "*Ice Knife",
-      name_jp: "アイスブラッシュ",
-      desc: "Deals ranged cut+ice damage to one target.",
-      stats: ["STR"],
-      dep: { },
-      maxLevel: 8,
-      coords: { x: 0, y: 4 }
-    },
-    proficiency: {
-      name_en: "Trance",
-      name_jp: "夜賊の心得",
-      desc: "Increases damage dealt to enemies with ailments.",
-      stats: [],
-      dep: { },
-      maxLevel: 10,
-      coords: { x: 1, y: 4 }
-    },
-    decoySign: {
-      name_en: "*Decoy Sign",
-      name_jp: "デコイサイン",
-      desc: "For a set amount of turns, increases one ally's chance of being targeted and allows them to counter attack when hit.",
-      stats: [],
-      dep: { },
-      maxLevel: 4,
-      coords: { x: 0, y: 5 }
-    },
-    bladeFlurry: {
-      name_en: "Blade Flurry",
-      name_jp: "追影の刃",
-      desc: "User can attack with both weapons if two weapons are equipped. Damage of the second attack is based on this skill's level. Enables sub-weapon when this skill is learned.",
-      stats: [],
-      dep: { },
-      maxLevel: 8,
-      coords: { x: 1, y: 5 }
-    },
-    chop: {
-      name_en: "Chop",
-      name_jp: "伐採",
-      desc: "Occasionally gains more items when using Chop points.",
-      stats: [],
-      unique: true,
-      dep: { },
-      maxLevel: 1,
-      coords: { x: 0, y: 6 }
+      coords: { x: 1, y: 1 }
     },
     curseThrow: {
       name_en: "Curse Throw",
@@ -3781,63 +3474,9 @@ let skills = {
       name_jp: "シャドウバイト",
       desc: "Deals melee cut damage to one target. Damage is increased if the target has an ailment.",
       stats: ["STR"],
-      dep: { sleepThrow: 3 },
+      dep: { sleepThrow: 3, foulMastery: 3 },
       maxLevel: 10,
       coords: { x: 2, y: 2 }
-    },
-    autoCloak: {
-      name_en: "Auto-Cloak",
-      name_jp: "先制クローク",
-      desc: "If Shadow Cloak is learned, there is a chance to automatically cast it at the start of battle. Cannot activate if another ally activated it first.",
-      stats: [],
-      dep: { bidingSlice: 2 },
-      maxLevel: 6,
-      coords: { x: 2, y: 3 }
-    },
-    backstab: {
-      name_en: "Backstab",
-      name_jp: "バックスタブ",
-      desc: "Deals melee cut damage to one target. Attempts to inflict head bind. If the user has Shadow Cloak, add almighty element to the attack and increases damage.",
-      stats: ["STR", "LUC"],
-      dep: { autoCloak: 2 },
-      maxLevel: 10,
-      coords: { x: 3, y: 3 }
-    },
-    sneakAttack: {
-      name_en: "Sneak Attack",
-      name_jp: "奇襲",
-      desc: "For a set number of steps, increases the chance of preemptive attacks.",
-      stats: [],
-      dep: { proficiency: 2 },
-      maxLevel: 6,
-      coords: { x: 2, y: 4 }
-    },
-    foulMastery: {
-      name_en: "Foul Mastery",
-      name_jp: "闇討マスタリ",
-      desc: "Increases attack every time the user inflicts an ailment. Bonus stacks up to 3 times, and is reset if the user dies.",
-      stats: [],
-      dep: { sneakAttack: 2 },
-      maxLevel: 10,
-      coords: { x: 3, y: 4 }
-    },
-    speedUp: {
-      name_en: "Speed Up",
-      name_jp: "素早さブースト",
-      desc: "Increases accuracy, evasion and action speed.",
-      stats: [],
-      dep: { },
-      maxLevel: 8,
-      coords: { x: 2, y: 6 }
-    },
-    spreadThrow: {
-      name_en: "Spread Throw",
-      name_jp: "スプレッドスロー",
-      desc: "Until the end of the next turn, increases throw skills' range to all targets, and improves their infliction rate.",
-      stats: [],
-      dep: { },
-      maxLevel: 4,
-      coords: { x: 3, y: 6 }
     },
     venomThrow: {
       name_en: "Venom Throw",
@@ -3857,6 +3496,42 @@ let skills = {
       maxLevel: 10,
       coords: { x: 4, y: 2 }
     },
+    shadowCloak: {
+      name_en: "Shadow Cloak",
+      name_jp: "ハイドクローク",
+      desc: "For 3 turns, negates one physical attack made against the user.",
+      stats: [],
+      dep: { },
+      maxLevel: 4,
+      coords: { x: 0, y: 4 }
+    },
+    bidingSlice: {
+      name_en: "Biding Slice",
+      name_jp: "ディレスタブ",
+      desc: "Deals melee cut damage to one target. If the user is not damaged until the end of the turn, deals melee cut damage to the same target again.",
+      stats: ["STR"],
+      dep: { shadowCloak: 1 },
+      maxLevel: 8,
+      coords: { x: 1, y: 4 }
+    },
+    autoCloak: {
+      name_en: "Auto-Cloak",
+      name_jp: "先制クローク",
+      desc: "If Shadow Cloak is learned, there is a chance to automatically cast it at the start of battle. Cannot activate if another ally activated it first.",
+      stats: [],
+      dep: { bidingSlice: 2 },
+      maxLevel: 6,
+      coords: { x: 2, y: 4 }
+    },
+    backstab: {
+      name_en: "Backstab",
+      name_jp: "バックスタブ",
+      desc: "Deals melee cut damage to one target. Attempts to inflict head bind. If the user has Shadow Cloak, add almighty element to the attack and increases damage.",
+      stats: ["STR", "LUC"],
+      dep: { autoCloak: 2 },
+      maxLevel: 10,
+      coords: { x: 3, y: 4 }
+    },
     assassinate: {
       name_en: "Assassinate",
       name_jp: "アサシネイション",
@@ -3864,7 +3539,7 @@ let skills = {
       stats: ["STR"],
       dep: { backstab: 3 },
       maxLevel: 8,
-      coords: { x: 4, y: 3 }
+      coords: { x: 4, y: 4 }
     },
     returnCloak: {
       name_en: "Return Cloak",
@@ -3873,16 +3548,52 @@ let skills = {
       stats: [],
       dep: { assassinate: 3 },
       maxLevel: 8,
-      coords: { x: 5, y: 3 }
+      coords: { x: 5, y: 4 }
     },
-    followTrace: {
-      name_en: "Follow Trace",
-      name_jp: "追影の残滓",
-      desc: "After using an attack skill, if at least one of the skill's targets has an ailment, there is a chance to repeat the skill.",
+    decoySign: {
+      name_en: "*Decoy Sign",
+      name_jp: "デコイサイン",
+      desc: "For a set amount of turns, increases one ally's chance of being targeted and allows them to counter attack when hit.",
       stats: [],
-      dep: { bladeFlurry: 4 },
+      dep: { },
+      maxLevel: 4,
+      coords: { x: 0, y: 5 }
+    },
+    iceKnife: {
+      name_en: "Attack Bait",
+      name_jp: "アイスブラッシュ",
+      desc: "When the user or an adjacent ally is hit with an attack, the user will counter, with increased damage if they were the target. The chance of countering goes down with each successive counter.",
+      stats: ["STR"],
+      dep: { decoySign: 3 },
+      maxLevel: 8,
+      coords: { x: 1, y: 5 }
+    },
+    proficiency: {
+      name_en: "Trance",
+      name_jp: "夜賊の心得",
+      desc: "Increases damage dealt to enemies with ailments.",
+      stats: [],
+      dep: { },
       maxLevel: 10,
-      coords: { x: 4, y: 5 }
+      coords: { x: 0, y: 3 }
+    },
+    foulMastery: {
+      name_en: "Foul Mastery",
+      name_jp: "闇討マスタリ",
+      desc: "Increases attack every time the user inflicts an ailment. Bonus stacks up to 3 times, and is reset if the user dies.",
+      stats: [],
+      dep: { proficiency: 2 },
+      maxLevel: 10,
+      coords: { x: 1, y: 3 }
+    },
+    spreadThrow: {
+      name_en: "Spread Throw",
+      name_jp: "スプレッドスロー",
+      desc: "Until the end of the next turn, increases throw skills' range to all targets, and improves their infliction rate.",
+      stats: [],
+      dep: { foulMastery: 2 },
+      maxLevel: 4,
+      coords: { x: 2, y: 3 }
     },
     autoSpread: {
       name_en: "*Perseverance",
@@ -3891,7 +3602,53 @@ let skills = {
       stats: [],
       dep: { spreadThrow: 2 },
       maxLevel: 6,
-      coords: { x: 4, y: 6 }
+      coords: { x: 3, y: 3 }
+    },
+    followTrace: {
+      name_en: "Follow Trace",
+      name_jp: "追影の残滓",
+      desc: "After using an attack skill, if at least one of the skill's targets has an ailment, there is a chance to repeat the skill.",
+      stats: [],
+      dep: { autoSpread: 4 },
+      maxLevel: 10,
+      coords: { x: 4, y: 3 }
+    },
+    bladeFlurry: {
+      name_en: "Blade Flurry",
+      name_jp: "追影の刃",
+      desc: "User can attack with both weapons if two weapons are equipped. Damage of the second attack is based on this skill's level. Enables sub-weapon when this skill is learned.",
+      stats: [],
+      dep: { },
+      maxLevel: 8,
+      coords: { x: 1, y: 6 }
+    },
+    speedUp: {
+      name_en: "Speed Up",
+      name_jp: "素早さブースト",
+      desc: "Increases accuracy, evasion and action speed.",
+      stats: [],
+      dep: { },
+      maxLevel: 8,
+      coords: { x: 2, y: 6 }
+    },
+    sneakAttack: {
+      name_en: "Sneak Attack",
+      name_jp: "奇襲",
+      desc: "For a set number of steps, increases the chance of preemptive attacks.",
+      stats: [],
+      dep: { },
+      maxLevel: 6,
+      coords: { x: 3, y: 6 }
+    },
+    chop: {
+      name_en: "Chop",
+      name_jp: "伐採",
+      desc: "Occasionally gains more items when using Chop points.",
+      stats: [],
+      unique: true,
+      dep: { },
+      maxLevel: 1,
+      coords: { x: 0, y: 6 }
     }
   },
   Arcanist: {
@@ -4883,33 +4640,6 @@ let skills = {
       maxLevel: 0,
       coords: { x: 1, y: 0 }
     },
-    bite: {
-      name_en: "Bite",
-      name_jp: "セルディバイド",
-      desc: "Deal stab damage to an enemy and restores the users HP based on damage dealt. This restoration can heal beyond maximum HP.",
-      stats: [],
-      dep: { },
-      maxLevel: 6,
-      coords: { x: 0, y: 1 }
-    },
-    iceVein: {
-      name_en: "Ice Vein",
-      name_jp: "渾身ディフェンス",
-      desc: "Deals ranged Ice damage to all enemies and attempts to inflict Leg bind.",
-      stats: [],
-      dep: { bite: 3 },
-      maxLevel: 8,
-      coords: { x: 1, y: 1 }
-    },
-    lifeSiphon: {
-      name_en: "Life Siphon",
-      name_jp: "決死の覚悟",
-      desc: "Deals ranged Almighty damage to all enemies. Heals the user for 25% of the damage dealt.",
-      stats: [],
-      dep: { iceVein: 3 },
-      maxLevel: 8,
-      coords: { x: 2, y: 1 }
-    },
     bareFangs: {
       name_en: "Bare Fangs",
       name_jp: "フロントガード",
@@ -4917,7 +4647,7 @@ let skills = {
       stats: [],
       dep: { },
       maxLevel: 6,
-      coords: { x: 0, y: 2 }
+      coords: { x: 0, y: 1 }
     },
     crimsonShower: {
       name_en: "Crimson Shower",
@@ -4926,7 +4656,7 @@ let skills = {
       stats: [],
       dep: { bareFangs: 3 },
       maxLevel: 6,
-      coords: { x: 1, y: 2 }
+      coords: { x: 1, y: 1 }
     },
     bloodPact: {
       name_en: "Blood Pact",
@@ -4935,106 +4665,52 @@ let skills = {
       stats: [],
       dep: { crimsonShower: 3 },
       maxLevel: 10,
-      coords: { x: 2, y: 2 }
+      coords: { x: 2, y: 1 }
     },
-    crimsonOath: {
-      name_en: "Crimson Oath",
-      name_jp: "バッグガード",
-      desc: "Covers one ally and heals them.",
+    underTheZenith: {
+      name_en: "Under the Zenith",
+      name_jp: "フルガード",
+      desc: "Gives a chance to heal the user at the end of the turn if their HP is below a certain threshold.",
       stats: [],
-      dep: { bloodPact: 3, rebirthRitual:3 },
-      maxLevel: 6,
-      coords: { x: 3, y: 2.5 }
-    },
-    transfusion: {
-      name_en: "Transfusion",
-      name_jp: "ヒールウォール",
-      desc: "Consumes the users HP to heal a line.",
-      stats: [],
-      dep: { },
-      maxLevel: 8,
-      coords: { x: 0, y: 3 }
-    },
-    phlebotomy: {
-      name_en: "Phlebotomy",
-      name_jp: "ファイアガード",
-      desc: "Consumes users HP to dispel a line of allies Ailments and Binds.",
-      stats: [],
-      dep: { transfusion: 3 },
-      maxLevel: 8,
-      coords: { x: 1, y: 3 }
-    },
-    rebirthRitual: {
-      name_en: "Rebirth Ritual",
-      name_jp: "ショックガード",
-      desc: "Consumes the partys HP to revive an ally with overhealed health.",
-      stats: [],
-      dep: { phlebotomy: 3 },
-      maxLevel: 8,
-      coords: { x: 2, y: 3 }
+      dep: { bloodPact: 3 },
+      maxLevel: 10,
+      coords: { x: 3, y: 1 }
     },
     unscathedBody: {
       name_en: "Unscathed Body",
       name_jp: "ＨＰブースト",
       desc: "If the user is in the front row and at full HP, their TP is restored at the end of the turn.",
       stats: [],
-      dep: { crimsonOath: 3 },
+      dep: { underTheZenith: 3 },
       maxLevel: 6,
-      coords: { x: 4, y: 3.5 }
+      coords: { x: 4, y: 0.5 }
     },
-    vampiricSpirit: {
-      name_en: "Vampiric Spirit",
-      name_jp: "シールドスマイト",
-      desc: "Heals the user at the end of the turn, while also granting them a buff that increases their maximum HP.",
-      stats: ["STR", "LUC"],
-      dep: { },
-      maxLevel: 6,
-      coords: { x: 0, y: 4 }
-    },
-    sanguineTide: {
-      name_en: "Sanguine Tide",
-      name_jp: "シールドラッシュ",
-      desc: "Grants the user a buff that has a chance to nullify Ailments, Binds and Debuffs for a set number of turns and lose HP whenever they act. Also grants a buff to the rest of the party that restores HP at the end of their turn.",
-      stats: ["STR"],
-      dep: { vampiricSpirit: 3 },
-      maxLevel: 8,
-      coords: { x: 1, y: 4 }
-    },
-    umbralVeil: {
-      name_en: "Umbral Veil",
-      name_jp: "属性防御ブースト",
-      desc: "Places a buff on the allies of the users line that reduces their chance of being targetted.",
-      stats: ["STR"],
-      dep: { sanguineTide: 3 },
-      maxLevel: 8,
-      coords: { x: 2, y: 4 }
-    },
-    feast: {
-      name_en: "Feast",
-      name_jp: "物理防御ブースト",
-      desc: "For a set number of turns, one ally ally will have increased attack, but lose HP every time they act. Also grants the user a buff that restores HP at the end of their turn.",
-      stats: ["STR"],
-      dep: { umbralVeil: 3 },
-      maxLevel: 6,
-      coords: { x: 3, y: 4 }
-    },
-    vitalityDrain: {
-      name_en: "Vitality Drain",
-      name_jp: "挑発",
-      desc: "For a set number of turns, decreases an enemy's defense and increases the user's defense.",
+    drainBite: {
+      name_en: "Drain Bite",
+      name_jp: "セルディバイド",
+      desc: "Deal stab damage to an enemy and restores the users HP. This restoration can heal beyond maximum HP.",
       stats: [],
       dep: { },
-      maxLevel: 8,
-      coords: { x: 1, y: 5 }
-    },
-    vigorDrain: {
-      name_en: "Vigor Drain",
-      name_jp: "先制挑発",
-      desc: "For a set number of turns, decreases an enemy's attack and increases the user's attack.",
-      stats: [],
-      dep: { vitalityDrain: 3 },
       maxLevel: 6,
-      coords: { x: 2, y: 5 }
+      coords: { x: 0, y: 2 }
+    },
+    iceVein: {
+      name_en: "Ice Vein",
+      name_jp: "渾身ディフェンス",
+      desc: "Deals ranged Ice damage to all enemies and attempts to inflict Leg bind.",
+      stats: [],
+      dep: { drainBite: 3 },
+      maxLevel: 8,
+      coords: { x: 1, y: 2 }
+    },
+    lifeSiphon: {
+      name_en: "Life Siphon",
+      name_jp: "決死の覚悟",
+      desc: "Deals ranged Almighty damage to all enemies. Heals the user for 25% of the damage dealt.",
+      stats: [],
+      dep: { iceVein: 3 },
+      maxLevel: 8,
+      coords: { x: 2, y: 2 }
     },
     metamorphosis: {
       name_en: "Metamorphosis",
@@ -5043,34 +4719,97 @@ let skills = {
       stats: [],
       dep: { lifeSiphon: 3 },
       maxLevel: 8,
-      coords: { x: 3, y: 1 }
+      coords: { x: 3, y: 2 }
     },
-    bloodyCatastrophe: {
-      name_en: "Bloody Catastrophe",
-      name_jp: "ラインディバイド",
-      desc: "Lowers all damage to the user for this turn. At the end of the turn, deals melee Cut damage to all enemies. Every time the user is damaged between the cast time and the attack, the damage is multiplied by 1.25x. The damage is capped at 3x the base damage.",
+    vampiricSpirit: {
+      name_en: "Vampiric Spirit",
+      name_jp: "シールドスマイト",
+      desc: "Heals the user at the end of the turn, while also granting them a buff that increases their maximum HP.",
+      stats: ["STR", "LUC"],
+      dep: { },
+      maxLevel: 6,
+      coords: { x: 0, y: 3 }
+    },
+    sanguineTide: {
+      name_en: "Sanguine Tide",
+      name_jp: "シールドラッシュ",
+      desc: "Grants the user a buff that has a chance to nullify Ailments, Binds and Debuffs for a set number of turns and lose HP whenever they act. Also grants a buff to the rest of the party that restores HP at the end of their turn.",
+      stats: ["STR"],
+      dep: { vampiricSpirit: 3 },
+      maxLevel: 8,
+      coords: { x: 1, y: 3 }
+    },
+    umbralVeil: {
+      name_en: "Umbral Veil",
+      name_jp: "属性防御ブースト",
+      desc: "Places a buff on the allies of the users line that reduces their chance of being targetted.",
+      stats: ["STR"],
+      dep: { sanguineTide: 3 },
+      maxLevel: 8,
+      coords: { x: 2, y: 3 }
+    },
+    feast: {
+      name_en: "Feast",
+      name_jp: "物理防御ブースト",
+      desc: "For a set number of turns, one ally ally will have increased attack, but lose HP every time they act. Also grants the user a buff that restores HP at the end of their turn.",
+      stats: ["STR"],
+      dep: { umbralVeil: 3 },
+      maxLevel: 6,
+      coords: { x: 3, y: 3 }
+    },
+    vitalityDrain: {
+      name_en: "Vitality Drain",
+      name_jp: "挑発",
+      desc: "For a set number of turns, decreases an enemy's defense and increases the user's defense.",
       stats: [],
-      dep: { metamorphosis: 3, crimsonOath:3 },
-      maxLevel: 10,
-      coords: { x: 4, y: 1.5 }
+      dep: { },
+      maxLevel: 8,
+      coords: { x: 1, y: 4 }
+    },
+    vigorDrain: {
+      name_en: "Vigor Drain",
+      name_jp: "先制挑発",
+      desc: "For a set number of turns, decreases an enemy's attack and increases the user's attack.",
+      stats: [],
+      dep: { vitalityDrain: 3 },
+      maxLevel: 6,
+      coords: { x: 2, y: 4 }
+    },
+    transfusion: {
+      name_en: "Transfusion",
+      name_jp: "ヒールウォール",
+      desc: "Consumes the users HP to heal a line.",
+      stats: [],
+      dep: { },
+      maxLevel: 8,
+      coords: { x: 0, y: 5 }
+    },
+    phlebotomy: {
+      name_en: "Phlebotomy",
+      name_jp: "ファイアガード",
+      desc: "Consumes users HP to dispel a line of allies Ailments and Binds.",
+      stats: [],
+      dep: { transfusion: 3 },
+      maxLevel: 8,
+      coords: { x: 1, y: 5 }
+    },
+    rebirthRitual: {
+      name_en: "Rebirth Ritual",
+      name_jp: "ショックガード",
+      desc: "Consumes the partys HP to revive an ally with overhealed health.",
+      stats: [],
+      dep: { phlebotomy: 3 },
+      maxLevel: 8,
+      coords: { x: 2, y: 5 }
     },
     riseFromTheDead: {
       name_en: "Rise from the Dead",
       name_jp: "ヒールガード",
       desc: "At the end of the turn, the user has a chance of automatically reviving.",
       stats: ["WIS"],
-      dep: { crimsonOath: 3 },
+      dep: { rebirthRitual: 3 },
       maxLevel: 6,
-      coords: { x: 4, y: 2.5 }
-    },
-    underTheZenith: {
-      name_en: "Under the Zenith",
-      name_jp: "フルガード",
-      desc: "Gives a chance to heal the user at the end of the turn if their HP is below a certain threshold.",
-      stats: [],
-      dep: { riseFromTheDead: 3 },
-      maxLevel: 10,
-      coords: { x: 5, y: 2 }
+      coords: { x: 3, y: 5 }
     },
     briefImmortality: {
       name_en: "Brief Immortality",
@@ -5079,7 +4818,16 @@ let skills = {
       stats: [],
       dep: { riseFromTheDead:3 },
       maxLevel: 10,
-      coords: { x: 5, y: 3 }
+      coords: { x: 4, y: 5 }
+    },
+    bloodyCatastrophe: {
+      name_en: "Bloody Catastrophe",
+      name_jp: "ラインディバイド",
+      desc: "Lowers all damage to the user for this turn. At the end of the turn, deals melee Cut damage to all enemies. Every time the user is damaged between the cast time and the attack, the damage is multiplied by 1.25x. The damage is capped at 3x the base damage.",
+      stats: [],
+      dep: { metamorphosis: 3, underTheZenith:3 },
+      maxLevel: 10,
+      coords: { x: 4, y: 1.5 }
     },
     vampiricGrace: {
       name_en: "Vampiric Grace",
@@ -5088,7 +4836,16 @@ let skills = {
       stats: ["STR"],
       dep: { feast: 3, vigorDrain:3 },
       maxLevel: 8,
-      coords: { x: 4, y: 4.5 }
+      coords: { x: 4, y: 3.5 }
+    },
+    crimsonOath: {
+      name_en: "Invoke Gods",
+      name_jp: "バッグガード",
+      desc: "Covers one ally and heals them.",
+      stats: [],
+      dep: { bloodyCatastrophe: 3, vampiricGrace: 3 },
+      maxLevel: 6,
+      coords: { x: 5, y: 2.5 }
     },
     take: {
       name_en: "Take",

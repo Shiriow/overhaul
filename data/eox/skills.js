@@ -1248,7 +1248,7 @@ let skills = {
     warEdgeMastery: {
       name_en: "War Edge Mastery",
       name_jp: "巫剣マスタリー",
-      desc: "User can dual-wield and use sword skills with staff. Increases maximum TP when a sword is equipped; increases damage when a staff is equipped. Normal attacks have a chance of being repeated.",
+      desc: "User can dual-wield and use sword skills with staff. Increases maximum TP when a sword is equipped; increases damage when a staff is equipped on the top slot. Normal attacks have a chance of being repeated.",
       stats: [],
       dep: { },
       maxLevel: 4,
@@ -1390,7 +1390,7 @@ let skills = {
       coords: { x: 5, y: 4 }
     },
     leeches: {
-      name_en: "Leeches",
+      name_en: "Leech",
       name_jp: "吸命",
       desc: "When the user deals damage to an enemy with an ailment, restores HP to the user's row. Can only activate once per turn.",
       stats: ["WIS"],
@@ -2469,41 +2469,104 @@ let skills = {
       maxLevel: 0,
       coords: { x: 1, y: 0 }*/
     },
-    ethericGleam: {
-      name_en: "*Etheric Gleam",
-      name_jp: "エーテルの輝き",
-      desc: "For a set number of turns, increases elemental attack and defense for one row.",
+    ethericShoot: {
+      name_en: "*Etheric Shoot",
+      name_jp: "エーテルシュート",
+      desc: "Deals ranged, INT-based damage to one enemy with the user's weapon.",
       stats: [],
       dep: { },
       maxLevel: 8,
-      coords: { x: 0, y: 2 }
+      coords: { x: 1, y: 1.5 }
     },
     binaryFire: {
       name_en: "*Binary Fire",
       name_jp: "炎の連星術",
       desc: "Deals ranged fire damage to all enemies.",
       stats: ["INT"],
-      dep: { ethericGleam: 1 },
+      dep: { ethericShoot: 1 },
       maxLevel: 10,
-      coords: { x: 1, y: 1 }
+      coords: { x: 2, y: 0.5 }
     },
     binaryIce: {
       name_en: "*Binary Ice",
       name_jp: "氷の連星術",
       desc: "Deals ranged ice damage to all enemies.",
       stats: ["INT"],
-      dep: { ethericGleam: 1 },
+      dep: { ethericShoot: 1 },
       maxLevel: 10,
-      coords: { x: 1, y: 2 }
+      coords: { x: 2, y: 1.5 }
     },
     binaryVolt: {
       name_en: "*Binary Volt",
       name_jp: "雷の連星術",
       desc: "Deals ranged volt damage to all enemies.",
       stats: ["INT"],
-      dep: { ethericGleam: 1 },
+      dep: { ethericShoot: 1 },
       maxLevel: 10,
-      coords: { x: 1, y: 3 }
+      coords: { x: 2, y: 2.5 }
+    },
+    fireStar: {
+      name_en: "*Astral Fire",
+      name_jp: "炎の星術",
+      desc: "Deals ranged fire damage to one target. Applies Astral Fire on the user, forcing attack skills to target only one enemy while increasing damage for 3 turns. This skill cannot be used again for 3 turns.",
+      stats: ["INT"],
+      dep: { binaryFire: 3, binaryIce: 3, binaryVolt: 3 },
+      maxLevel: 10,
+      coords: { x: 3, y: 1.5 }
+    },
+    iceStar: {
+      name_en: "*Umbral Ice",
+      name_jp: "氷の星術",
+      desc: "Deals ranged ice damage to one target. Recovers some TP and removes Astral Fire after use.",
+      stats: ["INT"],
+      dep: { fireStar: 2 },
+      maxLevel: 10,
+      coords: { x: 4, y: 1 }
+    },
+    voltStar: {
+      name_en: "*Solstice Volt",
+      name_jp: "雷の星術",
+      desc: "Deals ranged volt damage to one target, and ignores resistances. Removes Astral Fire after use.",
+      stats: ["INT"],
+      dep: { fireStar: 2 },
+      maxLevel: 10,
+      coords: { x: 4, y: 2 }
+    },
+    meteor: {
+      name_en: "*Meteor",
+      name_jp: "メテオ",
+      desc: "Deals 2-5 instances of ranged bash damage to random targets. If the user used an elemental attack on the last turn, also follow ups with an additional 2-5 instances of the same element",
+      stats: ["INT"],
+      dep: { iceStar: 1, voltStar: 1 },
+      maxLevel: 10,
+      coords: { x: 5, y: 1.5 }
+    },
+    focusEther: {
+      name_en: "???",
+      name_jp: "エーテル圧縮",
+      desc: "Until the end of the next turn, Zodiac attack skills will hit only one target, but deal increased damage.",
+      stats: [],
+      dep: { },
+      maxLevel: 6,
+      coords: { x: 0, y: 1 }
+    },
+    etherMastery: {
+      name_en: "???",
+      name_jp: "エーテルマスター",
+      desc: "Increases damage depending on how low the users TP is.",
+      stats: [],
+      dep: { },
+      maxLevel: 8,
+      coords: { x: 0, y: 2 }
+    },
+    tpUp: {
+      name_en: "???",
+      name_jp: "ＴＰブースト",
+      desc: "Increases maximum TP.",
+      stats: [],
+      dep: { },
+      maxLevel: 8,
+      coords: { x: 0, y: 3 }
     },
     singularity: {
       name_en: "Singularity",
@@ -2512,25 +2575,106 @@ let skills = {
       stats: [],
       dep: { },
       maxLevel: 8,
-      coords: { x: 0, y: 4.5 }
+      coords: { x: 0, y: 4 }
     },
-    focusEther: {
-      name_en: "Focus Ether",
-      name_jp: "エーテル圧縮",
-      desc: "Until the end of the next turn, Zodiac attack skills will hit only one target, but deal increased damage.",
+    ethericGleam: {
+      name_en: "*Etheric Gleam",
+      name_jp: "エーテルの輝き",
+      desc: "For a set number of turns, increases elemental attack and defense for one row.",
       stats: [],
-      dep: { singularity: 3 },
-      maxLevel: 6,
+      dep: { singularity: 2 },
+      maxLevel: 8,
       coords: { x: 1, y: 4 }
     },
+    antiEther: {
+      name_en: "*Anti-Ether",
+      name_jp: "アンチエーテル",
+      desc: "Provides a chance to nullify elemental attacks against the user's row.",
+      stats: [],
+      dep: { ethericGleam: 2 },
+      maxLevel: 8,
+      coords: { x: 2, y: 4 }
+    },
+    spreadEther: {
+      name_en: "*Nebula Resurgence",
+      name_jp: "多段式エーテル",
+      desc: "When the user hits an enemy's weakness, their Force gauge is increased.",
+      stats: [],
+      dep: { antiEther: 2 },
+      maxLevel: 6,
+      coords: { x: 3, y: 4 }
+    },
+    fireProphecy: {
+      name_en: "*Flame Veil",
+      name_jp: "炎の先見術",
+      desc: "For a set number of turns, imbue an ally's weapon with fire and make them automatically counterattacks enemies who attacks them.",
+      stats: [],
+      dep: { spreadEther: 2 },
+      maxLevel: 6,
+      coords: { x: 4, y: 3 }
+    },
+    iceProphecy: {
+      name_en: "*Freeze Veil",
+      name_jp: "氷の先見術",
+      desc: "For a set number of turns, imbue an ally's weapon with ice and make them automatically counterattacks enemies who attacks them.",
+      stats: [],
+      dep: { spreadEther: 2 },
+      maxLevel: 6,
+      coords: { x: 4, y: 4 }
+    },
+    voltProphecy: {
+      name_en: "*Shock Veil",
+      name_jp: "雷の先見術",
+      desc: "For a set number of turns, imbue an ally's weapon with volt and make them automatically counterattacks enemies who attacks them.",
+      stats: [],
+      dep: { spreadEther: 2 },
+      maxLevel: 6,
+      coords: { x: 4, y: 5 }
+    },
+    horoscope: {
+      name_en: "*Prophecy",
+      name_jp: "氷の先見術",
+      desc: "Prevents elemental attacks from one enemy. If an attack is prevented, increases the user's attack until the end of the next turn.",
+      stats: [],
+      dep: { fireProphecy: 1, iceProphecy: 1, voltProphecy: 1 },
+      maxLevel: 6,
+      coords: { x: 5, y: 4 }
+    },
     ethericReturn: {
-      name_en: "*Etheric Return",
+      name_en: "*Celestial Return",
       name_jp: "リターンエーテル",
       desc: "Restores TP to the user when hitting a weakness.",
       stats: [],
-      dep: { singularity: 3 },
+      dep: { },
       maxLevel: 4,
+      coords: { x: 0, y: 5 }
+    },
+    darkEther: {
+      name_en: "Dark Ether",
+      name_jp: "ダークエーテル",
+      desc: "This turn, reduces TP usage for one row.",
+      stats: [],
+      dep: { ethericReturn: 2 },
+      maxLevel: 6,
       coords: { x: 1, y: 5 }
+    },
+    restoreEther: {
+      name_en: "*Stellar Flow",
+      name_jp: "レストアエーテル",
+      desc: "Increases attack based on the number of TP spent on the previous turn. Does not activate if TP spent last turn is too low.",
+      stats: [],
+      dep: { darkEther: 2 },
+      maxLevel: 10,
+      coords: { x: 2, y: 5 }
+    },
+    freeEnergy: {
+      name_en: "*Pulsar Feedback",
+      name_jp: "ＴＰカット",
+      desc: "Provides a chance to refund the user's TP usage.",
+      stats: [],
+      dep: { restoreEther : 2 },
+      maxLevel: 6,
+      coords: { x: 3, y: 5 }
     },
     mine: {
       name_en: "Mine",
@@ -2541,150 +2685,6 @@ let skills = {
       dep: { },
       maxLevel: 1,
       coords: { x: 0, y: 6 }
-    },
-    etherMastery: {
-      name_en: "*Nebula Resurgence",
-      name_jp: "エーテルマスター",
-      desc: "Increases damage depending on how low the users TP is.",
-      stats: [],
-      dep: { },
-      maxLevel: 8,
-      coords: { x: 2, y: 6 }
-    },
-    tpUp: {
-      name_en: "*???",
-      name_jp: "ＴＰブースト",
-      desc: "Increases maximum TP.",
-      stats: [],
-      dep: { },
-      maxLevel: 8,
-      coords: { x: 3, y: 0 }
-    },
-    fireStar: {
-      name_en: "*Astral Fire",
-      name_jp: "炎の星術",
-      desc: "Deals ranged fire damage to one target. Applies Astral Fire on the user, increasing damage for 3 turns. This skill cannot be used again for 3 turns.",
-      stats: ["INT"],
-      dep: { binaryFire: 3, binaryIce: 3, binaryVolt: 3 },
-      maxLevel: 10,
-      coords: { x: 2, y: 2 }
-    },
-    iceStar: {
-      name_en: "*Umbral Ice",
-      name_jp: "氷の星術",
-      desc: "Deals ranged ice damage to one target. Recovers some TP and removes Astral Fire after use.",
-      stats: ["INT"],
-      dep: { fireStar: 2 },
-      maxLevel: 10,
-      coords: { x: 3, y: 1.5 }
-    },
-    voltStar: {
-      name_en: "*Solstice Volt",
-      name_jp: "雷の星術",
-      desc: "Deals ranged volt damage to one target, and ignores resistances. Removes Astral Fire after use.",
-      stats: ["INT"],
-      dep: { fireStar: 2 },
-      maxLevel: 10,
-      coords: { x: 3, y: 2.5 }
-    },
-    ethericShoot: {
-      name_en: "*Etheric Shoot",
-      name_jp: "エーテルシュート",
-      desc: "Deals ranged, INT-based damage to one enemy with the user's weapon.",
-      stats: [],
-      dep: { focusEther: 2 },
-      maxLevel: 8,
-      coords: { x: 2, y: 4 }
-    },
-    restoreEther: {
-      name_en: "*Restore Ether",
-      name_jp: "レストアエーテル",
-      desc: "Increases attack based on the number of TP spent on the previous turn. Does not activate if TP spent last turn is too low.",
-      stats: [],
-      dep: { darkEther: 2 },
-      maxLevel: 10,
-      coords: { x: 3, y: 5 }
-    },
-    antiEther: {
-      name_en: "*Anti-Ether",
-      name_jp: "アンチエーテル",
-      desc: "Provides a chance to nullify elemental attacks against the user's row.",
-      stats: [],
-      dep: { ethericShoot: 2 },
-      maxLevel: 8,
-      coords: { x: 3, y: 4 }
-    },
-    darkEther: {
-      name_en: "Dark Ether",
-      name_jp: "ダークエーテル",
-      desc: "This turn, reduces TP usage for one row.",
-      stats: [],
-      dep: { ethericReturn: 2 },
-      maxLevel: 6,
-      coords: { x: 2, y: 5 }
-    },
-    fireProphecy: {
-      name_en: "*Flame Veil",
-      name_jp: "炎の先見術",
-      desc: "Places a Flame Veil on an ally, which automatically counterattacks enemies who attack that ally with Fire damage.",
-      stats: [],
-      dep: { iceStar: 2, voltStar: 2  },
-      maxLevel: 4,
-      coords: { x: 4, y: 1 }
-    },
-    iceProphecy: {
-      name_en: "*Freeze Veil",
-      name_jp: "氷の先見術",
-      desc: "Places a Freeze Veil on an ally, which automatically counterattacks enemies who attack that ally with Ice damage.",
-      stats: [],
-      dep: { iceStar: 2, voltStar: 2  },
-      maxLevel: 10,
-      coords: { x: 4, y: 2 }
-    },
-    voltProphecy: {
-      name_en: "*Shock Veil",
-      name_jp: "雷の先見術",
-      desc: "Places a Shock Veil on an ally, which automatically counterattacks enemies who attack that ally with Volt damage.",
-      stats: [],
-      dep: { iceStar: 2, voltStar: 2 },
-      maxLevel: 4,
-      coords: { x: 4, y: 3 }
-    },
-    horoscope: {
-      name_en: "*Prophecy",
-      name_jp: "氷の先見術",
-      desc: "Prevents elemental attacks from one enemy. If an attack is prevented, increases the user's attack until the end of the next turn.",
-      stats: [],
-      dep: { fireProphecy: 1, iceProphecy: 1, voltProphecy: 1 },
-      maxLevel: 6,
-      coords: { x: 5, y: 1.5 }
-    },
-    spreadEther: {
-      name_en: "*Etheric Siphon",
-      name_jp: "多段式エーテル",
-      desc: "When the user hits an enemy's weakness, their Force gauge is increased.",
-      stats: [],
-      dep: { antiEther: 2 },
-      maxLevel: 6,
-      coords: { x: 4, y: 4 }
-    },
-    freeEnergy: {
-      name_en: "*Pulsar Feedback",
-      name_jp: "ＴＰカット",
-      desc: "Provides a chance to refund the user's TP usage.",
-      stats: [],
-      dep: { restoreEther : 2 },
-      maxLevel: 6,
-      coords: { x: 4, y: 5 }
-    },
-    meteor: {
-      name_en: "*Meteor",
-      name_jp: "メテオ",
-      desc: "Deals 2-5 instances of ranged bash damage to random targets. If the user used an elemental attack on the last turn, also follow ups with an additional 2-5 instances of the same element",
-      stats: ["INT"],
-      dep: { fireProphecy: 1, iceProphecy: 1, voltProphecy: 1 },
-      maxLevel: 10,
-      coords: { x: 5, y: 2.5 }
     }
   },
   Farmer: {
@@ -3503,7 +3503,25 @@ let skills = {
       stats: [],
       dep: { },
       maxLevel: 4,
-      coords: { x: 0, y: 4 }
+      coords: { x: 1, y: 4 }
+    },
+    autoCloak: {
+      name_en: "Auto-Cloak",
+      name_jp: "先制クローク",
+      desc: "If Shadow Cloak is learned, there is a chance to automatically cast it at the start of battle. Cannot activate if another ally activated it first.",
+      stats: [],
+      dep: { shadowCloak: 1 },
+      maxLevel: 6,
+      coords: { x: 2, y: 4 }
+    },
+    returnCloak: {
+      name_en: "Return Cloak",
+      name_jp: "リターンクローク",
+      desc: "When Shadow Cloak negates an attack, there is a chance that Shadow Cloak will be automatically cast on the user.",
+      stats: [],
+      dep: { autoCloak: 3 },
+      maxLevel: 8,
+      coords: { x: 3, y: 4 }
     },
     bidingSlice: {
       name_en: "Biding Slice",
@@ -3512,25 +3530,16 @@ let skills = {
       stats: ["STR"],
       dep: { shadowCloak: 1 },
       maxLevel: 8,
-      coords: { x: 1, y: 4 }
-    },
-    autoCloak: {
-      name_en: "Auto-Cloak",
-      name_jp: "先制クローク",
-      desc: "If Shadow Cloak is learned, there is a chance to automatically cast it at the start of battle. Cannot activate if another ally activated it first.",
-      stats: [],
-      dep: { bidingSlice: 2 },
-      maxLevel: 6,
-      coords: { x: 2, y: 4 }
+      coords: { x: 2, y: 5 }
     },
     backstab: {
       name_en: "Backstab",
       name_jp: "バックスタブ",
       desc: "Deals melee cut damage to one target. Attempts to inflict head bind. If the user has Shadow Cloak, add almighty element to the attack and increases damage.",
       stats: ["STR", "LUC"],
-      dep: { autoCloak: 2 },
+      dep: { bidingSlice: 2 },
       maxLevel: 10,
-      coords: { x: 3, y: 4 }
+      coords: { x: 3, y: 5 }
     },
     assassinate: {
       name_en: "Assassinate",
@@ -3539,16 +3548,7 @@ let skills = {
       stats: ["STR"],
       dep: { backstab: 3 },
       maxLevel: 8,
-      coords: { x: 4, y: 4 }
-    },
-    returnCloak: {
-      name_en: "Return Cloak",
-      name_jp: "リターンクローク",
-      desc: "When Shadow Cloak negates an attack, there is a chance that Shadow Cloak will be automatically cast on the user.",
-      stats: [],
-      dep: { assassinate: 3 },
-      maxLevel: 8,
-      coords: { x: 5, y: 4 }
+      coords: { x: 4, y: 5 }
     },
     decoySign: {
       name_en: "*Decoy Sign",
@@ -3577,22 +3577,22 @@ let skills = {
       maxLevel: 10,
       coords: { x: 0, y: 3 }
     },
-    foulMastery: {
-      name_en: "Foul Mastery",
-      name_jp: "闇討マスタリ",
-      desc: "Increases attack every time the user inflicts an ailment. Bonus stacks up to 3 times, and is reset if the user dies.",
-      stats: [],
-      dep: { proficiency: 2 },
-      maxLevel: 10,
-      coords: { x: 1, y: 3 }
-    },
     spreadThrow: {
       name_en: "Spread Throw",
       name_jp: "スプレッドスロー",
       desc: "Until the end of the next turn, increases throw skills' range to all targets, and improves their infliction rate.",
       stats: [],
-      dep: { foulMastery: 2 },
+      dep: { proficiency: 2 },
       maxLevel: 4,
+      coords: { x: 1, y: 3 }
+    },
+    foulMastery: {
+      name_en: "Foul Mastery",
+      name_jp: "闇討マスタリ",
+      desc: "Increases attack every time the user inflicts an ailment. Bonus stacks up to 3 times, and is reset if the user dies.",
+      stats: [],
+      dep: { spreadThrow: 2 },
+      maxLevel: 10,
       coords: { x: 2, y: 3 }
     },
     autoSpread: {
@@ -3600,7 +3600,7 @@ let skills = {
       name_jp: "先制スプレッド",
       desc: "Increases the chance of inflicting an ailment/bind if the user failed to inflict one last turn.",
       stats: [],
-      dep: { spreadThrow: 2 },
+      dep: { foulMastery: 2 },
       maxLevel: 6,
       coords: { x: 3, y: 3 }
     },
@@ -4640,14 +4640,23 @@ let skills = {
       maxLevel: 0,
       coords: { x: 1, y: 0 }
     },
+    bloodPact: {
+      name_en: "Blood Pact",
+      name_jp: "リカバリーガード",
+      desc: "Places a buff on the user that makes them take damage in place of party members for a set amount of turns, and for a certain amount of times per turn. Every time the user takes damage for another party member, the chance of them taking damage again on that turn is reduced.",
+      stats: [],
+      dep: { },
+      maxLevel: 8,
+      coords: { x: 0, y: 1 }
+    },
     bareFangs: {
       name_en: "Bare Fangs",
       name_jp: "フロントガード",
       desc: "This turn, whenever the user is attacked, counterattack with melee damage and restore their HP. Also increases the users aggro for that turn.",
       stats: [],
-      dep: { },
-      maxLevel: 6,
-      coords: { x: 0, y: 1 }
+      dep: { bloodPact: 3 },
+      maxLevel: 8,
+      coords: { x: 1, y: 1 }
     },
     crimsonShower: {
       name_en: "Crimson Shower",
@@ -4655,35 +4664,17 @@ let skills = {
       desc: "This turn, whenever the user is attacked, automatically restore their lines HP. Also increases the users aggro for that turn.",
       stats: [],
       dep: { bareFangs: 3 },
-      maxLevel: 6,
-      coords: { x: 1, y: 1 }
-    },
-    bloodPact: {
-      name_en: "Blood Pact",
-      name_jp: "リカバリーガード",
-      desc: "Places a buff on the user that lowers all damage done to them, in addition to making them take damage in place of party members below 50% HP for a set amount of turns, and for a certain amount of times per turn. Every time the user takes damage for another party member, the chance of them taking damage again on that turn is reduced.",
-      stats: [],
-      dep: { crimsonShower: 3 },
-      maxLevel: 10,
+      maxLevel: 8,
       coords: { x: 2, y: 1 }
     },
-    underTheZenith: {
-      name_en: "Under the Zenith",
-      name_jp: "フルガード",
-      desc: "Gives a chance to heal the user at the end of the turn if their HP is below a certain threshold.",
-      stats: [],
-      dep: { bloodPact: 3 },
-      maxLevel: 10,
-      coords: { x: 3, y: 1 }
-    },
     unscathedBody: {
-      name_en: "Unscathed Body",
+      name_en: "?Unscathed Body?",
       name_jp: "ＨＰブースト",
-      desc: "If the user is in the front row and at full HP, their TP is restored at the end of the turn.",
+      desc: "If the user is in the front row and gets hit, their TP is restored.",
       stats: [],
-      dep: { underTheZenith: 3 },
+      dep: { crimsonShower: 3 },
       maxLevel: 6,
-      coords: { x: 4, y: 0.5 }
+      coords: { x: 3, y: 1 }
     },
     drainBite: {
       name_en: "Drain Bite",
@@ -4691,7 +4682,7 @@ let skills = {
       desc: "Deal stab damage to an enemy and restores the users HP. This restoration can heal beyond maximum HP.",
       stats: [],
       dep: { },
-      maxLevel: 6,
+      maxLevel: 8,
       coords: { x: 0, y: 2 }
     },
     iceVein: {
@@ -4700,7 +4691,7 @@ let skills = {
       desc: "Deals ranged Ice damage to all enemies and attempts to inflict Leg bind.",
       stats: [],
       dep: { drainBite: 3 },
-      maxLevel: 8,
+      maxLevel: 6,
       coords: { x: 1, y: 2 }
     },
     lifeSiphon: {
@@ -4715,7 +4706,7 @@ let skills = {
     metamorphosis: {
       name_en: "Metamorphosis",
       name_jp: "オートガード",
-      desc: "Hides the user from the battle for the current turn. At the end of the turn, they will reenter battle and deal STR based melee cut damage to one enemy.",
+      desc: "The user is replaced by a substitute for the turn, if it is destroyed then the user returns to battle. If the substitute survives, then deal cut damage to one enemy at the end of the turn.",
       stats: [],
       dep: { lifeSiphon: 3 },
       maxLevel: 8,
@@ -4724,7 +4715,7 @@ let skills = {
     vampiricSpirit: {
       name_en: "Vampiric Spirit",
       name_jp: "シールドスマイト",
-      desc: "Heals the user at the end of the turn, while also granting them a buff that increases their maximum HP.",
+      desc: "Grants the user a buff that increases their maximum HP at the end of the turn, while also healing them.",
       stats: ["STR", "LUC"],
       dep: { },
       maxLevel: 6,
@@ -4742,10 +4733,10 @@ let skills = {
     umbralVeil: {
       name_en: "Umbral Veil",
       name_jp: "属性防御ブースト",
-      desc: "Places a buff on the allies of the users line that reduces their chance of being targetted.",
+      desc: "For a set number of turns, the allies on the users line will have their chance of being targetted reduced. This skill is considered a debuff.",
       stats: ["STR"],
       dep: { sanguineTide: 3 },
-      maxLevel: 8,
+      maxLevel: 6,
       coords: { x: 2, y: 3 }
     },
     feast: {
@@ -4772,22 +4763,22 @@ let skills = {
       desc: "For a set number of turns, decreases an enemy's attack and increases the user's attack.",
       stats: [],
       dep: { vitalityDrain: 3 },
-      maxLevel: 6,
+      maxLevel: 8,
       coords: { x: 2, y: 4 }
     },
     transfusion: {
       name_en: "Transfusion",
       name_jp: "ヒールウォール",
-      desc: "Consumes the users HP to heal a line.",
+      desc: "Restores one party member's HP. Also removes a set amount of binds.",
       stats: [],
       dep: { },
-      maxLevel: 8,
+      maxLevel: 6,
       coords: { x: 0, y: 5 }
     },
     phlebotomy: {
-      name_en: "Phlebotomy",
+      name_en: "???",
       name_jp: "ファイアガード",
-      desc: "Consumes users HP to dispel a line of allies Ailments and Binds.",
+      desc: "Consumes users HP to remove ailments from a line of allies.",
       stats: [],
       dep: { transfusion: 3 },
       maxLevel: 8,
@@ -4796,7 +4787,7 @@ let skills = {
     rebirthRitual: {
       name_en: "Rebirth Ritual",
       name_jp: "ショックガード",
-      desc: "Consumes the partys HP to revive an ally with overhealed health.",
+      desc: "Consumes the HP of the party to revive an ally with overhealed health.",
       stats: [],
       dep: { phlebotomy: 3 },
       maxLevel: 8,
@@ -4814,19 +4805,28 @@ let skills = {
     briefImmortality: {
       name_en: "Brief Immortality",
       name_jp: "フリーズガード",
-      desc: "Consumes the users HP to make the ally survive fatal damage once for this turn.",
+      desc: "For 3 turns, an ally will endure fatal damage once with a set amount of HP. This skill is considered a debuff.",
       stats: [],
       dep: { riseFromTheDead:3 },
-      maxLevel: 10,
+      maxLevel: 6,
       coords: { x: 4, y: 5 }
+    },
+    underTheZenith: {
+      name_en: "Under the Zenith",
+      name_jp: "フルガード",
+      desc: "Gives the user a chance to use Transfusion when damaged or when bound, at the end of the damage/bind source's turn.",
+      stats: [],
+      dep: { briefImmortality: 3 },
+      maxLevel: 10,
+      coords: { x: 5, y: 5 }
     },
     bloodyCatastrophe: {
       name_en: "Bloody Catastrophe",
       name_jp: "ラインディバイド",
       desc: "Lowers all damage to the user for this turn. At the end of the turn, deals melee Cut damage to all enemies. Every time the user is damaged between the cast time and the attack, the damage is multiplied by 1.25x. The damage is capped at 3x the base damage.",
       stats: [],
-      dep: { metamorphosis: 3, underTheZenith:3 },
-      maxLevel: 10,
+      dep: { metamorphosis: 3, unscathedBody: 3 },
+      maxLevel: 8,
       coords: { x: 4, y: 1.5 }
     },
     vampiricGrace: {
@@ -4839,9 +4839,9 @@ let skills = {
       coords: { x: 4, y: 3.5 }
     },
     crimsonOath: {
-      name_en: "Invoke Gods",
+      name_en: "Forbidden Offering",
       name_jp: "バッグガード",
-      desc: "Covers one ally and heals them.",
+      desc: "Requires 3 buffs. Removes all of them and, in exchange, the user will attack an enemy dealing melee cut damage and reducing the target's damage until the end of the turn.",
       stats: [],
       dep: { bloodyCatastrophe: 3, vampiricGrace: 3 },
       maxLevel: 6,

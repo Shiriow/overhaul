@@ -1837,9 +1837,9 @@ let skills = {
       coords: { x: 2, y: 2 }
     },
     chargedShot: {
-      name_en: "Clean Shot",
+      name_en: "Sharpshooter",
       name_jp: "チャージショット",
-      desc: "Deals ranged stab damage to one target. Deals more damage if target is bound. Low action speed, and the user will take double damage until the skill activates.",
+      desc: "Prepares weapon and waits; at the end of the turn, a thrust attack that snipes enemies that have any bind conditions.",
       stats: ["STR"],
       dep: { headSnipe: 2 },
       maxLevel: 10,
@@ -1882,9 +1882,9 @@ let skills = {
       coords: { x: 2, y: 6 }
     },
     tpUp: {
-      name_en: "TP Up",
+      name_en: "Front Mortar",
       name_jp: "ＴＰブースト",
-      desc: "Increases maximum TP.",
+      desc: "Deals ranged stab damage to one target. Only usable on the front row.",
       stats: [],
       dep: { },
       maxLevel: 8,
@@ -2469,104 +2469,86 @@ let skills = {
       maxLevel: 0,
       coords: { x: 1, y: 0 }*/
     },
+    tpUp: {
+      name_en: "Guiding Star",
+      name_jp: "ＴＰブースト",
+      desc: "Increases elemental attack and maximum TP.",
+      stats: [],
+      dep: { },
+      maxLevel: 8,
+      coords: { x: 2, y: 0 }
+    },
     ethericShoot: {
-      name_en: "*Etheric Shoot",
+      name_en: "Pulse Star",
       name_jp: "エーテルシュート",
       desc: "Deals ranged, INT-based damage to one enemy with the user's weapon.",
       stats: [],
       dep: { },
       maxLevel: 8,
-      coords: { x: 1, y: 1.5 }
+      coords: { x: 0, y: 2 }
     },
     binaryFire: {
-      name_en: "*Binary Fire",
+      name_en: "Binary Fire",
       name_jp: "炎の連星術",
       desc: "Deals ranged fire damage to all enemies.",
       stats: ["INT"],
       dep: { ethericShoot: 1 },
       maxLevel: 10,
-      coords: { x: 2, y: 0.5 }
+      coords: { x: 1, y: 1 }
     },
     binaryIce: {
-      name_en: "*Binary Ice",
+      name_en: "Binary Ice",
       name_jp: "氷の連星術",
       desc: "Deals ranged ice damage to all enemies.",
       stats: ["INT"],
       dep: { ethericShoot: 1 },
       maxLevel: 10,
-      coords: { x: 2, y: 1.5 }
+      coords: { x: 1, y: 2 }
     },
     binaryVolt: {
-      name_en: "*Binary Volt",
+      name_en: "Binary Volt",
       name_jp: "雷の連星術",
       desc: "Deals ranged volt damage to all enemies.",
       stats: ["INT"],
       dep: { ethericShoot: 1 },
       maxLevel: 10,
-      coords: { x: 2, y: 2.5 }
+      coords: { x: 1, y: 3 }
     },
     fireStar: {
-      name_en: "*Astral Fire",
+      name_en: "Astral Fire",
       name_jp: "炎の星術",
-      desc: "Deals ranged fire damage to one target. Applies Astral Fire on the user, forcing attack skills to target only one enemy while increasing damage for 3 turns. This skill cannot be used again for 3 turns.",
+      desc: "Deals ranged fire damage to one target. Applies Astral Fire on the user, increasing damage for 3 turns. This skill cannot be used again for 3 turns.",
       stats: ["INT"],
       dep: { binaryFire: 3, binaryIce: 3, binaryVolt: 3 },
       maxLevel: 10,
-      coords: { x: 3, y: 1.5 }
+      coords: { x: 2, y: 2 }
     },
     iceStar: {
-      name_en: "*Umbral Ice",
+      name_en: "Umbral Ice",
       name_jp: "氷の星術",
       desc: "Deals ranged ice damage to one target. Recovers some TP and removes Astral Fire after use.",
       stats: ["INT"],
       dep: { fireStar: 2 },
       maxLevel: 10,
-      coords: { x: 4, y: 1 }
+      coords: { x: 3, y: 1.5 }
     },
     voltStar: {
-      name_en: "*Solstice Volt",
+      name_en: "Solstice Volt",
       name_jp: "雷の星術",
       desc: "Deals ranged volt damage to one target, and ignores resistances. Removes Astral Fire after use.",
       stats: ["INT"],
       dep: { fireStar: 2 },
       maxLevel: 10,
-      coords: { x: 4, y: 2 }
+      coords: { x: 3, y: 2.5 }
     },
     meteor: {
-      name_en: "*Meteor",
+      name_en: "Meteor",
       name_jp: "メテオ",
-      desc: "Deals 2-5 instances of ranged bash damage to random targets. If the user used an elemental attack on the last turn, also follow ups with an additional 2-5 instances of the same element",
+      desc: "Deals 2-5 instances of ranged random elemental damage to random targets. If the user used an elemental attack on the last turn, also follow ups with an additional 2-5 instances of the same element",
       stats: ["INT"],
       dep: { iceStar: 1, voltStar: 1 },
       maxLevel: 10,
-      coords: { x: 5, y: 1.5 }
-    },
-    focusEther: {
-      name_en: "???",
-      name_jp: "エーテル圧縮",
-      desc: "Until the end of the next turn, Zodiac attack skills will hit only one target, but deal increased damage.",
-      stats: [],
-      dep: { },
-      maxLevel: 6,
-      coords: { x: 0, y: 1 }
-    },
-    etherMastery: {
-      name_en: "???",
-      name_jp: "エーテルマスター",
-      desc: "Increases damage depending on how low the users TP is.",
-      stats: [],
-      dep: { },
-      maxLevel: 8,
-      coords: { x: 0, y: 2 }
-    },
-    tpUp: {
-      name_en: "???",
-      name_jp: "ＴＰブースト",
-      desc: "Increases maximum TP.",
-      stats: [],
-      dep: { },
-      maxLevel: 8,
-      coords: { x: 0, y: 3 }
+      coords: { x: 4, y: 2 }
     },
     singularity: {
       name_en: "Singularity",
@@ -2578,7 +2560,7 @@ let skills = {
       coords: { x: 0, y: 4 }
     },
     ethericGleam: {
-      name_en: "*Etheric Gleam",
+      name_en: "Cosmic Gleam",
       name_jp: "エーテルの輝き",
       desc: "For a set number of turns, increases elemental attack and defense for one row.",
       stats: [],
@@ -2587,7 +2569,7 @@ let skills = {
       coords: { x: 1, y: 4 }
     },
     antiEther: {
-      name_en: "*Anti-Ether",
+      name_en: "Asteroid Belt",
       name_jp: "アンチエーテル",
       desc: "Provides a chance to nullify elemental attacks against the user's row.",
       stats: [],
@@ -2596,7 +2578,7 @@ let skills = {
       coords: { x: 2, y: 4 }
     },
     spreadEther: {
-      name_en: "*Nebula Resurgence",
+      name_en: "Nebula Resurgence",
       name_jp: "多段式エーテル",
       desc: "When the user hits an enemy's weakness, their Force gauge is increased.",
       stats: [],
@@ -2605,7 +2587,7 @@ let skills = {
       coords: { x: 3, y: 4 }
     },
     fireProphecy: {
-      name_en: "*Flame Veil",
+      name_en: "Flame Veil",
       name_jp: "炎の先見術",
       desc: "For a set number of turns, imbue an ally's weapon with fire and make them automatically counterattacks enemies who attacks them.",
       stats: [],
@@ -2614,7 +2596,7 @@ let skills = {
       coords: { x: 4, y: 3 }
     },
     iceProphecy: {
-      name_en: "*Freeze Veil",
+      name_en: "Freeze Veil",
       name_jp: "氷の先見術",
       desc: "For a set number of turns, imbue an ally's weapon with ice and make them automatically counterattacks enemies who attacks them.",
       stats: [],
@@ -2623,7 +2605,7 @@ let skills = {
       coords: { x: 4, y: 4 }
     },
     voltProphecy: {
-      name_en: "*Shock Veil",
+      name_en: "Shock Veil",
       name_jp: "雷の先見術",
       desc: "For a set number of turns, imbue an ally's weapon with volt and make them automatically counterattacks enemies who attacks them.",
       stats: [],
@@ -2632,7 +2614,7 @@ let skills = {
       coords: { x: 4, y: 5 }
     },
     horoscope: {
-      name_en: "*Prophecy",
+      name_en: "Prophecy",
       name_jp: "氷の先見術",
       desc: "Prevents elemental attacks from one enemy. If an attack is prevented, increases the user's attack until the end of the next turn.",
       stats: [],
@@ -2641,7 +2623,7 @@ let skills = {
       coords: { x: 5, y: 4 }
     },
     ethericReturn: {
-      name_en: "*Celestial Return",
+      name_en: "Celestial Return",
       name_jp: "リターンエーテル",
       desc: "Restores TP to the user when hitting a weakness.",
       stats: [],
@@ -2649,8 +2631,26 @@ let skills = {
       maxLevel: 4,
       coords: { x: 0, y: 5 }
     },
+    focusEther: {
+      name_en: "Aether Leak",
+      name_jp: "エーテル圧縮",
+      desc: "For a set amount of turns, when using TP, a percentage of the used TP will be restored to one random party member.",
+      stats: [],
+      dep: { ethericReturn : 2 },
+      maxLevel: 8,
+      coords: { x: 1, y: 6 }
+    },
+    etherMastery: {
+      name_en: "Auto-Leak",
+      name_jp: "エーテルマスター",
+      desc: "If Aether Leak is learned, there is a chance to automatically cast it at the start of battle. Cannot activate if another ally activated it first.",
+      stats: [],
+      dep: { focusEther: 3 },
+      maxLevel: 6,
+      coords: { x: 2, y: 6 }
+    },
     darkEther: {
-      name_en: "Dark Ether",
+      name_en: "Spacial Distortion",
       name_jp: "ダークエーテル",
       desc: "This turn, reduces TP usage for one row.",
       stats: [],
@@ -2659,7 +2659,7 @@ let skills = {
       coords: { x: 1, y: 5 }
     },
     restoreEther: {
-      name_en: "*Stellar Flow",
+      name_en: "Stellar Flow",
       name_jp: "レストアエーテル",
       desc: "Increases attack based on the number of TP spent on the previous turn. Does not activate if TP spent last turn is too low.",
       stats: [],
@@ -2668,7 +2668,7 @@ let skills = {
       coords: { x: 2, y: 5 }
     },
     freeEnergy: {
-      name_en: "*Pulsar Feedback",
+      name_en: "Pulsar Feedback",
       name_jp: "ＴＰカット",
       desc: "Provides a chance to refund the user's TP usage.",
       stats: [],
@@ -2969,33 +2969,6 @@ let skills = {
       maxLevel: 10,
       coords: { x: 1, y: 1 }
     },
-    counterCommand: {
-      name_en: "*Counter Command",
-      name_jp: "斬月居合陣",
-      desc: "This turn, when the selected ally is attacked, all front row allies will counterattack with their weapons. Does not activate against counterattacks.",
-      stats: ["STR"],
-      dep: { },
-      maxLevel: 8,
-      coords: { x: 1, y: 2 }
-    },
-    boltSlash: {
-      name_en: "Bolt Slash",
-      name_jp: "雷切",
-      desc: "Deals melee cut+volt damage to one target with inverted splash damage.",
-      stats: ["STR"],
-      dep: { },
-      maxLevel: 8,
-      coords: { x: 1, y: 3 }
-    },
-    sight: {
-      name_en: "Sight",
-      name_jp: "無明の極",
-      desc: "Increases the user's attack at night or when blinded.",
-      stats: [],
-      dep: { },
-      maxLevel: 4,
-      coords: { x: 1, y: 4 }
-    },
     greatGeneral: {
       name_en: "*Great General",
       name_jp: "大武辺者",
@@ -3042,41 +3015,86 @@ let skills = {
       maxLevel: 10,
       coords: { x: 2, y: 1 }
     },
-    baitCommand: {
-      name_en: "Bait Command",
-      name_jp: "据え虎の陣",
-      desc: "This turn, when the user is attacked, all allies other than the user will counterattack with their weapons. Does not activate against counterattacks.",
-      stats: ["STR"],
-      dep: { counterCommand: 2 },
-      maxLevel: 6,
-      coords: { x: 2, y: 2 }
-    },
     blitzCommand: {
       name_en: "Blitz Command",
       name_jp: "乱れ竜の陣",
       desc: "All allies other than the user will attack one target with their weapons.",
       stats: ["STR"],
-      dep: { baitCommand: 2 },
+      dep: { },
       maxLevel: 10,
+      coords: { x: 0, y: 2 }
+    },
+    baitCommand: {
+      name_en: "Bait Command",
+      name_jp: "据え虎の陣",
+      desc: "This turn, when the user is attacked, all allies other than the user will counterattack with their weapons. Does not activate against counterattacks.",
+      stats: ["STR"],
+      dep: { blitzCommand: 2 },
+      maxLevel: 6,
+      coords: { x: 1, y: 2 }
+    },
+    counterCommand: {
+      name_en: "*Counter Command",
+      name_jp: "斬月居合陣",
+      desc: "This turn, when the selected ally is attacked, all front row allies will counterattack with their weapons. Does not activate against counterattacks.",
+      stats: ["STR"],
+      dep: { baitCommand: 2 },
+      maxLevel: 8,
+      coords: { x: 2, y: 2 }
+    },
+    reprisalCommand: {
+      name_en: "Reprisal Command",
+      name_jp: "報復射撃陣",
+      desc: "This turn, when the selected row is attacked, all allies equipped with a bow or gun will counterattack with their bow or gun. Does not activate against counterattacks.",
+      stats: ["STR"],
+      dep: { counterCommand: 3 },
+      maxLevel: 6,
       coords: { x: 3, y: 2 }
     },
-    morningStar: {
-      name_en: "Morning Star",
-      name_jp: "明星",
-      desc: "Deals melee cut damage to one target. Never misses and removes users Blind.",
+    warriorMight: {
+      name_en: "Warrior Might",
+      name_jp: "一騎当千",
+      desc: "This turn, the user will chase all attacks from all allies, but will lose HP for every chase. The HP loss can kill the user. Links, chases and counterattacks cannot be chased. Only one chase will be made for each action.",
       stats: ["STR"],
-      dep: { boltSlash: 3 },
-      maxLevel: 6,
-      coords: { x: 2, y: 3 }
+      dep: { reprisalCommand: 2 },
+      maxLevel: 10,
+      coords: { x: 4, y: 2 }
+    },
+    boltSlash: {
+      name_en: "Bolt Slash",
+      name_jp: "雷切",
+      desc: "Deals melee cut+volt damage to one target with inverted splash damage.",
+      stats: ["STR"],
+      dep: { },
+      maxLevel: 8,
+      coords: { x: 0, y: 3 }
+    },
+    sight: {
+      name_en: "Sight",
+      name_jp: "無明の極",
+      desc: "Increases the user's attack at night or when blinded.",
+      stats: [],
+      dep: { },
+      maxLevel: 4,
+      coords: { x: 0, y: 4 }
     },
     dusk: {
       name_en: "Dusk",
       name_jp: "禍時",
       desc: "Deals melee cut damage to one row. Never misses and inflicts Blind on the user.",
       stats: ["STR"],
-      dep: { sight: 2 },
+      dep: { sight: 2, boltSlash: 2 },
       maxLevel: 6,
-      coords: { x: 2, y: 4 }
+      coords: { x: 1, y: 3.5 }
+    },
+    morningStar: {
+      name_en: "Morning Star",
+      name_jp: "明星",
+      desc: "Deals melee cut damage to one target. Never misses and removes users Blind.",
+      stats: ["STR"],
+      dep: { dusk: 3 },
+      maxLevel: 6,
+      coords: { x: 2, y: 3.5 }
     },
     bloodyLance: {
       name_en: "Bloody Lance",
@@ -3085,7 +3103,16 @@ let skills = {
       stats: [],
       dep: { },
       maxLevel: 6,
-      coords: { x: 3, y: 4 }
+      coords: { x: 3, y: 3.5 }
+    },
+    mercyKill: {
+      name_en: "Mercy Kill",
+      name_jp: "介錯",
+      desc: "When any enemy or ally is attacked, and their HP falls below a set percentage, there is a chance to inflict instant death to them.",
+      stats: [],
+      dep: { bloodyLance: 3 },
+      maxLevel: 4,
+      coords: { x: 4, y: 3.5 }
     },
     fellingBird: {
       name_en: "Felling Bird",
@@ -3123,24 +3150,6 @@ let skills = {
       maxLevel: 10,
       coords: { x: 4, y: 1 }
     },
-    reprisalCommand: {
-      name_en: "Reprisal Command",
-      name_jp: "報復射撃陣",
-      desc: "This turn, when the selected row is attacked, all allies equipped with a bow or gun will counterattack with their bow or gun. Does not activate against counterattacks.",
-      stats: ["STR"],
-      dep: { blitzCommand: 3 },
-      maxLevel: 6,
-      coords: { x: 4, y: 2 }
-    },
-    warriorMight: {
-      name_en: "Warrior Might",
-      name_jp: "一騎当千",
-      desc: "This turn, the user will chase all attacks from all allies, but will lose HP for every chase. The HP loss can kill the user. Links, chases and counterattacks cannot be chased. Only one chase will be made for each action.",
-      stats: ["STR"],
-      dep: { reprisalCommand: 2 },
-      maxLevel: 10,
-      coords: { x: 5, y: 2 }
-    },
     reincarnation: {
       name_en: "Reincarnation",
       name_jp: "仮死再生",
@@ -3148,16 +3157,7 @@ let skills = {
       stats: [],
       dep: { ritualSuicide: 2 },
       maxLevel: 10,
-      coords: { x: 4, y: 6 }
-    },
-    mercyKill: {
-      name_en: "Mercy Kill",
-      name_jp: "介錯",
-      desc: "When any enemy or ally is attacked, and their HP falls below a set percentage, there is a chance to inflict instant death to them.",
-      stats: [],
-      dep: { bloodyLance: 3 },
-      maxLevel: 4,
-      coords: { x: 4, y: 4 }
+      coords: { x: 3, y: 6 }
     },
     foreHonor: {
       name_en: "Fore Honor",
@@ -3166,7 +3166,7 @@ let skills = {
       stats: [],
       dep: { curseStrike: 2 },
       maxLevel: 6,
-      coords: { x: 4, y: 5 }
+      coords: { x: 3, y: 5 }
     }
   },
   Landsknecht: {

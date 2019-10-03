@@ -436,7 +436,7 @@ let skills = {
       coords: { x: 2, y: 4 }
     },
     hpUp: {
-      name_en: "*Rampart",
+      name_en: "*Parry",
       name_jp: "ＨＰブースト",
       desc: "Attempts to nullify physical attacks directed at the user's row for one turn. Each time an attack is nullified, the chance of it triggering again on that turn is reduced.",
       stats: [],
@@ -1248,10 +1248,10 @@ let skills = {
     warEdgeMastery: {
       name_en: "War Edge Mastery",
       name_jp: "巫剣マスタリー",
-      desc: "User can dual-wield and use sword skills with staff. Increases maximum TP when a sword is equipped; increases damage when a staff is equipped on the top slot. Normal attacks have a chance of being repeated.",
+      desc: "User can dual-wield and use sword skills with staff. Increases maximum TP when a sword is equipped; increases damage when a staff is equipped on the top slot. Normal attacks have a chance of being repeated for a maximum of 4 times.",
       stats: [],
       dep: { },
-      maxLevel: 4,
+      maxLevel: 6,
       coords: { x: 0, y: 1.5 }
     },
     warHealLine: {
@@ -1291,7 +1291,7 @@ let skills = {
       coords: { x: 3, y: 2 }
     },
     pandemonium: {
-      name_en: "*Pandemonium",
+      name_en: "Pandemonium",
       name_jp: "ＨＰブースト",
       desc: "Increases the targets attack and defense for a set number of turns.",
       stats: [],
@@ -1368,7 +1368,7 @@ let skills = {
       desc: "Deals melee cut+almighty damage to one target. If the target has an ailment, increases damage dealt.",
       stats: ["STR"],
       dep: { legcut: 3 },
-      maxLevel: 6,
+      maxLevel: 8,
       coords: { x: 4, y: 3.5 }
     },
     harvestFestival: {
@@ -1377,16 +1377,16 @@ let skills = {
       desc: "Deals melee cut damage to all enemies. Increases damage dealt and attempts to inflict instant death on enemy with binds.",
       stats: ["WIS"],
       dep: { ailingSlash: 2 },
-      maxLevel: 10,
+      maxLevel: 8,
       coords: { x: 5, y: 3 }
     },
     scorpion: {
-      name_en: "*Scorpion",
+      name_en: "Scorpion",
       name_jp: "巫術：再生陣",
       desc: "Deals melee cut damage to one enemy, with double splash damage to adjacent enemies. If adjacent enemies have ailments, attempts to petrify the target.",
       stats: ["STR"],
       dep: { ailingSlash: 2 },
-      maxLevel: 10,
+      maxLevel: 8,
       coords: { x: 5, y: 4 }
     },
     leeches: {
@@ -1395,7 +1395,7 @@ let skills = {
       desc: "When the user deals damage to an enemy with an ailment, restores HP to the user's row. Can only activate once per turn.",
       stats: ["WIS"],
       dep: { },
-      maxLevel: 6,
+      maxLevel: 8,
       coords: { x: 1, y: 5.5 }
     },
     rouse: {
@@ -1408,16 +1408,16 @@ let skills = {
       coords: { x: 2, y: 5 }
     },
     bindCut: {
-      name_en: "*Bind Cut",
+      name_en: "Bind Cut",
       name_jp: "物理攻撃ブースト",
       desc: "Deals melee cut+almighty damage to one target. If target is bound, increases the user's Force.",
       stats: [],
       dep: { leeches: 2 },
-      maxLevel: 8,
+      maxLevel: 6,
       coords: { x: 2, y: 6 }
     },
     dissection: {
-      name_en: "*Dissection",
+      name_en: "Dissection",
       name_jp: "抑制防御ブースト",
       desc: "When the user kills an enemy, restores Force to all party members.",
       stats: [],
@@ -1431,11 +1431,11 @@ let skills = {
       desc: "When the user deals damage to an enemy with both an ailment and a bind, restores TP to the user's row. Can only activate once per turn.",
       stats: ["WIS"],
       dep: { dissection: 2 },
-      maxLevel: 6,
+      maxLevel: 8,
       coords: { x: 4, y: 5.5 }
     },
     curseCut: {
-      name_en: "*Curse Cut",
+      name_en: "Curse Cut",
       name_jp: "発疫",
       desc: "Deals melee cut+almighty damage to one target and attempt to inflict curse. If sucessful, or if the target is already cursed, restores Force to the users row.",
       stats: ["LUC"],

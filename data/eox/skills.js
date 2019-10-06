@@ -668,13 +668,13 @@ let skills = {
       coords: { x: 3, y: 6 }
     },
     partyHeal: {
-      name_en: "*???",
+      name_en: "*Vital Hit",
       name_jp: "エリアヒール",
-      desc: "Restores HP to all party members.",
+      desc: "Deals melee STR-based Bash damage to one enemy. Damage is multiplied by the party's current average HP compared to their normal max.",
       stats: ["WIS"],
-      dep: { delayedHeal: 3 },
+      dep: { },
       maxLevel: 10,
-      coords: { x: 4, y: 1 }
+      coords: { x: 4, y: 6 }
     },
     chaseHeal: {
       name_en: "Chase Heal",
@@ -683,7 +683,7 @@ let skills = {
       stats: ["WIS"],
       dep: { delayedHeal: 3 },
       maxLevel: 8,
-      coords: { x: 4, y: 2 }
+      coords: { x: 4, y: 1.5 }
     },
     overheal: {
       name_en: "Overheal",
@@ -1369,23 +1369,32 @@ let skills = {
       stats: ["STR"],
       dep: { legcut: 3 },
       maxLevel: 8,
-      coords: { x: 4, y: 3.5 }
-    },
-    harvestFestival: {
-      name_en: "Harvest Festival",
-      name_jp: "巫術：再生",
-      desc: "Deals melee cut damage to all enemies. Increases damage dealt and attempts to inflict instant death on enemy with binds.",
-      stats: ["WIS"],
-      dep: { ailingSlash: 2 },
-      maxLevel: 8,
-      coords: { x: 5, y: 3 }
+      coords: { x: 4, y: 3 }
     },
     scorpion: {
       name_en: "Scorpion",
       name_jp: "巫術：再生陣",
       desc: "Deals melee cut damage to one enemy, with double splash damage to adjacent enemies. If adjacent enemies have ailments, attempts to petrify the target.",
       stats: ["STR"],
+      dep: { legcut: 3 },
+      maxLevel: 8,
+      coords: { x: 4, y: 4 }
+    },
+    blindLaughter: {
+      name_en: "Blind Laughter",
+      name_jp: "抑制防御ブースト",
+      desc: "For that turn, if an enemy becomes afflicted with an ailment, bind, or stun, the user will attack.",
+      stats: [],
       dep: { ailingSlash: 2 },
+      maxLevel: 8,
+      coords: { x: 5, y: 3 }
+    },
+    looseThread: {
+      name_en: "Loose Thread",
+      name_jp: "巫術：再生",
+      desc: "Deals melee cut damage to all enemies. Increases damage dealt and attempts to inflict instant death on enemy with binds.",
+      stats: ["WIS"],
+      dep: { scorpion: 2 },
       maxLevel: 8,
       coords: { x: 5, y: 4 }
     },
@@ -1405,23 +1414,14 @@ let skills = {
       stats: [],
       dep: { leeches: 2 },
       maxLevel: 6,
-      coords: { x: 2, y: 5 }
+      coords: { x: 2, y: 5.5 }
     },
     bindCut: {
       name_en: "Bind Cut",
       name_jp: "物理攻撃ブースト",
       desc: "Deals melee cut+almighty damage to one target. If target is bound, increases the user's Force.",
       stats: [],
-      dep: { leeches: 2 },
-      maxLevel: 6,
-      coords: { x: 2, y: 6 }
-    },
-    dissection: {
-      name_en: "Dissection",
-      name_jp: "抑制防御ブースト",
-      desc: "When the user kills an enemy, restores Force to all party members.",
-      stats: [],
-      dep: { rouse: 3, bindCut: 3 },
+      dep: { rouse: 2 },
       maxLevel: 6,
       coords: { x: 3, y: 5.5 }
     },
@@ -1560,9 +1560,9 @@ let skills = {
       coords: { x: 0, y: 6 }
     },
     hpUp: {
-      name_en: "*???",
+      name_en: "*Force Offering",
       name_jp: "ＨＰブースト",
-      desc: "Increases maximum HP.",
+      desc: "Only usable while the user is in the Force Boost state. Consumes the users HP to extend the duration of their Force Boost by 1 turn.",
       stats: [],
       dep: { },
       maxLevel: 8,
@@ -2687,7 +2687,7 @@ let skills = {
       coords: { x: 0, y: 6 }
     }
   },
-  Farmer: {
+  /*Farmer: {
     itemAgain: {
       name_en: "Item Again",
       name_jp: "アイテムアゲイン",
@@ -2927,7 +2927,7 @@ let skills = {
       maxLevel: 8,
       coords: { x: 5, y: 6 }
     }
-  },
+  },*/
   Shogun: {
     fullCombatForm: {
       name_en: "Full Combat Form",
@@ -3060,30 +3060,21 @@ let skills = {
       maxLevel: 10,
       coords: { x: 4, y: 2 }
     },
-    boltSlash: {
-      name_en: "Bolt Slash",
-      name_jp: "雷切",
-      desc: "Deals melee cut+volt damage to one target with inverted splash damage.",
-      stats: ["STR"],
-      dep: { },
-      maxLevel: 8,
-      coords: { x: 0, y: 3 }
-    },
     sight: {
-      name_en: "Sight",
+      name_en: "*Sight",
       name_jp: "無明の極",
       desc: "Increases the user's attack at night or when blinded.",
       stats: [],
       dep: { },
-      maxLevel: 4,
-      coords: { x: 0, y: 4 }
+      maxLevel: 6,
+      coords: { x: 0, y: 3.5 }
     },
     dusk: {
       name_en: "Dusk",
       name_jp: "禍時",
       desc: "Deals melee cut damage to one row. Never misses and inflicts Blind on the user.",
       stats: ["STR"],
-      dep: { sight: 2, boltSlash: 2 },
+      dep: { sight: 2 },
       maxLevel: 6,
       coords: { x: 1, y: 3.5 }
     },
@@ -3096,23 +3087,32 @@ let skills = {
       maxLevel: 6,
       coords: { x: 2, y: 3.5 }
     },
-    bloodyLance: {
-      name_en: "Bloody Lance",
-      name_jp: "血染めの朱槍",
-      desc: "When the user kills an enemy or ally, their attack is increased. The effect is reset when the user dies.",
-      stats: [],
-      dep: { },
-      maxLevel: 6,
-      coords: { x: 3, y: 3.5 }
-    },
     mercyKill: {
       name_en: "Mercy Kill",
       name_jp: "介錯",
       desc: "When any enemy or ally is attacked, and their HP falls below a set percentage, there is a chance to inflict instant death to them.",
       stats: [],
-      dep: { bloodyLance: 3 },
+      dep: {  },
       maxLevel: 4,
-      coords: { x: 4, y: 3.5 }
+      coords: { x: 3, y: 3.5 }
+    },
+    bloodyLance: {
+      name_en: "Bloody Lance",
+      name_jp: "血染めの朱槍",
+      desc: "When the user kills an enemy or ally, their attack is increased. The effect is reset when the user dies.",
+      stats: [],
+      dep: { mercyKill: 2 },
+      maxLevel: 6,
+      coords: { x: 4, y: 3 }
+    },
+    dissection: {
+      name_en: "*Dissection",
+      name_jp: "雷切",
+      desc: "When the user kills an enemy, restores Force to all party members.",
+      stats: ["STR"],
+      dep: { mercyKill: 2 },
+      maxLevel: 6,
+      coords: { x: 4, y: 4 }
     },
     fellingBird: {
       name_en: "Felling Bird",
@@ -3474,9 +3474,9 @@ let skills = {
       name_jp: "シャドウバイト",
       desc: "Deals melee cut damage to one target. Damage is increased if the target has an ailment.",
       stats: ["STR"],
-      dep: { sleepThrow: 3, foulMastery: 3 },
+      dep: { foulMastery: 5 },
       maxLevel: 10,
-      coords: { x: 2, y: 2 }
+      coords: { x: 3, y: 3 }
     },
     venomThrow: {
       name_en: "Venom Throw",
@@ -3494,7 +3494,7 @@ let skills = {
       stats: ["STR"],
       dep: { shadowBite: 3 },
       maxLevel: 10,
-      coords: { x: 4, y: 2 }
+      coords: { x: 4, y: 3 }
     },
     shadowCloak: {
       name_en: "Shadow Cloak",
@@ -3575,16 +3575,16 @@ let skills = {
       stats: [],
       dep: { },
       maxLevel: 10,
-      coords: { x: 0, y: 3 }
+      coords: { x: 0, y: 2 }
     },
     spreadThrow: {
       name_en: "Spread Throw",
       name_jp: "スプレッドスロー",
       desc: "Until the end of the next turn, increases throw skills' range to all targets, and improves their infliction rate.",
       stats: [],
-      dep: { proficiency: 2 },
+      dep: { proficiency: 5 },
       maxLevel: 4,
-      coords: { x: 1, y: 3 }
+      coords: { x: 1, y: 2 }
     },
     foulMastery: {
       name_en: "Foul Mastery",
@@ -3593,25 +3593,25 @@ let skills = {
       stats: [],
       dep: { spreadThrow: 2 },
       maxLevel: 10,
-      coords: { x: 2, y: 3 }
+      coords: { x: 2, y: 2 }
     },
     autoSpread: {
       name_en: "*Perseverance",
       name_jp: "先制スプレッド",
       desc: "Increases the chance of inflicting an ailment/bind if the user failed to inflict one last turn.",
       stats: [],
-      dep: { foulMastery: 2 },
+      dep: { foulMastery: 5 },
       maxLevel: 6,
-      coords: { x: 3, y: 3 }
+      coords: { x: 3, y: 2 }
     },
     followTrace: {
       name_en: "Follow Trace",
       name_jp: "追影の残滓",
       desc: "After using an attack skill, if at least one of the skill's targets has an ailment, there is a chance to repeat the skill.",
       stats: [],
-      dep: { autoSpread: 4 },
+      dep: { autoSpread: 3 },
       maxLevel: 10,
-      coords: { x: 4, y: 3 }
+      coords: { x: 4, y: 2 }
     },
     bladeFlurry: {
       name_en: "Blade Flurry",
@@ -3757,7 +3757,7 @@ let skills = {
       coords: { x: 0, y: 6 }
     },
     dismissRevive: {
-      name_en: "Dismiss Revive",
+      name_en: "*Dismiss Revive",
       name_jp: "破陣：再起活性",
       desc: "Dismisses the current circle to attempt to revive one row of allies.",
       stats: [],
@@ -3834,7 +3834,7 @@ let skills = {
       desc: "Provides a chance to nullify binds, ailments and stun for the user's row.",
       stats: [],
       dep: { },
-      maxLevel: 4,
+      maxLevel: 8,
       coords: { x: 3, y: 6 }
     },
     dismissBlast: {
@@ -3847,9 +3847,9 @@ let skills = {
       coords: { x: 4, y: 1 }
     },
     circleMastery: {
-      name_en: "*???",
+      name_en: "*Force ???",
       name_jp: "方陣マスタリ",
-      desc: "Increases the power of Dismiss skills.",
+      desc: "Restores Force to the party whenever the user inflicts a bind, ailment or stun. Inflicting something on multiple enemies will not increase the effect of this skill.",
       stats: [],
       dep: { dismissBlast: 3 },
       maxLevel: 6,
@@ -3979,9 +3979,9 @@ let skills = {
       coords: { x: 1, y: 4.5 }
     },
     avenger: {
-      name_en: "*???",
+      name_en: "*Force Energy",
       name_jp: "アベンジャー",
-      desc: "When an ally dies, restores HP to the user.",
+      desc: "Passively restores a percentage of the user's maximum TP plus a static amount while they are in the Force Boost state.",
       stats: [],
       dep: { },
       maxLevel: 4,
@@ -4686,7 +4686,7 @@ let skills = {
       coords: { x: 0, y: 2 }
     },
     iceVein: {
-      name_en: "Ice Vein",
+      name_en: "???",
       name_jp: "渾身ディフェンス",
       desc: "Deals ranged Ice damage to all enemies and attempts to inflict Leg bind.",
       stats: [],
@@ -4785,7 +4785,7 @@ let skills = {
       coords: { x: 1, y: 5 }
     },
     rebirthRitual: {
-      name_en: "Rebirth Ritual",
+      name_en: "???",
       name_jp: "ショックガード",
       desc: "Consumes the HP of the party to revive an ally with overhealed health.",
       stats: [],

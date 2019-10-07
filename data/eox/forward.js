@@ -159,7 +159,7 @@ let forward = {
     scorpion: { looseThread:2 },
     blindLaughter: { },
     looseThread: { },
-    leeches: { rouse: 2, bindCut: 2 },
+    leeches: { rouse: 2 },
     rouse: { bindCut: 2 },
     bindCut: { spiritDrain: 2 },
     spiritDrain: { curseCut: 3 },

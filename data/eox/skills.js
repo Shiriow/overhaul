@@ -1248,7 +1248,7 @@ let skills = {
     warEdgeMastery: {
       name_en: "War Edge Mastery",
       name_jp: "巫剣マスタリー",
-      desc: "User can dual-wield and use sword skills with staff. Increases maximum TP when a sword is equipped; increases damage when a staff is equipped on the top slot. Normal attacks have a chance of being repeated for a maximum of 4 times.",
+      desc: "User can dual-wield and use sword skills with staff. Increases maximum TP when a sword is equipped; increases damage when a staff is equipped on the top slot. Normal attacks may hit 2-4 times if two weapons are equipped.",
       stats: [],
       dep: { },
       maxLevel: 6,
@@ -1383,7 +1383,7 @@ let skills = {
     blindLaughter: {
       name_en: "Blind Laughter",
       name_jp: "抑制防御ブースト",
-      desc: "For that turn, if an enemy becomes afflicted with an ailment, bind, or stun, the user will attack.",
+      desc: "This turn, if an enemy is afflicted with any ailments, binds, or stun, the user will perform a follow up attack.",
       stats: [],
       dep: { ailingSlash: 2 },
       maxLevel: 8,
@@ -1430,7 +1430,7 @@ let skills = {
       name_jp: "吸気",
       desc: "When the user deals damage to an enemy with both an ailment and a bind, restores TP to the user's row. Can only activate once per turn.",
       stats: ["WIS"],
-      dep: { dissection: 2 },
+      dep: { bindCut: 2 },
       maxLevel: 8,
       coords: { x: 4, y: 5.5 }
     },
@@ -3054,7 +3054,7 @@ let skills = {
     warriorMight: {
       name_en: "Warrior Might",
       name_jp: "一騎当千",
-      desc: "This turn, the user will chase all attacks from all allies, but will lose HP for every chase. The HP loss can kill the user. Links, chases and counterattacks cannot be chased. Only one chase will be made for each action.",
+      desc: "This turn, the user will chase all attacks from all allies, but will lose HP for every chase. Links, chases and counterattacks cannot be chased. Only one chase will be made for each action.",
       stats: ["STR"],
       dep: { reprisalCommand: 2 },
       maxLevel: 10,

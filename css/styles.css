@@ -254,8 +254,11 @@ td {
 .skill-available{
 background-color: #024486;
 }
-.skill-info{
+/* .skill-info{
 background-color: #014486;
+} */
+.skill-info{
+background-color: #003264;
 }
 
 .skill-unavailable{

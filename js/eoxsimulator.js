@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 class EOXSimulator extends Simulator {
   get defaultClass() {
-    return "Roninv2";
+    return "Ninjav2";
   }
 
   get levelCaps() {

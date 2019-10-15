@@ -1127,10 +1127,10 @@ let skills = {
       desc: "When an attack is dodged, the user has a chance to counter-attack the source of the attack. Chance decreases by 40% per dodge.",
       stats: [],
       dep: { fanDance: 2 },
-      maxLevel: 10,
+      maxLevel: 8,
       coords: { x: 3, y: 3 }
     },
-    sneakAttack: {
+    rayOfLight: {
       name_en: "Ray of Light",
       name_jp: "奇襲",
       desc: "When the user dodges an attack, their chance to be targeted and defense increase. If the they fail to dodge an attack, Ray of Light's effects are reset.",
@@ -1144,7 +1144,7 @@ let skills = {
       name_jp: "自然の恩恵",
       desc: "If the user evaded an attack on the previous turn, increases chance of inflicting ailments",
       stats: [],
-      dep: { sylphid: 3, sneakAttack: 3 },
+      dep: { sylphid: 3, rayOfLight: 3 },
       maxLevel: 8,
       coords: { x: 4, y: 3.5 }
     },
@@ -1199,7 +1199,7 @@ let skills = {
       desc: "Selected ally will cover all party members a set number of times this turn. Ineffective if that ally has leg bind.",
       stats: [],
       dep: { efficiency: 2, stalker: 2 },
-      maxLevel: 6,
+      maxLevel: 8,
       coords: { x: 3, y: 5.5 }
     },
     swapStep: {
@@ -1208,7 +1208,7 @@ let skills = {
       desc: "Selected ally has a chance to act first this turn.",
       stats: [],
       dep: { scapegoat: 2 },
-      maxLevel: 6,
+      maxLevel: 8,
       coords: { x: 4, y: 5.5 }
     },
     naturalInstinct: {
@@ -3125,7 +3125,7 @@ let skills = {
     phantomKnives: {
       name_en: "Phantom Knives",
       name_jp: "忍法　雲隠",
-      desc: "Consumes the user's HP to reduce the accuracy of one row of enemies.",
+      desc: "For a set number of turns, reduces the accuracy of one row of enemies.",
       stats: [],
       dep: { concealment: 2 },
       maxLevel: 8,

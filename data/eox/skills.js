@@ -652,7 +652,7 @@ let skills = {
     patrol: {
       name_en: "Defender",
       name_jp: "警戒斥候",
-      desc: "Increases the party's Physical Defense and Bind Defense for a set number of turns.",
+      desc: "Increases the party's physical/bind defense for a set number of turns.",
       stats: [],
       dep: { },
       maxLevel: 6,
@@ -661,7 +661,7 @@ let skills = {
     elemDefUp: {
       name_en: "*Immunize",
       name_jp: "属性防御ブースト",
-      desc: "Increases the party's Elemental Defense and Ailment Defense for a set number of turns.",
+      desc: "Increases the party's elemental/ailment defense for a set number of turns.",
       stats: [],
       dep: { },
       maxLevel: 8,
@@ -993,17 +993,39 @@ let skills = {
       maxLevel: 0,
       coords: { x: 0, y: 0 }
     },
+    // illusionStep: {
+    //   name_en: "Illusion Step",
+    //   name_jp: "夢幻陣形",
+    //   desc: "For 3 turns, increases the user's evasion and chance of being targeted. Adds an extra chaser attack to bow attacks and skills.",
+    //   stats: [],
+    //   unique: true,
+    //   type: "Boost",
+    //   dep: { },
+    //   maxLevel: 0,
+    //   coords: { x: 0, y: 0 }
+    // },
     mirageArrow: {
-      name_en: "Mirage Arrow",
-      name_jp: "ミラージュアロー",
-      desc: "Deals ranged stab damage to one target. Decreases their accuracy and make them act last for 3 turns.",
-      stats: ["STR"],
-      unique: true,
-      type: "Break",
-      dep: { illusionStep: 0 },
-      maxLevel: 0,
-      coords: { x: 1, y: 0 }
-    },
+        name_en: "Mirage Arrow",
+        name_jp: "ミラージュアロー",
+        desc: "Deals ranged stab damage to one target. Decreases their accuracy and make them act last for 3 turns.",
+        stats: ["STR"],
+        unique: true,
+        type: "Break",
+        dep: { illusionStep: 0 },
+        maxLevel: 0,
+        coords: { x: 1, y: 0 }
+      },
+    // mirageArrow: {
+    //   name_en: "Summer Rain",
+    //   name_jp: "ミラージュアロー",
+    //   desc: "Deals 16 instances of ranged stab damage to random targets. Can hit the same target 4 times at most. Decreases their accuracy and make them act last for 3 turns.",
+    //   stats: ["STR"],
+    //   unique: true,
+    //   type: "Break",
+    //   dep: { illusionStep: 0 },
+    //   maxLevel: 0,
+    //   coords: { x: 1, y: 0 }
+    // },
     flameArrow: {
       name_en: "Flame Arrow",
       name_jp: "フレイムアロー",
@@ -1543,7 +1565,7 @@ let skills = {
     flameGrater: {
       name_en: "Flame Grater",
       name_jp: "卸し焔",
-      desc: "Requires Upper Stance. Deals melee cut+fire damage to one target and sets up a line counter. Assumes Clear Stance after use.",
+      desc: "Requires Upper Stance. Deals melee cut+fire damage to one target and when a party member on the user's row is attacked, counterattack with melee damage. Assumes Clear Stance after use.",
       stats: ["STR"],
       dep: { airBlade: 1, delayedStrike: 1, bloodyBlade: 1 },
       maxLevel: 8,
@@ -1561,7 +1583,7 @@ let skills = {
     swallowStrike: {
       name_en: "Swallow Strike",
       name_jp: "ツバメがえし",
-      desc: "Requires Upper Stance. Deals multiple instances of melee cut damage to one target.",
+      desc: "Requires Upper Stance. Deals multiple instances of melee cut damage to one target. Assumes Clear Stance after use. Novice and Master skills cannot be used again for 3 turns.",
       stats: ["STR"],
       dep: { helmSplitter: 3 },
       maxLevel: 8,
@@ -1570,7 +1592,7 @@ let skills = {
     petalScatter: {
       name_en: "Petal Scatter",
       name_jp: "散華",
-      desc: "Requires Upper Stance. Deals ranged cut damage to all targets. Deals less damage based on the number of targets.",
+      desc: "Requires Upper Stance. Deals ranged cut damage to all targets. Deals less damage based on the number of targets. Assumes Clear Stance after use. Novice and Master skills cannot be used again for 3 turns.",
       stats: ["STR"],
       dep: { horizontalSlice: 3 },
       maxLevel: 8,
@@ -1651,7 +1673,7 @@ let skills = {
     bluntingStab: {
       name_en: "Blunting Stab",
       name_jp: "鈍通し",
-      desc: "Requires Clear Stance. Deals melee stab damage to one target. Attempts to inflict petrify.",
+      desc: "Requires Clear Stance. Deals melee stab damage to one target. Attempts to inflict petrify. Assumes Upper Stance after use. Novice and Master skills cannot be used again for 3 turns.",
       stats: ["STR", "LUC"],
       dep: { hazeSlash: 3 },
       maxLevel: 8,
@@ -1660,7 +1682,7 @@ let skills = {
     earthBreaker: {
       name_en: "Earth Breaker",
       name_jp: "免許皆伝",
-      desc: "Requires Clear Stance. Deals melee cut attack to one target with splash damage and a chance of stunning.",
+      desc: "Requires Clear Stance. Deals melee cut attack to one target with splash damage and a chance of stunning. Assumes Upper Stance after use. Novice and Master skills cannot be used again for 3 turns.",
       stats: [],
       dep: { lightningStab: 3 },
       maxLevel: 8,
@@ -2219,7 +2241,7 @@ let skills = {
       coords: { x: 0, y: 1 }
     },
     spreadShot: {
-      name_en: "Spread Shot",
+      name_en: "???",
       name_jp: "拡散弾",
       desc: "Deals ranged stab damage to one target, with splash damage.",
       stats: ["STR"],
@@ -2923,7 +2945,7 @@ let skills = {
     insolence: {
       name_en: "Insolence",
       name_jp: "不忍",
-      desc: "For 3 turns, increases all party members' evasion and user's chance of being targeted.",
+      desc: "For 3 turns, increases all party members' action speed and evasion.",
       stats: [],
       unique: true,
       type: "Boost",
@@ -3047,7 +3069,7 @@ let skills = {
       desc: "Once per battle, when the user is killed by an enemy attack, they will counterattack with ranged fire damage.",
       stats: ["STR"],
       dep: { },
-      maxLevel: 6,
+      maxLevel: 4,
       coords: { x: 2, y: 6 }
     },
     ninpoClone: {
@@ -3074,7 +3096,7 @@ let skills = {
       desc: "If Ninpo: Clone is learned, there is a chance to automatically cast it at the start of battle. Cannot activate if another ally activated it first.",
       stats: [],
       dep: { drawingSlice: 4 },
-      maxLevel: 6,
+      maxLevel: 10,
       coords: { x: 4, y: 3 }
     },
     ninpoMirage: {
@@ -3110,7 +3132,7 @@ let skills = {
       desc: "Increases evasion.",
       stats: [],
       dep: { acrobatics: 2 },
-      maxLevel: 10,
+      maxLevel: 8,
       coords: { x: 1, y: 4 }
     },
     windCurtain: {
@@ -3127,7 +3149,7 @@ let skills = {
       name_jp: "忍法　雲隠",
       desc: "For a set number of turns, reduces the accuracy of one row of enemies.",
       stats: [],
-      dep: { concealment: 2 },
+      dep: { windCurtain: 2 },
       maxLevel: 8,
       coords: { x: 1, y: 5 }
     },
@@ -3241,7 +3263,7 @@ let skills = {
     fireStar: {
       name_en: "Astral Fire",
       name_jp: "炎の星術",
-      desc: "Deals ranged fire damage to one target. Applies Astral Fire on the user, increasing damage for 3 turns. This skill cannot be used again for 3 turns.",
+      desc: "Deals ranged fire damage to one target. Applies Astral Fire on the user, increasing damage for ? turns. This skill cannot be used again for 3 turns.",
       stats: ["INT"],
       dep: { binaryFire: 3, binaryIce: 3, binaryVolt: 3 },
       maxLevel: 10,
@@ -3266,13 +3288,22 @@ let skills = {
       coords: { x: 3, y: 2.5 }
     },
     meteor: {
-      name_en: "Meteor",
+      name_en: "Meteor Rain",
       name_jp: "メテオ",
-      desc: "Deals 2-5 instances of ranged random elemental damage to random targets. If the user used an elemental attack on the last turn, also follow ups with an additional 2-5 instances of the same element",
+      desc: "Deals 5-10 instances of ranged random elemental damage to random targets.",
       stats: ["INT"],
       dep: { iceStar: 1, voltStar: 1 },
       maxLevel: 10,
       coords: { x: 4, y: 2 }
+    },
+    voltProphecy: {
+      name_en: "Gravitational Nova",
+      name_jp: "雷の先見術",
+      desc: "Three turns after casting, deals ranged INT-based bash damage to one enemy. During this time, for each time the target's weakness is hit, this skills damage is increased, up to 10 stacks. Multi-hit attacks will trigger multiple stacks.",
+      stats: [],
+      dep: { meteor: 2 },
+      maxLevel: 6,
+      coords: { x: 5, y: 2 }
     },
     singularity: {
       name_en: "Singularity",
@@ -3311,38 +3342,29 @@ let skills = {
       coords: { x: 3, y: 4 }
     },
     fireProphecy: {
-      name_en: "Flame Veil",
+      name_en: "Alignment",
       name_jp: "炎の先見術",
-      desc: "For a set number of turns, imbue an ally's weapon with fire and make them automatically counterattacks enemies who attacks them.",
+      desc: "If the skill used on this turn is of a different element from the last one used, it gains the element of the last one used and has its damage increased.",
       stats: [],
       dep: { spreadEther: 2 },
       maxLevel: 6,
-      coords: { x: 4, y: 3 }
+      coords: { x: 4, y: 3.5 }
     },
     iceProphecy: {
-      name_en: "Freeze Veil",
+      name_en: "Aspected Veil",
       name_jp: "氷の先見術",
-      desc: "For a set number of turns, imbue an ally's weapon with ice and make them automatically counterattacks enemies who attacks them.",
+      desc: "For a set number of turns, imbue an ally's weapon with fire/ice/volt and make them automatically counterattacks enemies who attacks them.",
       stats: [],
       dep: { spreadEther: 2 },
       maxLevel: 6,
-      coords: { x: 4, y: 4 }
-    },
-    voltProphecy: {
-      name_en: "Shock Veil",
-      name_jp: "雷の先見術",
-      desc: "For a set number of turns, imbue an ally's weapon with volt and make them automatically counterattacks enemies who attacks them.",
-      stats: [],
-      dep: { spreadEther: 2 },
-      maxLevel: 6,
-      coords: { x: 4, y: 5 }
+      coords: { x: 4, y: 4.5 }
     },
     horoscope: {
       name_en: "Prophecy",
       name_jp: "氷の先見術",
       desc: "Prevents elemental attacks from one enemy. If an attack is prevented, increases the user's attack until the end of the next turn.",
       stats: [],
-      dep: { fireProphecy: 1, iceProphecy: 1, voltProphecy: 1 },
+      dep: { fireProphecy: 1, iceProphecy: 1},
       maxLevel: 6,
       coords: { x: 5, y: 4 }
     },
@@ -5392,9 +5414,9 @@ let skills = {
       coords: { x: 2, y: 1 }
     },
     unscathedBody: {
-      name_en: "?Unscathed Body?",
+      name_en: "?Divide?",
       name_jp: "ＨＰブースト",
-      desc: "If the user is in the front row and gets hit, their TP is restored.",
+      desc: "Covers the users row for one turn.",
       stats: [],
       dep: { crimsonShower: 3 },
       maxLevel: 6,
@@ -5509,14 +5531,23 @@ let skills = {
       coords: { x: 1, y: 5 }
     },
     rebirthRitual: {
-      name_en: "???",
+      name_en: "?Unscathed Body?",
       name_jp: "ショックガード",
-      desc: "Consumes the HP of the party to revive an ally with overhealed health.",
+      desc: "If the user is in the front row and takes damage, their TP is restored.",
       stats: [],
       dep: { phlebotomy: 3 },
       maxLevel: 8,
       coords: { x: 2, y: 5 }
     },
+    // rebirthRitual: {
+    //   name_en: "???",
+    //   name_jp: "ショックガード",
+    //   desc: "Consumes the HP of the party to revive an ally with overhealed health.",
+    //   stats: [],
+    //   dep: { phlebotomy: 3 },
+    //   maxLevel: 8,
+    //   coords: { x: 2, y: 5 }
+    // },
     riseFromTheDead: {
       name_en: "Rise from the Dead",
       name_jp: "ヒールガード",

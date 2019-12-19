@@ -1489,7 +1489,7 @@ let skills = {
     peerless: {
       name_en: "Peerless",
       name_jp: "無双",
-      desc: "For 3 turns, stance duration will not decrease, and stances cannot be removed. In addition, the user gains the effect of all stances.",
+      desc: "For 3 turns, stance duration will not decrease, and stances cannot be removed. In addition, the user gains the effect of both stances.",
       stats: [],
       unique: true,
       type: "Boost",
@@ -1526,19 +1526,19 @@ let skills = {
       maxLevel: 6,
       coords: { x: 1, y: 1 }
     },
-    delayedStrike: {
-      name_en: "Delayed Strike",
-      name_jp: "貫突",
-      desc: "Deals melee cut damage to one target, and attack again 2 turns later. Assumes Upper Stance after use.",
+    bloodyBlade: {
+      name_en: "Bloody Blade",
+      name_jp: "逆袈裟",
+      desc: "Deals melee cut damage to one target and increases the users row attack for 3 turns. Assumes Upper Stance after use.",
       stats: ["STR"],
       dep: { upperStance: 1 },
       maxLevel: 6,
       coords: { x: 1, y: 2 }
     },
-    bloodyBlade: {
-      name_en: "Bloody Blade",
-      name_jp: "逆袈裟",
-      desc: "Deals melee cut damage to one target and increases the users row attack for 3 turns. Assumes Upper Stance after use.",
+    delayedStrike: {
+      name_en: "Delayed Strike",
+      name_jp: "貫突",
+      desc: "Deals melee cut damage to one target, and attack again 2 turns later. Assumes Upper Stance after use.",
       stats: ["STR"],
       dep: { upperStance: 1 },
       maxLevel: 6,
@@ -1549,7 +1549,7 @@ let skills = {
       name_jp: "鞘撃",
       desc: "Requires Upper Stance. Deals melee cut damage to one target. Assumes Clear Stance after use.",
       stats: ["STR"],
-      dep: { airBlade: 1, delayedStrike: 1, bloodyBlade: 1 },
+      dep: { airBlade: 2, delayedStrike: 2, bloodyBlade: 2 },
       maxLevel: 8,
       coords: { x: 2, y: 1.5 }
     },
@@ -1558,7 +1558,7 @@ let skills = {
       name_jp: "兜割り ",
       desc: "Requires Upper Stance. Deals melee cut+almighty damage to one target. Low accuracy. Assumes Clear Stance after use.",
       stats: ["STR"],
-      dep: { moonShadow: 1  },
+      dep: { moonShadow: 2  },
       maxLevel: 8,
       coords: { x: 3, y: 1.5 }
     },
@@ -1567,7 +1567,7 @@ let skills = {
       name_jp: "卸し焔",
       desc: "Requires Upper Stance. Deals melee cut+fire damage to one target and when a party member on the user's row is attacked, counterattack with melee damage. Assumes Clear Stance after use.",
       stats: ["STR"],
-      dep: { airBlade: 1, delayedStrike: 1, bloodyBlade: 1 },
+      dep: { airBlade: 2, delayedStrike: 2, bloodyBlade: 2 },
       maxLevel: 8,
       coords: { x: 2, y: 2.5 }
     },
@@ -1576,7 +1576,7 @@ let skills = {
       name_jp: "横一文字",
       desc: "Requires Upper Stance. Deals melee cut damage to one row and reduces their Ailment and Bind Resistance for 3 turns. Assumes Clear Stance after use.",
       stats: ["STR"],
-      dep: { flameGrater: 1 },
+      dep: { flameGrater: 3 },
       maxLevel: 8,
       coords: { x: 3, y: 2.5 }
     },
@@ -1616,19 +1616,19 @@ let skills = {
       maxLevel: 6,
       coords: { x: 1, y: 4 }
     },
-    drainSlice: {
-      name_en: "Drain Slice",
-      name_jp: "息吹",
-      desc: "Deals melee cut damage to one target and restores HP to the users line based on their Max HP. Assumes Clear Stance after use.",
+    armorPierce: {
+      name_en: "Armor Pierce",
+      name_jp: "居合の構え",
+	    desc: "Deals melee stab damage to one target and decreases their Defense for 3 turns. Assumes Clear Stance after use.",
       stats: [],
       dep: { clearStance: 1 },
       maxLevel: 6,
       coords: { x: 1, y: 5 }
     },
-    armorPierce: {
-      name_en: "Armor Pierce",
-      name_jp: "居合の構え",
-	    desc: "Deals melee stab damage to one target and decreases their Defense for 3 turns. Assumes Clear Stance after use.",
+    drainSlice: {
+      name_en: "Drain Slice",
+      name_jp: "息吹",
+      desc: "Deals melee cut damage to one target and restores HP to the users line based on their Max HP. Assumes Clear Stance after use.",
       stats: [],
       dep: { clearStance: 1 },
       maxLevel: 6,
@@ -1639,25 +1639,16 @@ let skills = {
       name_jp: "物理攻撃ブースト",
       desc: "Requires Clear Stance. On this turn, when the user is attacked with physical damage, there is a chance they will nullify the damage and counterattack the source. Assumes Upper Stance after use.",
       stats: [],
-      dep: { armStrike: 1, armorPierce: 1, drainSlice: 1 },
+      dep: { armStrike: 2, armorPierce: 2, drainSlice: 2 },
       maxLevel: 8,
       coords: { x: 2, y: 4.5 }
-    },
-    frigidSlash: {
-      name_en: "Frigid Slash",
-      name_jp: "抜刀氷雪",
-      desc: "Requires Clear Stance. Deals ranged cut+ice damage to one target. Increases the user's defense and accuracy until the end of next turn.  Assumes Upper Stance after use.",
-      stats: ["STR"],
-      dep: { armStrike: 1, armorPierce: 1, drainSlice: 1 },
-      maxLevel: 8,
-      coords: { x: 2, y: 5.5 }
     },
     hazeSlash: {
       name_en: "Haze Slash",
       name_jp: "霞斬り",
       desc: "Requires Clear Stance. Deals melee cut damage to one target. Attempts to inflict sleep. Assumes Upper Stance after use.",
       stats: ["STR", "LUC"],
-      dep: { mirrorMoon: 1 },
+      dep: { mirrorMoon: 3 },
       maxLevel: 8,
       coords: { x: 3, y: 4.5 }
     },
@@ -1666,7 +1657,16 @@ let skills = {
       name_jp: "雷耀突き",
       desc: "Requires Clear Stance. Deals melee stab+volt damage to one target and reduces the targets attack for that turn. Assumes Upper Stance after use.",
       stats: ["STR"],
-      dep: { frigidSlash: 1 },
+      dep: { armStrike: 2, armorPierce: 2, drainSlice: 2 },
+      maxLevel: 8,
+      coords: { x: 2, y: 5.5 }
+    },
+    frigidSlash: {
+      name_en: "Frigid Slash",
+      name_jp: "抜刀氷雪",
+      desc: "Requires Clear Stance. Deals ranged cut+ice damage to one target. Increases the user's defense and accuracy until the end of next turn.  Assumes Upper Stance after use.",
+      stats: ["STR"],
+      dep: { lightningStab: 3 },
       maxLevel: 8,
       coords: { x: 3, y: 5.5 }
     },
@@ -1684,7 +1684,7 @@ let skills = {
       name_jp: "免許皆伝",
       desc: "Requires Clear Stance. Deals melee cut attack to one target with splash damage and a chance of stunning. Assumes Upper Stance after use. Novice and Master skills cannot be used again for 3 turns.",
       stats: [],
-      dep: { lightningStab: 3 },
+      dep: { frigidSlash: 3 },
       maxLevel: 8,
       coords: { x: 4, y: 5.5 }
     },
@@ -1702,7 +1702,7 @@ let skills = {
       name_jp: "戦意高揚",
       desc: "At the end of the turn, if a stance is active, restores TP to the user.",
       stats: [],
-      dep: { swallowStrike: 1, petalScatter: 1, bluntingStab: 1, earthBreaker: 1},
+      dep: { swallowStrike: 1, petalScatter: 1, bluntingStab: 1, earthBreaker: 1 },
       maxLevel: 6,
       coords: { x: 5, y: 3.5 }
     },
@@ -3070,7 +3070,7 @@ let skills = {
       stats: ["STR"],
       dep: { },
       maxLevel: 4,
-      coords: { x: 2, y: 6 }
+      coords: { x: 4, y: 6 }
     },
     ninpoClone: {
       name_en: "Ninpo: Clone",
@@ -3079,7 +3079,7 @@ let skills = {
       stats: [],
       dep: { },
       maxLevel: 8,
-      coords: { x: 2, y: 3 }
+      coords: { x: 2, y: 3.25 }
     },
     drawingSlice: {
       name_en: "Drawing Slice",
@@ -3088,7 +3088,7 @@ let skills = {
       stats: ["STR"],
       dep: { ninpoClone: 4 },
       maxLevel: 8,
-      coords: { x: 3, y: 3 }
+      coords: { x: 3, y: 3.25 }
     },
     autoClone: {
       name_en: "Auto-Clone",
@@ -3097,7 +3097,7 @@ let skills = {
       stats: [],
       dep: { drawingSlice: 4 },
       maxLevel: 10,
-      coords: { x: 4, y: 3 }
+      coords: { x: 4, y: 3.25 }
     },
     ninpoMirage: {
       name_en: "Ninpo: Mirage",
@@ -3106,7 +3106,7 @@ let skills = {
       stats: [],
       dep: { },
       maxLevel: 6,
-      coords: { x: 0, y: 3 }
+      coords: { x: 2, y: 6 }
     },
     autoMirage: {
       name_en: "Auto-Mirage",
@@ -3115,7 +3115,7 @@ let skills = {
       stats: [],
       dep: { ninpoMirage: 2 },
       maxLevel: 6,
-      coords: { x: 1, y: 3 }
+      coords: { x: 3, y: 6 }
     },
     acrobatics: {
       name_en: "Acrobatics",
@@ -3215,7 +3215,7 @@ let skills = {
       maxLevel: 0,
       coords: { x: 1, y: 0 }*/
     },
-    tpUp: {
+    guidingStar: {
       name_en: "Guiding Star",
       name_jp: "ＴＰブースト",
       desc: "Increases elemental attack and maximum TP.",
@@ -3224,7 +3224,7 @@ let skills = {
       maxLevel: 8,
       coords: { x: 2, y: 0 }
     },
-    ethericShoot: {
+    pulseStar: {
       name_en: "Pulse Star",
       name_jp: "エーテルシュート",
       desc: "Deals ranged, INT-based damage to one enemy with the user's weapon.",
@@ -3238,7 +3238,7 @@ let skills = {
       name_jp: "炎の連星術",
       desc: "Deals ranged fire damage to all enemies.",
       stats: ["INT"],
-      dep: { ethericShoot: 1 },
+      dep: { pulseStar: 1 },
       maxLevel: 10,
       coords: { x: 1, y: 1 }
     },
@@ -3247,7 +3247,7 @@ let skills = {
       name_jp: "氷の連星術",
       desc: "Deals ranged ice damage to all enemies.",
       stats: ["INT"],
-      dep: { ethericShoot: 1 },
+      dep: { pulseStar: 1 },
       maxLevel: 10,
       coords: { x: 1, y: 2 }
     },
@@ -3256,11 +3256,11 @@ let skills = {
       name_jp: "雷の連星術",
       desc: "Deals ranged volt damage to all enemies.",
       stats: ["INT"],
-      dep: { ethericShoot: 1 },
+      dep: { pulseStar: 1 },
       maxLevel: 10,
       coords: { x: 1, y: 3 }
     },
-    fireStar: {
+    astralFire: {
       name_en: "Astral Fire",
       name_jp: "炎の星術",
       desc: "Deals ranged fire damage to one target. Applies Astral Fire on the user, increasing damage for ? turns. This skill cannot be used again for 3 turns.",
@@ -3269,39 +3269,39 @@ let skills = {
       maxLevel: 10,
       coords: { x: 2, y: 2 }
     },
-    iceStar: {
+    umbralIce: {
       name_en: "Umbral Ice",
       name_jp: "氷の星術",
       desc: "Deals ranged ice damage to one target. Recovers some TP and removes Astral Fire after use.",
       stats: ["INT"],
-      dep: { fireStar: 2 },
+      dep: { astralFire: 2 },
       maxLevel: 10,
       coords: { x: 3, y: 1.5 }
     },
-    voltStar: {
+    solsticeVolt: {
       name_en: "Solstice Volt",
       name_jp: "雷の星術",
       desc: "Deals ranged volt damage to one target, and ignores resistances. Removes Astral Fire after use.",
       stats: ["INT"],
-      dep: { fireStar: 2 },
+      dep: { astralFire: 2 },
       maxLevel: 10,
       coords: { x: 3, y: 2.5 }
     },
-    meteor: {
+    meteorRain: {
       name_en: "Meteor Rain",
       name_jp: "メテオ",
       desc: "Deals 5-10 instances of ranged random elemental damage to random targets.",
       stats: ["INT"],
-      dep: { iceStar: 1, voltStar: 1 },
+      dep: { umbralIce: 1, solsticeVolt: 1 },
       maxLevel: 10,
       coords: { x: 4, y: 2 }
     },
-    voltProphecy: {
-      name_en: "Gravitational Nova",
+    distortionNova: {
+      name_en: "Distortion Nova",
       name_jp: "雷の先見術",
       desc: "Three turns after casting, deals ranged INT-based bash damage to one enemy. During this time, for each time the target's weakness is hit, this skills damage is increased, up to 10 stacks. Multi-hit attacks will trigger multiple stacks.",
       stats: [],
-      dep: { meteor: 2 },
+      dep: { meteorRain: 2 },
       maxLevel: 6,
       coords: { x: 5, y: 2 }
     },
@@ -3314,7 +3314,7 @@ let skills = {
       maxLevel: 8,
       coords: { x: 0, y: 4 }
     },
-    ethericGleam: {
+    cosmicGleam: {
       name_en: "Cosmic Gleam",
       name_jp: "エーテルの輝き",
       desc: "For a set number of turns, increases elemental attack and defense for one row.",
@@ -3323,52 +3323,52 @@ let skills = {
       maxLevel: 8,
       coords: { x: 1, y: 4 }
     },
-    antiEther: {
+    asteroidBelt: {
       name_en: "Asteroid Belt",
       name_jp: "アンチエーテル",
       desc: "Provides a chance to nullify elemental attacks against the user's row.",
       stats: [],
-      dep: { ethericGleam: 2 },
+      dep: { cosmicGleam: 2 },
       maxLevel: 8,
       coords: { x: 2, y: 4 }
     },
-    spreadEther: {
+    nebulaResurgence: {
       name_en: "Nebula Resurgence",
       name_jp: "多段式エーテル",
       desc: "When the user hits an enemy's weakness, their Force gauge is increased.",
       stats: [],
-      dep: { antiEther: 2 },
+      dep: { asteroidBelt: 2 },
       maxLevel: 6,
       coords: { x: 3, y: 4 }
     },
-    fireProphecy: {
+    alignment: {
       name_en: "Alignment",
       name_jp: "炎の先見術",
       desc: "If the skill used on this turn is of a different element from the last one used, it gains the element of the last one used and has its damage increased.",
       stats: [],
-      dep: { spreadEther: 2 },
+      dep: { },
       maxLevel: 6,
-      coords: { x: 4, y: 3.5 }
+      coords: { x: 3, y: 0 }
     },
-    iceProphecy: {
+    aspectedVeil: {
       name_en: "Aspected Veil",
       name_jp: "氷の先見術",
       desc: "For a set number of turns, imbue an ally's weapon with fire/ice/volt and make them automatically counterattacks enemies who attacks them.",
       stats: [],
-      dep: { spreadEther: 2 },
+      dep: { nebulaResurgence: 2 },
       maxLevel: 6,
-      coords: { x: 4, y: 4.5 }
+      coords: { x: 4, y: 4 }
     },
-    horoscope: {
+    prophecy: {
       name_en: "Prophecy",
       name_jp: "氷の先見術",
       desc: "Prevents elemental attacks from one enemy. If an attack is prevented, increases the user's attack until the end of the next turn.",
       stats: [],
-      dep: { fireProphecy: 1, iceProphecy: 1},
+      dep: { aspectedVeil: 1},
       maxLevel: 6,
       coords: { x: 5, y: 4 }
     },
-    ethericReturn: {
+    celestialReturn: {
       name_en: "Celestial Return",
       name_jp: "リターンエーテル",
       desc: "Restores TP to the user when hitting a weakness.",
@@ -3377,48 +3377,48 @@ let skills = {
       maxLevel: 4,
       coords: { x: 0, y: 5 }
     },
-    focusEther: {
+    aetherLeak: {
       name_en: "Aether Leak",
       name_jp: "エーテル圧縮",
       desc: "For a set amount of turns, when using TP, a percentage of the used TP will be restored to one random party member.",
       stats: [],
-      dep: { ethericReturn : 2 },
+      dep: { celestialReturn : 2 },
       maxLevel: 8,
       coords: { x: 1, y: 6 }
     },
-    etherMastery: {
+    autoLeak: {
       name_en: "Auto-Leak",
       name_jp: "エーテルマスター",
       desc: "If Aether Leak is learned, there is a chance to automatically cast it at the start of battle. Cannot activate if another ally activated it first.",
       stats: [],
-      dep: { focusEther: 3 },
+      dep: { aetherLeak: 3 },
       maxLevel: 6,
       coords: { x: 2, y: 6 }
     },
-    darkEther: {
-      name_en: "Spacial Distortion",
+    spacialDistortion: {
+      name_en: "Dark Matter",
       name_jp: "ダークエーテル",
       desc: "This turn, reduces TP usage for one row.",
       stats: [],
-      dep: { ethericReturn: 2 },
+      dep: { celestialReturn: 2 },
       maxLevel: 6,
       coords: { x: 1, y: 5 }
     },
-    restoreEther: {
+    stellarFlow: {
       name_en: "Stellar Flow",
       name_jp: "レストアエーテル",
       desc: "Increases attack based on the number of TP spent on the previous turn. Does not activate if TP spent last turn is too low.",
       stats: [],
-      dep: { darkEther: 2 },
+      dep: { spacialDistortion: 2 },
       maxLevel: 10,
       coords: { x: 2, y: 5 }
     },
-    freeEnergy: {
+    pulsarFeedback: {
       name_en: "Pulsar Feedback",
       name_jp: "ＴＰカット",
       desc: "Provides a chance to refund the user's TP usage.",
       stats: [],
-      dep: { restoreEther : 2 },
+      dep: { stellarFlow : 2 },
       maxLevel: 6,
       coords: { x: 3, y: 5 }
     },
@@ -5324,7 +5324,7 @@ let skills = {
       stats: ["STR"],
       dep: { wiltingMiasma: 1, arrestingMiasma: 1 },
       maxLevel: 10,
-      coords: { x: 4, y: 1.5 }
+      coords: { x: 3, y: 1.5 }
     },
     fatalReap: {
       name_en: "*Fatal Reap",

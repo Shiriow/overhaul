@@ -326,7 +326,7 @@ let skills = {
       name_jp: "鞘撃",
       desc: "Requires Upper Stance. Deals melee cut damage to one target. Assumes Clear Stance after use.",
       stats: ["STR"],
-      dep: { airBlade: 2, delayedStrike: 2, bloodyBlade: 2 },
+      dep: { airBlade: 1, delayedStrike: 1, bloodyBlade: 1 },
       maxLevel: 8,
       coords: { x: 2, y: 1.5 }
     },
@@ -335,7 +335,7 @@ let skills = {
       name_jp: "兜割り ",
       desc: "Requires Upper Stance. Deals melee cut+almighty damage to one target. Low accuracy. Assumes Clear Stance after use.",
       stats: ["STR"],
-      dep: { moonShadow: 2  },
+      dep: { moonShadow: 1  },
       maxLevel: 8,
       coords: { x: 3, y: 1.5 }
     },
@@ -344,7 +344,7 @@ let skills = {
       name_jp: "卸し焔",
       desc: "Requires Upper Stance. Deals melee cut+fire damage to one target and when a party member on the user's row is attacked, counterattack with melee damage. Assumes Clear Stance after use.",
       stats: ["STR"],
-      dep: { airBlade: 2, delayedStrike: 2, bloodyBlade: 2 },
+      dep: { airBlade: 1, delayedStrike: 1, bloodyBlade: 1 },
       maxLevel: 8,
       coords: { x: 2, y: 2.5 }
     },
@@ -353,7 +353,7 @@ let skills = {
       name_jp: "横一文字",
       desc: "Requires Upper Stance. Deals melee cut damage to one row and reduces their Ailment and Bind Resistance for a set number of turns. Assumes Clear Stance after use.",
       stats: ["STR"],
-      dep: { flameGrater: 3 },
+      dep: { flameGrater: 1 },
       maxLevel: 8,
       coords: { x: 3, y: 2.5 }
     },
@@ -416,7 +416,7 @@ let skills = {
       name_jp: "物理攻撃ブースト",
       desc: "Requires Clear Stance. On this turn, when the user is attacked with physical damage, there is a chance they will nullify the damage and counterattack the source. Assumes Upper Stance after use.",
       stats: [],
-      dep: { armStrike: 2, armorPierce: 2, drainSlice: 2 },
+      dep: { armStrike: 1, armorPierce: 1, drainSlice: 1 },
       maxLevel: 8,
       coords: { x: 2, y: 4.5 }
     },
@@ -425,7 +425,7 @@ let skills = {
       name_jp: "霞斬り",
       desc: "Requires Clear Stance. Deals melee cut damage to one target. Attempts to inflict sleep. Assumes Upper Stance after use.",
       stats: ["STR", "LUC"],
-      dep: { mirrorMoon: 3 },
+      dep: { mirrorMoon: 1 },
       maxLevel: 8,
       coords: { x: 3, y: 4.5 }
     },
@@ -434,7 +434,7 @@ let skills = {
       name_jp: "雷耀突き",
       desc: "Requires Clear Stance. Deals melee stab+volt damage to one target and reduces the targets attack for that turn. Assumes Upper Stance after use.",
       stats: ["STR"],
-      dep: { armStrike: 2, armorPierce: 2, drainSlice: 2 },
+      dep: { armStrike: 1, armorPierce: 1, drainSlice: 1 },
       maxLevel: 8,
       coords: { x: 2, y: 5.5 }
     },
@@ -443,7 +443,7 @@ let skills = {
       name_jp: "抜刀氷雪",
       desc: "Requires Clear Stance. Deals ranged cut+ice damage to one target. Increases the user's defense and accuracy until the end of next turn.  Assumes Upper Stance after use.",
       stats: ["STR"],
-      dep: { lightningStab: 3 },
+      dep: { lightningStab: 1 },
       maxLevel: 8,
       coords: { x: 3, y: 5.5 }
     },

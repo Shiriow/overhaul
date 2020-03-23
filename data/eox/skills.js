@@ -26,7 +26,7 @@ let skills = {
         name_en: "Mirage Arrow",
         name_jp: "ミラージュアロー",
         desc: "Deals ranged stab damage to one target. Decreases their accuracy and make them act last for 3 turns.",
-        stats: ["STR"],
+        stats: ["STR", "Arms"],
         unique: true,
         type: "Break",
         dep: { illusionStep: 0 },
@@ -37,7 +37,7 @@ let skills = {
     //   name_en: "Summer Rain",
     //   name_jp: "ミラージュアロー",
     //   desc: "Deals 16 instances of ranged stab damage to random targets. Can hit the same target 4 times at most. Decreases their accuracy and make them act last for 3 turns.",
-    //   stats: ["STR"],
+    //   stats: ["STR", "Arms", "Bow"],
     //   unique: true,
     //   type: "Break",
     //   dep: { illusionStep: 0 },
@@ -48,155 +48,171 @@ let skills = {
       name_en: "Flame Arrow",
       name_jp: "フレイムアロー",
       desc: "Deals ranged stab+fire damage to one target, with line-piercing effects.",
-      stats: ["STR"],
+      stats: ["STR", "Arms", "Bow"],
       dep: { },
       maxLevel: 8,
-      coords: { x: 1, y: 1.5 }
+      coords: { x: 0, y: 1.5 }
     },
     flankShot: {
+      // name_en: "Foot Pierce",
+      // desc: "Deals ranged stab damage to one row. Attempts to inflict leg bind. If sucessful, or if the enemy is already inflicted with leg bind, the user will attack that enemy again.",
       name_en: "Flank Shot",
       name_jp: "フランクショット",
       desc: "Deals ranged stab damage to one row.",
-      stats: ["STR"],
+      stats: ["STR", "Arms", "Bow"],
       dep: { flameArrow: 3 },
       maxLevel: 8,
-      coords: { x: 2, y: 1 }
+      coords: { x: 1, y: 1 }
     },
     finishingArrow: {
       name_en: "Finishing Arrow",
       name_jp: "仕留めの一矢",
       desc: "When the user attacks a target whose HP is below a set threshold, the user follows up with their weapon. Does not activate for links, chases or counterattacks.",
       stats: ["STR"],
-      dep: { flankShot: 3 },
+      dep: { flankShot: 2 },
       maxLevel: 8,
-      coords: { x: 3, y: 1 }
+      coords: { x: 2, y: 1 }
     },
     multiShot: {
       name_en: "Multi-Shot",
       name_jp: "ダブルショット",
       desc: "Deals 2 instances of ranged stab damage to one enemy.",
-      stats: ["STR"],
+      stats: ["STR", "Arms", "Bow"],
       dep: { flameArrow: 3 },
       maxLevel: 8,
-      coords: { x: 2, y: 2 }
+      coords: { x: 1, y: 2 }
     },
     dropShot: {
       name_en: "Drop Shot",
       name_jp: "ドロップショット",
       desc: "Deals ranged stab damage to one target. Damage increases if the target is in the back row.",
-      stats: ["STR"],
+      stats: ["STR", "Arms", "Bow"],
       dep: { multiShot: 3 },
       maxLevel: 8,
-      coords: { x: 3, y: 2 }
+      coords: { x: 2, y: 2 }
     },
     disablingShot: {
       name_en: "Disabling Shot",
       name_jp: "エイミングフット",
       desc: "When the user attacks with a bow skill, attempts to inflict leg bind.",
-      stats: [],
+      //[/Deals ranged stab damage to one target. Attempts to inflict stun and leg bind.]
+      stats: ["LUC, Bow"],
       dep: { finishingArrow: 1 },
-      maxLevel: 8,
-      coords: { x: 4, y: 1 }
+      maxLevel: 6,
+      coords: { x: 3, y: 1 }
     },
     sagittariusShot: {
       name_en: "Sagittarius Shot",
       name_jp: "サジタリウスの矢",
-      desc: "On the third turn after using this skill, ranged stab damage is dealt to one target at the start of that turn. Attempts to inflict stun. Ineffective if the user dies before the skill activates.",
-      stats: ["STR"],
+      desc: "At the beginning of the next turn, ranged stab damage is dealt to a random target. Attempts to inflict stun. Ineffective if the user dies before the skill activates.",
+      stats: ["STR", "LUC", "Arms", "Bow"],
       dep: { dropShot: 3 },
       maxLevel: 8,
+      coords: { x: 3, y: 2 }
+    },
+    autoSagittarius: {
+      name_en: "Auto-Sagittarius",
+      name_jp: "自然の恩恵",
+      // desc: "Deals ranged stab damage to one target. Damage is increased depending on the number of evades the user has made since they last used this skill.",
+      desc: "If Sagittarius Shot is learned, there is a chance to automatically cast it at the start of battle. Cannot activate if another ally activated it first.",
+      stats: ["STR", "Arms", "Bow"],
+      dep: { sagittariusShot: 3 },
+      maxLevel: 6,
       coords: { x: 4, y: 2 }
     },
-    sleepArrow: {
-      name_en: "Sleep Arrow",
-      name_jp: "パワーショット",
-      desc: "Deals ranged stab damage to one target. Attempts to inflict sleep.",
-      stats: ["STR", "LUC"],
+    naturesCloak: {
+      //Sylphscreen
+      name_en: "Nature's Cloak",
+      name_jp: "トリックステップ",
+      // / Increases evasion whenever the user deals damage to an enemy. / Increases evasion and damage taken from cut/stab/bash. / Damage taken is increased during the turn this skill is used.  /
+      desc: "Increases evasion until the end of the next turn. Damage taken is increased during the turn this skill is used. At the start of battle, automatically puts the user in the Nature's Cloak state.",
+      stats: [],
       dep: { },
       maxLevel: 8,
-      coords: { x: 0, y: 2.5 }
+      coords: { x: 0, y: 3 }
+    },
+    chainThrust: {
+      //Squall Volley
+      name_en: "Chain Thrust",
+      name_jp: "チェインダンス",
+      desc: "Deals ranged stab damage to one target and, for that turn, increases the user's evasion and chance of being targeted.",
+      stats: ["STR", "Arms", "Bow"],
+      dep: { naturesCloak: 2  },
+      maxLevel: 8,
+      coords: { x: 1, y: 3 }
     },
     blindArrow: {
       name_en: "Blind Arrow",
       name_jp: "ブラインドアロー",
       desc: "Deals ranged stab damage to one target. Attempts to inflict blind.",
-      stats: ["STR", "LUC"],
+      stats: ["STR", "LUC", "Arms", "Bow"],
       dep: { },
       maxLevel: 8,
-      coords: { x: 0, y: 3.5 }
+      coords: { x: 0, y: 4 }
     },
-    paralysisArrow: {
-      name_en: "Paralysis Arrow",
-      name_jp: "警戒斥候",
-      desc: "Deals ranged stab damage to one target. Attempts to inflict paralysis.",
-      stats: ["STR", "LUC"],
-      dep: { },
-      maxLevel: 8,
-      coords: { x: 0, y: 4.5 }
+    sereneBreeze: {
+      name_en: "Serene Breeze",
+      name_jp: "抑制攻撃ブースト",
+      desc: "Places a buff on an ally that allows them to dodge the next incoming physical attack. When an attack is dodged, the buff is removed.",
+      stats: ["Legs"],
+      dep: { blindArrow: 2 },
+      maxLevel: 6,
+      coords: { x: 1, y: 4 }
     },
-    chainThrust: {
-      name_en: "Chain Thrust",
-      name_jp: "チェインダンス",
-      desc: "Deals ranged stab damage to one target and, for that turn, increases the user's evasion and chance of being targeted.",
-      stats: [],
-      dep: { blindArrow: 1, paralysisArrow: 1, sleepArrow: 1 },
+    blurredVeil: {
+      name_en: "Blurred Veil",
+      name_jp: "忍法　猿飛",
+      desc: "This turn, the selected row has a high chance of evading physical attacks. Each time they evade an attack, the evasion boost is reduced.",
+      stats: ["Legs"],
+      dep: { sereneBreeze:2 },
       maxLevel: 8,
-      coords: { x: 1, y: 3 }
+      coords: { x: 2, y: 4 }
     },
     mistStep: {
       name_en: "Mist Step",
       name_jp: "整頓術",
       desc: "Increases Force whenever the user dodges an attack.",
       stats: [],
-      dep: { blindArrow: 1, paralysisArrow: 1, sleepArrow: 1 },
+      dep: { chainThrust: 2 },
       maxLevel: 8,
-      coords: { x: 1, y: 4 }
-    },
-    fanDance: {
-      name_en: "Fan Dance",
-      name_jp: "トリックステップ",
-      desc: "Increase the users evasion for a set number of turns.",
-      stats: [],
-      dep: { chainThrust: 2, mistStep: 2 },
-      maxLevel: 8,
-      coords: { x: 2, y: 3.5 }
+      coords: { x: 2, y: 3 }
     },
     sylphid: {
       name_en: "Sylphid",
       name_jp: "素早さブースト",
-      desc: "When an attack is dodged, the user has a chance to counter-attack the source of the attack. Chance decreases by 40% per dodge.",
-      stats: [],
-      dep: { fanDance: 2 },
+      desc: "When an attack is dodged, the user will counter-attack the source of the attack. Has a chance of triggering multiple times.",
+      stats: ["STR", "Arms", "Bow"],
+      dep: { mistStep: 2 },
       maxLevel: 8,
       coords: { x: 3, y: 3 }
     },
     rayOfLight: {
-      name_en: "Ray of Light",
+      name_en: "Ray of Light",/*Shivelight, Komorebi*/
       name_jp: "奇襲",
       desc: "When the user dodges an attack, their chance to be targeted and defense increase. If the they fail to dodge an attack, Ray of Light's effects are reset.",
       stats: [],
-      dep: { fanDance: 2 },
+      dep: { blurredVeil: 2 },
       maxLevel: 6,
       coords: { x: 3, y: 4 }
-    },
-    eyeForAnEye: {
-      name_en: "Eye for an Eye",
-      name_jp: "自然の恩恵",
-      desc: "If the user evaded an attack on the previous turn, increases chance of inflicting ailments",
-      stats: [],
-      dep: { sylphid: 3, rayOfLight: 3 },
-      maxLevel: 8,
-      coords: { x: 4, y: 3.5 }
     },
     hazyShot: {
       name_en: "Hazy Shot",
       name_jp: "朧矢",
       desc: "Deals ranged stab damage to one target. Always hits. Can only be used if the user evaded an attack on the previous turn.",
-      stats: ["STR"],
-      dep: { eyeForAnEye: 3, sagittariusShot:1 },
-      maxLevel: 6,
-      coords: { x: 5, y: 2.75 }
-    },
+      stats: ["STR", "Arms", "Bow"],
+      dep: { sylphid: 3, rayOfLight: 3  },
+      maxLevel: 8,
+      coords: { x: 4, y: 3.5 }
+    },/*
+    eyeForAnEye: {
+      name_en: "Nature's Wrath",
+      name_jp: "自然の恩恵",
+      desc: "Deals ranged stab damage to one target. Damage is increased depending on the number of evades the user has made since they last used this skill.",
+      stats: ["STR", "Arms", "Bow"],
+      dep: { hazyShot: 3 },
+      maxLevel: 8,
+      coords: { x: 5, y: 3.5 }
+    },*/
     riskPerception: {
       name_en: "Risk Perception",
       name_jp: "危機感知",
@@ -228,16 +244,16 @@ let skills = {
       name_en: "Efficiency",
       name_jp: "エフィシエント",
       desc: "For 5 turns, increases the HP restored by Medica and upgrades used by the user, and extends their range to one row.",
-      stats: [],
+      stats: ["Head"],
       dep: { resuscitate: 3 },
-      maxLevel: 4,
+      maxLevel: 6,
       coords: { x: 2, y: 6 }
     },
     scapegoat: {
       name_en: "Scapegoat",
       name_jp: "スケープゴート",
       desc: "Selected ally will cover all party members a set number of times this turn. Ineffective if that ally has leg bind.",
-      stats: [],
+      stats: ["Legs"],
       dep: { efficiency: 2, stalker: 2 },
       maxLevel: 8,
       coords: { x: 3, y: 5.5 }
@@ -246,15 +262,15 @@ let skills = {
       name_en: "Swap Step",
       name_jp: "アザーズステップ",
       desc: "Selected ally has a chance to act first this turn.",
-      stats: [],
+      stats: ["Legs"],
       dep: { scapegoat: 2 },
       maxLevel: 8,
       coords: { x: 4, y: 5.5 }
     },
     naturalInstinct: {
-      name_en: "Natural Instinct",
+      name_en: "Take",
       name_jp: "野生の勘",
-      desc: "Occasionally gains more items when using any gathering points.",
+      desc: "Occasionally gains more items when using Take points.",
       stats: [],
       unique: true,
       dep: { },
@@ -278,7 +294,7 @@ let skills = {
       name_en: "Issen",
       name_jp: "一閃",
       desc: "Deals ranged cut damage to all enemies. Attempts to inflict instant death. Chance of instant death is increased against targets at low HP.",
-      stats: ["STR", "LUC"],
+      stats: ["STR", "LUC", "Arms"],
       unique: true,
       type: "Break",
       dep: { peerless: 0 },
@@ -289,7 +305,7 @@ let skills = {
       name_en: "Upper Stance",
       name_jp: "上段の構え",
 	    desc: "Increases attack and evasion when Upper Stance is active. At the start of each battle, the user automatically assumes the stance with the highest skill level.",
-      stats: [],
+      stats: ["Katana"],
       dep: { },
       maxLevel: 8,
       coords: { x: 0, y: 2 }
@@ -298,7 +314,7 @@ let skills = {
       name_en: "Air Blade",
       name_jp: "空刃",
       desc: "Deals ranged cut damage to one target. Assumes Upper Stance after use.",
-      stats: ["STR"],
+      stats: ["STR", "Arms", "Katana"],
       dep: { upperStance: 1 },
       maxLevel: 6,
       coords: { x: 1, y: 1 }
@@ -307,7 +323,7 @@ let skills = {
       name_en: "Bloody Blade",
       name_jp: "逆袈裟",
       desc: "Deals melee cut damage to one target and increases the users row attack for a set number of turns. Assumes Upper Stance after use.",
-      stats: ["STR"],
+      stats: ["STR", "Arms", "Katana"],
       dep: { upperStance: 1 },
       maxLevel: 6,
       coords: { x: 1, y: 2 }
@@ -316,7 +332,7 @@ let skills = {
       name_en: "Delayed Strike",
       name_jp: "貫突",
       desc: "Deals melee cut damage to one target, and attack again 2 turns later. Assumes Upper Stance after use.",
-      stats: ["STR"],
+      stats: ["STR", "Arms", "Katana"],
       dep: { upperStance: 1 },
       maxLevel: 6,
       coords: { x: 1, y: 3 }
@@ -325,7 +341,7 @@ let skills = {
       name_en: "Moon Shadow",
       name_jp: "鞘撃",
       desc: "Requires Upper Stance. Deals melee cut damage to one target. Assumes Clear Stance after use.",
-      stats: ["STR"],
+      stats: ["STR", "Arms", "Katana"],
       dep: { airBlade: 1, delayedStrike: 1, bloodyBlade: 1 },
       maxLevel: 8,
       coords: { x: 2, y: 1.5 }
@@ -334,7 +350,7 @@ let skills = {
       name_en: "Helm Splitter",
       name_jp: "兜割り ",
       desc: "Requires Upper Stance. Deals melee cut+almighty damage to one target. Low accuracy. Assumes Clear Stance after use.",
-      stats: ["STR"],
+      stats: ["STR", "Arms", "Katana"],
       dep: { moonShadow: 1  },
       maxLevel: 8,
       coords: { x: 3, y: 1.5 }
@@ -343,7 +359,7 @@ let skills = {
       name_en: "Flame Grater",
       name_jp: "卸し焔",
       desc: "Requires Upper Stance. Deals melee cut+fire damage to one target and when a party member on the user's row is attacked, counterattack with melee damage. Assumes Clear Stance after use.",
-      stats: ["STR"],
+      stats: ["STR", "Arms", "Katana"],
       dep: { airBlade: 1, delayedStrike: 1, bloodyBlade: 1 },
       maxLevel: 8,
       coords: { x: 2, y: 2.5 }
@@ -352,7 +368,7 @@ let skills = {
       name_en: "Horizontal Slice",
       name_jp: "横一文字",
       desc: "Requires Upper Stance. Deals melee cut damage to one row and reduces their Ailment and Bind Resistance for a set number of turns. Assumes Clear Stance after use.",
-      stats: ["STR"],
+      stats: ["STR", "Arms", "Katana"],
       dep: { flameGrater: 1 },
       maxLevel: 8,
       coords: { x: 3, y: 2.5 }
@@ -361,7 +377,7 @@ let skills = {
       name_en: "Swallow Strike",
       name_jp: "ツバメがえし",
       desc: "Requires Upper Stance. Deals multiple instances of melee cut damage to one target. Assumes Clear Stance after use. Novice and Master skills cannot be used again for 3 turns.",
-      stats: ["STR"],
+      stats: ["STR", "Arms", "Katana"],
       dep: { helmSplitter: 3 },
       maxLevel: 8,
       coords: { x: 4, y: 1.5 }
@@ -370,7 +386,7 @@ let skills = {
       name_en: "Petal Scatter",
       name_jp: "散華",
       desc: "Requires Upper Stance. Deals ranged cut damage to all targets. Deals less damage based on the number of targets. Assumes Clear Stance after use. Novice and Master skills cannot be used again for 3 turns.",
-      stats: ["STR"],
+      stats: ["STR", "Arms", "Katana"],
       dep: { horizontalSlice: 3 },
       maxLevel: 8,
       coords: { x: 4, y: 2.5 }
@@ -379,7 +395,7 @@ let skills = {
       name_en: "Clear Stance",
       name_jp: "青眼の構え",
   	  desc: "Increases defense and Ronin skills' infliction rate when Clear Stance is active. At the start of each battle, the user automatically assumes the stance with the highest skill level.",
-      stats: [],
+      stats: ["Katana"],
       dep: { },
       maxLevel: 8,
       coords: { x: 0, y: 5 }
@@ -388,7 +404,7 @@ let skills = {
       name_en: "Arm Strike",
       name_jp: "小手討ち",
       desc: "Deals melee stab damage to one target. Attempts to inflict arm bind. Assumes Clear Stance after use.",
-      stats: ["STR", "LUC"],
+      stats: ["STR", "LUC", "Arms", "Katana"],
       dep: { clearStance: 1 },
       maxLevel: 6,
       coords: { x: 1, y: 4 }
@@ -397,7 +413,7 @@ let skills = {
       name_en: "Armor Pierce",
       name_jp: "居合の構え",
 	    desc: "Deals melee stab damage to one target and decreases their Defense for a set number of turns. Assumes Clear Stance after use.",
-      stats: [],
+      stats: ["STR", "Arms", "Katana"],
       dep: { clearStance: 1 },
       maxLevel: 6,
       coords: { x: 1, y: 5 }
@@ -405,8 +421,8 @@ let skills = {
     drainSlice: {
       name_en: "Drain Slice",
       name_jp: "息吹",
-      desc: "Deals melee cut damage to one target and restores HP to the users line based on their Max HP. Assumes Clear Stance after use.",
-      stats: [],
+      desc: "Deals melee cut damage to one target and restores HP to the users row based on their Max HP. Assumes Clear Stance after use.",
+      stats: ["STR", "Arms", "Katana"],
       dep: { clearStance: 1 },
       maxLevel: 6,
       coords: { x: 1, y: 6 }
@@ -415,7 +431,7 @@ let skills = {
       name_en: "Mirror Moon",
       name_jp: "物理攻撃ブースト",
       desc: "Requires Clear Stance. On this turn, when the user is attacked with physical damage, there is a chance they will nullify the damage and counterattack the source. Assumes Upper Stance after use.",
-      stats: [],
+      stats: ["STR", "Arms", "Katana"],
       dep: { armStrike: 1, armorPierce: 1, drainSlice: 1 },
       maxLevel: 8,
       coords: { x: 2, y: 4.5 }
@@ -424,7 +440,7 @@ let skills = {
       name_en: "Haze Slash",
       name_jp: "霞斬り",
       desc: "Requires Clear Stance. Deals melee cut damage to one target. Attempts to inflict sleep. Assumes Upper Stance after use.",
-      stats: ["STR", "LUC"],
+      stats: ["STR", "LUC", "Arms", "Katana"],
       dep: { mirrorMoon: 1 },
       maxLevel: 8,
       coords: { x: 3, y: 4.5 }
@@ -433,7 +449,7 @@ let skills = {
       name_en: "Lightning Stab",
       name_jp: "雷耀突き",
       desc: "Requires Clear Stance. Deals melee stab+volt damage to one target and reduces the targets attack for that turn. Assumes Upper Stance after use.",
-      stats: ["STR"],
+      stats: ["STR", "Arms", "Katana"],
       dep: { armStrike: 1, armorPierce: 1, drainSlice: 1 },
       maxLevel: 8,
       coords: { x: 2, y: 5.5 }
@@ -442,7 +458,7 @@ let skills = {
       name_en: "Frigid Slash",
       name_jp: "抜刀氷雪",
       desc: "Requires Clear Stance. Deals ranged cut+ice damage to one target. Increases the user's defense and accuracy until the end of next turn.  Assumes Upper Stance after use.",
-      stats: ["STR"],
+      stats: ["STR", "Arms", "Katana"],
       dep: { lightningStab: 1 },
       maxLevel: 8,
       coords: { x: 3, y: 5.5 }
@@ -451,7 +467,7 @@ let skills = {
       name_en: "Blunting Stab",
       name_jp: "鈍通し",
       desc: "Requires Clear Stance. Deals melee stab damage to one target. Attempts to inflict petrify. Assumes Upper Stance after use. Novice and Master skills cannot be used again for 3 turns.",
-      stats: ["STR", "LUC"],
+      stats: ["STR", "LUC", "Arms", "Katana"],
       dep: { hazeSlash: 3 },
       maxLevel: 8,
       coords: { x: 4, y: 4.5 }
@@ -460,10 +476,19 @@ let skills = {
       name_en: "Earth Breaker",
       name_jp: "免許皆伝",
       desc: "Requires Clear Stance. Deals melee cut attack to one target with splash damage and a chance of stunning. Assumes Upper Stance after use. Novice and Master skills cannot be used again for 3 turns.",
-      stats: [],
+      stats: ["STR", "LUC", "Arms", "Katana"],
       dep: { frigidSlash: 3 },
       maxLevel: 8,
       coords: { x: 4, y: 5.5 }
+    },
+    speedUp: {
+      name_en: "Serene Heart",
+      name_jp: "素早さブースト",
+      desc: "Increases accuracy, evasion and action speed.",
+      stats: [],
+      dep: { },
+      maxLevel: 8,
+      coords: { x: 3, y: 0 }
     },
     duel: {
       name_en: "Duel",
@@ -482,15 +507,6 @@ let skills = {
       dep: { swallowStrike: 1, petalScatter: 1, bluntingStab: 1, earthBreaker: 1 },
       maxLevel: 6,
       coords: { x: 5, y: 3.5 }
-    },
-    speedUp: {
-      name_en: "Speed Up",
-      name_jp: "素早さブースト",
-      desc: "Increases accuracy, evasion and action speed.",
-      stats: [],
-      dep: { },
-      maxLevel: 8,
-      coords: { x: 3, y: 0 }
     },
     mine: {
       name_en: "Mine",
@@ -761,7 +777,7 @@ let skills = {
       name_en: "Ninpo: Poison Mist",
       name_jp: "忍法　毒霧",
       desc: "Attempts to inflict poison on all enemies.",
-      stats: ["LUC"],
+      stats: ["LUC", "Head"],
       unique: true,
       type: "Break",
       dep: { insolence: 0 },
@@ -771,8 +787,9 @@ let skills = {
     ninpoScorpio: {
       name_en: "Ninpo: Scorpio",
       name_jp: "忍法　含針",
-      desc: "Deals ranged stab damage to a set number of random targets. Can hit each target once at most. Attempts to inflict poison.",
-      stats: ["STR", "LUC"],
+      //desc: "Deals ranged stab damage to a set number of random targets. Can hit each target once at most. Attempts to inflict poison.",
+      desc: "Deals 3 instances of ranged stab damage to random targets. Attempts to inflict poison.",
+      stats: ["STR", "LUC", "Head"],
       dep: { },
       maxLevel: 8,
       coords: { x: 0, y: 1 }
@@ -781,118 +798,104 @@ let skills = {
       name_en: "Ninpo: Needles",
       name_jp: "忍法　撒菱",
       desc: "This turn, when the selected row is attacked, counterattack with ranged stab damage and attempt to inflict sleep.",
-      stats: ["STR", "LUC"],
+      stats: ["STR", "LUC", "Arms"],
       dep: { ninpoScorpio: 3 },
       maxLevel: 6,
       coords: { x: 1, y: 1 }
-    },
-    shadowBind: {
-      name_en: "Shadow Bind",
-      name_jp: "影縫",
-      desc: "Deals melee cut damage to one target. Attempts to inflict leg bind.",
-      stats: ["STR", "LUC"],
-      dep: { },
-      maxLevel: 8,
-      coords: { x: 0, y: 2 }
-    },
-    boneCrusher: {
-      name_en: "Bone Crusher",
-      name_jp: "骨砕き",
-      desc: "Deals melee bash damage to one target. Reduces their physical defense.",
-      stats: ["STR"],
-      dep: { shadowBind: 3 },
-      maxLevel: 8,
-      coords: { x: 1, y: 2 }
-    },
-    ninpoMastery: {
-      name_en: "Ninpo Mastery",
-      name_jp: "忍びの心得",
-      desc: "Increases attack. At max level, melee attacks will hit for full damage and can always reach the enemy back row, even when the user is in the back.",
-      stats: [],
-      dep: { },
-      maxLevel: 4,
-      coords: { x: 1, y: 6 }
     },
     ninpoMirror: {
       name_en: "Ninpo: Mirror",
       name_jp: "忍法　水鏡",
       desc: "Attempts to inflict the ailments and binds present on one enemy to all enemies.",
-      stats: ["LUC"],
-      dep: { ninpoNeedles: 2 },
+      stats: ["LUC", "Head"],
+      dep: { ninpoNeedles: 3 },
       maxLevel: 6,
       coords: { x: 2, y: 1 }
     },
     ninpoShock: {
       name_en: "Ninpo: Shock",
       name_jp: "忍法　驚忍",
-      desc: "Attempts to inflict panic on one enemy.",
-      stats: ["LUC"],
+      desc: "Attempts to inflict panic on one enemy, with line-piercing effects.",
+      stats: ["LUC", "Head"],
       dep: { ninpoMirror: 2 },
       maxLevel: 8,
       coords: { x: 3, y: 1 }
     },
-    foxDrop: {
-      name_en: "Fox Drop",
-      name_jp: "飯綱",
-      desc: "Deals melee cut damage to one target. Attempts to inflict petrify.",
-      stats: ["STR", "LUC"],
-      dep: { ninpoShock: 2, schadenfreude: 2 },
+    shadowBind: {
+      name_en: "Shadow Bind",
+      name_jp: "影縫",
+      desc: "Deals melee cut damage to one target. Attempts to inflict leg bind.",
+      stats: ["STR", "LUC", "Arms", "Knife"],
+      dep: { },
       maxLevel: 8,
-      coords: { x: 4, y: 1.5 }
+      coords: { x: 0, y: 2 }
     },
     hawkStrike: {
       name_en: "Hawk Strike",
       name_jp: "鷹乃羽",
       desc: "Deals multiple instances of melee cut damage to random targets.",
-      stats: ["STR"],
-      dep: { boneCrusher: 3 },
+      stats: ["STR", "Arms", "Knife"],
+      dep: { shadowBind: 3 },
       maxLevel: 8,
-      coords: { x: 2, y: 2 }
+      coords: { x: 1, y: 2 }
     },
     schadenfreude: {
       name_en: "Schadenfreude",
       name_jp: "幸災楽禍",
       desc: "Deals melee cut damage to one target. Always hits. If target has an ailment, increases the user's Force.",
-      stats: ["STR"],
+      stats: ["STR", "Arms", "Knife"],
       dep: { hawkStrike: 2 },
+      maxLevel: 6,
+      coords: { x: 2, y: 2 }
+    },
+    foxDrop: {
+      name_en: "Fox Drop",
+      name_jp: "飯綱",
+      desc: "Deals melee cut damage to one target. Attempts to inflict petrify.",
+      stats: ["STR", "LUC", "Arms", "Knife"],
+      dep: { schadenfreude:2 },
       maxLevel: 8,
       coords: { x: 3, y: 2 }
+    },
+    quietus: {
+      //name_en: "Illusionary Swap",
+      //name_jp: "抑制攻撃ブースト",
+      //desc: "Targets a Mirage. That Mirage will take damage for the selected row for one turn, with a multiplier applied to the damage they take from redirected hits.",
+      //name_en: "Coup de Grace/Guillotine/Jugulate",
+      name_en: "Quietus",
+      name_jp: "抑制攻撃ブースト",
+      desc: "Deals melee cut damage to one target with a chance to instantly kill it. Chance is increased if the enemy has an ailment.",
+      stats: ["STR", "LUC", "Arms", "Knife"],
+      dep: { foxDrop: 2, ninpoShock: 2 },
+      maxLevel: 6,
+      coords: { x: 4, y: 1.5 }
     },
     fallingBloom: {
       name_en: "Falling Bloom",
       name_jp: "意趣返し",
       desc: "Deals melee cut+almighty damage to one target. Low accuracy.",
-      stats: ["STR"],
-      dep: { foxDrop: 2  },
+      stats: ["STR", "Arms", "Knife"],
+      dep: { quietus: 2  },
       maxLevel: 8,
       coords: { x: 5, y: 1.5 }
-    },
-    selfDestruct: {
-      name_en: "Self-Destruct",
-      name_jp: "肉弾",
-      desc: "Once per battle, when the user is killed by an enemy attack, they will counterattack with ranged fire damage.",
-      stats: ["STR"],
-      dep: { },
-      maxLevel: 4,
-      coords: { x: 4, y: 6 }
     },
     ninpoClone: {
       name_en: "Ninpo: Clone",
       name_jp: "忍法　分身",
       desc: "Consumes a percentage of the user's HP and TP to create a clone in an empty slot. Force Boost and Force Break are unusable while a clone is active.",
-      stats: [],
+      stats: ["Head"],
       dep: { },
       maxLevel: 8,
-      coords: { x: 2, y: 3.25 }
+      coords: { x: 1, y: 6 }
     },
     drawingSlice: {
       name_en: "Drawing Slice",
       name_jp: "多元抜刀",
       desc: "Deals multiple instances of melee damage to random targets. All clones will disappear after use.",
-      stats: ["STR"],
+      stats: ["STR", "Arms", "Knife"],
       dep: { ninpoClone: 4 },
       maxLevel: 8,
-      coords: { x: 3, y: 3.25 }
+      coords: { x: 2, y: 6 }
     },
     autoClone: {
       name_en: "Auto-Clone",
@@ -901,16 +904,45 @@ let skills = {
       stats: [],
       dep: { drawingSlice: 4 },
       maxLevel: 10,
-      coords: { x: 4, y: 3.25 }
+      coords: { x: 3, y: 6 }
     },
     ninpoMirage: {
       name_en: "Ninpo: Mirage",
       name_jp: "忍法　陽炎",
       desc: "Creates a decoy of the user in an empty slot. The decoy has added evasion and chance to be targeted.",
-      stats: [],
+      stats: ["Head"],
       dep: { },
       maxLevel: 6,
-      coords: { x: 2, y: 6 }
+      coords: { x: 0, y: 4 }
+    },
+    phantomKnives: {
+      name_en: "Phantom Knives",
+      name_jp: "忍びの心得",
+      desc: "Deals melee cut damage to one row. For 3 turns, reduces the accuracy of one row of enemies.",
+      stats: ["STR", "Arms", "Knife"],
+      dep: { ninpoMirage: 2 },
+      maxLevel: 8,
+      coords: { x: 1, y: 4 }
+    },
+    selfDestruct: {
+      name_en: "Corpse Explosion",
+      name_jp: "肉弾",
+      //desc: "Destroys a Mirage. Deals ranged fire damage to all enemies.",
+      desc: "Instantly kill an ally/mirage. Deals ranged fire damage to all enemies.",
+      stats: ["STR", "Head", "Knife"],
+      dep: { phantomKnives:2 },
+      maxLevel: 6,
+      coords: { x: 2, y: 4 }
+    },
+    shadewalker: {
+      name_en: "Shadewalker",
+      name_jp: "忍法　猿飛",
+      //desc: "Targets a Mirage. This turn, every time the Mirage dodges an attack, members in the same row will individually counter with an attack using their equipped weapon.",
+      desc: "This turn, every time the selected ally/mirage dodges an attack, members in the same row will individually counter with an attack using their equipped weapon.",
+      stats: ["STR", "Head", "Knife"],
+      dep: { selfDestruct: 3 },
+      maxLevel: 8,
+      coords: { x: 3, y: 4 }
     },
     autoMirage: {
       name_en: "Auto-Mirage",
@@ -919,61 +951,60 @@ let skills = {
       stats: [],
       dep: { ninpoMirage: 2 },
       maxLevel: 6,
-      coords: { x: 3, y: 6 }
+      coords: { x: 1, y: 5 }
     },
     acrobatics: {
+      //Force Energy
       name_en: "Acrobatics",
       name_jp: "軽業",
-      desc: "When the user evades an attack, their TP is restored.",
-      stats: [],
-      dep: { },
-      maxLevel: 8,
-      coords: { x: 0, y: 4 }
-    },
-    concealment: {
-      name_en: "Concealment",
-      name_jp: "潜伏",
-      desc: "Increases evasion.",
-      stats: [],
-      dep: { acrobatics: 2 },
-      maxLevel: 8,
-      coords: { x: 1, y: 4 }
-    },
-    windCurtain: {
-      name_en: "Wind Curtain",
-      name_jp: "抑制攻撃ブースト",
-      desc: "Places a buff on an ally that allows them to dodge the next incoming physical attack. When an attack is dodged, the buff is removed.",
+      desc: "When the user evades an attack, their TP is restored. At level 4, melee attacks will hit for full damage and can always reach the enemy back row, even when the user is in the back.",
       stats: [],
       dep: { },
       maxLevel: 6,
-      coords: { x: 0, y: 5 }
+      coords: { x: 0, y: 3 }
     },
-    phantomKnives: {
-      name_en: "Phantom Knives",
+    ninpoSmoke: {
+      name_en: "Ninpo: Smoke",
+      //name_en: "Ninpo: Flight/Smoke",
+      name_jp: "潜伏",
+      //desc: "This turn, the user has a high chance of evading physical attacks. Each time the user dodges an attack, their evasion and chance to be targeted are decreased.",
+      desc: "Reduces the user's maximum HP to greatly increase their evasion and aggro for 3 turns.",
+      stats: ["Legs"],
+      dep: { acrobatics: 2  },
+      maxLevel: 8,
+      coords: { x: 1, y: 3 }
+    },
+    eyeForAnEye: {
+      name_en: "Eye for an Eye",
+      name_jp: "忍法　猿飛",
+      desc: "If the user evaded an attack on the previous turn, increases chance of inflicting ailments",
+      stats: [],
+      dep: { ninpoSmoke: 2 },
+      maxLevel: 6,
+      coords: { x: 2, y: 3 }
+    },
+    reprisal: {
+      name_en: "Reprisal",
+      //name_en: "Deep Breath/???",
+      name_jp: "骨砕き",
+      //desc: "All clones will disappear and the user recovers HP and TP.",
+      desc: "Deals melee cut damage to one target. Damage is increased depending on the number of evades the user has made since they last used this skill.",
+      stats: ["STR", "Arms", "Knife"],
+      dep: { eyeForAnEye: 2 },
+      maxLevel: 8,
+      coords: { x: 3, y: 3 }
+    },
+    shadowstrike: {
+      name_en: "Shadowstrike",
+      //name_en: "Deep Breath/Revenge Thrust",
       name_jp: "忍法　雲隠",
-      desc: "For a set number of turns, reduces the accuracy of one row of enemies.",
+      //desc: "Requires a Mirage. Deals melee cut damage to one row. For a set number of turns, reduces their accuracy.",
+      //[their HP is restored. / reduce the attackers accuracy. / inflict ?.]
+      desc: "When an attack is evaded, the user has a chance to cast Phantom Knives.",
       stats: [],
-      dep: { windCurtain: 2 },
+      dep: { reprisal: 2, shadewalker: 2 },
       maxLevel: 8,
-      coords: { x: 1, y: 5 }
-    },
-    ninpoFlight: {
-      name_en: "*Ninpo: Flight",
-      name_jp: "忍法　猿飛",
-      desc: "This turn, the selected line has a high chance of evading physical attacks. Each time they evade an attack, the evasion boost is reduced.",
-      stats: [],
-      dep: { phantomKnives: 3, concealment: 3 },
-      maxLevel: 8,
-      coords: { x: 2, y: 4.5 }
-    },
-    lure: {
-      name_en: "Lure",
-      name_jp: "忍法　猿飛",
-      desc: "This turn, every time the selected ally dodges an attack, members in the same row will individually counter with an attack using their equipped weapon.",
-      stats: [],
-      dep: { ninpoFlight: 3 },
-      maxLevel: 8,
-      coords: { x: 3, y: 4.5 }
+      coords: { x: 4, y: 3.5 }
     },
     chop: {
       name_en: "Chop",
@@ -1022,8 +1053,8 @@ let skills = {
     pulseStar: {
       name_en: "Pulse Star",
       name_jp: "エーテルシュート",
-      desc: "Deals ranged, INT-based damage to one enemy with the user's weapon. Reduces their elemental defense for a set number of turns.",
-      stats: ["INT, Arms"],
+      desc: "Deals ranged almighty damage to one enemy. Reduces their elemental defense for a set number of turns.",
+      stats: ["INT, Arms, Staff"],
       dep: { },
       maxLevel: 8,
       coords: { x: 0, y: 2 }
@@ -1035,7 +1066,7 @@ let skills = {
       //  Replaces the element of the next skill with fire. [For three turns, enemies will take more damage from fire attacks./ Slightly increases the power of Zodiac attack skills until the next turn.
       stats: ["INT, Head, Staff"],
       dep: { pulseStar: 3 },
-      maxLevel: 8,
+      maxLevel: 6,
       coords: { x: 1, y: 1 }
     },
     binaryIce: {
@@ -1044,7 +1075,7 @@ let skills = {
       desc: "Deals ranged ice damage to all enemies.",
       stats: ["INT, Head, Staff"],
       dep: { pulseStar: 3 },
-      maxLevel: 8,
+      maxLevel: 6,
       coords: { x: 1, y: 2 }
     },
     binaryVolt: {
@@ -1053,7 +1084,7 @@ let skills = {
       desc: "Deals ranged volt damage to all enemies.",
       stats: ["INT, Head, Staff"],
       dep: { pulseStar: 3 },
-      maxLevel: 8,
+      maxLevel: 6,
       coords: { x: 1, y: 3 }
     },
     meteorRain: {
@@ -1101,7 +1132,7 @@ let skills = {
       desc: "Requires Astral Fire. Deals ranged ice damage to one target. Recovers some TP and removes Astral Fire after use.",
       stats: ["INT, Head, Staff"],
       dep: { astralFire: 3 },
-      maxLevel: 6,
+      maxLevel: 8,
       coords: { x: 4, y: 1 }
     },
     solsticeVolt: {
@@ -1120,7 +1151,7 @@ let skills = {
       desc: "Increases damage dealt when hitting weaknesses. In addition, the previous skill's element is now added into your attacks.",
       stats: [],
       dep: { },
-      maxLevel: 6,
+      maxLevel: 8,
       coords: { x: 0, y: 4 }
     },
     cosmicGleam: {
@@ -1176,7 +1207,7 @@ let skills = {
       desc: "Absorb one instance of elemental damage against all party members.",
       stats: ["Head, Staff"],
       dep: { aspectedVeil: 4 },
-      maxLevel: 6,
+      maxLevel: 8,
       coords: { x: 5, y: 4.5 }
     },
     celestialReturn: {

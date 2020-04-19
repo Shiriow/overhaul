@@ -1204,7 +1204,7 @@ let skills = {
     fluxAbsorption: {
       name_en: "Flux Absorption",
       name_jp: "炎の先見術",
-      desc: "Absorb one instance of elemental damage against all party members.",
+      desc: "Reduces one instance of elemental damage against all party members. Higher levels upgrade reduction to absorb.",
       stats: ["Head, Staff"],
       dep: { aspectedVeil: 4 },
       maxLevel: 8,

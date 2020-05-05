@@ -1,4 +1,258 @@
 let skills = {
+  Medic: {
+    steadyHands: {
+      name_en: "Steady Hands",
+      desc: "For 3 turns, increases the action speed of all actions, and the healing power of healing skills (including items). The TP cost of healing skills is halved.",
+      stats: [],
+      unique: true,
+      type: "Boost",
+      dep: { },
+      maxLevel: 0,
+      coords: { x: 0, y: 0 }
+    },
+    medicalMiracle: {
+      name_en: "Medical Miracle",
+      desc: "Revives and removes ailments, binds and debuffs from all party members, and restores their HP.",
+      stats: ["WIS"],
+      unique: true,
+      type: "Break",
+      dep: { steadyHands: 0 },
+      maxLevel: 0,
+      coords: { x: 1, y: 0 }
+    },
+    lineHeal: {
+      name_en: "Line Heal",
+      desc: "Restores HP to one row.",
+      stats: ["WIS", "Head"],
+      dep: { },
+      maxLevel: 8,
+      coords: { x: 0, y: 1.5 }
+    },
+    refresh: {
+      name_en: "Refresh",
+      desc: "Removes ailments from one ally. Higher level increases range to one row.",
+      stats: ["Head"],
+      dep: { lineHeal:3 },
+      maxLevel: 6,
+      coords: { x: 1, y: 1 }
+    },
+    unbind: {
+      name_en: "Unbind",
+      desc: "Removes binds from one ally. Higher levels increase range to one row.",
+      stats: ["Head"],
+      dep: { lineHeal:3 },
+      maxLevel: 6,
+      coords: { x: 1, y: 2 }
+    },
+    delayedHeal: {
+      name_en: "Delayed Heal",
+      desc: "Restores HP to all party members at the start of the next turn. Cannot be used on consecutive turns. Ineffective if the user dies before the skill activates.",
+      stats: ["WIS", "Head"],
+      dep: { refresh: 3 },
+      maxLevel: 8,
+      coords: { x: 2, y: 1 }
+    },
+    chaseHeal: {
+      name_en: "Chase Heal",
+      // for a set number of times
+      desc: "For one turn, automatically restores HP to allies when they are attacked. Every time this skill activates, its chance of activating decreases.",
+      stats: ["WIS", "Head"],
+      dep: { unbind: 3 },
+      maxLevel: 8,
+      coords: { x: 2, y: 2 }
+    },
+    overheal: {
+      name_en: "Overheal",
+      desc: "Medic skills in battle can restore HP over party members' maximum HP by a set percentage. The overhealed amount is removed at the end of turn.",
+      stats: [],
+      dep: { delayedHeal:3, chaseHeal:3 },
+      maxLevel: 6,
+      coords: { x: 3, y: 1.5 }
+    },
+    defender: {
+      name_en: "Defender",
+      desc: "Increases the party's physical and bind defense for a set number of turns.",
+      stats: ["Head"],
+      dep: { },
+      maxLevel: 8,
+      coords: { x: 0, y: 3 }
+    },
+    immunize: {
+      name_en: "Immunize",
+      desc: "Increases the party's elemental and ailment defense for a set number of turns.",
+      stats: ["Head"],
+      dep: { defender:3 },
+      maxLevel: 8,
+      coords: { x: 1, y: 3 }
+    },
+    indomitability: {
+      //Rouse
+      name_en: "Indomitability",
+      desc: "Increases the party's physical and elemental attack for a set number of turns.",
+      stats: ["Head"],
+      dep: { immunize:3 },
+      maxLevel: 8,
+      coords: { x: 2, y: 3 }
+    },
+    succor: {
+      name_en: "Succor",
+      //desc: "When the user is alive, party members with buffs will recover HP when taking damage.",
+      desc: "When the user is alive, party members with buffs will recover HP when they act.",
+      stats: ["WIS"],
+      dep: { indomitability: 3 },
+      maxLevel: 6,
+      coords: { x: 3, y: 3 }
+    },
+    // scavenge: {
+    //   name_en: "Skanda Ensemble",
+    //   desc: "For one turn, all allies with a buff will have their action speed increased.",
+    //   stats: [],
+    //   dep: {  },
+    //   maxLevel: 4,
+    //   coords: { x: 5, y: 3 }
+    // },
+    // healing: {
+    //   name_en: "CPR/Appease Spirits/Benevolence",
+    //   desc: "This turn, the selected target(s) may endure fatal damage. / When the Shaman is alive, party members with buffs will recover HP when they act. / While the Shaman is alive, party members with buffs will recover HP when taking damage.",
+    //   stats: ["WIS"],
+    //   dep: { },
+    //   maxLevel: 8,
+    //   coords: { x: 0, y: 3 }
+    // },
+    groupTherapy: {
+      name_en: "Group Therapy",
+      desc: "For a set number of turns, increases the range of the user's healing skills, but decreases healing power and action speed.",
+      stats: [],
+      dep: { overheal:3, succor:3 },
+      maxLevel: 8,
+      coords: { x: 4, y: 1.75 }
+    },
+    healDejaVu: {
+      name_en: "Heal Deja Vu",
+      desc: "For a set number of turns, at the end of each turn, all party members will receive again the effect of the last Medic active skill they received, provided that they received at least one Medic active skill while Heal Deja Vu is active.",
+      stats: [],
+      dep: { overheal:3, succor:3 },
+      maxLevel: 8,
+      coords: { x: 4, y: 2.75 }
+    },
+    aglaophotis: {
+      name_en: "Aglaophotis",
+      desc: "Increases the duration of all buffs on all party members.",
+      stats: [],
+      dep: { groupTherapy: 3, healDejaVu: 3 },
+      maxLevel: 6,
+      coords: { x: 5, y: 2.25 }
+    },
+    caduceus: {
+      name_en: "Caduceus",
+      desc: "Deals melee bash damage to one target. Attempts to inflict stun and head bind.",
+      stats: ["STR", "LUC"],
+      dep: { },
+      maxLevel: 8,
+      coords: { x: 0, y: 4 }
+    },
+    mendingBlow: {
+      name_en: "Mending Blow",
+      desc: "Deal melee bash damage to one target. Restores HP to the users row.",
+      stats: ["STR", "LUC"],
+      dep: { caduceus: 3 },
+      maxLevel: 8,
+      coords: { x: 1, y: 4 }
+    },
+    heavyStrike: {
+      //Heavy Strike Knockout Blow
+      name_en: "Fierce Strike",
+      desc: "Deals melee bash damage to one target. The user is inflicted with paralysis afterwards.",
+      stats: ["STR", "LUC"],
+      dep: { mendingBlow: 3 },
+      maxLevel: 8,
+      coords: { x: 2, y: 4 }
+    },
+    starDrop: {
+      name_en: "Star Drop",
+      desc: "Deals melee bash damage to one target and increases damage that target takes for the rest of the turn.",
+      stats: [],
+      dep: { heavyStrike: 3 },
+      maxLevel: 8,
+      coords: { x: 3, y: 4 }
+    },
+    // vitalHit: {
+    //   name_en: "Vital Hit",
+    //   desc: "Deals melee bash damage to one enemy. Damage is multiplied by the party's current average HP compared to their normal max.",
+    //   stats: ["STR", "LUC"],
+    //   dep: { starDrop: 2 },
+    //   maxLevel: 8,
+    //   coords: { x: 4, y: 4 }
+    // },
+    // scavenge: {
+    //   //name_en: "Salve",
+    //   name_en: "Phantom Pain",
+    //   //desc: "Restores HP to ???. This restoration can heal beyond maximum HP. Overhealed HP will disappear at the end of the turn.",
+    //   desc: "For a set number of turns, at the end of each turn, all enemies will receive again the effect of the last Medic active skill they received, provided that they received at least one Medic active skill while Phantom Pain is active.",
+    //   stats: [],
+    //   dep: { staffMastery: 3 },
+    //   maxLevel: 4,
+    //   coords: { x: 5, y: 4.5 }
+    // },
+    revive: {
+      name_en: "Revive",
+      desc: "Revives one ally.",
+      stats: [],
+      dep: { },
+      maxLevel: 8,
+      coords: { x: 1, y: 5.5 }
+    },
+    finalGift: {
+      name_en: "Final Gift",
+      desc: "When the user dies, restores HP to all allies.",
+      stats: ["WIS"],
+      dep: { revive: 3 },
+      maxLevel: 6,
+      coords: { x: 2, y: 6 }
+    },
+    autoRevive: {
+      name_en: "Auto-Revive",
+      desc: "When an ally dies, there is a chance to automatically revive that ally.",
+      stats: [],
+      dep: { finalGift: 3 },
+      maxLevel: 8,
+      coords: { x: 3, y: 6 }
+    },
+    patchUp: {
+      name_en: "Patch Up",
+      desc: "Restores HP to all allies at the end of battle. Does not activate if the party flees.",
+      stats: ["WIS"],
+      dep: { revive: 3 },
+      maxLevel: 8,
+      coords: { x: 2, y: 5 }
+    },
+    antibodies: {
+      name_en: "Antibodies",
+      desc: "Increases the user's rate of recovery from binds and ailments.",
+      stats: [],
+      dep: { patchUp: 3 },
+      maxLevel: 6,
+      coords: { x: 3, y: 5 }
+    },
+    physick: {
+      name_en: "Physick",
+      desc: "Increases all healing done by your party.",
+      stats: [],
+      dep: { antibodies: 3 },
+      maxLevel: 6,
+      coords: { x: 4, y: 5 }
+    },
+    take: {
+      name_en: "Take",
+      desc: "Occasionally gains more items when using Take points.",
+      stats: [],
+      unique: true,
+      dep: { },
+      maxLevel: 1,
+      coords: { x: 0, y: 6 }
+    }
+  },
+
   Survivalist: {
     illusionStep: {
       name_en: "Illusion Step",

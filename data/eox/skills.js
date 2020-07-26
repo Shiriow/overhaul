@@ -806,7 +806,7 @@ let skills = {
       coords: { x: 0, y: 1.5 }
     },
     warHealLine: {
-      name_en: "War Heal Line",
+      name_en: "Blossom Sketch",
       name_jp: "巫術：再生帯",
       desc: "Restores HP to one row at the start of the turn, then at the end of the turn.",
       stats: ["WIS"],
@@ -860,7 +860,7 @@ let skills = {
       coords: { x: 5, y: 1.5 }
     },
     drippingSlash: {
-      name_en: "Dripping Slash",
+      name_en: "Dripping Brier",
       name_jp: "巫術：乱疫",
       desc: "Deals melee cut+almighty damage to one target. Attempts to inflict one of poison, paralyze, blind, sleep or curse.",
       stats: ["LUC"],
@@ -869,7 +869,7 @@ let skills = {
       coords: { x: 0, y: 3.5 }
     },
     strengthSlash: {
-      name_en: "Strength Slash",
+      name_en: "Strength Blight",
       name_jp: "巫剣：霊攻衰斬",
       desc: "Deals melee cut+almighty damage to one target. If the target has an ailment, decreases their attack for a set number of turns.",
       stats: ["STR"],
@@ -878,7 +878,7 @@ let skills = {
       coords: { x: 1, y: 3 }
     },
     guardSlash: {
-      name_en: "Guard Slash",
+      name_en: "Guard Blight",
       name_jp: "巫剣：霊防衰斬",
       desc: "Deals melee cut+almighty damage to one target. If the target has an ailment, decreases their defense for a set number of turns.",
       stats: ["STR"],
@@ -887,34 +887,34 @@ let skills = {
       coords: { x: 1, y: 4 }
     },
     headcut: {
-      name_en: "Headcut",
-      name_jp: "巫剣：霊封頭斬",
+      name_en: "Thorn Chains",
+      //Headcut, Dulled Senses, Mind Dull, Bramble, Briar
       desc: "Deals melee cut+almighty damage to one target. If the target has an ailment, attempts to inflict head bind.",
-      stats: ["STR", "LUC"],
+      stats: ["STR", "LUC", "Arms", "Sword"],
       dep: { strengthSlash: 2 },
-      maxLevel: 8,
+      maxLevel: 6,
       coords: { x: 2, y: 3 }
     },
     armcut: {
-      name_en: "Armcut",
-      name_jp: "巫剣：霊封腕斬",
+      name_en: "Thorn Cuffs",
+      //Armcut, Weak
       desc: "Deals melee cut+almighty damage to one target. If the target has an ailment, attempts to inflict arm bind.",
-      stats: ["STR", "LUC"],
+      stats: ["STR", "LUC", "Arms", "Sword"],
       dep: { guardSlash: 2 },
-      maxLevel: 8,
+      maxLevel: 6,
       coords: { x: 2, y: 4 }
     },
     legcut: {
-      name_en: "Legcut",
-      name_jp: "巫剣：霊封脚斬",
+      name_en: "Thorn Shackles",
+      //Legcut, Lethargy
       desc: "Deals melee cut+almighty damage to one target. If the target has an ailment, attempts to inflict leg bind.",
-      stats: ["STR", "LUC"],
+      stats: ["STR", "LUC", "Arms", "Sword"],
       dep: { headcut: 2, armcut: 2 },
-      maxLevel: 8,
+      maxLevel: 6,
       coords: { x: 3, y: 3.5 }
     },
     ailingSlash: {
-      name_en: "Ailing Slash",
+      name_en: "Ailing Barb",
       name_jp: "巫剣：霊攻大斬",
       desc: "Deals melee cut+almighty damage to one target. If the target has an ailment, increases damage dealt.",
       stats: ["STR"],
@@ -925,7 +925,7 @@ let skills = {
     scorpion: {
       name_en: "Scorpion",
       name_jp: "巫術：再生陣",
-      desc: "Deals melee cut damage to one enemy, with double splash damage to adjacent enemies. If adjacent enemies have ailments, attempts to petrify the target.",
+      desc: "Deals melee cut+almighty damage to one enemy, with double splash damage to adjacent enemies. If adjacent enemies have ailments, attempts to petrify the target.",
       stats: ["STR"],
       dep: { legcut: 3 },
       maxLevel: 8,
@@ -968,7 +968,7 @@ let skills = {
       coords: { x: 2, y: 5.5 }
     },
     bindCut: {
-      name_en: "Bind Cut",
+      name_en: "Aspir Gash",
       name_jp: "物理攻撃ブースト",
       desc: "Deals melee cut+almighty damage to one target. If target is bound, increases the user's Force.",
       stats: [],
@@ -986,7 +986,7 @@ let skills = {
       coords: { x: 4, y: 5.5 }
     },
     curseCut: {
-      name_en: "Curse Cut",
+      name_en: "Maledict Bristle",
       name_jp: "発疫",
       desc: "Deals melee cut+almighty damage to one target and attempt to inflict curse. If sucessful, or if the target is already cursed, restores Force to the users row.",
       stats: ["LUC"],

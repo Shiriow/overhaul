@@ -1776,5 +1776,253 @@ let skills = {
       coords: { x: 0, y: 6 }
     }
   },
+  Pugilist: {
+    sealRush: {
+      name_en: "Seal Rush",
+      desc: "For 3 turns, increases the user's bind infliction chance, and chases any of the user's attacks against an enemy with binds, ailments or stun. Multi-hit attacks will only be chased once.",
+      stats: [],
+      unique: true,
+      type: "Boost",
+      dep: { },
+      maxLevel: 0,
+      coords: { x: 0, y: 0 }
+    },
+    finalBlow: {
+      name_en: "Final Blow",
+      desc: "Deals melee bash damage to one target. Attempts to inflict head bind, arm bind and leg bind.",
+      stats: ["STR", "LUC"],
+      unique: true,
+      type: "Break",
+      dep: { sealRush: 0 },
+      maxLevel: 0,
+      coords: { x: 1, y: 0 }
+    },
+    concussion: {
+      name_en: "Concussion",
+      desc: "Deals melee bash damage to one target. Attempts to inflict head bind.",
+      stats: ["STR", "LUC"],
+      dep: { },
+      maxLevel: 6,
+      coords: { x: 0, y: 1 }
+    },
+    armBreaker: {
+      name_en: "Arm Breaker",
+      desc: "Deals melee bash damage to one target. Attempts to inflict arm bind.",
+      stats: ["STR", "LUC"],
+      dep: { },
+      maxLevel: 6,
+      coords: { x: 0, y: 2 }
+    },
+    lowBlow: {
+      name_en: "Low Blow",
+      desc: "Deals melee bash damage to one target. Attempts to inflict leg bind on the target.",
+      stats: ["STR", "LUC"],
+      dep: { },
+      maxLevel: 6,
+      coords: { x: 0, y: 3 }
+    },
+    oneTwoPunch: {
+      name_en: "One-Two Punch",
+      desc: "Deals melee bash damage to one target. May follow up with Concussion, Arm Breaker, and Low Blow if the target does not have the respective bind.",
+      // Follow-up skills deal reduced damage.
+      stats: ["STR", "LUC"],
+      dep: { concussion: 1, armBreaker: 1, lowBlow: 1 },
+      maxLevel: 6,
+      coords: { x: 1, y: 2 }
+    },
+    corkscrew: {
+      name_en: "Corkscrew",
+      desc: "Deals melee bash damage to one target. Attempts to inflict paralysis on the target.",
+      stats: ["STR", "LUC"],
+      dep: { },
+      maxLevel: 8,
+      coords: { x: 1, y: 1 }
+    },
+    addedBlow: {
+      name_en: "Added Blow",
+      desc: "When the user inflicts a bind on an enemy, there is a chance to follow up with Corkscrew.",
+      stats: [],
+      dep: { oneTwoPunch: 2, corkscrew: 2 },
+      maxLevel: 6,
+      coords: { x: 2, y: 1.5 }
+    },
+    leadingBlow: {
+      name_en: "Leading Blow",
+      desc: "Deals melee bash damage to one target. For every bind the target has, follows up with the corresponding Pugilist skill. For any ailment the target has, follows up with Corkscrew.",
+      stats: ["STR"],
+      dep: { addedBlow: 2 },
+      maxLevel: 8,
+      coords: { x: 3, y: 1.5 }
+    },
+    clinch: {
+      name_en: "Clinch",
+      desc: "Attempts to inflict head bind, arm bind, and leg bind on both the user and the target.",
+      stats: ["LUC"],
+      dep: { leadingBlow: 2 },
+      maxLevel: 6,
+      coords: { x: 4, y: 1.5 }
+    },
+    howlingFist: {
+      //Fist God/
+      name_en: "Howling Fist",
+      //desc: "Enables Cestus skills to crit. Increase Critical Chance",  Increase Critical chance against bound enemies.
+      desc: "Enables Cestus skills to crit. Increase Critical chance against bound enemies.",
+      stats: [],
+      dep: { },
+      maxLevel: 10,
+      coords: { x: 0, y: 4.5 }
+    },
+    axeKick: {
+      name_en: "Axe Kick",
+      //name_en: "Breaking Waves",Crimson Rouge
+      desc: "Deals melee bash damage to one target, with splash damage. If the target has binds or paralysis, attempts to spread them to adjacent enemies.",
+      stats: ["STR"],
+      dep: { howlingFist: 2 },
+      maxLevel: 6,
+      coords: { x: 1, y: 3.5 }
+    },
+    faultBlocker: {
+      name_en: "Fault Blocker",
+      desc: "For 3 turns, increases ailment/bind resistance and recovery for the user's row.",
+      stats: [],
+      dep: { axeKick: 2  },
+      maxLevel: 6,
+      coords: { x: 2, y: 3 }
+    },
+    adrenaline: {
+      name_en: "Adrenaline",
+      desc: "Restores TP to the user when they inflict a bind, ailment or stun. Inflicting something on multiple enemies will not increase the effect of this skill.",
+      stats: [],
+      dep: { faultBlocker: 2  },
+      maxLevel: 6,
+      coords: { x: 3, y: 3 }
+    },
+    meditation: {
+      name_en: "Meditation",
+      desc: "Until the end of the next turn, increases user's chance of inflicting binds and ailments.",
+      stats: [],
+      dep: { adrenaline: 2 },
+      maxLevel: 8,
+      coords: { x: 4, y: 3 }
+    },
+    thunderFist: {
+      name_en: "Thunder Fist",
+      //Unbrindled Strength Rushing Blood Punching Bag
+      //If it kills, recover TP. If the attack does not kill the target,
+      desc: "Deals melee bash+volt damage to one target. If that enemy was killed with Thunder Fist, attempt to inflict paralysis on all enemies, otherwise the user takes damage.",
+      stats: [],
+      dep: { meditation: 2 },
+      maxLevel: 8,
+      coords: { x: 5, y: 3 }
+    },
+    doublePunch: {
+      name_en: "Double Punch",
+      desc: "When any single-action, single-target Pugilist skill is used, Corkscrew is used via Added Blow, or Cross Counter is used, if the skill fails to inflict their bind or ailment, there is a chance it will be repeated.",
+      // desc: "When any single-action, single-target Pugilist skill is used, or when Corkscrew is used via Added Blow, or when Cross Counter is used (despite what the description claims), if the skill fails to inflict their bind or ailment, there is a chance it will be repeated.",
+      stats: [],
+      dep: { axeKick: 2 },
+      maxLevel: 6,
+      coords: { x: 2, y: 4 }
+    },
+    breather: {
+      name_en: "Breather",
+      desc: "Removes binds and ailment from an ally. If successful, increases the user's attack until the end of the next turn.",
+      //desc: "Removes binds and ailment from the user, and increases attack until the end of the next turn. Cannot be used if the user has no binds or ailments.",
+      stats: [],
+      dep: { doublePunch: 2 },
+      maxLevel: 6,
+      coords: { x: 3, y: 4 }
+    },
+    crossCounter: {
+      name_en: "Cross Counter",
+      desc: "This turn, when a party member on the user's row is attacked, counterattacks with melee damage with the user's weapon and attempts to inflict the corresponding bind on the target. Does not activate if the counterattack cannot reach the enemy.",
+      stats: ["STR", "LUC"],
+      dep: { breather: 2 },
+      maxLevel: 8,
+      coords: { x: 4, y: 4 }
+    },
+    vajraForm: {
+      name_en: "Vajra Form",
+      //Raging Waves
+      //desc: "Increases damage dealt based on the number of binds and ailments the target has.",
+      desc: "For 5 turns, increase the user's critical chance and defence but decrease ailment/bind infliction chance.",
+      stats: [],
+      dep: { howlingFist: 2 },
+      maxLevel: 6,
+      coords: { x: 1, y: 5.5 }
+    },
+   resonanceBlow: {
+      name_en: "Resonance Blow",
+      desc: "Deals multiple instances of melee bash damage to one target. The number of hits increases based on the number of turns since Resonance Blow was last used.",
+      stats: ["STR"],
+      dep: { vajraForm: 2 },
+      maxLevel: 6,
+      coords: { x: 2, y: 5 }
+    },
+    flowingStrikes: {
+      name_en: "Greased Lightning",
+      //Relentless Strikes / Flowing Strikes
+      desc: "Increases damage dealt based on the number of attacks.",
+      stats: [],
+      dep: { resonanceBlow: 2 },
+      maxLevel: 8,
+      coords: { x: 3, y: 5 }
+    },
+    lashOut: {
+      name_en: "Lash Out",
+      desc: "Deals multiple instances of melee bash damage to one target. The number of hits is equal to the number of hits made on the previous turn. No matter how many attacks Lash Out makes, it will always count as 1 attack for the purpose of this skill.",
+      stats: ["STR"],
+      dep: { flowingStrikes: 2 },
+      maxLevel: 8,
+      coords: { x: 4, y: 5 }
+    },
+    hundredFists: {
+      name_en: "Hundred Fists",
+      //Flurry of Fists
+      //desc: "When an enemy is killed with Breakfire Rush, the user will attack another enemy with melee bash damage.",
+      desc: "At the beginning of the next turn, deals multiple instances of melee bash damage to random enemies. Can hit the same target 4 times at most.",
+      stats: ["STR"],
+      dep: { vajraForm: 2 },
+      maxLevel: 8,
+      coords: { x: 2, y: 6 }
+    },
+    breakfireRush: {
+      name_en: "Breakfire Rush",
+      //Weaving Flurry
+      //desc: "After using an attack skill, if at least one of the skill's targets has a bind, there is a chance to repeat the skill.", Deals multiple instances of melee bash+fire damage to random targets.
+      //desc: "This turn, if the designated target is hit by a Fire or Bash attack, follow up with a melee Fire+Bash attack. The chance of a Chain activating starts at 100%, and decreases with each activation.",
+      desc: "Deals multiple instances of melee fire damage to an enemy row. Decreases the users critical rate for 1 turn after use.",
+      stats: ["STR"],
+      dep: { hundredFists: 2 },
+      maxLevel: 8,
+      coords: { x: 3, y: 6 }
+    },
+    haymaker: {
+      name_en: "Haymaker",
+      //Duplex Suplex (????)
+      //desc: "Gives a chance for an extra follow-up attack on Breakfire Rush activation.",
+      /// Activates Breakfire Rush, Resonance Blow, and Lash Out all at once. Applies a multiplier-based reduction to each skill's damage. The user's buffs are dispelled after Peerless Combo's use.
+      desc: "This turn, when the selected ally is attacked, counterattack with multiple instances of melee bash damage.",
+      stats: ["STR"],
+      dep: { breakfireRush: 2 },
+      maxLevel: 8,
+      coords: { x: 4, y: 6 }
+    },
+    chop: {
+      name_en: "Chop",
+      desc: "Occasionally gains more items when using Chop points.",
+      stats: [],
+      unique: true,
+      dep: { },
+      maxLevel: 1,
+      coords: { x: 0, y: 6 }
+    }
+      //Onslaught / Shoulder Tackle / Triple Strike / Cursed Fist
+      //desc: "Whenever an enemy gets inflicted by a bind, follow up with an attack.
+      // Deals 3 instances of melee bash damage to one enemy. Each hit attempts to inflict head/arm/leg bind. If the target is bound by one of the attacks, the remaining attacks will not be made.",
+      //Deals multiple instances of melee bash+fire damage to random targets. For 3 turns, increases the user's attack but decreases ailment/bind infliction.
+      //Deals melee bash damage to one target. Attempts to inflict curse on the target. Clears ailments and for 3 turns, the enemy will negate ailments and have their ailment recovery reduced.
+      //Toxic Jab |(Attempts to inflict poison on the target. 1% Chance and 200+ Poison damage)
+  },
 
 };

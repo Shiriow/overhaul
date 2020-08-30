@@ -934,7 +934,7 @@ let skills = {
     blindLaughter: {
       name_en: "Blind Laughter",
       name_jp: "抑制防御ブースト",
-      desc: "This turn, if an enemy is afflicted with any ailments, binds, or stun, the user will perform a follow up attack.",
+      desc: "This turn, if the target is afflicted with any ailments, binds, or stun, the user will perform a follow up attack.",
       stats: [],
       dep: { ailingSlash: 2 },
       maxLevel: 8,

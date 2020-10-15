@@ -55,7 +55,7 @@ let skills = {
     chaseHeal: {
       name_en: "Chase Heal",
       // for a set number of times
-      desc: "For one turn, automatically restores HP to allies when they are attacked. Every time this skill activates, its chance of activating decreases.",
+      desc: "For one turn, automatically restores HP to allies when they are attacked. Every time this skill activates, its chance of activating on that ally decreases.",
       stats: ["WIS", "Head"],
       dep: { unbind: 3 },
       maxLevel: 8,
@@ -137,7 +137,7 @@ let skills = {
     },
     aglaophotis: {
       name_en: "Aglaophotis",
-      desc: "Increases the duration of all buffs on all party members.",
+      desc: "Increases the duration of all buffs on all party members. Cannot be used again for 3 turns.",
       stats: [],
       dep: { groupTherapy: 3, healDejaVu: 3 },
       maxLevel: 6,
@@ -1532,6 +1532,254 @@ let skills = {
       coords: { x: 0, y: 6 }
     }
   },
+  Nightseeker: {
+    killerStance: {
+      name_en: "Killer Stance",
+      desc: "For 3 turns, increases attack and ailment infliction chance for the user.",
+      stats: [],
+      unique: true,
+      type: "Boost",
+      dep: { },
+      maxLevel: 0,
+      coords: { x: 0, y: 0 }
+    },
+    disaster: {
+      name_en: "Disaster",
+      desc: "Deals melee cut damage to one target. If the target has an ailment, increases the ailment's duration.",
+      stats: ["STR"],
+      unique: true,
+      type: "Break",
+      dep: { killerStance: 0 },
+      maxLevel: 0,
+      coords: { x: 1, y: 0 }
+    },
+    abyssalCurse: {
+      name_en: "Abyssal Curse",
+      //powder, Flask, Phial, Vial / Curse Bomb, Umbral Curse
+      // and increases Creeping Darkness's damage     bash
+      desc: "Umbral skill. Deals ranged cut damage to one target. Attempts to inflict curse.",
+      stats: ["STR", "LUC", "Arms", "Sword/Knife"],
+      dep: { },
+      maxLevel: 8,
+      coords: { x: 0, y: 2 }
+    },
+    shadowflame: {
+      name_en: "Shadowflame", // Haze
+      // Umbral Flare / Necrotic+ / +Sign / Noxious / Effluvium / Spark / Umbra / Smoke Bomb / Dark Haze / Shade / Obscurity / Paranoia / Nocturne / Oblivion / Abyssal / Nightmare / Shadowflare
+      //desc: "Attempt to inflict blind on one target. If the enemy is hit by a fire element, follow up with another fire attack and the user's row has increased evasion for a set number of turns.",
+      desc: "Umbral skill. Attempt to inflict blind on one target. If the enemy is hit by fire damage, follow up with ranged fire damage that reduces their accuracy for 3 turns.",
+      stats: ["STR", "LUC", "Arms", "Sword/Knife"],
+      dep: { abyssalCurse: 3  },
+      maxLevel: 8,
+      coords: { x: 1, y: 1.25 }
+    },
+    shockgrasp: {
+      name_en: "Shockgrasp", //Shade, Veil Shroud
+      //, Nerve Bomb, Umbral Spark / Vacuum
+      //desc: "Attempt to inflict paralysis on one target. If the enemy is hit by a volt element, follow up with another volt attack that purges all buffs from hit targets. Damage is doubled for each buff removed, up to 6x for three buffs.",
+      //that attempts to instantly empty their remaining HP if that enemy is at 40% HP or below. If the HP emptying succeeds, restores a percentage of the HP emptied to the user.
+      //that increases the user's attack until the end of the next turn
+      desc: "Umbral skill. Attempt to inflict paralysis on one target. If the enemy is hit by volt damage, follow up with ranged volt damage and apply Shadow Cloak on the user.",
+      stats: ["STR", "LUC", "Arms", "Sword/Knife"],
+      dep: { shadowflame: 3 },
+      maxLevel: 8,
+      coords: { x: 2, y: 1.25 }
+    },
+    noxiousTorpor: {
+      name_en: "Noxious Torpor",
+      //Sleep Bomb
+      //desc: "Deals ranged bash damage to one target. Attempts to inflict sleep. If at the end of the turn the enemy is still asleep, attempt to instantly kill it.",
+      desc: "Umbral skill. Deals ranged cut damage to one target. Attempts to inflict sleep. If at the end of the turn the enemy is still asleep, recover Force.",
+      stats: ["STR", "LUC", "Arms", "Sword/Knife"],
+      dep: { shockgrasp: 3 },
+      maxLevel: 8,
+      coords: { x: 3, y: 1.25 }
+    },
+    creepingDarkness: {
+      name_en: "Creeping Darkness",
+      //Quickdraw, Shadow Remnant
+      //Trance/Increases damage dealt to enemies with ailments. /
+      //desc: "Any enemies hit with Umbral skills (except Noxious Torpor) are hit again with a ranged stab attack at the end of the turn.",
+      desc: "Any enemies hit with Abyssal Curse or Umbral follow-ups are hit again with a ranged cut attack at the end of the turn.",
+      stats: ["STR"],
+      dep: { noxiousTorpor: 3 },
+      maxLevel: 8,
+      coords: { x: 4, y: 0.75 }
+    },
+    effluviumBurst: {
+      //name_en: "Umbral Double",
+      //desc: "Gives a chance for an extra follow-up attack on Umbral skills.",
+      //Splash Palm?
+      //If the user hits an enemy's weakness with a palm skill, there is a chance that they will deal splash damage of the same element to adjacent enemies.
+      name_en: "Effluvium Burst",
+      desc: "When an enemy is killed with a Umbral skill, the user will attack another enemy with a ranged bash attack.",
+      stats: ["STR"],
+      dep: { noxiousTorpor: 3 },
+      maxLevel: 8,
+      coords: { x: 4, y: 1.75 }
+    },
+    coldbloodedVenom: {
+      name_en: "Coldblood Venom", //Coldblooded
+      //, Venom Bomb, Deep Freeze Umbral Venom
+      //desc: "Attempt to inflict poison on one target. If the enemy is hit by a ice element, follow up with another ice attack.",
+      desc: "Umbral skill. Attempt to inflict poison on one target. If the enemy is hit by ice damage, follow up with ranged ice damage that increases poison duration by one.",
+      stats: ["STR", "LUC", "Arms", "Sword/Knife"],
+      dep: { creepingDarkness: 3, effluviumBurst: 3 },
+      maxLevel: 8,
+      coords: { x: 5, y: 1.25 }
+    },
+    maskedPain: {
+      name_en: "Masked Pain",
+      //cleanse, Detox Bomb
+      //Also prevents one ailment infliction for 3 turns
+      desc: "Umbral skill. Removes ailments and binds from one ally. Level up to increase number of binds and type of ailments removed.",
+      stats: ["Head"],
+      dep: { abyssalCurse: 2 },
+      maxLevel: 4,
+      coords: { x: 1, y: 2.75 }
+    },
+    eventide: {
+      name_en: "Eventide",
+      // Eventide / Nightfall
+      //Until the end of the next turn
+      desc: "For a set number of turns, increases Umbral skills' range to all targets, and improves their infliction rate.",
+      stats: ["Head"],
+      dep: { maskedPain: 2 },
+      maxLevel: 8,
+      coords: { x: 2, y: 2.75 }
+    },
+    duskToDawn: {
+      name_en: "Dusk to Dawn",
+      //(Increases ailment chance until the end of the next turn./
+      desc: "Deals melee cut damage to one target and removes an ailment. Damage is increased if the target has an ailment. Casts Eventide after use.",
+      stats: ["STR", "Arms", "Sword/Knife"],
+      dep: { eventide: 2 },
+      maxLevel: 8,
+      coords: { x: 3, y: 2.25 }
+    },
+    daggerFetish: {
+      name_en: "Dagger Fetish",
+      //*Perseverance, Relentless Night, Seeping Darkness, Twilight Force, Dark Malady, Eventide, Ebon Fury, Scourge of Darkness, Blackout, Dusk to Dawn, Dark Descent, Relentless Pursuit, Impending Doom
+      //desc: "Increases the chance of inflicting an ailment if the user failed to inflict one last turn.",
+       //and TP
+      desc: "Increases damage while wielding daggers.",
+      stats: [],
+      dep: { eventide: 2 },
+      maxLevel: 6,
+      coords: { x: 3, y: 3.25 }
+    },
+    sadisticEcstasy: {
+      name_en: "Sadistic Ecstasy",
+      //delight
+      desc: "Increases attack every time the user inflicts an ailment. Bonus stacks up to 3 times, and is reset if the user dies.",
+      stats: [],
+      dep: { duskToDawn: 2, daggerFetish: 2 },
+      maxLevel: 10,
+      coords: { x: 4, y: 2.75 }
+    },
+    ebonFrenzy: {
+      name_en: "Ebon Frenzy",
+      desc: "Deals 3-5 instances of melee cut damage to one target. If the target has an ailment, maximum number of attacks is increased to 9 and increases Dusk to Dawn's damage until the end of the next turn.",
+      stats: ["STR", "Arms", "Sword/Knife"],
+      dep: { sadisticEcstasy: 3 },
+      maxLevel: 8,
+      coords: { x: 5, y: 2.75 }
+    },
+    shadowCloak: {
+      name_en: "Shadow Cloak",
+      desc: "Umbral skill. For 3 turns, negates one physical attack made against the user.",
+      stats: ["Head"],
+      dep: { },
+      maxLevel: 4,
+      coords: { x: 0, y: 4.75 }
+    },
+    decoySign: {
+      name_en: "Decoy Sign",
+      // Also increases their rows evasion.
+      desc: "For a set amount of turns, increases one ally's chance of being targeted and their ailment/bind resistance.",
+      stats: ["Head"],
+      dep: { shadowCloak: 2 },
+      maxLevel: 6,
+      coords: { x: 1, y: 4.25 }
+    },
+    autoCloak: {
+      name_en: "Auto-Cloak",
+      desc: "If Shadow Cloak is learned, there is a chance to automatically cast it at the start of battle. Cannot activate if another ally activated it first.",
+      stats: [],
+      dep: { decoySign: 1 },
+      maxLevel: 6,
+      coords: { x: 2, y: 4.25 }
+    },
+    blackestNight: {
+      name_en: "Blackest Night",
+      //When Shadow Cloak negates an attack, there is a chance that the user will attack an enemy.",
+      desc: "For a set number of turns, increases accuracy and speed for one row.",
+      stats: ["Head"],
+      dep: { autoCloak: 3 },
+      maxLevel: 6,
+      coords: { x: 3, y: 4.25 }
+    },
+    sneakAttack: {
+      name_en: "Sneak Attack",
+      desc: "For a set number of steps, increases the chance of preemptive attacks.",
+      stats: [],
+      dep: { blackestNight: 2 },
+      maxLevel: 6,
+      coords: { x: 4, y: 4.25 }
+    },
+    shadowRemnant: {
+      name_en: "Shadow Remnant",
+      //Return Cloak
+      desc: "When Shadow Cloak negates an attack, there is a chance that Shadow Cloak will be automatically cast on the user.",
+      stats: [],
+      dep: { sneakAttack: 3 },
+      maxLevel: 8,
+      coords: { x: 5, y: 4.25 }
+    },
+    bidingSlice: {
+      name_en: "*Biding Slice",
+      desc: "Deals melee cut damage to one target. If the user is not damaged until the end of the turn, deals melee cut damage to the same target with splash damage.",
+      stats: ["STR", "Arms", "Sword/Knife"],
+      dep: { shadowCloak: 1 },
+      maxLevel: 8,
+      coords: { x: 1, y: 5.25 }
+    },
+    backstab: {
+      name_en: "Backstab",
+      desc: "Deals melee cut damage to one target. Attempts to inflict head bind. If the user has Shadow Cloak, increase damage.",
+      stats: ["STR", "LUC", "Arms", "Sword/Knife"],
+      dep: { bidingSlice: 2 },
+      maxLevel: 8,
+      coords: { x: 2, y: 5.25 }
+    },
+    twilightFury: {
+      name_en: "Twilight Fury",
+      //Attack Bait
+      desc: "When the user or an adjacent ally is hit with an attack, the user will counter, with increased damage if they were the target. The chance of countering goes down with each successive counter.",
+      stats: ["STR", "Arms", "Sword/Knife"],
+      dep: { backstab: 2 },
+      maxLevel: 8,
+      coords: { x: 3, y: 5.25 }
+    },
+    assassinate: {
+      name_en: "Assassinate",
+      desc: "Deals melee cut damage to one target. If the user has Shadow Cloak, attempts to inflict instant death.",
+      stats: ["STR", "LUC", "Arms", "Sword/Knife"],
+      dep: { twilightFury: 3 },
+      maxLevel: 8,
+      coords: { x: 4, y: 5.25 }
+    },
+    chop: {
+      name_en: "Chop",
+      desc: "Occasionally gains more items when using Chop points.",
+      stats: [],
+      unique: true,
+      dep: { },
+      maxLevel: 1,
+      coords: { x: 0, y: 6 }
+    }
+  },
+
   Imperial: {
     ignition: {
       name_en: "Ignition",

@@ -1738,7 +1738,7 @@ let skills = {
     },
     bidingSlice: {
       name_en: "*Biding Slice",
-      desc: "Deals melee cut damage to one target. If the user is not damaged until the end of the turn, deals melee cut damage to the same target with splash damage.",
+      desc: "Deals melee cut damage to one target. If the user is not damaged until the end of the turn, deals melee cut damage to the target's row.",
       stats: ["STR", "Arms", "Sword/Knife"],
       dep: { shadowCloak: 1 },
       maxLevel: 8,

@@ -1687,7 +1687,7 @@ let skills = {
     },
     shadowCloak: {
       name_en: "Shadow Cloak",
-      desc: "Umbral skill. For 3 turns, negates one physical attack made against the user.",
+      desc: "For 3 turns, negates one physical attack made against the user.",
       stats: ["Head"],
       dep: { },
       maxLevel: 4,

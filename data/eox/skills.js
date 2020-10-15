@@ -54,7 +54,6 @@ let skills = {
     },
     chaseHeal: {
       name_en: "Chase Heal",
-      // for a set number of times
       desc: "For one turn, automatically restores HP to allies when they are attacked. Every time this skill activates, its chance of activating on that ally decreases.",
       stats: ["WIS", "Head"],
       dep: { unbind: 3 },
@@ -86,7 +85,6 @@ let skills = {
       coords: { x: 1, y: 3 }
     },
     indomitability: {
-      //Rouse
       name_en: "Indomitability",
       desc: "Increases the party's physical and elemental attack for a set number of turns.",
       stats: ["Head"],
@@ -96,29 +94,12 @@ let skills = {
     },
     succor: {
       name_en: "Succor",
-      //desc: "When the user is alive, party members with buffs will recover HP when taking damage.",
       desc: "When the user is alive, party members with buffs will recover HP when they act.",
       stats: ["WIS"],
       dep: { indomitability: 3 },
       maxLevel: 6,
       coords: { x: 3, y: 3 }
     },
-    // scavenge: {
-    //   name_en: "Skanda Ensemble",
-    //   desc: "For one turn, all allies with a buff will have their action speed increased.",
-    //   stats: [],
-    //   dep: {  },
-    //   maxLevel: 4,
-    //   coords: { x: 5, y: 3 }
-    // },
-    // healing: {
-    //   name_en: "CPR/Appease Spirits/Benevolence",
-    //   desc: "This turn, the selected target(s) may endure fatal damage. / When the Shaman is alive, party members with buffs will recover HP when they act. / While the Shaman is alive, party members with buffs will recover HP when taking damage.",
-    //   stats: ["WIS"],
-    //   dep: { },
-    //   maxLevel: 8,
-    //   coords: { x: 0, y: 3 }
-    // },
     groupTherapy: {
       name_en: "Group Therapy",
       desc: "For a set number of turns, increases the range of the user's healing skills, but decreases healing power and action speed.",
@@ -160,7 +141,6 @@ let skills = {
       coords: { x: 1, y: 4 }
     },
     heavyStrike: {
-      //Heavy Strike Knockout Blow
       name_en: "Fierce Strike",
       desc: "Deals melee bash damage to one target. The user is inflicted with paralysis afterwards.",
       stats: ["STR", "LUC"],
@@ -176,24 +156,6 @@ let skills = {
       maxLevel: 8,
       coords: { x: 3, y: 4 }
     },
-    // vitalHit: {
-    //   name_en: "Vital Hit",
-    //   desc: "Deals melee bash damage to one enemy. Damage is multiplied by the party's current average HP compared to their normal max.",
-    //   stats: ["STR", "LUC"],
-    //   dep: { starDrop: 2 },
-    //   maxLevel: 8,
-    //   coords: { x: 4, y: 4 }
-    // },
-    // scavenge: {
-    //   //name_en: "Salve",
-    //   name_en: "Phantom Pain",
-    //   //desc: "Restores HP to ???. This restoration can heal beyond maximum HP. Overhealed HP will disappear at the end of the turn.",
-    //   desc: "For a set number of turns, at the end of each turn, all enemies will receive again the effect of the last Medic active skill they received, provided that they received at least one Medic active skill while Phantom Pain is active.",
-    //   stats: [],
-    //   dep: { staffMastery: 3 },
-    //   maxLevel: 4,
-    //   coords: { x: 5, y: 4.5 }
-    // },
     revive: {
       name_en: "Revive",
       desc: "Revives one ally.",
@@ -265,17 +227,6 @@ let skills = {
       maxLevel: 0,
       coords: { x: 0, y: 0 }
     },
-    // illusionStep: {
-    //   name_en: "Illusion Step",
-    //   name_jp: "夢幻陣形",
-    //   desc: "For 3 turns, increases the user's evasion and chance of being targeted. Adds an extra chaser attack to bow attacks and skills.",
-    //   stats: [],
-    //   unique: true,
-    //   type: "Boost",
-    //   dep: { },
-    //   maxLevel: 0,
-    //   coords: { x: 0, y: 0 }
-    // },
     mirageArrow: {
         name_en: "Mirage Arrow",
         name_jp: "ミラージュアロー",
@@ -287,17 +238,6 @@ let skills = {
         maxLevel: 0,
         coords: { x: 1, y: 0 }
       },
-    // mirageArrow: {
-    //   name_en: "Summer Rain",
-    //   name_jp: "ミラージュアロー",
-    //   desc: "Deals 16 instances of ranged stab damage to random targets. Can hit the same target 4 times at most. Decreases their accuracy and make them act last for 3 turns.",
-    //   stats: ["STR", "Arms", "Bow"],
-    //   unique: true,
-    //   type: "Break",
-    //   dep: { illusionStep: 0 },
-    //   maxLevel: 0,
-    //   coords: { x: 1, y: 0 }
-    // },
     flameArrow: {
       name_en: "Flame Arrow",
       name_jp: "フレイムアロー",
@@ -308,8 +248,6 @@ let skills = {
       coords: { x: 0, y: 1.5 }
     },
     flankShot: {
-      // name_en: "Foot Pierce",
-      // desc: "Deals ranged stab damage to one row. Attempts to inflict leg bind. If sucessful, or if the enemy is already inflicted with leg bind, the user will attack that enemy again.",
       name_en: "Flank Shot",
       name_jp: "フランクショット",
       desc: "Deals ranged stab damage to one row.",
@@ -349,7 +287,6 @@ let skills = {
       name_en: "Disabling Shot",
       name_jp: "エイミングフット",
       desc: "When the user attacks with a bow skill, attempts to inflict leg bind.",
-      //[/Deals ranged stab damage to one target. Attempts to inflict stun and leg bind.]
       stats: ["LUC, Bow"],
       dep: { finishingArrow: 1 },
       maxLevel: 6,
@@ -367,7 +304,6 @@ let skills = {
     autoSagittarius: {
       name_en: "Auto-Sagittarius",
       name_jp: "自然の恩恵",
-      // desc: "Deals ranged stab damage to one target. Damage is increased depending on the number of evades the user has made since they last used this skill.",
       desc: "If Sagittarius Shot is learned, there is a chance to automatically cast it at the start of battle. Cannot activate if another ally activated it first.",
       stats: ["STR", "Arms", "Bow"],
       dep: { sagittariusShot: 3 },
@@ -375,10 +311,8 @@ let skills = {
       coords: { x: 4, y: 2 }
     },
     naturesCloak: {
-      //Sylphscreen
       name_en: "Nature's Cloak",
       name_jp: "トリックステップ",
-      // / Increases evasion whenever the user deals damage to an enemy. / Increases evasion and damage taken from cut/stab/bash. / Damage taken is increased during the turn this skill is used.  /
       desc: "Increases evasion until the end of the next turn. Damage taken is increased during the turn this skill is used. At the start of battle, automatically puts the user in the Nature's Cloak state.",
       stats: [],
       dep: { },
@@ -386,7 +320,6 @@ let skills = {
       coords: { x: 0, y: 3 }
     },
     chainThrust: {
-      //Squall Volley
       name_en: "Chain Thrust",
       name_jp: "チェインダンス",
       desc: "Deals ranged stab damage to one target and, for that turn, increases the user's evasion and chance of being targeted.",
@@ -888,7 +821,6 @@ let skills = {
     },
     headcut: {
       name_en: "Thorn Chains",
-      //Headcut, Dulled Senses, Mind Dull, Bramble, Briar
       desc: "Deals melee cut+almighty damage to one target. If the target has an ailment, attempts to inflict head bind.",
       stats: ["STR", "LUC", "Arms", "Sword"],
       dep: { strengthSlash: 2 },
@@ -897,7 +829,6 @@ let skills = {
     },
     armcut: {
       name_en: "Thorn Cuffs",
-      //Armcut, Weak
       desc: "Deals melee cut+almighty damage to one target. If the target has an ailment, attempts to inflict arm bind.",
       stats: ["STR", "LUC", "Arms", "Sword"],
       dep: { guardSlash: 2 },
@@ -906,7 +837,6 @@ let skills = {
     },
     legcut: {
       name_en: "Thorn Shackles",
-      //Legcut, Lethargy
       desc: "Deals melee cut+almighty damage to one target. If the target has an ailment, attempts to inflict leg bind.",
       stats: ["STR", "LUC", "Arms", "Sword"],
       dep: { headcut: 2, armcut: 2 },
@@ -1041,7 +971,6 @@ let skills = {
     ninpoScorpio: {
       name_en: "Ninpo: Scorpio",
       name_jp: "忍法　含針",
-      //desc: "Deals ranged stab damage to a set number of random targets. Can hit each target once at most. Attempts to inflict poison.",
       desc: "Deals 3 instances of ranged stab damage to random targets. Attempts to inflict poison.",
       stats: ["STR", "LUC", "Head"],
       dep: { },
@@ -1112,10 +1041,6 @@ let skills = {
       coords: { x: 3, y: 2 }
     },
     quietus: {
-      //name_en: "Illusionary Swap",
-      //name_jp: "抑制攻撃ブースト",
-      //desc: "Targets a Mirage. That Mirage will take damage for the selected row for one turn, with a multiplier applied to the damage they take from redirected hits.",
-      //name_en: "Coup de Grace/Guillotine/Jugulate",
       name_en: "Quietus",
       name_jp: "抑制攻撃ブースト",
       desc: "Deals melee cut damage to one target with a chance to instantly kill it. Chance is increased if the enemy has an ailment.",
@@ -1181,7 +1106,6 @@ let skills = {
     selfDestruct: {
       name_en: "Corpse Explosion",
       name_jp: "肉弾",
-      //desc: "Destroys a Mirage. Deals ranged fire damage to all enemies.",
       desc: "Instantly kill an ally/mirage. Deals ranged fire damage to all enemies.",
       stats: ["STR", "Head", "Knife"],
       dep: { phantomKnives:2 },
@@ -1191,7 +1115,6 @@ let skills = {
     shadewalker: {
       name_en: "Shadewalker",
       name_jp: "忍法　猿飛",
-      //desc: "Targets a Mirage. This turn, every time the Mirage dodges an attack, members in the same row will individually counter with an attack using their equipped weapon.",
       desc: "This turn, every time the selected ally/mirage dodges an attack, members in the same row will individually counter with an attack using their equipped weapon.",
       stats: ["STR", "Head", "Knife"],
       dep: { selfDestruct: 3 },
@@ -1208,7 +1131,6 @@ let skills = {
       coords: { x: 1, y: 5 }
     },
     acrobatics: {
-      //Force Energy
       name_en: "Acrobatics",
       name_jp: "軽業",
       desc: "When the user evades an attack, their TP is restored. At level 4, melee attacks will hit for full damage and can always reach the enemy back row, even when the user is in the back.",
@@ -1219,9 +1141,7 @@ let skills = {
     },
     ninpoSmoke: {
       name_en: "Ninpo: Smoke",
-      //name_en: "Ninpo: Flight/Smoke",
       name_jp: "潜伏",
-      //desc: "This turn, the user has a high chance of evading physical attacks. Each time the user dodges an attack, their evasion and chance to be targeted are decreased.",
       desc: "Reduces the user's maximum HP to greatly increase their evasion and aggro for 3 turns.",
       stats: ["Legs"],
       dep: { acrobatics: 2  },
@@ -1239,9 +1159,7 @@ let skills = {
     },
     reprisal: {
       name_en: "Reprisal",
-      //name_en: "Deep Breath/???",
       name_jp: "骨砕き",
-      //desc: "All clones will disappear and the user recovers HP and TP.",
       desc: "Deals melee cut damage to one target. Damage is increased depending on the number of evades the user has made since they last used this skill.",
       stats: ["STR", "Arms", "Knife"],
       dep: { eyeForAnEye: 2 },
@@ -1250,10 +1168,7 @@ let skills = {
     },
     shadowstrike: {
       name_en: "Shadowstrike",
-      //name_en: "Deep Breath/Revenge Thrust",
       name_jp: "忍法　雲隠",
-      //desc: "Requires a Mirage. Deals melee cut damage to one row. For a set number of turns, reduces their accuracy.",
-      //[their HP is restored. / reduce the attackers accuracy. / inflict ?.]
       desc: "When an attack is evaded, the user has a chance to cast Phantom Knives.",
       stats: [],
       dep: { reprisal: 2, shadewalker: 2 },
@@ -1317,7 +1232,6 @@ let skills = {
       name_en: "Binary Fire",
       name_jp: "炎の連星術",
       desc: "Deals ranged fire damage to all enemies.",
-      //  Replaces the element of the next skill with fire. [For three turns, enemies will take more damage from fire attacks./ Slightly increases the power of Zodiac attack skills until the next turn.
       stats: ["INT, Head, Staff"],
       dep: { pulseStar: 3 },
       maxLevel: 6,
@@ -1351,8 +1265,6 @@ let skills = {
       coords: { x: 2, y: 2.5 }
     },
     refractionNova: {
-      //name_en: "Distortion Nova",
-      //name_en: "Refraction Spark",
       name_en: "Refraction Nova",
       name_jp: "雷の先見術",
       desc: "On the third turn after using this skill, ranged almighty damage is dealt to one target. During this time, for each time the target's weakness is hit, this skills damage is increased up to 10 stacks. Multi-hit attacks will trigger multiple stacks.",
@@ -1374,7 +1286,6 @@ let skills = {
       name_en: "Astral Fire",
       name_jp: "炎の星術",
       desc: "Deals ranged fire damage to one target. Applies the Astral Fire stance on the user, increasing damage for a set number of turns. This skill cannot be used again for 3 turns.",
-      //[On the next turn, if the user uses an elemental skill, follows up with a ranged Int-based Cut+Element attack on all enemies hit with an element by the user.]
       stats: ["INT, Head, Staff"],
       dep: { guidingStar: 3 },
       maxLevel: 6,
@@ -1393,7 +1304,6 @@ let skills = {
       name_en: "Solstice Volt",
       name_jp: "雷の星術",
       desc: "Requires Astral Fire. Deals ranged volt damage to one target. Removes Astral Fire after use.",
-      //, and ignores resistances
       stats: ["INT, Head, Staff"],
       dep: { astralFire: 3 },
       maxLevel: 10,
@@ -1419,7 +1329,6 @@ let skills = {
     },
     asteroidBelt: {
       name_en: "Asteroid Belt",
-       //Spacial Distortion
       name_jp: "アンチエーテル",
       desc: "Provides a chance to nullify elemental attacks against the user's row.",
       stats: [],
@@ -1439,7 +1348,6 @@ let skills = {
     aspectedVeil: {
       name_en: "Aspected Veil",
       name_jp: "氷の先見術",
-      //desc: "For a set number of turns, imbue an ally's weapon with fire/ice/volt and have them counterattack whenever the row they're in is attacked by an enemy.",
       desc: "For a set number of turns, imbue an ally's weapon with fire/ice/volt and have them automatically counterattack enemies who attacks them.",
       stats: ["Head, STR"],
       dep: { nebulaResurgence: 4 },
@@ -1475,7 +1383,6 @@ let skills = {
     },
     aetherLeak: {
       name_en: "Aether Leak",
-      //name_en: "Planar Crack/Fracture/Rift/Breach/Tear/Rend",
       name_jp: "エーテル圧縮",
       desc: "For a set amount of turns, when using TP, a percentage of the used TP will be restored to one random party member.",
       stats: ["Head"],
@@ -1496,8 +1403,6 @@ let skills = {
       name_en: "Dark Matter",
       name_jp: "ダークエーテル",
       desc: "Reduce TP usage for one row this turn, while increasing the user's Zodiac skill damage until the end of the next turn.",
-      //desc: "Reduce TP usage for one row this turn, while increasing the users damage until the end of the next turn.",
-      // [. The user absorbs some of it, recovering their own.]
       stats: ["Head"],
       dep: { celestialReturn: 2 },
       maxLevel: 6,
@@ -1555,8 +1460,6 @@ let skills = {
     },
     abyssalCurse: {
       name_en: "Abyssal Curse",
-      //powder, Flask, Phial, Vial / Curse Bomb, Umbral Curse
-      // and increases Creeping Darkness's damage     bash
       desc: "Umbral skill. Deals ranged cut damage to one target. Attempts to inflict curse.",
       stats: ["STR", "LUC", "Arms", "Sword/Knife"],
       dep: { },
@@ -1564,9 +1467,7 @@ let skills = {
       coords: { x: 0, y: 2 }
     },
     shadowflame: {
-      name_en: "Shadowflame", // Haze
-      // Umbral Flare / Necrotic+ / +Sign / Noxious / Effluvium / Spark / Umbra / Smoke Bomb / Dark Haze / Shade / Obscurity / Paranoia / Nocturne / Oblivion / Abyssal / Nightmare / Shadowflare
-      //desc: "Attempt to inflict blind on one target. If the enemy is hit by a fire element, follow up with another fire attack and the user's row has increased evasion for a set number of turns.",
+      name_en: "Shadowflame",
       desc: "Umbral skill. Attempt to inflict blind on one target. If the enemy is hit by fire damage, follow up with ranged fire damage that reduces their accuracy for 3 turns.",
       stats: ["STR", "LUC", "Arms", "Sword/Knife"],
       dep: { abyssalCurse: 3  },
@@ -1574,11 +1475,7 @@ let skills = {
       coords: { x: 1, y: 1.25 }
     },
     shockgrasp: {
-      name_en: "Shockgrasp", //Shade, Veil Shroud
-      //, Nerve Bomb, Umbral Spark / Vacuum
-      //desc: "Attempt to inflict paralysis on one target. If the enemy is hit by a volt element, follow up with another volt attack that purges all buffs from hit targets. Damage is doubled for each buff removed, up to 6x for three buffs.",
-      //that attempts to instantly empty their remaining HP if that enemy is at 40% HP or below. If the HP emptying succeeds, restores a percentage of the HP emptied to the user.
-      //that increases the user's attack until the end of the next turn
+      name_en: "Shockgrasp", 
       desc: "Umbral skill. Attempt to inflict paralysis on one target. If the enemy is hit by volt damage, follow up with ranged volt damage and apply Shadow Cloak on the user.",
       stats: ["STR", "LUC", "Arms", "Sword/Knife"],
       dep: { shadowflame: 3 },
@@ -1587,8 +1484,6 @@ let skills = {
     },
     noxiousTorpor: {
       name_en: "Noxious Torpor",
-      //Sleep Bomb
-      //desc: "Deals ranged bash damage to one target. Attempts to inflict sleep. If at the end of the turn the enemy is still asleep, attempt to instantly kill it.",
       desc: "Umbral skill. Deals ranged cut damage to one target. Attempts to inflict sleep. If at the end of the turn the enemy is still asleep, recover Force.",
       stats: ["STR", "LUC", "Arms", "Sword/Knife"],
       dep: { shockgrasp: 3 },
@@ -1597,9 +1492,6 @@ let skills = {
     },
     creepingDarkness: {
       name_en: "Creeping Darkness",
-      //Quickdraw, Shadow Remnant
-      //Trance/Increases damage dealt to enemies with ailments. /
-      //desc: "Any enemies hit with Umbral skills (except Noxious Torpor) are hit again with a ranged stab attack at the end of the turn.",
       desc: "Any enemies hit with Abyssal Curse or Umbral follow-ups are hit again with a ranged cut attack at the end of the turn.",
       stats: ["STR"],
       dep: { noxiousTorpor: 3 },
@@ -1607,10 +1499,6 @@ let skills = {
       coords: { x: 4, y: 0.75 }
     },
     effluviumBurst: {
-      //name_en: "Umbral Double",
-      //desc: "Gives a chance for an extra follow-up attack on Umbral skills.",
-      //Splash Palm?
-      //If the user hits an enemy's weakness with a palm skill, there is a chance that they will deal splash damage of the same element to adjacent enemies.
       name_en: "Effluvium Burst",
       desc: "When an enemy is killed with a Umbral skill, the user will attack another enemy with a ranged bash attack.",
       stats: ["STR"],
@@ -1619,9 +1507,7 @@ let skills = {
       coords: { x: 4, y: 1.75 }
     },
     coldbloodedVenom: {
-      name_en: "Coldblood Venom", //Coldblooded
-      //, Venom Bomb, Deep Freeze Umbral Venom
-      //desc: "Attempt to inflict poison on one target. If the enemy is hit by a ice element, follow up with another ice attack.",
+      name_en: "Coldblood Venom",
       desc: "Umbral skill. Attempt to inflict poison on one target. If the enemy is hit by ice damage, follow up with ranged ice damage that increases poison duration by one.",
       stats: ["STR", "LUC", "Arms", "Sword/Knife"],
       dep: { creepingDarkness: 3, effluviumBurst: 3 },
@@ -1630,8 +1516,6 @@ let skills = {
     },
     maskedPain: {
       name_en: "Masked Pain",
-      //cleanse, Detox Bomb
-      //Also prevents one ailment infliction for 3 turns
       desc: "Umbral skill. Removes ailments and binds from one ally. Level up to increase number of binds and type of ailments removed.",
       stats: ["Head"],
       dep: { abyssalCurse: 2 },
@@ -1640,8 +1524,6 @@ let skills = {
     },
     eventide: {
       name_en: "Eventide",
-      // Eventide / Nightfall
-      //Until the end of the next turn
       desc: "For a set number of turns, increases Umbral skills' range to all targets, and improves their infliction rate.",
       stats: ["Head"],
       dep: { maskedPain: 2 },
@@ -1650,7 +1532,6 @@ let skills = {
     },
     duskToDawn: {
       name_en: "Dusk to Dawn",
-      //(Increases ailment chance until the end of the next turn./
       desc: "Deals melee cut damage to one target and removes an ailment. Damage is increased if the target has an ailment. Casts Eventide after use.",
       stats: ["STR", "Arms", "Sword/Knife"],
       dep: { eventide: 2 },
@@ -1659,9 +1540,6 @@ let skills = {
     },
     daggerFetish: {
       name_en: "Dagger Fetish",
-      //*Perseverance, Relentless Night, Seeping Darkness, Twilight Force, Dark Malady, Eventide, Ebon Fury, Scourge of Darkness, Blackout, Dusk to Dawn, Dark Descent, Relentless Pursuit, Impending Doom
-      //desc: "Increases the chance of inflicting an ailment if the user failed to inflict one last turn.",
-       //and TP
       desc: "Increases damage while wielding daggers.",
       stats: [],
       dep: { eventide: 2 },
@@ -1670,7 +1548,6 @@ let skills = {
     },
     sadisticEcstasy: {
       name_en: "Sadistic Ecstasy",
-      //delight
       desc: "Increases attack every time the user inflicts an ailment. Bonus stacks up to 3 times, and is reset if the user dies.",
       stats: [],
       dep: { duskToDawn: 2, daggerFetish: 2 },
@@ -1695,7 +1572,6 @@ let skills = {
     },
     decoySign: {
       name_en: "Decoy Sign",
-      // Also increases their rows evasion.
       desc: "For a set amount of turns, increases one ally's chance of being targeted and their ailment/bind resistance.",
       stats: ["Head"],
       dep: { shadowCloak: 2 },
@@ -1712,7 +1588,6 @@ let skills = {
     },
     blackestNight: {
       name_en: "Blackest Night",
-      //When Shadow Cloak negates an attack, there is a chance that the user will attack an enemy.",
       desc: "For a set number of turns, increases accuracy and speed for one row.",
       stats: ["Head"],
       dep: { autoCloak: 3 },
@@ -1729,7 +1604,6 @@ let skills = {
     },
     shadowRemnant: {
       name_en: "Shadow Remnant",
-      //Return Cloak
       desc: "When Shadow Cloak negates an attack, there is a chance that Shadow Cloak will be automatically cast on the user.",
       stats: [],
       dep: { sneakAttack: 3 },
@@ -1754,7 +1628,6 @@ let skills = {
     },
     twilightFury: {
       name_en: "Twilight Fury",
-      //Attack Bait
       desc: "When the user or an adjacent ally is hit with an attack, the user will counter, with increased damage if they were the target. The chance of countering goes down with each successive counter.",
       stats: ["STR", "Arms", "Sword/Knife"],
       dep: { backstab: 2 },
@@ -1859,10 +1732,7 @@ let skills = {
     },
     bulwarkDrive: {
       name_en: "Bulwark Drive",
-      //Deals melee cut damage to one target, and places the user in the overheat state for 5 turns. Cannot be used while overheated. When cast, doubles this skills TP cost and damage until the user's death. |
-      //Deals melee cut damage to one target, and places the user in the overheat state for 5 turns. Cannot be used while overheated. Damage is reduced when used consecutively, and the TP cost is reduced based on the amount of TP used before this skill was cast.
       desc: "Deals melee cut damage to one target, and increases defense for all allies until it executes. Places the user in the overheat state for 5 turns. Cannot be used while overheated or when current TP is below the original TP cost. The TP cost is reduced based on the amount of TP used before this skill was cast.",
-      //desc: "Deals melee cut damage to one target, and increases defense for all allies until it executes. Places the user in the overheat state for 5 turns and cannot be used while overheated. ",
       stats: ["STR", "Arms", "Driveblade"],
       dep: { },
       maxLevel: 8,
@@ -1870,7 +1740,6 @@ let skills = {
     },
     heatSink: {
       name_en: "*Heat Sink",
-      // desc: "Reduces overheat duration by a set number of turns and increases the users defense until the end of the next turn. Can only be used while overheated.",
       desc: "Reduces overheat duration by a set number of turns and restores Force to the user. Can only be used while overheated.",
       stats: ["Head", "Driveblade"],
       dep: { bulwarkDrive: 3 },
@@ -1885,15 +1754,6 @@ let skills = {
       maxLevel: 8,
       coords: { x: 1, y: 3.25 }
     },
-    // intercooler: {
-    //   //Amped Blade, Condensed Heat, Heated Blade
-    //   name_en: "Zero Sum",
-    //   desc: "Increases your damage for the rest of combat (or until you are killed) every time your Driveblade overheats.",
-    //   stats: [],
-    //   dep: { heatSink: 1 },
-    //   maxLevel: 8,
-    //   coords: { x: 2, y: 2.75 }
-    // },
     flameDrive: {
       name_en: "Flame Drive",
       desc: "Deals melee cut+fire damage to one target, and places the user in the overheat state for 6 turns. Cannot be used while overheated or when current TP is below the original TP cost. The TP cost is reduced based on the amount of TP used before this skill was cast.",
@@ -1920,7 +1780,6 @@ let skills = {
     },
     bladeRecoil: {
       name_en: "Blade Recoil",
-      // Cannot be used below the original TP cost. The TP cost is reduced based on the amount of TP used before this skill was cast.
       desc: "Deals melee cut damage to one target. If the user used an elemental attack on the last turn, also adds a follow-up attack of that element. The user will take 2x more damage until the skill activates.",
       stats: ["STR", "Arms", "Driveblade"],
       dep: { shockDrive: 3, freezeDrive: 3 },
@@ -1935,15 +1794,6 @@ let skills = {
       maxLevel: 8,
       coords: { x: 5, y: 2.75 }
     },
-    // driveStake: {
-    //   //Amped Blade, Condensed Heat, Heated Blade
-    //   name_en: "Drivestake Blast",
-    //   desc: "Any enemies hit with Drive skills are hit again with an attack of the same element at the end of the turn.",
-    //   stats: [],
-    //   dep: { bladeRecoil: 4 },
-    //   maxLevel: 8,
-    //   coords: { x: 5, y: 2.75 }
-    // },
     overheatGuard: {
       name_en: "Overheat Guard",
       desc: "While overheated, increases the user's defense.",
@@ -1954,11 +1804,7 @@ let skills = {
     },
     bloodfest: {
       name_en: "Avenger",
-      //name_en: "Bloodfest",
       desc: "When an ally dies, restore HP and TP.",
-      //desc: "When the user uses a skill, restore HP.",
-      //desc: "When an ally dies or an enemy is killed by the user, restore HP.",
-      //desc: "Combo skill. Deals melee cut damage to one target, heals the party for 25% of the damage dealt and increases the user's chance of being targeted. Reduces overheat duration by 1 turn.",
       stats: [],
       dep: { bulwarkDrive: 2 },
       maxLevel: 6,
@@ -1982,7 +1828,6 @@ let skills = {
     },
     solidBarrel: {
       name_en: "Solid Barrel",
-      //desc: "Combo skill. Deals melee cut damage to one target and, for that turn, increases the user's chance of being targeted. Preserves the effect of last turn's Rough Divide. Reduces overheat duration by 2 turns.",
       desc: "Combo skill. Deals melee cut damage to one target and heals the party for 15% of the damage dealt. Preserves the effect of last turn's Rough Divide. Reduces overheat duration by 1 turn.",
       stats: ["STR", "Arms", "Driveblade"],
       dep: { roughDivide: 2, rearGuard: 2  },
@@ -2006,7 +1851,6 @@ let skills = {
       coords: { x: 4, y: 5.5 }
     },
     driveRevenge: {
-      //Amped Blade, Condensed/Compressed Heat, Heated Blade, Discharge
       name_en: "Amped Discharge",
       desc: "Increases the damage of Drive skills after activating Rough Divide, Keen Flurry or Sentinel Shell.",
       stats: [],
@@ -2072,7 +1916,6 @@ let skills = {
     oneTwoPunch: {
       name_en: "One-Two Punch",
       desc: "Deals melee bash damage to one target. May follow up with Concussion, Arm Breaker, and Low Blow if the target does not have the respective bind.",
-      // Follow-up skills deal reduced damage.
       stats: ["STR", "LUC"],
       dep: { concussion: 1, armBreaker: 1, lowBlow: 1 },
       maxLevel: 6,
@@ -2111,9 +1954,7 @@ let skills = {
       coords: { x: 4, y: 1.5 }
     },
     howlingFist: {
-      //Fist God/
       name_en: "Howling Fist",
-      //desc: "Enables Cestus skills to crit. Increase Critical Chance",  Increase Critical chance against bound enemies.
       desc: "Enables Cestus skills to crit. Increase Critical chance against bound enemies.",
       stats: [],
       dep: { },
@@ -2122,7 +1963,6 @@ let skills = {
     },
     axeKick: {
       name_en: "Axe Kick",
-      //name_en: "Breaking Waves",Crimson Rouge
       desc: "Deals melee bash damage to one target, with splash damage. If the target has binds or paralysis, attempts to spread them to adjacent enemies.",
       stats: ["STR"],
       dep: { howlingFist: 2 },
@@ -2155,8 +1995,6 @@ let skills = {
     },
     thunderFist: {
       name_en: "Thunder Fist",
-      //Unbrindled Strength Rushing Blood Punching Bag
-      //If it kills, recover TP. If the attack does not kill the target,
       desc: "Deals melee bash+volt damage to one target. If that enemy was killed with Thunder Fist, attempt to inflict paralysis on all enemies, otherwise the user takes damage.",
       stats: [],
       dep: { meditation: 2 },
@@ -2166,7 +2004,6 @@ let skills = {
     doublePunch: {
       name_en: "Double Punch",
       desc: "When any single-action, single-target Pugilist skill is used, Corkscrew is used via Added Blow, or Cross Counter is used, if the skill fails to inflict their bind or ailment, there is a chance it will be repeated.",
-      // desc: "When any single-action, single-target Pugilist skill is used, or when Corkscrew is used via Added Blow, or when Cross Counter is used (despite what the description claims), if the skill fails to inflict their bind or ailment, there is a chance it will be repeated.",
       stats: [],
       dep: { axeKick: 2 },
       maxLevel: 6,
@@ -2175,7 +2012,6 @@ let skills = {
     breather: {
       name_en: "Breather",
       desc: "Removes binds and ailment from an ally. If successful, increases the user's attack until the end of the next turn.",
-      //desc: "Removes binds and ailment from the user, and increases attack until the end of the next turn. Cannot be used if the user has no binds or ailments.",
       stats: [],
       dep: { doublePunch: 2 },
       maxLevel: 6,
@@ -2191,8 +2027,6 @@ let skills = {
     },
     vajraForm: {
       name_en: "Vajra Form",
-      //Raging Waves
-      //desc: "Increases damage dealt based on the number of binds and ailments the target has.",
       desc: "For 5 turns, increase the user's critical chance and defence but decrease ailment/bind infliction chance.",
       stats: [],
       dep: { howlingFist: 2 },
@@ -2209,7 +2043,6 @@ let skills = {
     },
     flowingStrikes: {
       name_en: "Greased Lightning",
-      //Relentless Strikes / Flowing Strikes
       desc: "Increases damage dealt based on the number of attacks.",
       stats: [],
       dep: { resonanceBlow: 2 },
@@ -2226,8 +2059,6 @@ let skills = {
     },
     hundredFists: {
       name_en: "Hundred Fists",
-      //Flurry of Fists
-      //desc: "When an enemy is killed with Breakfire Rush, the user will attack another enemy with melee bash damage.",
       desc: "At the beginning of the next turn, deals multiple instances of melee bash damage to random enemies. Can hit the same target 4 times at most.",
       stats: ["STR"],
       dep: { vajraForm: 2 },
@@ -2236,9 +2067,6 @@ let skills = {
     },
     breakfireRush: {
       name_en: "Breakfire Rush",
-      //Weaving Flurry
-      //desc: "After using an attack skill, if at least one of the skill's targets has a bind, there is a chance to repeat the skill.", Deals multiple instances of melee bash+fire damage to random targets.
-      //desc: "This turn, if the designated target is hit by a Fire or Bash attack, follow up with a melee Fire+Bash attack. The chance of a Chain activating starts at 100%, and decreases with each activation.",
       desc: "Deals multiple instances of melee fire damage to an enemy row. Decreases the users critical rate for 1 turn after use.",
       stats: ["STR"],
       dep: { hundredFists: 2 },
@@ -2247,9 +2075,6 @@ let skills = {
     },
     haymaker: {
       name_en: "Haymaker",
-      //Duplex Suplex (????)
-      //desc: "Gives a chance for an extra follow-up attack on Breakfire Rush activation.",
-      /// Activates Breakfire Rush, Resonance Blow, and Lash Out all at once. Applies a multiplier-based reduction to each skill's damage. The user's buffs are dispelled after Peerless Combo's use.
       desc: "This turn, when the selected ally is attacked, counterattack with multiple instances of melee bash damage.",
       stats: ["STR"],
       dep: { breakfireRush: 2 },
@@ -2265,12 +2090,6 @@ let skills = {
       maxLevel: 1,
       coords: { x: 0, y: 6 }
     }
-      //Onslaught / Shoulder Tackle / Triple Strike / Cursed Fist
-      //desc: "Whenever an enemy gets inflicted by a bind, follow up with an attack.
-      // Deals 3 instances of melee bash damage to one enemy. Each hit attempts to inflict head/arm/leg bind. If the target is bound by one of the attacks, the remaining attacks will not be made.",
-      //Deals multiple instances of melee bash+fire damage to random targets. For 3 turns, increases the user's attack but decreases ailment/bind infliction.
-      //Deals melee bash damage to one target. Attempts to inflict curse on the target. Clears ailments and for 3 turns, the enemy will negate ailments and have their ailment recovery reduced.
-      //Toxic Jab |(Attempts to inflict poison on the target. 1% Chance and 200+ Poison damage)
   },
 
 };

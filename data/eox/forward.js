@@ -25,7 +25,6 @@ let forward = {
     mendingBlow: { heavyStrike: 3 },
     heavyStrike: { starDrop: 3 },
     starDrop: { },
-    //vitalHit: { },
     take: { }
   },
 
@@ -169,6 +168,37 @@ let forward = {
     autoLeak: { },
     mine: { }
   },
+
+
+  Shogun: {
+    fullCombatForm: { bodyDouble: 0 },
+    bodyDouble: {},
+    parryingBlade: { hawkSlice: 3, soleFocus: 3 },
+    hawkSlice: { fiveRingSword: 3, gnashingFang: 3 },
+    fiveRingSword: {},
+    gnashingFang: { finalFlicker: 3, bloodyLance: 2 },
+    finalFlicker: { mercyKill: 3 },
+    bloodyLance: { mercyKill: 3 },
+    mercyKill: {},
+    blitzCommand: { galvanize: 3 },
+    galvanize: { ambushStance: 3 },
+    ambushStance: { rearDignity: 3 },
+    rearDignity: { sanzuCross: 3 },
+    soleFocus: { wickedTalons: 3 },
+    wickedTalons: { savageClaw: 2 },
+    savageClaw: { sanzuCross: 3 },
+    sanzuCross: {},
+    blazeSpirit: { hailSpirit: 3, boltSpirit: 3 },
+    hailSpirit: { greatGeneral: 3 },
+    boltSpirit: { greatGeneral: 3 },
+    greatGeneral: { moraleBoost: 3, ritualSuicide: 3 },
+    moraleBoost: { reincarnation: 3 },
+    ritualSuicide: {},
+    bloodfest: { ritualSuicide: 3 },
+    reincarnation: {},
+    take: {}
+  },
+
   Nightseeker: {
     killerStance: { disaster: 0 },
     disaster: { },
@@ -204,7 +234,6 @@ let forward = {
     tripEdge: { galeEdge: 2  },
     galeEdge: { bloodEdge: 2 },
     bloodEdge: { impulseEdge: 2 },
-    //coolEdge: { impulseEdge: 2 },
     impulseEdge: { smashEdge: 2, thermalCell: 2 },
     smashEdge: { chargeEdge: 2 },
     thermalCell: { chargeEdge: 2 },
@@ -217,7 +246,6 @@ let forward = {
     shockDrive: { bladeRecoil: 3 },
     bladeRecoil: { finisher: 3 },
     finisher: {  },
-    //driveStake: { },
     overheatGuard: { roughDivide: 2 },
     bloodfest: { rearGuard: 2 },
     roughDivide: { solidBarrel: 2 },

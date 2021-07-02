@@ -357,7 +357,7 @@ let skills = {
       coords: { x: 3, y: 3 }
     },
     rayOfLight: {
-      name_en: "Ray of Light",/*Shivelight, Komorebi*/
+      name_en: "Ray of Light",
       desc: "When the user dodges an attack, their chance to be targeted and defense increase. If the they fail to dodge an attack, Ray of Light's effects are reset.",
       stats: [],
       dep: { blurredVeil: 2 },
@@ -371,15 +371,7 @@ let skills = {
       dep: { sylphid: 3, rayOfLight: 3  },
       maxLevel: 8,
       coords: { x: 4, y: 3.5 }
-    },/*
-    eyeForAnEye: {
-      name_en: "Nature's Wrath",
-      desc: "Deals ranged stab damage to one target. Damage is increased depending on the number of evades the user has made since they last used this skill.",
-      stats: ["STR", "Arms", "Bow"],
-      dep: { hazyShot: 3 },
-      maxLevel: 8,
-      coords: { x: 5, y: 3.5 }
-    },*/
+    },
     riskPerception: {
       name_en: "Risk Perception",
       desc: "There is a set chance that blindsides will be negated.",
@@ -1104,15 +1096,6 @@ let skills = {
       dep: { astrologersAxis: 0 },
       maxLevel: 0,
       coords: { x: 1, y: 0 }
-  /*astralSign: {
-      name_en: "Conversion",
-      desc: "Restores TP to the user. This can restore TP over maximum TP. The overhealed TP will disappear at the end of battle, or when the user dies.",
-      stats: [],
-      unique: true,
-      type: "Break",
-      dep: { astrologersAxis: 0 },
-      maxLevel: 0,
-      coords: { x: 1, y: 0 }*/
     },
     pulseStar: {
       name_en: "Pulse Star",
@@ -1311,7 +1294,7 @@ let skills = {
 
   Shogun: {
     fullCombatForm: {
-      name_en: "*Full Combat Form",
+      name_en: "Full Combat Form",
       desc: "For 3 turns, increases maximum HP and attack for all party members.",
       stats: [],
       unique: true,
@@ -1475,7 +1458,7 @@ let skills = {
       coords: { x: 1, y: 6 }
     },
     greatGeneral: {
-      name_en: "*Great General",
+      name_en: "Great General",
       desc: "For a set number of turns, increases one ally's physical attack and chance of being targeted.",
       stats: [],
       dep: { hailSpirit: 3, boltSpirit: 3 },
@@ -1507,7 +1490,7 @@ let skills = {
       coords: { x: 3, y: 6 }
     },
     ritualSuicide: {
-      name_en: "*Ritual Suicide",
+      name_en: "Ritual Suicide",
       desc: "Restores HP to all other allies with a chance to revive them, but the user dies. This self-inflicted death cannot be prevented via any means.",
       stats: ["WIS"],
       dep: { bloodfest: 3 },
@@ -1764,7 +1747,7 @@ let skills = {
       coords: { x: 1, y: 0 }
     },
     tripEdge: {
-      name_en: "*Trip Edge",
+      name_en: "Trip Edge",
       desc: "Starter skill. Deals melee cut damage to one target. Attempts to inflict leg bind. Reduces overheat duration by 1 turn.",
       stats: ["STR", "LUC", "Arms", "Driveblade"],
       dep: { },
@@ -1780,7 +1763,7 @@ let skills = {
       coords: { x: 1, y: 1 }
     },
     bloodEdge: {
-      name_en: "*Blood Edge",
+      name_en: "Blood Edge",
       desc: "Starter and Combo skill. Deals melee cut damage to one target. Restores HP to the user based on the amount of damage dealt. Reduces overheat duration by 2 turns. Can only be used if an Starter skill was used on the previous turn.",
       stats: ["STR", "Arms", "Driveblade"],
       dep: { galeEdge: 2  },
@@ -1788,7 +1771,7 @@ let skills = {
       coords: { x: 2, y: 1 }
     },
     impulseEdge: {
-      name_en: "*Impulse Edge",
+      name_en: "Impulse Edge",
       desc: "Starter and Combo skill. Deals melee cut damage to one target. Restores TP and Force to the user. Reduces overheat duration by 1 turn. Can only be used if an Starter skill was used on the previous turn.",
       stats: ["STR", "Arms", "Driveblade"],
       dep: { bloodEdge: 2 },
@@ -1828,7 +1811,7 @@ let skills = {
       coords: { x: 0, y: 3.875 }
     },
     heatSink: {
-      name_en: "*Heat Sink",
+      name_en: "Heat Sink",
       desc: "Reduces overheat duration by a set number of turns and restores Force to the user. Can only be used while overheated.",
       stats: ["Head", "Driveblade"],
       dep: { bulwarkDrive: 3 },

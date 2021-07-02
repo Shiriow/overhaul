@@ -1324,7 +1324,7 @@ let skills = {
     hawkSlice: {
       name_en: "Twilight Glory", 
       desc: "Deals melee damage to one target with the user's weapon. If a second weapon is equipped, attack adjacent enemies with double damage.",
-      stats: [],
+      stats: ["STR", "Arm", "Katana"],
       dep: { parryingBlade: 3 },
       maxLevel: 8,
       coords: { x: 1, y: 1 }
@@ -1332,7 +1332,7 @@ let skills = {
     gnashingFang: {
       name_en: "Gnashing Fang",
       desc: "Deals melee damage to one target with the user's weapon. If that enemy is killed and a second weapon is equipped, attack all enemies for the same damage.",
-      stats: [],
+      stats: ["STR", "Arm", "Katana"],
       dep: { hawkSlice: 3 },
       maxLevel: 8,
       coords: { x: 2, y: 0.5 }
@@ -1340,7 +1340,7 @@ let skills = {
     fiveRingSword: {
       name_en: "Five-Ring Sword",
       desc: "Deals multiple instances of melee damage to random targets with user's weapon, and this attack will alternate between the katana and the other weapon. If only one weapon is equipped, the maximum number of hits will be halved.",
-      stats: ["STR"],
+      stats: ["STR", "Arm", "Katana"],
       dep: { hawkSlice: 3 },
       maxLevel: 10,
       coords: { x: 2, y: 1.5 }
@@ -1348,7 +1348,7 @@ let skills = {
     finalFlicker: {
       name_en: "Final Flicker",
       desc: "When the user kills an enemy, restores Force to all party members.",
-      stats: ["STR"],
+      stats: [],
       dep: { gnashingFang: 3 },
       maxLevel: 6,
       coords: { x: 3, y: 0 }
@@ -1364,7 +1364,7 @@ let skills = {
     mercyKill: {
       name_en: "Mercy Kill",
       desc: "When any enemy or ally is attacked, and their HP falls below a set percentage, there is a chance to inflict instant death to them.",
-      stats: [],
+      stats: ["Arm"],
       dep: { finalFlicker: 3, bloodyLance: 3 },
       maxLevel: 8,
       coords: { x: 4, y: 0.5 }
@@ -1380,7 +1380,7 @@ let skills = {
     wickedTalons: {
       name_en: "Wicked Talons",
       desc: "Normal attacks recover TP.",
-      stats: ["STR"],
+      stats: [],
       dep: { soleFocus: 3 },
       maxLevel: 4,
       coords: { x: 2, y: 2.65 }
@@ -1396,7 +1396,7 @@ let skills = {
     blitzCommand: {
       name_en: "Blitz Command",
       desc: "All allies other than the user will attack one target with their weapons.",
-      stats: ["STR"],
+      stats: ["STR", "Arm"],
       dep: {},
       maxLevel: 8,
       coords: { x: 0, y: 3.85 }
@@ -1404,7 +1404,7 @@ let skills = {
     galvanize: {
       name_en: "Galvanize", 
       desc: "All allies other than the user will heal random party members a set number of times. Each party member can only be healed once per ally.",
-      stats: [],
+      stats: ["WIS", "Arm"],
       dep: { blitzCommand: 3 },
       maxLevel: 8,
       coords: { x: 1, y: 3.85 }
@@ -1412,7 +1412,7 @@ let skills = {
     ambushStance: {
       name_en: "Ambush Stance", 
       desc: "This turn, when the selected ally is attacked, all front row allies will counterattack with their weapons. Does not activate against counterattacks.",
-      stats: ["STR"],
+      stats: ["STR", "Arm"],
       dep: { galvanize: 3 },
       maxLevel: 8,
       coords: { x: 2, y: 3.85 }
@@ -1420,7 +1420,7 @@ let skills = {
     rearDignity: {
       name_en: "Rear Dignity",  
       desc: "Reduces damage done and taken to a row for one turn.",
-      stats: [],
+      stats: ["Head"],
       dep: { ambushStance: 3 },
       maxLevel: 6,
       coords: { x: 3, y: 3.85 }
@@ -1428,7 +1428,7 @@ let skills = {
     sanzuCross: {
       name_en: "Sanzu Cross",
       desc: "This turn, the user will chase attacks from all allies and enemies. Number of chases is halved if equipped with just one weapon.",
-      stats: ["STR"],
+      stats: ["STR", "Leg"],
       dep: { savageClaw: 3, rearDignity: 3 },
       maxLevel: 10,
       coords: { x: 4, y: 3.25 }
@@ -1436,7 +1436,7 @@ let skills = {
     blazeSpirit: {
       name_en: "Blaze Spirit",
       desc: "For a set number of turns, imbues one row of allies' weapons with fire and have them counterattack enemies who attacks them.",
-      stats: [],
+      stats: ["STR","Head"],
       dep: {},
       maxLevel: 6,
       coords: { x: 0, y: 5 }
@@ -1444,7 +1444,7 @@ let skills = {
     hailSpirit: {
       name_en: "Hail Spirit",
       desc: "For a set number of turns, imbues one row of allies' weapons with ice and have them counterattack enemies who attacks them.",
-      stats: [],
+      stats: ["STR","Head"],
       dep: { blazeSpirit: 3 },
       maxLevel: 6,
       coords: { x: 1, y: 5 }
@@ -1452,7 +1452,7 @@ let skills = {
     boltSpirit: {
       name_en: "Bolt Spirit",
       desc: "For a set number of turns, imbues one row of allies' weapons with volt and have them counterattack enemies who attacks them.",
-      stats: [],
+      stats: ["STR","Head"],
       dep: { blazeSpirit: 3 },
       maxLevel: 6,
       coords: { x: 1, y: 6 }
@@ -1460,7 +1460,7 @@ let skills = {
     greatGeneral: {
       name_en: "Great General",
       desc: "For a set number of turns, increases one ally's physical attack and chance of being targeted.",
-      stats: [],
+      stats: ["Head"],
       dep: { hailSpirit: 3, boltSpirit: 3 },
       maxLevel: 8,
       coords: { x: 2, y: 5.5 }
@@ -1468,7 +1468,7 @@ let skills = {
     moraleBoost: {
       name_en: "Morale Boost",
       desc: "When the user is revived, restores HP to all allies.",
-      stats: [],
+      stats: ["WIS"],
       dep: { greatGeneral: 3 },
       maxLevel: 6,
       coords: { x: 3, y: 5 }
@@ -1492,7 +1492,7 @@ let skills = {
     ritualSuicide: {
       name_en: "Ritual Suicide",
       desc: "Restores HP to all other allies with a chance to revive them, but the user dies. This self-inflicted death cannot be prevented via any means.",
-      stats: ["WIS"],
+      stats: ["WIS", "Arm"],
       dep: { bloodfest: 3 },
       maxLevel: 8,
       coords: { x: 4, y: 6 }

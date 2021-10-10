@@ -725,8 +725,8 @@ let levels = {
 
   Ninja: {
     insolence: {
-      Speed: ["x3.5"],
-      Evasion: ["+20%"]
+      Evasion: ["35%"],
+      Speed: ["x2"],
     },
     ninpoPoisonMist: {
       "Infliction Chance": ["1000%", "1000%", "1000%"],

@@ -433,11 +433,11 @@ let skills = {
   Ronin: {
     peerless: {
       name_en: "Peerless",
-      desc: "For 3 turns, stance duration will not decrease, and stances cannot be removed. In addition, the user gains the effect of both stances.",
+      desc: "For 3 turns, stance duration will not decrease, and stances cannot be removed. ",
       stats: [],
       unique: true,
       type: "Boost",
-      dep: { },
+      dep: {},
       maxLevel: 0,
       coords: { x: 0, y: 0 }
     },
@@ -453,71 +453,135 @@ let skills = {
     },
     upperStance: {
       name_en: "Upper Stance",
-	    desc: "Increases attack and evasion when Upper Stance is active. At the start of each battle, the user automatically assumes the stance with the highest skill level.",
-      stats: ["Katana"],
-      dep: { },
+      desc: "When Upper Stance is active, damage is increased but various other stats are decreased.",
+      stats: [],
+      dep: {},
       maxLevel: 8,
       coords: { x: 0, y: 2 }
     },
     airBlade: {
       name_en: "Air Blade",
-      desc: "Deals ranged cut damage to one target. Assumes Upper Stance after use.",
+      desc: "Deals ranged cut damage to one target. \nAssumes Upper Stance at the end of the turn.",
       stats: ["STR", "Arms", "Katana"],
       dep: { upperStance: 1 },
       maxLevel: 6,
       coords: { x: 1, y: 1 }
     },
-    bloodyBlade: {
-      name_en: "Bloody Blade",
-      desc: "Deals melee cut damage to one target and increases the users row attack for a set number of turns. Assumes Upper Stance after use.",
+    ripperBlast: {
+      name_en: "Ripper Blast",
+      desc: "Deals melee cut damage to one target, with splash damage to the adjacent enemies. \nAssumes Upper Stance at the end of the turn.",
       stats: ["STR", "Arms", "Katana"],
       dep: { upperStance: 1 },
       maxLevel: 6,
       coords: { x: 1, y: 2 }
     },
-    delayedStrike: {
-      name_en: "Delayed Strike",
-      desc: "Deals melee cut damage to one target, and attack again 2 turns later. Assumes Upper Stance after use.",
+    dyingLotus: {
+      name_en: "Dying Lotus",
+      desc: "Deals melee cut damage to one target. \nAssume Upper Stance 2 turns later.",
       stats: ["STR", "Arms", "Katana"],
       dep: { upperStance: 1 },
       maxLevel: 6,
       coords: { x: 1, y: 3 }
     },
+    clearStance: {
+      name_en: "Clear Stance",
+      desc: "Increases defense and accuracy when Clear Stance is active. At max, Clear Stance has a chance to automatically activate at the start of a battle.",
+      stats: [],
+      dep: {},
+      maxLevel: 8,
+      coords: { x: 0, y: 5 }
+    },
+    armStrike: {
+      name_en: "Arm Strike",
+      desc: "Deals melee stab damage to one target. Attempts to inflict arm bind. \nAssumes Clear Stance after use.",
+      stats: ["STR", "LUC", "Arms", "Katana"],
+      dep: { clearStance: 1 },
+      maxLevel: 6,
+      coords: { x: 1, y: 4 }
+    },
+    bloodyBlade: {
+      name_en: "Bloody Blade",
+      desc: "Deals melee cut damage to one target and increases the user's row attack for a set number of turns. \nAssumes Clear Stance after use.",
+      stats: ["STR", "Arms", "Katana"],
+      dep: { clearStance: 1 },
+      maxLevel: 6,
+      coords: { x: 1, y: 5 }
+    },
+    flowingPath: {
+      name_en: "Flowing Path",
+      desc: "Deals melee cut damage to one target. Restores HP to the user based on the amount of damage dealt.\nAssumes Clear Stance after use.",
+      stats: ["STR", "Arms", "Katana"],
+      dep: { clearStance: 1 },
+      maxLevel: 6,
+      coords: { x: 1, y: 6 }
+    },
+    soaringTempest: {
+      name_en: "Soaring Tempest",
+      desc: "Requires Upper Stance. Deals melee cut damage to one target and when a party member on the user's row is attacked, counterattack with melee damage. \nAssumes Clear Stance for 3 turns after use.",
+      stats: ["STR", "Arms", "Katana"],
+      dep: { airBlade: 1, dyingLotus: 1, ripperBlast: 1 },
+      maxLevel: 8,
+      coords: { x: 2, y: 1 }
+    },
+    mirrorMoon: {
+      name_en: "Mirror Moon",
+      desc: "Requires Clear Stance. On this turn, when the user is attacked with physical damage, there is a chance they will nullify the damage and counterattack the source. \nAssumes Upper Stance for 3 turns after use.",
+      stats: ["STR", "Arms", "Katana"],
+      dep: { armStrike: 1, flowingPath: 1, bloodyBlade: 1 },
+      maxLevel: 8,
+      coords: { x: 2, y: 6 }
+    },
     moonShadow: {
       name_en: "Moon Shadow",
-      desc: "Requires Upper Stance. Deals melee cut damage to one target. Assumes Clear Stance after use.",
+      desc: "Requires any stance. Deals melee cut+almighty damage to one target.",
       stats: ["STR", "Arms", "Katana"],
-      dep: { airBlade: 1, delayedStrike: 1, bloodyBlade: 1 },
+      dep: {},
       maxLevel: 8,
-      coords: { x: 2, y: 1.5 }
+      coords: { x: 2, y: 2.5 }
+    },
+    spiritBreath: {
+      name_en: "Spirit Breath",
+      desc: "Requires any stance. Deals melee cut damage to one target. Restores HP to the user and allies adjacent to the user.",
+      stats: ["STR", "Arms", "Katana"],
+      dep: {},
+      maxLevel: 8,
+      coords: { x: 2, y: 4.5 }
     },
     helmSplitter: {
       name_en: "Helm Splitter",
-      desc: "Requires Upper Stance. Deals melee cut+almighty damage to one target. Low accuracy. Assumes Clear Stance after use.",
+      desc: "Requires any stance. Deals melee cut damage to one target. Low accuracy. \nReduces stance duration by 2 after use. ",
       stats: ["STR", "Arms", "Katana"],
-      dep: { moonShadow: 1  },
-      maxLevel: 8,
+      dep: { moonShadow: 3 },
+      maxLevel: 10,
       coords: { x: 3, y: 1.5 }
     },
     flameGrater: {
       name_en: "Flame Grater",
-      desc: "Requires Upper Stance. Deals melee cut+fire damage to one target and when a party member on the user's row is attacked, counterattack with melee damage. Assumes Clear Stance after use.",
+      desc: "Requires any stance. Deals melee cut+fire damage to one row and reduces their Ailment and Bind Resistance for a set number of turns. \nReduces stance duration by 2 after use. ",
       stats: ["STR", "Arms", "Katana"],
-      dep: { airBlade: 1, delayedStrike: 1, bloodyBlade: 1 },
-      maxLevel: 8,
-      coords: { x: 2, y: 2.5 }
-    },
-    horizontalSlice: {
-      name_en: "Horizontal Slice",
-      desc: "Requires Upper Stance. Deals melee cut damage to one row and reduces their Ailment and Bind Resistance for a set number of turns. Assumes Clear Stance after use.",
-      stats: ["STR", "Arms", "Katana"],
-      dep: { flameGrater: 1 },
+      dep: { moonShadow: 3 },
       maxLevel: 8,
       coords: { x: 3, y: 2.5 }
     },
+    lightningStab: {
+      name_en: "Lightning Stab",
+      desc: "Requires any stance. Deals melee stab+volt damage to one target and reduces the targets attack for that turn. \nReduces stance duration by 2 after use.",
+      stats: ["STR", "Arms", "Katana"],
+      dep: { spiritBreath: 3 },
+      maxLevel: 8,
+      coords: { x: 3, y: 4.5 }
+    },
+    frigidSlash: {
+      name_en: "Frigid Slash",
+      desc: "Requires any stance. Deals melee cut+ice damage to one target. Attempts to inflict sleep. \nReduces stance duration by 2 after use. ",
+      stats: ["STR", "LUC", "Arms", "Katana"],
+      dep: { spiritBreath: 3 },
+      maxLevel: 10,
+      coords: { x: 3, y: 5.5 }
+    },
     swallowStrike: {
       name_en: "Swallow Strike",
-      desc: "Requires Upper Stance. Deals multiple instances of melee cut damage to one target. Assumes Clear Stance after use. Novice and Master skills cannot be used again for 3 turns.",
+      desc: "Requires any stance. Deals multiple instances of melee cut damage to one target. \nRemoves stance after use.",
       stats: ["STR", "Arms", "Katana"],
       dep: { helmSplitter: 3 },
       maxLevel: 8,
@@ -525,126 +589,62 @@ let skills = {
     },
     petalScatter: {
       name_en: "Petal Scatter",
-      desc: "Requires Upper Stance. Deals ranged cut damage to all targets. Deals less damage based on the number of targets. Assumes Clear Stance after use. Novice and Master skills cannot be used again for 3 turns.",
+      desc: "Requires any stance. Deals ranged cut damage to all targets. Deals less damage based on the number of targets. \nRemoves stance after use.",
       stats: ["STR", "Arms", "Katana"],
-      dep: { horizontalSlice: 3 },
-      maxLevel: 8,
+      dep: { flameGrater: 3 },
+      maxLevel: 6,
       coords: { x: 4, y: 2.5 }
-    },
-    clearStance: {
-      name_en: "Clear Stance",
-  	  desc: "Increases defense and Ronin skills' infliction rate when Clear Stance is active. At the start of each battle, the user automatically assumes the stance with the highest skill level.",
-      stats: ["Katana"],
-      dep: { },
-      maxLevel: 8,
-      coords: { x: 0, y: 5 }
-    },
-    armStrike: {
-      name_en: "Arm Strike",
-      desc: "Deals melee stab damage to one target. Attempts to inflict arm bind. Assumes Clear Stance after use.",
-      stats: ["STR", "LUC", "Arms", "Katana"],
-      dep: { clearStance: 1 },
-      maxLevel: 6,
-      coords: { x: 1, y: 4 }
-    },
-    armorPierce: {
-      name_en: "Armor Pierce",
-	    desc: "Deals melee stab damage to one target and decreases their Defense for a set number of turns. Assumes Clear Stance after use.",
-      stats: ["STR", "Arms", "Katana"],
-      dep: { clearStance: 1 },
-      maxLevel: 6,
-      coords: { x: 1, y: 5 }
-    },
-    drainSlice: {
-      name_en: "Drain Slice",
-      desc: "Deals melee cut damage to one target and restores HP to the users row based on their Max HP. Assumes Clear Stance after use.",
-      stats: ["STR", "Arms", "Katana"],
-      dep: { clearStance: 1 },
-      maxLevel: 6,
-      coords: { x: 1, y: 6 }
-    },
-    mirrorMoon: {
-      name_en: "Mirror Moon",
-      desc: "Requires Clear Stance. On this turn, when the user is attacked with physical damage, there is a chance they will nullify the damage and counterattack the source. Assumes Upper Stance after use.",
-      stats: ["STR", "Arms", "Katana"],
-      dep: { armStrike: 1, armorPierce: 1, drainSlice: 1 },
-      maxLevel: 8,
-      coords: { x: 2, y: 4.5 }
-    },
-    hazeSlash: {
-      name_en: "Haze Slash",
-      desc: "Requires Clear Stance. Deals melee cut damage to one target. Attempts to inflict sleep. Assumes Upper Stance after use.",
-      stats: ["STR", "LUC", "Arms", "Katana"],
-      dep: { mirrorMoon: 1 },
-      maxLevel: 8,
-      coords: { x: 3, y: 4.5 }
-    },
-    lightningStab: {
-      name_en: "Lightning Stab",
-      desc: "Requires Clear Stance. Deals melee stab+volt damage to one target and reduces the targets attack for that turn. Assumes Upper Stance after use.",
-      stats: ["STR", "Arms", "Katana"],
-      dep: { armStrike: 1, armorPierce: 1, drainSlice: 1 },
-      maxLevel: 8,
-      coords: { x: 2, y: 5.5 }
-    },
-    frigidSlash: {
-      name_en: "Frigid Slash",
-      desc: "Requires Clear Stance. Deals ranged cut+ice damage to one target. Increases the user's defense and accuracy until the end of next turn.  Assumes Upper Stance after use.",
-      stats: ["STR", "Arms", "Katana"],
-      dep: { lightningStab: 1 },
-      maxLevel: 8,
-      coords: { x: 3, y: 5.5 }
-    },
-    bluntingStab: {
-      name_en: "Blunting Stab",
-      desc: "Requires Clear Stance. Deals melee stab damage to one target. Attempts to inflict petrify. Assumes Upper Stance after use. Novice and Master skills cannot be used again for 3 turns.",
-      stats: ["STR", "LUC", "Arms", "Katana"],
-      dep: { hazeSlash: 3 },
-      maxLevel: 8,
-      coords: { x: 4, y: 4.5 }
     },
     earthBreaker: {
       name_en: "Earth Breaker",
-      desc: "Requires Clear Stance. Deals melee cut attack to one target with splash damage and a chance of stunning. Assumes Upper Stance after use. Novice and Master skills cannot be used again for 3 turns.",
+      desc: "Requires any stance. Deals melee cut attack to one target with splash damage and a chance of stunning. \nRemoves stance after use.",
       stats: ["STR", "LUC", "Arms", "Katana"],
-      dep: { frigidSlash: 3 },
+      dep: { mirrorMoon: 3 },
+      maxLevel: 6,
+      coords: { x: 4, y: 4.5 }
+    },
+    bluntingStab: {
+      name_en: "Blunting Stab",
+      desc: "Requires any stance. Deals melee stab damage to one target. Attempts to inflict petrify. \nRemoves stance after use.",
+      stats: ["STR", "LUC", "Arms", "Katana"],
+      dep: { hazeSlash: 3 },
       maxLevel: 8,
       coords: { x: 4, y: 5.5 }
     },
-    speedUp: {
-      name_en: "Serene Heart",
-      desc: "Increases accuracy, evasion and action speed.",
+    risingSpirit: {
+      name_en: "Rising Spirit",
+      desc: "Requires Lv 4 Upper and Clear Stance. \nAt the end of the turn, if a stance is active, restores TP to the user.",
       stats: [],
-      dep: { },
+      dep: {},
       maxLevel: 8,
-      coords: { x: 3, y: 0 }
+      coords: { x: 0, y: 3.5 }
     },
     duel: {
       name_en: "Duel",
       desc: "Increases damage when attacking enemies that the user attacked last turn.",
       stats: [],
-      dep: { },
+      dep: { swallowStrike: 1, petalScatter: 1 },
       maxLevel: 6,
-      coords: { x: 2, y: 0 }
+      coords: { x: 5, y: 2 }
     },
-    risingSpirit: {
-      name_en: "Rising Spirit",
-      desc: "At the end of the turn, if a stance is active, restores TP to the user.",
+    bladeGrasp: {
+      name_en: "Blade Grasp",
+      desc: "Provides a chance to nullify physical attacks against the user's row.",
       stats: [],
-      dep: { swallowStrike: 1, petalScatter: 1, bluntingStab: 1, earthBreaker: 1 },
+      dep: { bluntingStab: 1, earthBreaker: 1 },
       maxLevel: 6,
-      coords: { x: 5, y: 3.5 }
+      coords: { x: 5, y: 5 }
     },
     mine: {
       name_en: "Mine",
       desc: "Occasionally gains more items when using Mine points.",
       stats: [],
       unique: true,
-      dep: { },
+      dep: {},
       maxLevel: 1,
       coords: { x: 0, y: 6 }
     }
-},
+  },
   "War Magus": {
     warEdgePower: {
       name_en: "War Edge Power",
@@ -873,7 +873,7 @@ let skills = {
     },
     gaeBolg: {
       name_en: "Gae Bolg",
-      desc: "Deals ranged stab damage to all enemies, and restores TP to the user based on damage dealt.",
+      desc: "This turn the party will endure all attacks, and the user will deal ranged stab damage to all combatants.",
       stats: ["STR", "Arm", "Spear"],
       unique: true,
       type: "Break",
@@ -1497,8 +1497,8 @@ let skills = {
       coords: { x: 3, y: 5 }
     },
     mine: {
-      name_en: "Mine",
-      desc: "Occasionally gains more items when using Mine points.",
+      name_en: "Synastry",
+      desc: "The previous skill's element is now added into your attacks. Occasionally gains more items when using Mine points.",
       stats: [],
       unique: true,
       dep: { },
@@ -1650,7 +1650,7 @@ let skills = {
     },
     blazeSpirit: {
       name_en: "Blaze Spirit",
-      desc: "For a set number of turns, imbues one row of allies' weapons with fire and have them counterattack enemies who attacks them.",
+      desc: "For a set number of turns, imbues one row of allies' weapons with fire and have them counterattack enemies who attacks them with melee attacks.",
       stats: ["STR","Head"],
       dep: {},
       maxLevel: 6,
@@ -1658,7 +1658,7 @@ let skills = {
     },
     hailSpirit: {
       name_en: "Hail Spirit",
-      desc: "For a set number of turns, imbues one row of allies' weapons with ice and have them counterattack enemies who attacks them.",
+      desc: "For a set number of turns, imbues one row of allies' weapons with ice and have them counterattack enemies who attacks them with melee attacks.",
       stats: ["STR","Head"],
       dep: { blazeSpirit: 3 },
       maxLevel: 6,
@@ -1666,7 +1666,7 @@ let skills = {
     },
     boltSpirit: {
       name_en: "Bolt Spirit",
-      desc: "For a set number of turns, imbues one row of allies' weapons with volt and have them counterattack enemies who attacks them.",
+      desc: "For a set number of turns, imbues one row of allies' weapons with volt and have them counterattack enemies who attacks them with melee attacks.",
       stats: ["STR","Head"],
       dep: { blazeSpirit: 3 },
       maxLevel: 6,
@@ -1811,7 +1811,7 @@ let skills = {
     },
     eventide: {
       name_en: "Eventide",
-      desc: "For a set number of turns, increases Umbral skills' range to all targets, and improves their infliction rate.",
+      desc: "Until the end of the next turn, Umbral skills will target all enemies and their infliction rate is improved.",
       stats: ["Head"],
       dep: { maskedPain: 2 },
       maxLevel: 8,
@@ -2115,7 +2115,7 @@ let skills = {
     },
     solidBarrel: {
       name_en: "Solid Barrel",
-      desc: "Combo skill. Deals melee cut damage to one target and heals the party for 15% of the damage dealt. Preserves the effect of last turn's Rough Divide. Reduces overheat duration by 1 turn.",
+      desc: "Combo skill. Deals melee cut damage to one target. Preserves the effect of last turn's Rough Divide. Reduces overheat duration by 1 turn.",
       stats: ["STR", "Arms", "Driveblade"],
       dep: { roughDivide: 2, rearGuard: 2  },
       maxLevel: 6,
@@ -2224,20 +2224,20 @@ let skills = {
       maxLevel: 6,
       coords: { x: 2, y: 1.5 }
     },
-    leadingBlow: {
-      name_en: "Leading Blow",
-      desc: "Deals melee bash damage to one target. For every bind the target has, follows up with the corresponding Pugilist skill. For any ailment the target has, follows up with Corkscrew.",
-      stats: ["STR"],
+    thunderFist: {
+      name_en: "Thunder Fist",
+      desc: "Deals melee bash+volt damage to one target. If that enemy was killed with Thunder Fist, attempt to inflict paralysis on all enemies, otherwise the user takes damage.",
+      stats: [],
       dep: { addedBlow: 2 },
       maxLevel: 8,
       coords: { x: 3, y: 1.5 }
     },
-    clinch: {
-      name_en: "Clinch",
-      desc: "Attempts to inflict head bind, arm bind, and leg bind on both the user and the target.",
-      stats: ["LUC"],
-      dep: { leadingBlow: 2 },
-      maxLevel: 6,
+    leadingBlow: {
+      name_en: "Leading Blow",
+      desc: "Deals melee bash damage to one target. For every bind the target has, follows up with the corresponding Pugilist skill. For any ailment the target has, follows up with Corkscrew.",
+      stats: ["STR"],
+      dep: { thunderFist: 2 },
+      maxLevel: 10,
       coords: { x: 4, y: 1.5 }
     },
     howlingFist: {
@@ -2280,10 +2280,10 @@ let skills = {
       maxLevel: 8,
       coords: { x: 4, y: 3 }
     },
-    thunderFist: {
-      name_en: "Thunder Fist",
-      desc: "Deals melee bash+volt damage to one target. If that enemy was killed with Thunder Fist, attempt to inflict paralysis on all enemies, otherwise the user takes damage.",
-      stats: [],
+    clinch: {
+      name_en: "Clinch",
+      desc: "Attempts to inflict head bind, arm bind, and leg bind on both the user and the target.",
+      stats: ["LUC"],
       dep: { meditation: 2 },
       maxLevel: 8,
       coords: { x: 5, y: 3 }
@@ -2293,7 +2293,7 @@ let skills = {
       desc: "When any single-action, single-target Pugilist skill is used, Corkscrew is used via Added Blow, or Cross Counter is used, if the skill fails to inflict their bind or ailment, there is a chance it will be repeated.",
       stats: [],
       dep: { axeKick: 2 },
-      maxLevel: 6,
+      maxLevel: 10,
       coords: { x: 2, y: 4 }
     },
     breather: {
@@ -2359,14 +2359,6 @@ let skills = {
       dep: { hundredFists: 2 },
       maxLevel: 8,
       coords: { x: 3, y: 6 }
-    },
-    haymaker: {
-      name_en: "Haymaker",
-      desc: "This turn, when the selected ally is attacked, counterattack with multiple instances of melee bash damage.",
-      stats: ["STR"],
-      dep: { breakfireRush: 2 },
-      maxLevel: 8,
-      coords: { x: 4, y: 6 }
     },
     chop: {
       name_en: "Chop",

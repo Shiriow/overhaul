@@ -751,7 +751,7 @@ let skills = {
       desc: "Deals melee cut+almighty damage to one target. If the target has an ailment, attempts to inflict head bind.",
       stats: ["STR", "LUC", "Arms", "Sword"],
       dep: { strengthSlash: 2 },
-      maxLevel: 6,
+      maxLevel: 8,
       coords: { x: 2, y: 3 }
     },
     armcut: {
@@ -759,7 +759,7 @@ let skills = {
       desc: "Deals melee cut+almighty damage to one target. If the target has an ailment, attempts to inflict arm bind.",
       stats: ["STR", "LUC", "Arms", "Sword"],
       dep: { guardSlash: 2 },
-      maxLevel: 6,
+      maxLevel: 8,
       coords: { x: 2, y: 4 }
     },
     legcut: {
@@ -767,7 +767,7 @@ let skills = {
       desc: "Deals melee cut+almighty damage to one target. If the target has an ailment, attempts to inflict leg bind.",
       stats: ["STR", "LUC", "Arms", "Sword"],
       dep: { headcut: 2, armcut: 2 },
-      maxLevel: 6,
+      maxLevel: 8,
       coords: { x: 3, y: 3.5 }
     },
     ailingSlash: {
@@ -796,7 +796,7 @@ let skills = {
     },
     looseThread: {
       name_en: "Loose Thread",
-      desc: "Deals melee cut damage to all enemies. Increases damage dealt and attempts to inflict instant death on enemy with binds.",
+      desc: "Deals melee cut damage to all enemies. Increases damage dealt and attempts to inflict instant death on enemies with binds.",
       stats: ["WIS"],
       dep: { scorpion: 2 },
       maxLevel: 8,

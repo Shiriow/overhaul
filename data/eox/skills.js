@@ -954,7 +954,7 @@ let skills = {
       coords: { x: 2, y: 2.25 }
     },
     thousandSpears: {
-      name_en: "Thousand Spears", // Spear Reversal/
+      name_en: "Thousand Spears", 
       desc: "Deals multiple instances of melee stab damage to an enemy's row. Damage decreases the higher the user's current HP is.",
       stats: ["STR", "Arm", "Spear"],
       dep: { crossCharge: 3 },
@@ -2370,5 +2370,654 @@ let skills = {
       coords: { x: 0, y: 6 }
     }
   },
+  Harbinger: {
+    infiniteMiasma: {
+      name_en: "Endless Miasma",
+      desc: "For 3 turns, Miasma Armor's and enemy debuff's duration will not decrease.",
+      
+      unique: true,
+      type: "Boost",
+      stats: [],
+      dep: {},
+      maxLevel: 0,
+      coords: { x: 0, y: 0 }
+    },
+    miasmaTorrent: {
+      name_en: "Miasma Torrent",
+      desc: "This turn, greatly reduces all enemies' attack, defense, evasion, action speed, and bind/ailment resistance.",
+      unique: true,
+      type: "Break",
+      stats: [],
+      dep: { infiniteMiasma: 0 },
+      maxLevel: 0,
+      coords: { x: 1, y: 0 }
+    },
+    miasmaArmor: {
+      name_en: "Miasma Armor", 
+      desc: "Puts the user in the Miasma Armor state for 3 turns. Increases action speed when Miasma Armor is active. At the start of battle, has a chance to automatically put the user in the Miasma Armor state.",
+      stats: [],
+      dep: {},
+      maxLevel: 6,
+      coords: { x: 0, y: 1.5 }
+    },
+    endlessShroud: {
+      name_en: "Endless Shroud",
+      desc: "When the user uses a debuff skill, there's a chance to cast Miasma Armor automatically.",
+      stats: [],
+      dep: { miasmaArmor: 2 },
+      maxLevel: 8,
+      coords: { x: 1, y: 2 }
+    },
+    spiritAbsorb: {
+      name_en: "Spirit Absorb",
+      desc: "When the user uses a debuff skill, restores HP to the user. This restoration can heal beyond maximum HP. Overhealed HP will disappear at the end of the turn.", 
+      stats: [],
+      dep: { endlessShroud: 1 },
+      maxLevel: 8,
+      coords: { x: 2, y: 2 }
+    },
+    blackShroud: {
+      name_en: "Black Shroud",
+      desc: "During Miasma Armor, increases defense. \nSkills which remove Miasma Armor will instead reduce its duration by a set number of turns. If Miasma Armor's duration reaches 0 or less, it is removed.",   
+      stats: [],
+      dep: { miasmaArmor: 2 },
+      maxLevel: 8,
+      coords: { x: 1, y: 1 }
+    },
+    atonement: {
+      name_en: "Atonement",
+      desc: "Requires Miasma Armor. Removes Miasma Armor to restore HP to all party members and attempt to remove their ailments.",
+      stats: ["WIS", "Head"],
+      dep: { blackShroud: 2 },
+      maxLevel: 8,
+      coords: { x: 2, y: 1 }
+    },
+    soulTransfer: {
+      name_en: "Soul Transfer",
+      desc: "Requires Miasma Armor. Removes Miasma Armor to attempt to revive all party members.",
+      stats: ["WIS", "Head"],
+      dep: { atonement: 3 },
+      maxLevel: 8,
+      coords: { x: 3, y: 0.5 }
+    },
+    deathsAsylum: {
+      name_en: "Death's Asylum",
+      desc: "Provides a chance to nullify debuffs and ailments on the user as they are inflicted.",
+      stats: [],
+      dep: { atonement: 3 },
+      maxLevel: 6,
+      coords: { x: 3, y: 1.5 }
+    },
+    spectralSeep: {
+      name_en: "Spectral Seep",  
+      desc: "Gives a chance to nullify physical attacks on party members in the opposite row as the user.", 
+      stats: [],
+      dep: { soulTransfer: 3 },
+      maxLevel: 8,
+      coords: { x: 4, y: 0.5 }
+    },
+    soulFixation: {
+      name_en: "Soul Fixation",
+      desc: "Requires Miasma Armor. Removes Miasma Armor to attempt to nullify instant death, stun and debuffs against all party members, up to a set number of times.",  
+      stats: ["Head"],
+      dep: { deathsAsylum: 3 },
+      maxLevel: 6,
+      coords: { x: 4, y: 1.5 }
+    },
+    judgment: {
+      name_en: "Judgment",  
+      desc: "If Miasma Armor is active, the user has a chance to extend the de/buffs of an enemy by 1 turn every time they are attacked.",  
+      stats: [],
+      dep: { spectralSeep: 3, soulFixation: 3 },
+      maxLevel: 8,
+      coords: { x: 5, y: 1 }
+    },
+    erodingReap: {
+      name_en: "Eroding Reap", 
+      desc: "Deals melee cut damage to one row and decreases their defense for a set number of turns.",
+      stats: ["STR", "Arms", "Scythe"],
+      dep: {},
+      maxLevel: 10,
+      coords: { x: 0, y: 2.75 }
+    },
+    stiflingReap: {
+      name_en: "Stifling Reap", 
+      desc: "Deals melee cut damage to one row and decreases their attack for a set number of turns.", 
+      stats: ["STR", "Arms", "Scythe"],
+      dep: {},
+      maxLevel: 8,
+      coords: { x: 0, y: 3.75 }
+    },
+    slowingReap: {
+      name_en: "Sluggish Reap",
+      desc: "Deals melee cut damage to one row and decreases their evasion and action speed for a set number of turns.",
+      stats: ["STR", "Arms", "Scythe"],
+      dep: { erodingReap: 2, stiflingReap: 2 },
+      maxLevel: 6,
+      coords: { x: 1, y: 3.25 }
+    },
+    maskingReap: {
+      name_en: "Masking Reap",
+      desc: "Deals melee cut damage to one row and decreases their accuracy for a set number of turns.",
+      stats: ["STR", "Arms", "Scythe"],
+      dep: { slowingReap: 3 },
+      maxLevel: 8,
+      coords: { x: 2, y: 3.25 }
+    },
+    ephemeralReap: {
+      name_en: "Ephemeral Reap",
+      desc: "Deals multiple instances of melee cut(/ice) damage to one target. Number of hits increases based on the number of debuffs on the target.",   
+      stats: ["STR", "Arms", "Scythe"],
+      dep: { maskingReap: 2 },
+      maxLevel: 8,
+      coords: { x: 3, y: 2.75 }
+    },
+    reversalDecay: {
+      name_en: "Reversal Decay",
+      desc: "Dispel an enemy's debuffs, and deal cut damage to all enemies. \nAttempts to inflict instant death. If the target is asleep, the damage and instant death chance rises.",
+      
+      
+      stats: ["STR", "LUC", "Arms", "Scythe"],
+      dep: { ephemeralReap: 2 },
+      maxLevel: 8,
+      coords: { x: 3, y: 3.75 }
+    },
+    harrowingScythe: {
+      name_en: "Harrowing Scythe",
+      desc: "Requires Miasma Armor. Removes Miasma Armor to deal melee cut damage to one enemy.  \nExtend the duration of buffs and debuffs that target has.",  
+      
+      stats: ["STR", "Arms", "Scythe"],
+      dep: { ephemeralReap: 2, reversalDecay: 2 },
+      maxLevel: 8,
+      coords: { x: 4, y: 3.25 }
+    },
+    paralyzingMiasma: {
+      name_en: "Numbing Miasma", 
+      desc: "If Miasma Armor is active, attempts to inflict paralysis to a row. Lowers the targets' Paralysis resistance and ailment recovery for 3 turns.",
+      stats: ["LUC", "Head", "Scythe"],
+      dep: {},
+      maxLevel: 8,
+      coords: { x: 0, y: 5 }
+    },
+    toxicMiasma: {
+      name_en: "Venom Miasma",
+      desc: "If Miasma Armor is active, attempts to inflict poison to a row. Lowers the targets' Poison resistance and ailment recovery for 3 turns.", 
+      stats: ["LUC", "Head", "Scythe"],
+      dep: { paralyzingMiasma: 3 },
+      maxLevel: 8,
+      coords: { x: 1, y: 5 }
+    },
+    darknessMiasma: {
+      name_en: "Blinding Miasma",
+      desc: "If Miasma Armor is active, attempts to inflict blind to a row. Lowers the targets' Blind resistance and ailment recovery for 3 turns. ",
+      stats: ["LUC", "Head", "Scythe"],
+      dep: { toxicMiasma: 2 },
+      maxLevel: 8,
+      coords: { x: 2, y: 5 }
+    },
+    chaosMiasma: {
+      name_en: "Madness Miasma",
+      desc: "If Miasma Armor is active, attempts to inflict panic to a row. Lowers the targets' Panic resistance and ailment recovery for a set amount of turns.",
+      stats: ["LUC", "Head", "Scythe"],
+      dep: { darknessMiasma: 3 },
+      maxLevel: 8,
+      coords: { x: 3, y: 5 }
+    },
+    frigidReap: {
+      name_en: "Frigid Reap",
+      desc: "Deals melee cut+ice damage to one row. Hits twice on enemies that have ailments.", 
+      stats: ["STR", "Arms", "Scythe"],
+      dep: { chaosMiasma: 2 },
+      maxLevel: 8,
+      coords: { x: 2, y: 6 }
+    },
+    soulRend: {
+      name_en: "Soul Rend",
+      desc: "Only effective on enemies with both an Ailment and Debuff applied. Removes one debuff and deals ranged cut damage to target enemy.",
+      stats: ["STR", "Arms", "Scythe"],
+      dep: { frigidReap: 2 },
+      maxLevel: 8,
+      coords: { x: 3, y: 6 }
+    },
+    take: {
+      name_en: "Take",
+      desc: "Occasionally gains more items when using Take points.",
+      stats: [],
+      unique: true,
+      dep: {},
+      maxLevel: 1,
+      coords: { x: 0, y: 6 }
+    }
+  },
+  Buccaneer: {
+    shiftyMethods: {
+      name_en: "Shifty Methods",
+      desc: "Allows the use of any skill regardless of weapon. Chase skills will follow any attack.",
+      stats: [],
+      unique: true,
+      type: "Boost",
+      dep: {},
+      maxLevel: 0,
+      coords: { x: 0, y: 0 }
+    },
+    noQuarter: {
+      name_en: "No Quarter",
+      desc: "Powerful ranged stab attack to 1 enemy. Allies will deal extra damage to this enemy.",
+      stats: [],
+      unique: true,
+      type: "Break",
+      dep: { shiftyMethods: 0 },
+      maxLevel: 0,
+      coords: { x: 1, y: 0 }
+    },
+    lightsOut: {
+      name_en: "Lights Out",
+      desc: "Melee stab attack to 1 enemy. May blind the enemy. Uses user's AGL for damage.",
+      stats: [],
+      dep: {},
+      maxLevel: 6,
+      coords: { x: 1, y: 1 }
+    },
+    paralyzingShot: {
+      name_en: "Paralyzing Shot",
+      desc: "Ranged stab attack to 1 enemy. May paralyze the enemy. Targets enemy's AGL for damage.",
+      stats: [],
+      dep: {},
+      maxLevel: 6,
+      coords: { x: 1, y: 2 }
+    },
+    chaseFiresaber: {
+      name_en: "Chase Fire-saber",
+      desc: "For one turn, follow-up allies cut/fire attacks with fire imbued weapon. Follow-up rate decreases with each attack.",
+      stats: [],
+      dep: {},
+      maxLevel: 10,
+      coords: { x: 1, y: 3 }
+    },
+    chaseIcethrust: {
+      name_en: "Chase Ice-thrust",
+      desc: "For one turn, follow-up allies stab/ice attacks with ice imbued weapon. Follow-up rate decreases with each attack.",
+      stats: [],
+      dep: {},
+      maxLevel: 10,
+      coords: { x: 1, y: 4 }
+    },
+    chaseVoltblow: {
+      name_en: "Chase Volt-blow",
+      desc: "For one turn, follow-up allies bash/volt attacks with volt imbued weapon. Follow-up rate decreases with each attack.",
+      stats: [],
+      dep: {},
+      maxLevel: 10,
+      coords: { x: 1, y: 5 }
+    },
+    vulcanStance: {
+      name_en: "Vulcan Stance",
+      desc: "Normal attacks do more damage and hit all enemies for 3 turns.",
+      stats: [],
+      dep: {},
+      maxLevel: 6,
+      coords: { x: 1, y: 6 }
+    },
+    trickster: {
+      name_en: "Trickster",
+      desc: "When using attacking skills, recover fixed TP.",
+      stats: [],
+      dep: {},
+      maxLevel: 4,
+      coords: { x: 0, y: 1 }
+    },
+    eagleEye: {
+      name_en: "Eagle Eye",
+      desc: "Lowers physical/elemental DEF of one enemy for 3 turns.",
+      stats: [],
+      dep: {},
+      maxLevel: 4,
+      coords: { x: 0, y: 2 }
+    },
+    troublemaker: {
+      name_en: "Troublemaker",
+      desc: "For a set number of steps, raises encounter rate and EXP gained.",
+      stats: [],
+      dep: {},
+      maxLevel: 6,
+      coords: { x: 0, y: 3 }
+    },
+    speedUp: {
+      name_en: "Speed Up",
+      desc: "Increaes hit rate, evasion, and act speed.",
+      stats: [],
+      dep: {},
+      maxLevel: 8,
+      coords: { x: 2, y: 0 }
+    },
+    hanging: {
+      name_en: "Hanging",
+      desc: "Melee stab attack to 1 enemy. May bind the enemy's head. Lower's enemy's AGL for 1 turn.",
+      stats: ["STR"],
+      dep: { lightsOut: 3 },
+      maxLevel: 6,
+      coords: { x: 2, y: 1 }
+    },
+    quickDraw: {
+      name_en: "Quick Draw",
+      desc: "2-4 ranged random pierce damage to all enemies. Increases User's AGL for 1 turn.",
+      stats: ["STR"],
+      dep: { paralyzingShot: 3 },
+      maxLevel: 8,
+      coords: { x: 2, y: 2 }
+    },
+    burstChase: {
+      name_en: "Burst Chase",
+      desc: "When an enemy is defeated by a Chase skill, performs another attack. Level up to raise maximum number of activations per turn.",
+      stats: [],
+      dep: { chaseFiresaber: 3, chaseIcethrust: 3, chaseVoltblow: 3 },
+      maxLevel: 8,
+      coords: { x: 2, y: 4 }
+    },
+    enhancedChase: {
+      name_en: "Enhanced Chase",
+      desc: "Next turn, Chase skills will do increased damage and the maximum chases increases.",
+      stats: [],
+      dep: { burstChase: 3 },
+      maxLevel: 4,
+      coords: { x: 3, y: 4 }
+    },
+    ladyLuck: {
+      name_en: "Lady Luck",
+      desc: "Increases Critical chance and damage. Enables skills to crit.",
+      stats: [],
+      dep: { vulcanStance: 2 },
+      maxLevel: 4,
+      coords: { x: 2, y: 6 }
+    },
+    swashbuckling: {
+      name_en: "Swashbuckling",
+      desc: "Normal attacks may strike up to 4 times.",
+      stats: [],
+      dep: { ladyLuck: 1 },
+      maxLevel: 6,
+      coords: { x: 3, y: 6 }
+    },
+    limitBreak: {
+      name_en: "Limit Break",
+      desc: "Allows force gauge to go beyond 100 during battle.",
+      stats: [],
+      dep: {},
+      maxLevel: 6,
+      coords: { x: 3, y: 0 }
+    },
+    thrustingFlurry: {
+      name_en: "Thrusting Flurry",
+      desc: "Melee stab attacks to a row of enemies. May bind enemy's legs. Uses user's AGL for damage.",
+      stats: ["STR"],
+      dep: { hanging: 3 },
+      maxLevel: 10,
+      coords: { x: 4, y: 1 }
+    },
+    bulletstorm: {
+      name_en: "Bulletstorm",
+      desc: "Ranged stab attacks to all enemies. May petrify the enemy. Targets enemy's AGL for damage.",
+      stats: ["STR"],
+      dep: { quickDraw: 2 },
+      maxLevel: 10,
+      coords: { x: 4, y: 2 }
+    },
+    pincushion: {
+      name_en: "Pincushion",
+      desc: "2-4 ranged stab attacks to 1 enemy. Uses user's and enemy's AGL for damage.",
+      stats: ["STR"],
+      dep: { thrustingFlurry: 3, bulletstorm: 3 },
+      maxLevel: 10,
+      coords: { x: 5, y: 1 }
+    },
+    dirtyFighting: {
+      name_en: "Dirty Fighting",
+      desc: "Skills may activate twice when equipping a gun or rapier. Chance doubles if equipping both.",
+      stats: [],
+      dep: { thrustingFlurry: 3, bulletstorm: 3 },
+      maxLevel: 8,
+      coords: { x: 5, y: 2 }
+    },
+    doubleChase: {
+      name_en: "Double Chase",
+      desc: "May perform an extra follow-up attack when using a Chase skill.",
+      stats: [],
+      dep: { enhancedChase: 2 },
+      maxLevel: 10,
+      coords: { x: 4, y: 4 }
+    },
+    resonance: {
+      name_en: "Resonance",
+      desc: "Melee stab to 1 enemy. Damage increases based on number of attacks last turn.",
+      stats: ["STR"],
+      dep: { swashbuckling: 2 },
+      maxLevel: 8,
+      coords: { x: 4, y: 6 }
+    },
+    take: {
+      name_en: "Take",
+      desc: "Occasionally gains more items when using Take points.",
+      stats: [],
+      unique: true,
+      dep: {},
+      maxLevel: 1,
+      coords: { x: 0, y: 6 }
+    }
+  },
+  Alchemist: {
+    analysis: {
+      name_en: "Analysis",
+      desc: "Raises damage when striking an enemies weakness.",
+      stats: [],
+      unique: true,
+      type: "Boost",
+      dep: {},
+      maxLevel: 0,
+      coords: { x: 0, y: 0 }
+    },
+    eschaton: {
+      name_en: "Eschaton",
+      desc: "Powerful ranged almighty attack to all enemies.",
+      stats: [],
+      unique: true,
+      type: "Break",
+      dep: { analysis: 0 },
+      maxLevel: 0,
+      coords: { x: 1, y: 0 }
+    },
+    firePalm: {
+      name_en: "Fire Palm",
+      desc: "Front Line: Melee fire attack. Keep element next turn. Damage also increase for next attack.",
+      stats: [],
+      dep: {},
+      maxLevel: 8,
+      coords: { x: 0, y: 2 }
+    },
+    icePalm: {
+      name_en: "Ice Palm",
+      desc: "Front Line: Melee ice attack. Keep element next turn. Damage also increase for next attack.",
+      stats: [],
+      dep: {},
+      maxLevel: 8,
+      coords: { x: 0, y: 3 }
+    },
+    voltPalm: {
+      name_en: "Volt Palm",
+      desc: "Front Line: Melee volt attack. Keep element next turn. Damage also increase for next attack.",
+      stats: [],
+      dep: {},
+      maxLevel: 8,
+      coords: { x: 0, y: 4 }
+    },
+    additionalPalm: {
+      name_en: "Additional Palm",
+      desc: "Attack target with the same element as the palm skill used at the end of the turn.",
+      stats: [],
+      dep: { firePalm: 3, icePalm: 3, voltPalm: 3 },
+      maxLevel: 6,
+      coords: { x: 1, y: 3 }
+    },
+    elementResonance: {
+      name_en: "Element Resonance",
+      desc: "Raise attack if an ally has used the same element.",
+      stats: [],
+      dep: {},
+      maxLevel: 6,
+      coords: { x: 0, y: 1 }
+    },
+    corrosiveFormula: {
+      name_en: "Corrosive Formula",
+      desc: "Lowers the resistance of the current element on cast.",
+      stats: [],
+      dep: {},
+      maxLevel: 8,
+      coords: { x: 1, y: 1 }
+    },
+    venomFormula: {
+      name_en: "Venom Formula",
+      desc: "Ranged bash attack. May poison the enemy. Chance and poison damage increase by the amount of times the user has struck a weakness.",
+      stats: [],
+      dep: {},
+      maxLevel: 8,
+      coords: { x: 1, y: 4.5 }
+    },
+    manaShield: {
+      name_en: "Mana Shield",
+      desc: "Raises maximum TP. Reduces damage from all attacks proportional to current TP.",
+      stats: [],
+      dep: {},
+      maxLevel: 8,
+      coords: { x: 1, y: 6 }
+    },
+    dilution: {
+      name_en: "Dilution",
+      desc: "Lowers elemental and almighty DEF for all enemies for [F8 5A][02 04] turns.",
+      stats: [],
+      dep: { corrosiveFormula: 3 },
+      maxLevel: 6,
+      coords: { x: 2, y: 1 }
+    },
+    blastFormula: {
+      name_en: "Blast Formula",
+      desc: "Ranged almighty attack to 1 enemy, with increased splash damage. Splash damage will do double the source damage. User recovers TP as damage.",
+      stats: ["INT"],
+      dep: { dilution: 3 },
+      maxLevel: 8,
+      coords: { x: 3, y: 1 }
+    },
+    splashPalm: {
+      name_en: "Splash Palm",
+      desc: "Chance of splash damage when a Palm skill hits enemy's weakness.",
+      stats: [],
+      dep: { additionalPalm: 3 },
+      maxLevel: 6,
+      coords: { x: 2, y: 3 }
+    },
+    gauntletMemory: {
+      name_en: "Gauntlet Memory",
+      desc: "Increases damage of palm skills. On higher levels increases how long palm charges last.",
+      stats: [],
+      dep: { splashPalm: 3 },
+      maxLevel: 6,
+      coords: { x: 3, y: 3 }
+    },
+    lacerateFormula: {
+      name_en: "Lacerate Formula",
+      desc: "Ranged cut to all enemies. May arm bind.",
+      stats: ["INT"],
+      dep: { venomFormula: 3 },
+      maxLevel: 8,
+      coords: { x: 2, y: 4 }
+    },
+    goringFormula: {
+      name_en: "Goring Formula",
+      desc: "Ranged stab to all enemies. May blind.",
+      stats: ["INT"],
+      dep: { venomFormula: 3 },
+      maxLevel: 8,
+      coords: { x: 2, y: 5 }
+    },
+    focus: {
+      name_en: "Focus",
+      desc: "Recover TP at the turn's end if the user's HP is at maximum.",
+      stats: [],
+      dep: { manaShield: 3 },
+      maxLevel: 6,
+      coords: { x: 2, y: 6 }
+    },
+    analyticalStrike: {
+      name_en: "Analytical Strike",
+      desc: "If striking weakness increase infliction rate.",
+      stats: [],
+      dep: { lacerateFormula: 3, goringFormula: 3 },
+      maxLevel: 8,
+      coords: { x: 3, y: 4 }
+    },
+    compression: {
+      name_en: "Compression",
+      desc: "For 3 turns, all target attacks are stronger but become single target.",
+      stats: [],
+      dep: { lacerateFormula: 3, goringFormula: 3 },
+      maxLevel: 8,
+      coords: { x: 3, y: 5 }
+    },
+    riotFormula: {
+      name_en: "Riot Formula",
+      desc: "5 ranged fire/ice/volt attacks to all enemies randomly. The more TP used in battle, the less the TP cost of this skill is.",
+      stats: ["INT"],
+      dep: { blastFormula: 3 },
+      maxLevel: 8,
+      coords: { x: 4, y: 0.5 }
+    },
+    recoilFormula: {
+      name_en: "Recoil Formula",
+      desc: "Melee bash attack. If used fire/ice/volt attack last turn, attacks with element again.",
+      stats: ["INT"],
+      dep: { blastFormula: 3 },
+      maxLevel: 8,
+      coords: { x: 4, y: 1.5 }
+    },
+    lightFormula: {
+      name_en: "Light Formula",
+      desc: "Lowers cut/stab/bash damage to user for the turn. Counters with ranged fire attack.",
+      stats: ["INT"],
+      dep: { gauntletMemory: 3 },
+      maxLevel: 8,
+      coords: { x: 4, y: 2.5 }
+    },
+    lightTincture: {
+      name_en: "Light Tincture",
+      desc: "Lowers fire/ice/volt damage to user for the turn. Counters with ranged fire attack.",
+      stats: ["INT"],
+      dep: { gauntletMemory: 3 },
+      maxLevel: 6,
+      coords: { x: 4, y: 3.5 }
+    },
+    nuclearFormula: {
+      name_en: "Nuclear Formula",
+      desc: "Ranged almighty to enemy. If enemy is bound/ailing, do cut/stab/bash attack to all enemies.",
+      stats: ["INT"],
+      dep: { analyticalStrike: 3, compression: 3, focus: 3 },
+      maxLevel: 6,
+      coords: { x: 4, y: 5 }
+    },
+    forceAbsorber: {
+      name_en: "Force Absorber",
+      desc: "When striking enemies weakness, recover force.",
+      stats: [],
+      dep: { riotFormula: 3, recoilFormula: 3 },
+      maxLevel: 4,
+      coords: { x: 5, y: 1 }
+    },
+    take: {
+      name_en: "Take",
+      desc: "Occasionally gains more items when using Take points.",
+      stats: [],
+      unique: true,
+      dep: {},
+      maxLevel: 1,
+      coords: { x: 0, y: 6 }
+    }
+  }
 
 };

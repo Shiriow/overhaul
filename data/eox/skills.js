@@ -2514,7 +2514,7 @@ let skills = {
     },
     reversalDecay: {
       name_en: "Reversal Decay",
-      desc: "Dispel an enemy's debuffs, and deal cut damage to all enemies. \nAttempts to inflict instant death. If the target is asleep, the damage and instant death chance rises.",
+      desc: "Dispel an enemy's debuffs, and deal cut damage to all enemies. \nAttempts to inflict instant death. If the target is asleep, the damage and instant death chance doubles.",
       
       
       stats: ["STR", "LUC", "Arms", "Scythe"],

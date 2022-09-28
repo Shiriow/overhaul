@@ -1394,7 +1394,7 @@ let skills = {
     },
     singularity: {
       name_en: "Singularity",
-      desc: "Increases damage dealt when hitting weaknesses. In addition, the previous skill's element is now added into your attacks.",
+      desc: "Increases damage dealt when hitting weaknesses.",
       stats: [],
       dep: { },
       maxLevel: 8,
@@ -2506,7 +2506,7 @@ let skills = {
     },
     ephemeralReap: {
       name_en: "Ephemeral Reap",
-      desc: "Deals multiple instances of melee cut(/ice) damage to one target. Number of hits increases based on the number of debuffs on the target.",   
+      desc: "Deals multiple instances of melee cut damage to one target. Number of hits increases based on the number of debuffs on the target.",   
       stats: ["STR", "Arms", "Scythe"],
       dep: { maskingReap: 2 },
       maxLevel: 8,

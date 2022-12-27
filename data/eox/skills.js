@@ -218,18 +218,18 @@ let skills = {
   Survivalist: {
     illusionStep: {
       name_en: "Illusion Step",
-      desc: "For 3 turns, increases the user's evasion and chance of being targeted.",
+      desc: "For 3 turns, increases all party members' action speed and evasion.",
       stats: [],
       unique: true,
       type: "Boost",
-      dep: { },
+      dep: {},
       maxLevel: 0,
       coords: { x: 0, y: 0 }
     },
-   mirageArrow: {
+    mirageArrow: {
       name_en: "Mirage Arrow",
       desc: "Deals ranged stab damage to one target. Decreases their accuracy and make them act last for 3 turns.",
-      stats: ["STR", "Arms"],
+      stats: ["STR", "Arms", "Bow"],
       unique: true,
       type: "Break",
       dep: { illusionStep: 0 },
@@ -240,151 +240,166 @@ let skills = {
       name_en: "Flame Arrow",
       desc: "Deals ranged stab+fire damage to one target, with line-piercing effects.",
       stats: ["STR", "Arms", "Bow"],
-      dep: { },
+      dep: {},
       maxLevel: 8,
-      coords: { x: 0, y: 1.5 }
-    },
-    flankShot: {
-      name_en: "Flank Shot",
-      desc: "Deals ranged stab damage to one row.",
-      stats: ["STR", "Arms", "Bow"],
-      dep: { flameArrow: 3 },
-      maxLevel: 8,
-      coords: { x: 1, y: 1 }
-    },
-    finishingArrow: {
-      name_en: "Finishing Arrow",
-      desc: "When the user attacks a target whose HP is below a set threshold, the user follows up with their weapon. Does not activate for links, chases or counterattacks.",
-      stats: ["STR"],
-      dep: { flankShot: 2 },
-      maxLevel: 8,
-      coords: { x: 2, y: 1 }
+      coords: { x: 0, y: 1 }
     },
     multiShot: {
       name_en: "Multi-Shot",
       desc: "Deals 2 instances of ranged stab damage to one enemy.",
       stats: ["STR", "Arms", "Bow"],
-      dep: { flameArrow: 3 },
+      dep: {},
       maxLevel: 8,
-      coords: { x: 1, y: 2 }
+      coords: { x: 0, y: 2 }
     },
     dropShot: {
       name_en: "Drop Shot",
       desc: "Deals ranged stab damage to one target. Damage increases if the target is in the back row.",
       stats: ["STR", "Arms", "Bow"],
-      dep: { multiShot: 3 },
+      dep: { flameArrow: 2, multiShot: 2 },
       maxLevel: 8,
-      coords: { x: 2, y: 2 }
+      coords: { x: 1, y: 1.5 }
+    },
+    finishingArrow: {
+      name_en: "Finishing Arrow",
+      desc: "When the user attacks a target whose HP is below a set threshold, the user follows up with their weapon. Does not activate for links, chases or counterattacks.",
+      stats: ["STR"],
+      dep: { dropShot: 2 },
+      maxLevel: 8,
+      coords: { x: 2, y: 1 }
     },
     disablingShot: {
-      name_en: "Disabling Shot",
-      desc: "When the user attacks with a bow skill, attempts to inflict leg bind.",
-      stats: ["LUC, Bow"],
-      dep: { finishingArrow: 1 },
-      maxLevel: 6,
+      name_en: "Saboteur",
+      desc: "After the user attacks this turn, all further attacks against enemies attacked by the user will have increased damage and accuracy.",
+      
+      stats: [],
+      dep: { finishingArrow: 3 },
+      maxLevel: 8,
       coords: { x: 3, y: 1 }
     },
     sagittariusShot: {
       name_en: "Sagittarius Shot",
+      
       desc: "In 2 turns, ranged stab damage is dealt to a random target. Attempts to inflict stun. Ineffective if the user dies before the skill activates.",
       stats: ["STR", "LUC", "Arms", "Bow"],
-      dep: { dropShot: 3 },
+      dep: { dropShot: 2 },
+      maxLevel: 8,
+      coords: { x: 2, y: 2 }
+    },
+    autoSagittarius: {
+      name_en: "Downdraft",
+      
+      desc: "If Sagittarius Shot is learned, there is a chance to automatically cast it at the start of battle. Cannot activate if another ally activated it first.",
+      stats: [],
+      dep: { sagittariusShot: 3 },
       maxLevel: 8,
       coords: { x: 3, y: 2 }
     },
-    autoSagittarius: {
-      name_en: "Auto-Sagittarius",
-      desc: "If Sagittarius Shot is learned, there is a chance to automatically cast it at the start of battle. Cannot activate if another ally activated it first.",
-      stats: ["STR", "Arms", "Bow"],
-      dep: { sagittariusShot: 3 },
-      maxLevel: 6,
-      coords: { x: 4, y: 2 }
-    },
-    naturesCloak: {
-      name_en: "Nature's Cloak",
-      desc: "Increases evasion until the end of the next turn. Damage taken is increased during the turn this skill is used. At the start of battle, automatically puts the user in the Nature's Cloak state.",
-      stats: [],
-      dep: { },
+
+    chainDance: {
+      
+      name_en: "Chain Dance",
+      desc: "This turn, the user has an increased chance of evading attacks, being targetted, and takes 2x damage. Each time they evade an attack, the boosts are reduced.",
+      stats: ["Legs"],
+      dep: {},
       maxLevel: 8,
       coords: { x: 0, y: 3 }
     },
-    chainThrust: {
-      name_en: "Chain Thrust",
-      desc: "Deals ranged stab damage to one target and, for that turn, increases the user's evasion and chance of being targeted.",
+    phantomTrick: {
+      
+      
+      name_en: "Phantom Trick",
+      desc: "Deals ranged stab damage to one row. For 3 turns, reduces the accuracy of one row of enemies.",
       stats: ["STR", "Arms", "Bow"],
-      dep: { naturesCloak: 2  },
+      dep: { chainDance: 2 },
       maxLevel: 8,
       coords: { x: 1, y: 3 }
+    },
+    hazyShot: {
+      name_en: "Hazy Shot",
+      desc: "Deals ranged stab damage to one target. Always hits. Can only be used if the user evaded an attack on the previous turn.", 
+      stats: ["STR", "Arms", "Bow"],
+      dep: { phantomTrick: 3 },
+      maxLevel: 8,
+      coords: { x: 2, y: 3 }
+    },
+    galeforce: {
+      name_en: "Galeforce",
+      desc: "When an attack is evaded, the user has a chance to cast Phantom Knives.",
+      stats: [],
+      dep: { hazyShot: 3 },
+      maxLevel: 8,
+      coords: { x: 3, y: 3 }
     },
     blindArrow: {
       name_en: "Blind Arrow",
       desc: "Deals ranged stab damage to one target. Attempts to inflict blind.",
       stats: ["STR", "LUC", "Arms", "Bow"],
-      dep: { },
-      maxLevel: 8,
+      dep: {},
+      maxLevel: 6,
       coords: { x: 0, y: 4 }
     },
-    sereneBreeze: {
-      name_en: "Serene Breeze",
-      desc: "Places a buff on an ally that allows them to dodge the next incoming physical attack. When an attack is dodged, the buff is removed.",
-      stats: ["Legs"],
+    feyPhantasm: {
+      name_en: "Fey Phantasm",
+      desc: "Creates a decoy of the user in an empty slot. The decoy has added evasion and chance to be targeted. \n\nHas a chance of being used at the start of battle after level 6.",
+      stats: ["Head"],
       dep: { blindArrow: 2 },
-      maxLevel: 6,
+      maxLevel: 10,
       coords: { x: 1, y: 4 }
     },
-    blurredVeil: {
-      name_en: "Blurred Veil",
+    illusoryWave: {
+      name_en: "Illusory Wave",
       desc: "This turn, the selected row has a high chance of evading physical attacks. Each time they evade an attack, the evasion boost is reduced.",
       stats: ["Legs"],
-      dep: { sereneBreeze:2 },
+      dep: { feyPhantasm: 3 },
       maxLevel: 8,
       coords: { x: 2, y: 4 }
     },
-    mistStep: {
-      name_en: "Mist Step",
-      desc: "Increases Force whenever the user dodges an attack.",
-      stats: [],
-      dep: { chainThrust: 2 },
-      maxLevel: 8,
-      coords: { x: 2, y: 3 }
-    },
-    sylphid: {
-      name_en: "Sylphid",
-      desc: "When an attack is dodged, the user will counter-attack the source of the attack. Has a chance of triggering multiple times.",
-      stats: ["STR", "Arms", "Bow"],
-      dep: { mistStep: 2 },
-      maxLevel: 8,
-      coords: { x: 3, y: 3 }
-    },
-    rayOfLight: {
-      name_en: "Ray of Light",
-      desc: "When the user dodges an attack, their chance to be targeted and defense increase. If the they fail to dodge an attack, Ray of Light's effects are reset.",
-      stats: [],
-      dep: { blurredVeil: 2 },
+    sereneBreeze: {
+      name_en: "Nature's Cloak",
+      desc: "Places a buff on an ally that allows them to dodge the next incoming physical attack. When an attack is dodged, the buff is removed.",
+      stats: ["Head"],
+      dep: { illusoryWave: 3 },
       maxLevel: 6,
       coords: { x: 3, y: 4 }
     },
-    hazyShot: {
-      name_en: "Hazy Shot",
-      desc: "Deals ranged stab damage to one target. Always hits. Can only be used if the user evaded an attack on the previous turn.",
-      stats: ["STR", "Arms", "Bow"],
-      dep: { sylphid: 3, rayOfLight: 3  },
+    shadewalker: {
+      name_en: "Shadewalker",
+      desc: "This turn, every time the selected ally/mirage dodges an attack, members in the same row will individually counter with an attack using their equipped weapon.",
+      stats: ["STR", "Legs"],
+      dep: { hazyShot: 2, sereneBreeze: 2 },
       maxLevel: 8,
       coords: { x: 4, y: 3.5 }
-    },
-    riskPerception: {
-      name_en: "Risk Perception",
-      desc: "There is a set chance that blindsides will be negated.",
-      stats: [],
-      dep: { },
-      maxLevel: 6,
-      coords: { x: 1, y: 5 }
     },
     resuscitate: {
       name_en: "Resuscitate",
       desc: "Restores HP to one ally. Can only be used in the field. Higher levels allow this skill to revive the target as well.",
       stats: [],
-      dep: { },
+      dep: {},
+      maxLevel: 6,
+      coords: { x: 0, y: 5 }
+    },
+    efficiency: {
+      name_en: "Efficiency",
+      desc: "For 5 turns, increases the HP restored by Medicas, extends their range to one row, and increases evasion.",
+      stats: ["Head"],
+      dep: { resuscitate: 2 },
+      maxLevel: 6,
+      coords: { x: 1, y: 5 }
+    },
+    blindingBlossom: {
+      name_en: "Blinding Blossom", 
+      desc: "At the end of the turn, if the user's HP is full, restores HP to all party members. Only one instance of this skill can activate per turn.",
+      stats: [],
+      dep: { efficiency: 2 },
+      maxLevel: 8,
+      coords: { x: 2, y: 5 }
+    },
+    riskPerception: {
+      name_en: "Risk Perception",
+      desc: "There is a set chance that blindsides will be negated.",
+      stats: [],
+      dep: {},
       maxLevel: 6,
       coords: { x: 1, y: 6 }
     },
@@ -392,15 +407,7 @@ let skills = {
       name_en: "Stalker",
       desc: "For a set number of steps, reduces encounter rate.",
       stats: [],
-      dep: { riskPerception: 1 },
-      maxLevel: 6,
-      coords: { x: 2, y: 5 }
-    },
-    efficiency: {
-      name_en: "Efficiency",
-      desc: "For 5 turns, increases the HP restored by Medica and upgrades used by the user, and extends their range to one row.",
-      stats: ["Head"],
-      dep: { resuscitate: 3 },
+      dep: { riskPerception: 2 },
       maxLevel: 6,
       coords: { x: 2, y: 6 }
     },
@@ -408,7 +415,7 @@ let skills = {
       name_en: "Scapegoat",
       desc: "Selected ally will cover all party members a set number of times this turn. Ineffective if that ally has leg bind.",
       stats: ["Legs"],
-      dep: { efficiency: 2, stalker: 2 },
+      dep: { blindingBlossom: 2, stalker: 2 },
       maxLevel: 8,
       coords: { x: 3, y: 5.5 }
     },
@@ -425,7 +432,7 @@ let skills = {
       desc: "Occasionally gains more items when using Take points.",
       stats: [],
       unique: true,
-      dep: { },
+      dep: {},
       maxLevel: 1,
       coords: { x: 0, y: 6 }
     }
@@ -974,7 +981,7 @@ let skills = {
       desc: "When the user loses HP, increases defense until the end of the turn.",
       stats: [],
       dep: { drainingThrust: 3 },
-      maxLevel: 6,
+      maxLevel: 8,
       coords: { x: 1, y: 1 }
     },
     bloodlust: {
@@ -982,7 +989,7 @@ let skills = {
       desc: "When the user loses HP, there is a chance that they will automatically attack with their weapon.",
       stats: [],
       dep: { bloodVeil: 3 },
-      maxLevel: 10,
+      maxLevel: 8,
       coords: { x: 2, y: 1 }
     },
     fightingSpirit: {
@@ -1079,214 +1086,224 @@ let skills = {
   Ninja: {
     insolence: {
       name_en: "Insolence",
-      desc: "For 3 turns, increases all party members' action speed and evasion.",
+      desc: "For 3 turns, increases the user's evasion and chance of being targeted.",
       stats: [],
       unique: true,
       type: "Boost",
-      dep: { },
+      dep: {},
       maxLevel: 0,
       coords: { x: 0, y: 0 }
     },
-    ninpoPoisonMist: {
-      name_en: "Ninpo: Poison Mist",
-      desc: "Attempts to inflict poison on all enemies.",
-      stats: ["LUC", "Head"],
+    ninpoClone: {
+      name_en: "Ninpo: Clone", 
+      desc: "Consumes half of the user's TP to create a clone in an empty slot.",
+      stats: ["Head"],
       unique: true,
       type: "Break",
       dep: { insolence: 0 },
       maxLevel: 0,
       coords: { x: 1, y: 0 }
     },
-    ninpoScorpio: {
-      name_en: "Ninpo: Scorpio",
-      desc: "Deals 3 instances of ranged stab damage to random targets. Attempts to inflict poison.",
-      stats: ["STR", "LUC", "Head"],
-      dep: { },
-      maxLevel: 8,
-      coords: { x: 0, y: 1 }
-    },
-    ninpoNeedles: {
-      name_en: "Ninpo: Needles",
-      desc: "This turn, when the selected row is attacked, counterattack with ranged stab damage and attempt to inflict sleep.",
-      stats: ["STR", "LUC", "Arms"],
-      dep: { ninpoScorpio: 3 },
-      maxLevel: 6,
-      coords: { x: 1, y: 1 }
-    },
-    ninpoMirror: {
-      name_en: "Ninpo: Mirror",
-      desc: "Attempts to inflict the ailments and binds present on one enemy to all enemies.",
-      stats: ["LUC", "Head"],
-      dep: { ninpoNeedles: 3 },
-      maxLevel: 6,
-      coords: { x: 2, y: 1 }
-    },
-    ninpoShock: {
-      name_en: "Ninpo: Shock",
-      desc: "Attempts to inflict panic on one enemy, with line-piercing effects.",
-      stats: ["LUC", "Head"],
-      dep: { ninpoMirror: 2 },
-      maxLevel: 8,
-      coords: { x: 3, y: 1 }
-    },
     shadowBind: {
       name_en: "Shadow Bind",
       desc: "Deals melee cut damage to one target. Attempts to inflict leg bind.",
       stats: ["STR", "LUC", "Arms", "Knife"],
-      dep: { },
-      maxLevel: 8,
-      coords: { x: 0, y: 2 }
+      dep: {},
+      maxLevel: 6,
+      coords: { x: 0, y: 1.5 }
     },
     hawkStrike: {
       name_en: "Hawk Strike",
       desc: "Deals multiple instances of melee cut damage to random targets.",
       stats: ["STR", "Arms", "Knife"],
-      dep: { shadowBind: 3 },
+      dep: {},
+      maxLevel: 8,
+      coords: { x: 0, y: 2.5 }
+    },
+    ninpoScorpio: {
+      name_en: "Ninpo: Scorpio",
+      
+      desc: "Deals 3 instances of ranged stab damage to random targets. Attempts to inflict poison.",
+      stats: ["STR", "LUC", "Head"],
+      dep: { shadowBind: 2, hawkStrike: 2 },
       maxLevel: 8,
       coords: { x: 1, y: 2 }
+    },
+    ninpoMirror: {
+      name_en: "Ninpo: Mirror",
+      desc: "Attempts to inflict the ailments and binds present on one enemy to all enemies.",
+      stats: ["LUC", "Head"],
+      dep: { ninpoScorpio: 2 },
+      maxLevel: 6,
+      coords: { x: 2, y: 1 }
+    },
+    ninpoShock: {
+      name_en: "Ninpo: Shock",
+      desc: "Attempts to inflict panic on one enemy.",
+      stats: ["LUC", "Head"],
+      dep: { ninpoMirror: 3 },
+      maxLevel: 8,
+      coords: { x: 3, y: 1 }
+    },
+    ninpoNeedles: {
+      name_en: "Ninpo: Needles",
+      desc: "This turn, when the selected row is attacked, counterattack with ranged stab damage and attempt to inflict sleep.",
+      stats: ["STR", "LUC", "Arms"],
+      dep: { ninpoScorpio: 2 },
+      maxLevel: 6,
+      coords: { x: 2, y: 2 }
+    },
+    quietus: {
+      
+      
+      
+      name_en: "Quietus",
+      desc: "Deals melee cut damage to one target with a chance to instantly kill it. Chance is increased if the enemy has an ailment.",
+      stats: ["STR", "LUC", "Arms", "Knife"],
+      dep: { ninpoNeedles: 2 },
+      maxLevel: 6,
+      coords: { x: 3, y: 2 }
+    },
+    foxDrop: {
+      name_en: "Fox Drop",
+      desc: "Deals melee cut damage to one target. Attempts to inflict petrify.", 
+      stats: ["STR", "LUC", "Arms", "Knife"],
+      dep: { ninpoShock: 3, quietus: 3 },
+      maxLevel: 8,
+      coords: { x: 4, y: 1.5 }
     },
     schadenfreude: {
       name_en: "Schadenfreude",
       desc: "Deals melee cut damage to one target. Always hits. If target has an ailment, increases the user's Force.",
       stats: ["STR", "Arms", "Knife"],
-      dep: { hawkStrike: 2 },
-      maxLevel: 6,
-      coords: { x: 2, y: 2 }
-    },
-    foxDrop: {
-      name_en: "Fox Drop",
-      desc: "Deals melee cut damage to one target. Attempts to inflict petrify.",
-      stats: ["STR", "LUC", "Arms", "Knife"],
-      dep: { schadenfreude:2 },
+      dep: { ninpoScorpio: 2 },
       maxLevel: 8,
-      coords: { x: 3, y: 2 }
-    },
-    quietus: {
-      name_en: "Quietus",
-      desc: "Deals melee cut damage to one target with a chance to instantly kill it. Chance is increased if the enemy has an ailment.",
-      stats: ["STR", "LUC", "Arms", "Knife"],
-      dep: { foxDrop: 2, ninpoShock: 2 },
-      maxLevel: 6,
-      coords: { x: 4, y: 1.5 }
+      coords: { x: 2, y: 3 }
     },
     fallingBloom: {
       name_en: "Falling Bloom",
       desc: "Deals melee cut+almighty damage to one target. Low accuracy.",
       stats: ["STR", "Arms", "Knife"],
-      dep: { quietus: 2  },
+      dep: { schadenfreude: 2 },
       maxLevel: 8,
-      coords: { x: 5, y: 1.5 }
-    },
-    ninpoClone: {
-      name_en: "Ninpo: Clone",
-      desc: "Consumes a percentage of the user's HP and TP to create a clone in an empty slot. Force Boost and Force Break are unusable while a clone is active.",
-      stats: ["Head"],
-      dep: { },
-      maxLevel: 8,
-      coords: { x: 1, y: 6 }
+      coords: { x: 3, y: 3 }
     },
     drawingSlice: {
-      name_en: "Drawing Slice",
-      desc: "Deals multiple instances of melee damage to random targets. All clones will disappear after use.",
+      name_en: "Tagen Battou", 
+      desc: "Deals multiple instances of melee damage to random targets. Consumes a clone to deal quadruple damage; half if no clone.",
       stats: ["STR", "Arms", "Knife"],
-      dep: { ninpoClone: 4 },
+      dep: { fallingBloom: 2 },
       maxLevel: 8,
-      coords: { x: 2, y: 6 }
+      coords: { x: 4, y: 3 }
     },
-    autoClone: {
-      name_en: "Auto-Clone",
-      desc: "If Ninpo: Clone is learned, there is a chance to automatically cast it at the start of battle. Cannot activate if another ally activated it first.",
+    yaegasumi: {
+      name_en: "Yaegasumi", 
+      desc: "Main Class only. At the start of the battle, there is a chance to consume half of the user's HP and TP to create a clone in an empty slot.",
       stats: [],
-      dep: { drawingSlice: 4 },
+      dep: { drawingSlice: 3 },
       maxLevel: 10,
-      coords: { x: 3, y: 6 }
+      coords: { x: 5, y: 3 }
     },
-    ninpoMirage: {
-      name_en: "Ninpo: Mirage",
-      desc: "Creates a decoy of the user in an empty slot. The decoy has added evasion and chance to be targeted.",
-      stats: ["Head"],
-      dep: { },
+
+    otori: {
+      name_en: "Otori",
+      desc: "Increases an ally's chance of being targeted and evasion for a set number of turns.",
+      stats: ["STR", "Arms", "Knife"],
+      dep: {},
       maxLevel: 6,
       coords: { x: 0, y: 4 }
     },
-    phantomKnives: {
-      name_en: "Phantom Knives",
-      desc: "Deals melee cut damage to one row. For 3 turns, reduces the accuracy of one row of enemies.",
-      stats: ["STR", "Arms", "Knife"],
-      dep: { ninpoMirage: 2 },
+    fuzake: {
+      name_en: "Fuzake",
+      desc: "Deals melee stab damage to one target and, for that turn, increases the user's evasion and chance of being targeted.",
+      stats: ["Head"],
+      dep: { otori: 1 },
       maxLevel: 8,
       coords: { x: 1, y: 4 }
     },
-    selfDestruct: {
-      name_en: "Corpse Explosion",
-      desc: "Instantly kill an ally/mirage. Deals ranged fire damage to all enemies.",
-      stats: ["STR", "Head", "Knife"],
-      dep: { phantomKnives:2 },
+    stormyGale: {
+      name_en: "Stormy Gale",
+      desc: "When the user dodges an attack, their chance to be targeted and defense increase. If the they fail to dodge an attack, the effects are reset.",
+      stats: [],
+      dep: { fuzake: 2 },
       maxLevel: 6,
       coords: { x: 2, y: 4 }
     },
-    shadewalker: {
-      name_en: "Shadewalker",
-      desc: "This turn, every time the selected ally/mirage dodges an attack, members in the same row will individually counter with an attack using their equipped weapon.",
-      stats: ["STR", "Head", "Knife"],
-      dep: { selfDestruct: 3 },
-      maxLevel: 8,
-      coords: { x: 3, y: 4 }
-    },
-    autoMirage: {
-      name_en: "Auto-Mirage",
-      desc: "If Ninpo: Mirage is learned, there is a chance to automatically cast it at the start of battle. Cannot activate if another ally activated it first.",
+    concealment: {
+      name_en: "Concealment",
+      
+      
+      desc: "Increases evasion based on the number of empty equipment slots.",
       stats: [],
-      dep: { ninpoMirage: 2 },
+      dep: {},
       maxLevel: 6,
-      coords: { x: 1, y: 5 }
-    },
-    acrobatics: {
-      name_en: "Acrobatics",
-      desc: "When the user evades an attack, their TP is restored. At level 4, melee attacks will hit for full damage and can always reach the enemy back row, even when the user is in the back.",
-      stats: [],
-      dep: { },
-      maxLevel: 6,
-      coords: { x: 0, y: 3 }
+      coords: { x: 0, y: 5 }
     },
     ninpoSmoke: {
       name_en: "Ninpo: Smoke",
-      desc: "Reduces the user's maximum HP to greatly increase their evasion and aggro for 3 turns.",
+      desc: "For 3 turns, increases the user's evasion.", 
       stats: ["Legs"],
-      dep: { acrobatics: 2  },
+      dep: { concealment: 2 },
       maxLevel: 8,
-      coords: { x: 1, y: 3 }
+      coords: { x: 1, y: 5 }
+    },
+    rendingShatter: {
+      name_en: "Rending Shatter", 
+      
+      
+      desc: "Deals melee cut damage to one target. Damage is increased depending on the number of evades the user has made since they last used this skill.",
+      stats: ["Legs"],
+      dep: { ninpoSmoke: 2 },
+      maxLevel: 8,
+      coords: { x: 2, y: 5 }
+    },
+    shadowstrike: {
+      name_en: "Shadowstrike", 
+      desc: "When an attack is dodged, the user will counter-attack the source of the attack multiple times, restoring Force once. ",
+      stats: ["STR", "Head", "Knife"],
+      dep: { stormyGale: 1, rendingShatter: 3 },
+      maxLevel: 8,
+      coords: { x: 3, y: 4.5 }
+    },
+    acrobatics: {
+      
+      name_en: "Acrobatics",
+      desc: "When the user evades an attack, their TP is restored. ",
+      stats: [],
+      dep: { concealment: 2 },
+      maxLevel: 8,
+      coords: { x: 1, y: 6 }
     },
     eyeForAnEye: {
       name_en: "Eye for an Eye",
       desc: "If the user evaded an attack on the previous turn, increases chance of inflicting ailments",
       stats: [],
-      dep: { ninpoSmoke: 2 },
+      dep: { acrobatics: 2 },
       maxLevel: 6,
-      coords: { x: 2, y: 3 }
+      coords: { x: 2, y: 6 }
     },
-    reprisal: {
-      name_en: "Reprisal",
-      desc: "Deals melee cut damage to one target. Damage is increased depending on the number of evades the user has made since they last used this skill.",
-      stats: ["STR", "Arms", "Knife"],
+    goad: {
+      name_en: "Goad",
+      desc: "Transfer some of your TP to one ally.",
+      stats: ["Head", "Knife"],
       dep: { eyeForAnEye: 2 },
       maxLevel: 8,
-      coords: { x: 3, y: 3 }
+      coords: { x: 3, y: 6 }
     },
-    shadowstrike: {
-      name_en: "Shadowstrike",
-      desc: "When an attack is evaded, the user has a chance to cast Phantom Knives.",
+    moonlightOmen: {
+      name_en: "Moonlight Omen", 
+      desc: "If Ninpo: Smoke is learned, there is a chance to automatically cast it at the start of battle. Cannot activate if another ally activated it first.",
       stats: [],
-      dep: { reprisal: 2, shadewalker: 2 },
+      dep: { goad: 2, shadowstrike: 2 },
       maxLevel: 8,
-      coords: { x: 4, y: 3.5 }
+      coords: { x: 4, y: 5.25 }
     },
     chop: {
-      name_en: "Chop",
-      desc: "Occasionally gains more items when using Chop points.",
+      name_en: "Keburi no Sue",
+      desc: "Melee attacks will hit for full damage and can always reach the enemy back row, even when the user is in the back.\nOccasionally gains more items when using Chop points.",
       stats: [],
       unique: true,
-      dep: { },
+      dep: {},
       maxLevel: 1,
       coords: { x: 0, y: 6 }
     }
@@ -1698,7 +1715,7 @@ let skills = {
     },
     bloodfest: {
       name_en: "Bloodfest", 
-      desc: "When a party member is killed, attack all enemies with the users weapon.",
+      desc: "Once per battle, when the user is killed by an enemy attack, they will counterattack with ranged cut damage to all enemies.",
       stats: ["STR"],
       dep: { greatGeneral: 3 },
       maxLevel: 6,

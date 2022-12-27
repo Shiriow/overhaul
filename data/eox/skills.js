@@ -1096,7 +1096,7 @@ let skills = {
     },
     ninpoClone: {
       name_en: "Ninpo: Clone", 
-      desc: "Consumes half of the user's TP to create a clone in an empty slot.",
+      desc: "Consumes half of the user's TP to create a clone in an empty slot. Doesn't break Force Gauge.",
       stats: ["Head"],
       unique: true,
       type: "Break",

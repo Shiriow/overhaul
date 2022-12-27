@@ -325,7 +325,7 @@ let skills = {
     },
     galeforce: {
       name_en: "Galeforce",
-      desc: "When an attack is evaded, the user has a chance to cast Phantom Knives.",
+      desc: "When an attack is evaded, the user has a chance to cast Phantom Trick.",
       stats: [],
       dep: { hazyShot: 3 },
       maxLevel: 8,
@@ -341,7 +341,7 @@ let skills = {
     },
     feyPhantasm: {
       name_en: "Fey Phantasm",
-      desc: "Creates a decoy of the user in an empty slot. The decoy has added evasion and chance to be targeted. \n\nHas a chance of being used at the start of battle after level 6.",
+      desc: "Creates a decoy of the user in an empty slot. The decoy has added evasion and chance to be targeted. \nHas a chance of being used at the start of battle after level 6.",
       stats: ["Head"],
       dep: { blindArrow: 2 },
       maxLevel: 10,

@@ -1082,6 +1082,221 @@ let skills = {
       coords: { x: 0, y: 6 }
     }
   },
+  Gunner: {
+    actionBoost: {
+      name_en: "Action Boost",
+      desc: "For 3 turns, all gun skills will activate twice. The second activation will have reduced power, but no TP cost.",
+      stats: [],
+      unique: true,
+      type: "Boost",
+      dep: {},
+      maxLevel: 0,
+      coords: { x: 0, y: 0 }
+    },
+    supremeBolt: {
+      name_en: "Supreme Bolt",
+      desc: "Deals ranged stab damage to one target. Attempts to stun the target with a high chance of success.",
+      stats: ["STR", "LUC"],
+      unique: true,
+      type: "Break",
+      dep: { actionBoost: 0 },
+      maxLevel: 0,
+      coords: { x: 1, y: 0 }
+    },
+    rapidFire: {
+      name_en: "Rapid Fire",
+      desc: "Deals 3 instances of ranged stab damage to one target. ",
+      stats: ["STR", "Arms", "Gun"],
+      dep: {},
+      maxLevel: 8,
+      coords: { x: 0, y: 2 }
+    },
+    doubleTap: {
+      name_en: "Double Tap",
+      desc: "Gives Gunner attack skills a chance to activate Rapid Fire with reduced damage.\nRapid Fire does not trigger this skill.",
+      stats: [],
+      dep: {},
+      maxLevel: 10,
+      coords: { x: 0, y: 3.5 }
+    },
+    grapeshotBlast: {
+      name_en: "Grapeshot Blast",
+      desc: "Deals ranged stab damage to one target with splash damage, reduces their evasion for 3 turns.",
+      stats: ["STR", "Arms", "Gun"],
+      dep: { rapidFire: 1, doubleTap: 1 },
+      maxLevel: 8,
+      coords: { x: 1, y: 1.5 }
+    },
+    ricochet: {
+      name_en: "Ricochet",
+      desc: "Deals multiple instances of ranged stab damage to random targets. Low accuracy. Higher level increases the number of attacks.",
+      stats: ["STR", "Arms", "Gun"],
+      dep: { grapeshotBlast: 3 },
+      maxLevel: 8,
+      coords: { x: 2, y: 1.5 }
+    },
+    burstShot: {
+      name_en: "Burst Shot", 
+      desc: "Deals ranged fire+ice+volt damage to one enemy. \nThe user takes double damage until activation. \nCannot be used again for 3 turns.",
+      stats: ["STR", "Arms", "Gun"],
+      dep: { ricochet: 3 },
+      maxLevel: 8,
+      coords: { x: 3, y: 1.5 }
+    },
+    wildShot: {
+      name_en: "Fatal Barrage",
+      desc: "Deals ranged stab damage to all enemies.",
+      stats: ["STR", "Arms", "Gun"],
+      dep: { ricochet: 3 },
+      maxLevel: 8,
+      coords: { x: 3, y: 0.5 }
+    },
+    burstCannon: {
+      name_en: "Buster Mortar",
+      desc: "On the start of the next turn, the user deals ranged stab damage to one enemy. \nDamage is increased depending on how close the user is to the target, 2x/1.5x/1x.",
+      stats: ["STR", "Arms", "Gun"],
+      dep: { wildShot: 3, burstShot: 3 },
+      maxLevel: 8,
+      coords: { x: 4, y: 1 }
+    },
+    legSnipe: {
+      name_en: "Chill Snipe", 
+      desc: "Deals ranged ice damage to one target. Always hits. Attempts to inflict leg bind.",
+      stats: ["STR", "LUC", "Arms", "Gun"],
+      dep: { rapidFire: 1, doubleTap: 1 },
+      maxLevel: 8,
+      coords: { x: 1, y: 2.75 }
+    },
+    armSnipe: {
+      name_en: "Heat Snipe", 
+      desc: "Deals ranged fire damage to one target. Always hits. Attempts to inflict arm bind.",
+      stats: ["STR", "LUC", "Arms", "Gun"],
+      dep: { legSnipe: 3 },
+      maxLevel: 8,
+      coords: { x: 2, y: 2.75 }
+    },
+    headSnipe: {
+      name_en: "Static Snipe", 
+      desc: "Deals ranged volt damage to one target. Always hits. Attempts to inflict head bind.",
+      stats: ["STR", "LUC", "Arms", "Gun"],
+      dep: { armSnipe: 3 },
+      maxLevel: 8,
+      coords: { x: 3, y: 2.75 }
+    },
+    sharpShooter: {
+      name_en: "Sharpshooter",
+      desc: "At the end of the turn, deal ranged stab damage to all bound enemies.\n1.25x damage per bind",
+      stats: ["STR", "Arms", "Gun"],
+      dep: { headSnipe: 3 },
+      maxLevel: 8,
+      coords: { x: 4, y: 2.75 }
+    },
+    vileBlast: {
+      name_en: "Vile Blast",
+      desc: "Deals ranged stab damage to one target. Reduces elemental attack for 3 turns. ",
+      stats: ["STR", "Arms", "Gun"],
+      dep: { rapidFire: 1, doubleTap: 1 },
+      maxLevel: 8,
+      coords: { x: 1, y: 4 }
+    },
+    sixthSense: {
+      name_en: "Sixth Sense",
+      desc: "At the start of battle, there is a chance to cast a buff on all party members that increases accuracy for 5 turns.",
+      stats: [],
+      dep: { vileBlast: 3 },
+      maxLevel: 8,
+      coords: { x: 2, y: 4 }
+    },
+    disablingShot: {
+      name_en: "Leg Graze",
+      desc: "When the user attacks with a gun skill, attempts to inflict leg bind.",
+      stats: [],
+      dep: { sixthSense: 3 },
+      maxLevel: 6,
+      coords: { x: 3, y: 4 }
+    },
+    penetrator: {
+      name_en: "Penetrator",
+      desc: "When attacking a single target, there is a chance that line-piercing effects will be added. Does not activate for skills with multiple instances of damage.",
+      stats: [],
+      dep: { disablingShot: 3 },
+      maxLevel: 8,
+      coords: { x: 4, y: 4 }
+    },
+    silentScope: {
+      name_en: "Silent Scope",
+      desc: "Each Gunner support skill used increases the damage of Gunner skills until the user's death.",
+      stats: [],
+      dep: {},
+      maxLevel: 8,
+      coords: { x: 0, y: 5 }
+    },
+    medicBullet: {
+      name_en: "Medic Bullet",
+      desc: "Restores HP and removes ailments from one ally.",
+      stats: ["Arms", "Gun"],
+      dep: { silentScope: 1 },
+      maxLevel: 6,
+      coords: { x: 1, y: 5 }
+    },
+    actQuick: {
+      name_en: "Act Quick",
+      desc: "Until the end of the next turn, reduces TP usage and increases action speed.",
+      stats: ["Head"],
+      dep: { silentScope: 1 },
+      maxLevel: 6,
+      coords: { x: 1, y: 6 }
+    },
+    coverFire: {
+      name_en: "Cover Fire",
+      desc: "Restores HP to the front row and decreases damage taken to the back row this turn",
+      stats: ["Arms", "Gun"],
+      dep: { medicBullet: 3, actQuick: 3 },
+      maxLevel: 8,
+      coords: { x: 2, y: 5.5 }
+    },
+    shellShock: {
+      name_en: "Shell Shock",
+      desc: "For one turn, reduces attack, defense, accuracy and evasion for enemies in the back row, and attempts to inflict stun on them.",
+      stats: ["LUC", "Gun"],
+      dep: { coverFire: 3 },
+      maxLevel: 6,
+      coords: { x: 3, y: 5.5 }
+    },
+    smokeGrenade: {
+      name_en: "Smoke Round", 
+      desc: "For a set number of turns, increases evasion for all allies.",
+      stats: ["Arms", "Gun"],
+      dep: { shellShock: 3 },
+      maxLevel: 8,
+      coords: { x: 4, y: 5 }
+    },
+    initiative: {
+      name_en: "Deadly Aim",
+      desc: "When attacking before any enemies act, increases damage and accuracy.",
+      stats: [],
+      dep: { shellShock: 3 },
+      maxLevel: 8,
+      coords: { x: 4, y: 6 }
+    },
+    bulletSymphony: {
+      name_en: "Bullet Symphony",
+      desc: "Quickly deal ranged stab damage to one target and increase evasion this turn. Disables skills next turn.",
+      stats: ["STR", "Arms", "Gun"],
+      dep: { smokeGrenade: 3, penetrator: 3 },
+      maxLevel: 8,
+      coords: { x: 5, y: 4.5 }
+    },
+    mine: {
+      name_en: "Mine",
+      desc: "Occasionally gains more items when using Mine points.",
+      stats: [],
+      unique: true,
+      dep: {},
+      maxLevel: 1,
+      coords: { x: 0, y: 6 }
+    }
+  },
 
   Ninja: {
     insolence: {

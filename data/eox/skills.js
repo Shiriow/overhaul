@@ -1116,7 +1116,7 @@ let skills = {
       desc: "Gives Gunner attack skills a chance to activate Rapid Fire with reduced damage.\nRapid Fire does not trigger this skill.",
       stats: [],
       dep: {},
-      maxLevel: 10,
+      maxLevel: 8,
       coords: { x: 0, y: 3.5 }
     },
     grapeshotBlast: {

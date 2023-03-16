@@ -654,215 +654,220 @@ let skills = {
   },
   "War Magus": {
     warEdgePower: {
-      name_en: "War Edge Power",
-      desc: "For 3 turns, War Edge skills can activate additional effects even against targets without an ailment and the users speed is increased.",
+      name_en: "Spellsword",
+      
+      desc: "For 3 turns, War Lore skills have additional effects.",
       stats: [],
       unique: true,
       type: "Boost",
-      dep: { },
+      dep: {},
       maxLevel: 0,
       coords: { x: 0, y: 0 }
     },
     fairyRobe: {
       name_en: "Fairy Robe",
-      desc: "Removes ailments, binds and debuffs from all party members, and restores their HP. This turn, negates all binds, ailments, stun, instant death and debuffs against all party members.",
-      stats: ["WIS"],
+      desc: "Does not break Gauge. Removes ailments, binds and debuffs from all party members, and restores their HP. This turn, negates all binds, ailments, stun, instant death and debuffs against all party members.",
+      stats: ["WIS", "Head"],
       unique: true,
       type: "Break",
       dep: { warEdgePower: 0 },
       maxLevel: 0,
       coords: { x: 1, y: 0 }
     },
-    warEdgeMastery: {
-      name_en: "War Edge Mastery",
-      desc: "User can dual-wield and use sword skills with staff. Increases maximum TP when a sword is equipped; increases damage when a staff is equipped on the top slot. Normal attacks may hit 2-4 times if two weapons are equipped.",
-      stats: [],
-      dep: { },
-      maxLevel: 6,
-      coords: { x: 0, y: 1.5 }
-    },
-    warHealLine: {
+    blossomSketch: {
       name_en: "Blossom Sketch",
-      desc: "Restores HP to one row at the start of the turn, then at the end of the turn.",
-      stats: ["WIS"],
-      dep: { },
-      maxLevel: 10,
-      coords: { x: 1, y: 1.5 }
-    },
-    warRevive: {
-      name_en: "War Revive",
-      desc: "Revives one ally at the start of the turn, then attempts to revive them again at the end of the turn.",
-      stats: [],
-      dep: { warHealLine: 3 },
-      maxLevel: 10,
-      coords: { x: 2, y: 1.5 }
-    },
-    artery: {
-      name_en: "Artery",
-      desc: "For a set number of turns, automatically restores HP for all party members when they act, once per turn.",
-      stats: ["WIS"],
-      dep: { warRevive: 2 },
-      maxLevel: 6,
-      coords: { x: 3, y: 1 }
+      desc: "Restores HP to one row at the start of the turn, then at the end of the turn. ",
+      stats: ["WIS", "Head"],
+      dep: {},
+      maxLevel: 8,
+      coords: { x: 0, y: 4 }
     },
     warResponse: {
       name_en: "War Response",
-      desc: "For a set number of turns, automatically restores HP for all party members when the debuffed enemy acts, once per turn.",
-      stats: ["WIS"],
-      dep: { warRevive: 2 },
-      maxLevel: 6,
-      coords: { x: 3, y: 2 }
+      desc: "For a set number of turns, automatically restores HP for all party members when the debuffed enemy acts, once per turn.\nSpellsword: For a set number of turns, automatically restores HP for all party members when they act, once per turn.",
+      stats: ["WIS", "Head"],
+      dep: { blossomSketch: 2 },
+      maxLevel: 8,
+      coords: { x: 1, y: 3.5 }
+    },
+    warRevive: {
+      name_en: "Nature's Will",
+      desc: "Revives one ally at the start of the turn, then attempts to revive them again at the end of the turn.",
+      stats: ["Head"],
+      dep: { warResponse: 2 },
+      maxLevel: 8,
+      coords: { x: 2, y: 3.5 }
+    },
+    displace: {
+      name_en: "Displace",
+      desc: "Removes ailments and binds from one ally, and attempts to inflict them on one enemy. ",
+      stats: ["LUC", "Head"],
+      dep: { blossomSketch: 2 },
+      maxLevel: 4,
+      coords: { x: 1, y: 4.5 }
+    },
+    artery: {
+      name_en: "Verdant Balm",
+      desc: "Once per turn, when an ally is damaged and their HP is below 50%, theres a chance to heal the whole party.",
+      
+      
+      stats: ["WIS", "Head"],
+      dep: { displace: 2 },
+      maxLevel: 8,
+      coords: { x: 2, y: 4.5 }
     },
     pandemonium: {
       name_en: "Pandemonium",
-      desc: "Increases the targets attack and defense for a set number of turns.",
-      stats: [],
-      dep: { artery: 2, warResponse: 2  },
-      maxLevel: 6,
-      coords: { x: 4, y: 1.5 }
+      desc: "For a set number of turns, increases one ally's physical attack and physical defense.",
+      stats: ["Head"],
+      dep: { warRevive: 2 },
+      maxLevel: 8,
+      coords: { x: 3, y: 3 }
     },
     barrier: {
       name_en: "Barrier",
-      desc: "For one turn, there is a chance to nullify binds and ailments against all party members, up to a set number of times.",
-      stats: [],
-      dep: { pandemonium: 2 },
-      maxLevel: 10,
-      coords: { x: 5, y: 1.5 }
-    },
-    drippingSlash: {
-      name_en: "Dripping Brier",
-      desc: "Deals melee cut+almighty damage to one target. Attempts to inflict one of poison, paralyze, blind, sleep or curse.",
-      stats: ["LUC"],
-      dep: { },
+      desc: "For one turn, there is a chance to nullify binds and ailments against all party members, up to a set number of times. \nSpellsword: Decrease damage taken.",
+      stats: ["Arms"],
+      dep: { warRevive: 2 },
       maxLevel: 8,
-      coords: { x: 0, y: 3.5 }
+      coords: { x: 3, y: 4 }
     },
     strengthSlash: {
       name_en: "Strength Blight",
-      desc: "Deals melee cut+almighty damage to one target. If the target has an ailment, decreases their attack for a set number of turns.",
-      stats: ["STR"],
-      dep: { drippingSlash: 1 },
-      maxLevel: 6,
-      coords: { x: 1, y: 3 }
+      desc: "Deals melee cut+almighty damage to one target, decreasing their attack for 3 turns. \nSpellsword: Debuff again.",
+      stats: ["STR", "Arms", "Staff"],
+      dep: {},
+      maxLevel: 8,
+      coords: { x: 0, y: 1 }
     },
     guardSlash: {
       name_en: "Guard Blight",
-      desc: "Deals melee cut+almighty damage to one target. If the target has an ailment, decreases their defense for a set number of turns.",
-      stats: ["STR"],
-      dep: { drippingSlash: 1 },
-      maxLevel: 6,
-      coords: { x: 1, y: 4 }
+      desc: "Deals melee cut+almighty damage to one target, decreasing their defense for 3 turns. \nSpellsword: Debuff again.",
+      stats: ["STR", "Arms", "Staff"],
+      dep: {},
+      maxLevel: 10,
+      coords: { x: 0, y: 2 }
     },
     headcut: {
-      name_en: "Thorn Chains",
-      desc: "Deals melee cut+almighty damage to one target. If the target has an ailment, attempts to inflict head bind.",
-      stats: ["STR", "LUC", "Arms", "Sword"],
-      dep: { strengthSlash: 2 },
+      name_en: "Thorn Chains",      
+      desc: "Deals melee cut+almighty damage to one target, attempts to inflict head bind. \nSpellsword: Attempt to inflict again.",
+      stats: ["STR", "LUC", "Arms", "Staff"],
+      dep: { guardSlash: 2, strengthSlash: 2 },
       maxLevel: 8,
-      coords: { x: 2, y: 3 }
+      coords: { x: 1, y: 1.5 }
     },
     armcut: {
-      name_en: "Thorn Cuffs",
-      desc: "Deals melee cut+almighty damage to one target. If the target has an ailment, attempts to inflict arm bind.",
-      stats: ["STR", "LUC", "Arms", "Sword"],
-      dep: { guardSlash: 2 },
+      name_en: "Thorn Cuffs",      
+      desc: "Deals melee cut+almighty damage to one target, attempts to inflict arm bind. \nSpellsword: Attempt to inflict again.",
+      stats: ["STR", "LUC", "Arms", "Staff"],
+      dep: { headcut: 2 },
       maxLevel: 8,
-      coords: { x: 2, y: 4 }
+      coords: { x: 2, y: 1 }
     },
     legcut: {
-      name_en: "Thorn Shackles",
-      desc: "Deals melee cut+almighty damage to one target. If the target has an ailment, attempts to inflict leg bind.",
-      stats: ["STR", "LUC", "Arms", "Sword"],
-      dep: { headcut: 2, armcut: 2 },
+      name_en: "Thorn Shackles",      
+      desc: "Deals melee cut+almighty damage to one target, attempts to inflict leg bind. \nSpellsword: Attempt to inflict again.",
+      stats: ["STR", "LUC", "Arms", "Staff"],
+      dep: { headcut: 2 },
       maxLevel: 8,
-      coords: { x: 3, y: 3.5 }
+      coords: { x: 2, y: 2 }
     },
-    ailingSlash: {
-      name_en: "Ailing Barb",
-      desc: "Deals melee cut+almighty damage to one target. If the target has an ailment, increases damage dealt.",
-      stats: ["STR"],
-      dep: { legcut: 3 },
+    viralVector: {
+      name_en: "Viral Vector",
+      desc: "Deals melee cut+almighty damage to one target. Attempts to inflict one of poison, paralyze, blind, sleep or curse. ",
+      stats: ["STR", "LUC", "Arms", "Staff"],
+      dep: {},
       maxLevel: 8,
-      coords: { x: 4, y: 3 }
+      coords: { x: 2, y: 0 }
     },
-    scorpion: {
-      name_en: "Scorpion",
-      desc: "Deals melee cut+almighty damage to one enemy, with double splash damage to adjacent enemies. If adjacent enemies have ailments, attempts to petrify the target.",
-      stats: ["STR"],
-      dep: { legcut: 3 },
+    maledictBristle: {
+      name_en: "Maledict Bristle",
+      desc: "Deals melee cut+almighty damage to one target. \nSpellsword: Increase damage dealt.",
+      stats: ["STR", "Arms", "Staff"],
+      dep: { viralVector: 2, legcut: 2, armcut: 2 },
       maxLevel: 8,
-      coords: { x: 4, y: 4 }
+      coords: { x: 3, y: 1.5 }
     },
     blindLaughter: {
       name_en: "Blind Laughter",
-      desc: "This turn, if the target is afflicted with any ailments, binds, or stun, the user will perform a follow up attack.",
-      stats: [],
-      dep: { ailingSlash: 2 },
-      maxLevel: 8,
-      coords: { x: 5, y: 3 }
+      desc: "This turn, if the targetted enemy is afflicted with any ailments, binds, or stun, the user will perform a follow up attack. ", 
+      stats: ["STR", "Arms", "Staff"],
+      dep: { viralVector: 2, legcut: 2, armcut: 2 },
+      maxLevel: 10,
+      coords: { x: 3, y: 0.5 }
     },
-    looseThread: {
-      name_en: "Loose Thread",
-      desc: "Deals melee cut damage to all enemies. Increases damage dealt and attempts to inflict instant death on enemies with binds.",
-      stats: ["WIS"],
-      dep: { scorpion: 2 },
+    demiseBurst: {
+      name_en: "Demise Burst", 
+      desc: "Deals ranged almighty damage to one target, removing one debuff. \nIf a debuff was removed, recover the user's row HP and overheal them.\nSpellsword: Heal the opposite row as well.", 
+      stats: ["STR", "Arms", "Staff"],
+      dep: { pandemonium: 2, maledictBristle: 2, blindLaughter: 2 },
       maxLevel: 8,
-      coords: { x: 5, y: 4 }
+      coords: { x: 4, y: 1.5 }
     },
-    leeches: {
-      name_en: "Leech",
-      desc: "When the user deals damage to an enemy with an ailment, restores HP to the user's row. Can only activate once per turn.",
-      stats: ["WIS"],
-      dep: { },
-      maxLevel: 8,
-      coords: { x: 1, y: 5.5 }
+    aspirGash: {
+      name_en: "Aspir Gash",
+      desc: "Deals melee cut+almighty damage to one target, recovering the user's Force.",
+      stats: ["STR", "Arms", "Staff"],
+      dep: {},
+      maxLevel: 10,
+      coords: { x: 1, y: 6 }
     },
     rouse: {
       name_en: "Rouse",
       desc: "Increases the user's Force gain based on the number of enemies with binds.",
       stats: [],
-      dep: { leeches: 2 },
-      maxLevel: 6,
-      coords: { x: 2, y: 5.5 }
+      dep: { aspirGash: 2 },
+      maxLevel: 10,
+      coords: { x: 2, y: 6 }
     },
-    bindCut: {
-      name_en: "Aspir Gash",
-      desc: "Deals melee cut+almighty damage to one target. If target is bound, increases the user's Force.",
-      stats: [],
+    hollowScourge: {
+      name_en: "Hollow Scourge",
+      desc: "Restores Force to the user's row allies. \nSpellsword: Increased recovery.", 
+      stats: ["Head"],
       dep: { rouse: 2 },
+      maxLevel: 10,
+      coords: { x: 3, y: 6 }
+    },
+    naturesWill: {
+      name_en: "Hedge Wall",
+      
+      desc: "When the user is dealt mortal damage, they will survive the hit once per Spellsword.", 
+      stats: [],
+      dep: { spiritDrain: 3 },
       maxLevel: 6,
-      coords: { x: 3, y: 5.5 }
+      coords: { x: 3, y: 5 }
     },
     spiritDrain: {
-      name_en: "Spirit Drain",
-      desc: "When the user deals damage to an enemy with both an ailment and a bind, restores TP to the user's row. Can only activate once per turn.",
+      name_en: "Spirit Mirror",
+      desc: "During Force Boost, recover the user's row TP.", 
       stats: ["WIS"],
-      dep: { bindCut: 2 },
+      dep: { naturesWill: 2, hollowScourge: 2, barrier: 2 },
       maxLevel: 8,
-      coords: { x: 4, y: 5.5 }
+      coords: { x: 4, y: 5 }
     },
-    curseCut: {
-      name_en: "Maledict Bristle",
-      desc: "Deals melee cut+almighty damage to one target and attempt to inflict curse. If sucessful, or if the target is already cursed, restores Force to the users row.",
-      stats: ["LUC"],
-      dep: { spiritDrain: 3 },
+    corpseAsh: {
+      name_en: "Corpse Ash",
+      
+      desc: "Usable once per Force Boost. \nReduces an ally's damage taken this turn, and at max level, also pauses the duration of their Force Boost.", 
+      stats: ["Arms"],
+      dep: { demiseBurst: 2, spiritDrain: 2 },
       maxLevel: 8,
-      coords: { x: 5, y: 5.5 }
+      coords: { x: 5, y: 2.5 }
     },
-    displace: {
-      name_en: "Displace",
-      desc: "Removes ailments and binds from one ally, and attempts to inflict them on one enemy.",
-      stats: ["LUC"],
-      dep: { },
-      maxLevel: 4,
-      coords: { x: 0, y: 5 }
+    looseThread: {
+      name_en: "Loose Thread",
+      desc: "Usable once per Force Boost. \nQuickly cancel an ally's Force Boost, setting their Force to a specific amount.", 
+      stats: ["Arms"],
+      dep: { demiseBurst: 2, spiritDrain: 2 },
+      maxLevel: 8,
+      coords: { x: 5, y: 4 }
     },
     take: {
       name_en: "Take",
-      desc: "Occasionally gains more items when using Mine points.",
+      desc: "Occasionally gains more items when using Take points.",
       stats: [],
       unique: true,
-      dep: { },
+      dep: {},
       maxLevel: 1,
       coords: { x: 0, y: 6 }
     }

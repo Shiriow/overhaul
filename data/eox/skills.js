@@ -686,7 +686,7 @@ let skills = {
       name_en: "War Response",
       desc: "For a set number of turns, automatically restores HP for all party members when the debuffed enemy acts, once per turn.\nSpellsword: For a set number of turns, automatically restores HP for all party members when they act, once per turn.",
       stats: ["WIS", "Head"],
-      dep: { blossomSketch: 2 },
+      dep: { blossomSketch: 3 },
       maxLevel: 8,
       coords: { x: 1, y: 3.5 }
     },
@@ -694,7 +694,7 @@ let skills = {
       name_en: "Nature's Will",
       desc: "Revives one ally at the start of the turn, then attempts to revive them again at the end of the turn.",
       stats: ["Head"],
-      dep: { warResponse: 2 },
+      dep: { warResponse: 3 },
       maxLevel: 8,
       coords: { x: 2, y: 3.5 }
     },
@@ -702,7 +702,7 @@ let skills = {
       name_en: "Displace",
       desc: "Removes ailments and binds from one ally, and attempts to inflict them on one enemy. ",
       stats: ["LUC", "Head"],
-      dep: { blossomSketch: 2 },
+      dep: { blossomSketch: 3 },
       maxLevel: 4,
       coords: { x: 1, y: 4.5 }
     },
@@ -712,7 +712,7 @@ let skills = {
       
       
       stats: ["WIS", "Head"],
-      dep: { displace: 2 },
+      dep: { displace: 3 },
       maxLevel: 8,
       coords: { x: 2, y: 4.5 }
     },
@@ -720,7 +720,7 @@ let skills = {
       name_en: "Pandemonium",
       desc: "For a set number of turns, increases one ally's physical attack and physical defense.",
       stats: ["Head"],
-      dep: { warRevive: 2 },
+      dep: { warRevive: 3 },
       maxLevel: 8,
       coords: { x: 3, y: 3 }
     },
@@ -728,7 +728,7 @@ let skills = {
       name_en: "Barrier",
       desc: "For one turn, there is a chance to nullify binds and ailments against all party members, up to a set number of times. \nSpellsword: Decrease damage taken.",
       stats: ["Arms"],
-      dep: { warRevive: 2 },
+      dep: { warRevive: 3 },
       maxLevel: 8,
       coords: { x: 3, y: 4 }
     },
@@ -752,7 +752,7 @@ let skills = {
       name_en: "Thorn Chains",      
       desc: "Deals melee cut+almighty damage to one target, attempts to inflict head bind. \nSpellsword: Attempt to inflict again.",
       stats: ["STR", "LUC", "Arms", "Staff"],
-      dep: { guardSlash: 2, strengthSlash: 2 },
+      dep: { guardSlash: 3, strengthSlash: 3 },
       maxLevel: 8,
       coords: { x: 1, y: 1.5 }
     },
@@ -760,7 +760,7 @@ let skills = {
       name_en: "Thorn Cuffs",      
       desc: "Deals melee cut+almighty damage to one target, attempts to inflict arm bind. \nSpellsword: Attempt to inflict again.",
       stats: ["STR", "LUC", "Arms", "Staff"],
-      dep: { headcut: 2 },
+      dep: { headcut: 3 },
       maxLevel: 8,
       coords: { x: 2, y: 1 }
     },
@@ -768,7 +768,7 @@ let skills = {
       name_en: "Thorn Shackles",      
       desc: "Deals melee cut+almighty damage to one target, attempts to inflict leg bind. \nSpellsword: Attempt to inflict again.",
       stats: ["STR", "LUC", "Arms", "Staff"],
-      dep: { headcut: 2 },
+      dep: { headcut: 3 },
       maxLevel: 8,
       coords: { x: 2, y: 2 }
     },
@@ -784,7 +784,7 @@ let skills = {
       name_en: "Maledict Bristle",
       desc: "Deals melee cut+almighty damage to one target. \nSpellsword: Increase damage dealt.",
       stats: ["STR", "Arms", "Staff"],
-      dep: { viralVector: 2, legcut: 2, armcut: 2 },
+      dep: { viralVector: 3, legcut: 3, armcut: 3 },
       maxLevel: 8,
       coords: { x: 3, y: 1.5 }
     },
@@ -792,7 +792,7 @@ let skills = {
       name_en: "Blind Laughter",
       desc: "This turn, if the targetted enemy is afflicted with any ailments, binds, or stun, the user will perform a follow up attack. ", 
       stats: ["STR", "Arms", "Staff"],
-      dep: { viralVector: 2, legcut: 2, armcut: 2 },
+      dep: { viralVector: 3, legcut: 3, armcut: 3 },
       maxLevel: 10,
       coords: { x: 3, y: 0.5 }
     },
@@ -800,7 +800,7 @@ let skills = {
       name_en: "Demise Burst", 
       desc: "Deals ranged almighty damage to one target, removing one debuff. \nIf a debuff was removed, recover the user's row HP and overheal them.\nSpellsword: Heal the opposite row as well.", 
       stats: ["STR", "Arms", "Staff"],
-      dep: { pandemonium: 2, maledictBristle: 2, blindLaughter: 2 },
+      dep: { pandemonium: 3, maledictBristle: 3, blindLaughter: 3 },
       maxLevel: 8,
       coords: { x: 4, y: 1.5 }
     },
@@ -816,7 +816,7 @@ let skills = {
       name_en: "Rouse",
       desc: "Increases the user's Force gain based on the number of enemies with binds.",
       stats: [],
-      dep: { aspirGash: 2 },
+      dep: { aspirGash: 3 },
       maxLevel: 10,
       coords: { x: 2, y: 6 }
     },
@@ -824,7 +824,7 @@ let skills = {
       name_en: "Hollow Scourge",
       desc: "Restores Force to the user's row allies. \nSpellsword: Increased recovery.", 
       stats: ["Head"],
-      dep: { rouse: 2 },
+      dep: { rouse: 3 },
       maxLevel: 10,
       coords: { x: 3, y: 6 }
     },
@@ -841,7 +841,7 @@ let skills = {
       name_en: "Spirit Mirror",
       desc: "During Force Boost, recover the user's row TP.", 
       stats: ["WIS"],
-      dep: { naturesWill: 2, hollowScourge: 2, barrier: 2 },
+      dep: { naturesWill: 3, hollowScourge: 3, barrier: 3 },
       maxLevel: 8,
       coords: { x: 4, y: 5 }
     },
@@ -850,7 +850,7 @@ let skills = {
       
       desc: "Usable once per Force Boost. \nReduces an ally's damage taken this turn, and at max level, also pauses the duration of their Force Boost.", 
       stats: ["Arms"],
-      dep: { demiseBurst: 2, spiritDrain: 2 },
+      dep: { demiseBurst: 3, spiritDrain: 3 },
       maxLevel: 8,
       coords: { x: 5, y: 2.5 }
     },
@@ -858,7 +858,7 @@ let skills = {
       name_en: "Loose Thread",
       desc: "Usable once per Force Boost. \nQuickly cancel an ally's Force Boost, setting their Force to a specific amount.", 
       stats: ["Arms"],
-      dep: { demiseBurst: 2, spiritDrain: 2 },
+      dep: { demiseBurst: 3, spiritDrain: 3 },
       maxLevel: 8,
       coords: { x: 5, y: 4 }
     },

@@ -1233,7 +1233,7 @@ let skills = {
       desc: "Each Gunner support skill used increases the damage of Gunner skills until the user's death.",
       stats: [],
       dep: {},
-      maxLevel: 8,
+      maxLevel: 1,
       coords: { x: 0, y: 5 }
     },
     medicBullet: {
@@ -1286,7 +1286,7 @@ let skills = {
     },
     bulletSymphony: {
       name_en: "Bullet Symphony",
-      desc: "Quickly deal ranged stab damage to one target and increase evasion this turn. Disables skills next turn.",
+      desc: "Quickly deal ranged stab damage to one target and increase evasion this turn. Can't be used again next turn.\nGives a stack of Silent Scope.",
       stats: ["STR", "Arms", "Gun"],
       dep: { smokeGrenade: 3, penetrator: 3 },
       maxLevel: 8,

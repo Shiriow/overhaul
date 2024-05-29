@@ -606,7 +606,7 @@ let skills = {
       name_en: "Earth Breaker",
       desc: "Requires any stance. Deals melee cut attack to one target with splash damage and a chance of stunning. \nRemoves stance after use.",
       stats: ["STR", "LUC", "Arms", "Katana"],
-      dep: { mirrorMoon: 3 },
+      dep: { lightningStab: 3 },
       maxLevel: 6,
       coords: { x: 4, y: 4.5 }
     },
@@ -614,7 +614,7 @@ let skills = {
       name_en: "Blunting Stab",
       desc: "Requires any stance. Deals melee stab damage to one target. Attempts to inflict petrify. \nRemoves stance after use.",
       stats: ["STR", "LUC", "Arms", "Katana"],
-      dep: { hazeSlash: 3 },
+      dep: { frigidSlash: 3 },
       maxLevel: 8,
       coords: { x: 4, y: 5.5 }
     },

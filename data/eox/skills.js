@@ -324,9 +324,9 @@ let skills = {
       coords: { x: 2, y: 3 }
     },
     succor: {
-      name_en: "Succor",
-      desc: "When the user is alive, party members with buffs will recover HP when they act.",
-      stats: ["WIS"],
+      name_en: "Vital Harmony",  
+      desc: "When all party members' HP is above a set percentage, increases the user's attack. If below then increase defense instead.",
+      stats: [],
       dep: { indomitability: 3 },
       maxLevel: 6,
       coords: { x: 3, y: 3 }

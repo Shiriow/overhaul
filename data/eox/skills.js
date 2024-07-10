@@ -55,7 +55,7 @@ let skills = {
     },
     glacialSplit: {
       name_en: "Glacial Split", 
-      desc: "Deals melee weapon STR damage to one enemy. Follow up with ice weapon INT damage to the same row.", 
+      desc: "Deals melee weapon STR damage to one enemy. Follow up with ranged INT ice weapon damage to the same row.", 
       stats: ["STR, INT, Arms, Rapier, Spear"],
       dep: { glaciesClaudere: 1, tonitrusCanere: 1, ignisArdere: 1 },
       maxLevel: 8,

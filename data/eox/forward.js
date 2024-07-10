@@ -1,4 +1,33 @@
 let forward = {
+  Protector: {
+    shieldProtect: { perfectDefense: 0 },
+    perfectDefense: {},
+    ignisArdere: { glacialSplit: 1, runeRadiance: 1 },
+    glaciesClaudere: { glacialSplit: 1, runeRadiance: 1 },
+    tonitrusCanere: { glacialSplit: 1, runeRadiance: 1 },
+    glacialSplit: { vallation: 2, arcaneRune: 2 },
+    vallation: { liement: 2 },
+    zephyrStride: { sunrazeDiver: 2 },
+    sunrazeDiver: { spellBurst: 2 },
+    spellBurst: {},
+    runeRadiance: { infusionSforzo: 3 },
+    infusionSforzo: { effusionGambit: 2, intervention: 2 },
+    intervention: { tenuousEternity: 2 },
+    holySuccor: { vivaciousPulse: 3 },
+    vivaciousPulse: {},
+    runeWard: {},
+    arcaneRune: { zephyrStride: 2 },
+    liement: { cover: 2 },
+    effusionGambit: { runeWard: 2 },
+    cellDivide: { provoke: 2 },
+    aegis: { autoguard: 2 },
+    cover: {},
+    autoguard: { cover: 2 },
+    provoke: { aegis: 2, holySuccor: 2 },
+    tenuousEternity: {},
+    chop: {}
+  },
+
   Medic: {
     steadyHands: { medicalMiracle: 0 },
     medicalMiracle: { },

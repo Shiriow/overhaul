@@ -1,4 +1,235 @@
 let skills = {
+  Protector: {
+    shieldProtect: {
+      name_en: "Tempered Will",
+      desc: "For 3 turns, pauses the duration of all buffs on the party and prevents enemies from dispelling buffs.",
+      stats: [],
+      unique: true,
+      type: "Boost",
+      dep: {},
+      maxLevel: 0,
+      coords: { x: 0, y: 0 }
+    },
+    perfectDefense: {
+      name_en: "Perfect Defense",
+      desc: "This turn, completely negates all damaging attacks against the party.",
+      stats: [],
+      unique: true,
+      type: "Break",
+      dep: { shieldProtect: 0 },
+      maxLevel: 0,
+      coords: { x: 1, y: 0 }
+    },
+    ignisArdere: {
+      name_en: "Ignis Ardere",
+      desc: "For a set number of turns, imbue a row's attacks with fire and increase their fire resistance. Extend range to party at max level.",
+      
+      
+      
+      stats: ["Head", "Shield"],
+      dep: {},
+      maxLevel: 6,
+      coords: { x: 0, y: 1 }
+    },
+    glaciesClaudere: {
+      name_en: "Glacies Claudere",  
+      desc: "For a set number of turns, imbue a row's attacks with ice and increase their ice resistance. Extend range to party at max level.",
+      
+      
+      
+      stats: ["Head", "Shield"],
+      dep: {},
+      maxLevel: 6,
+      coords: { x: 0, y: 2 }
+    },
+    tonitrusCanere: {
+      name_en: "Tonitrus Canere",  
+      desc: "For a set number of turns, imbue a row's attacks with volt and increase their volt resistance. Extend range to party at max level.",
+      
+      
+      
+      stats: ["Head", "Shield"],
+      dep: {},
+      maxLevel: 6,
+      coords: { x: 0, y: 3 }
+    },
+    glacialSplit: {
+      name_en: "Glacial Split", 
+      desc: "Deals melee weapon STR damage to one enemy. Follow up with ice weapon INT damage to the same row.", 
+      stats: ["STR, INT, Arms, Rapier, Spear"],
+      dep: { glaciesClaudere: 1, tonitrusCanere: 1, ignisArdere: 1 },
+      maxLevel: 8,
+      coords: { x: 1, y: 2.5 }
+    },
+    arcaneRune: {
+      name_en: "Arcane Rune",
+      desc: "Increases damage of attacks with two or more elements.",
+      stats: [],
+      dep: { glacialSplit: 2 },
+      maxLevel: 8,
+      coords: { x: 2, y: 2.5 }
+    },
+    zephyrStride: {
+      name_en: "Zephyr Stride",
+      desc: "Deals melee weapon STR damage to one enemy. Follow up with 3 instances of ranged INT volt weapon damage to random targets.",
+      stats: ["STR, INT, Arms, Rapier, Spear"],
+      dep: { arcaneRune: 2 },
+      maxLevel: 8,
+      coords: { x: 3, y: 2.5 }
+    },
+    sunrazeDiver: {
+      name_en: "Sunraze Diver",  
+      desc: "2 turns later, deal ranged fire weapon damage to all enemies at the start of turn. ",
+      stats: ["STR, Head, Rapier, Spear"],
+      dep: { zephyrStride: 2 },
+      maxLevel: 8,
+      coords: { x: 4, y: 2.5 }
+    },
+    spellBurst: {
+      name_en: "Spell Burst",  
+      desc: "Deals melee stab damage to one enemy. \nIf the user used an elemental attack on the last turn, commands all allies to deal Int-based ranged weapon damage to the target.",
+      stats: ["INT, Arms, Rapier, Spear"],
+      dep: { sunrazeDiver: 2 },
+      maxLevel: 8,
+      coords: { x: 5, y: 2.5 }
+    },
+    runeRadiance: {
+      name_en: "Rune Radiance",
+      desc: "Removes elemental imbue from one ally, and deals ranged damage of the element of the removed imbue to all enemies. Damage is based on the user's shield's DEF.",
+      
+      stats: ["STR, Arms", "Shield"],
+      dep: { glaciesClaudere: 1, tonitrusCanere: 1, ignisArdere: 1 },
+      maxLevel: 8,
+      coords: { x: 1, y: 1.5 }
+    },
+    infusionSforzo: {
+      name_en: "Infusion Sforzo",
+      desc: "Deals melee weapon damage to one target. Reduces user's de/buffs turn count by 1.",
+      stats: ["STR, Arms, Rapier, Spear"],
+      dep: { runeRadiance: 2 },
+      maxLevel: 8,
+      coords: { x: 2, y: 1.5 }
+    },
+    effusionGambit: {
+      name_en: "Effusion Gambit",
+      desc: "Removes elemental imbues from all allies, and deals ranged damage of the canceled element to random enemies. Repeat for each buff removed.",
+      
+      stats: ["INT, Arms, Rapier, Spear"],
+      dep: { infusionSforzo: 2 },
+      maxLevel: 8,
+      coords: { x: 3, y: 1.5 }
+    },
+    runeWard: {
+      name_en: "Rune Ward",
+      desc: "Cancels Ignis, Glacies or Tonitrus on the party. \nUntil the end of the turn, all party members will absorb damage of the canceled element.",
+      
+      
+      stats: ["Head", "Shield"],
+      dep: { effusionGambit: 2 },
+      maxLevel: 6,
+      coords: { x: 4, y: 1.5 }
+    },
+    intervention: {
+      name_en: "Intervention",
+      desc: "Dispel the oldest de/buff from an ally and raise their damage and defense for this turn.",
+      stats: ["Head", "Shield"],
+      dep: { infusionSforzo: 2 },
+      maxLevel: 8,
+      coords: { x: 3, y: 0.5 }
+    },
+    tenuousEternity: {
+      name_en: "Tenuous Eternity",
+      desc: "Dispel the oldest de/buff from an ally and extend the rest.",
+      stats: ["Head"],
+      dep: { intervention: 2 },
+      maxLevel: 6,
+      coords: { x: 4, y: 0.5 }
+    },
+    vallation: {
+      name_en: "Vallation",
+      desc: "For a set number of turns, increases one ally's attack when hitting an enemy's weakness and action speed. ",  
+      
+      
+      stats: ["Head"],
+      dep: { glacialSplit: 2 },
+      maxLevel: 8,
+      coords: { x: 2, y: 3.5 }
+    },
+    liement: {
+      name_en: "Liement ",
+      desc: "Restores TP to the user when their buffs are dispelled or run out.",  
+      stats: [],
+      dep: { vallation: 2 },
+      maxLevel: 8,
+      coords: { x: 3, y: 3.5 }
+    },
+    cellDivide: {
+      name_en: "Cell Divide",
+      desc: "Covers one ally for one turn.",
+      stats: ["Arms", "Shield"],
+      dep: {},
+      maxLevel: 6,
+      coords: { x: 0, y: 4.75 }
+    },
+    provoke: {
+      name_en: "Resonant Cry",
+      desc: "Decreases the enemy's elemental defense and increases the user's chance of being targeted for a set number of turns.",
+      stats: ["Head"],
+      dep: { cellDivide: 2 },
+      maxLevel: 8,
+      coords: { x: 1, y: 4.75 }
+    },
+    aegis: {
+      name_en: "Aegis Grace",
+      desc: "Gives a chance for the user to survive fatal damage at 1 HP if they have a buff on, in exchange for losing their oldest applied buff.",
+      stats: [],
+      dep: { provoke: 2 },
+      maxLevel: 8,
+      coords: { x: 2, y: 4.75 }
+    },
+    autoguard: {
+      name_en: "Hallowed Feint", 
+      desc: "When the user is attacked, there is a chance to automatically reduce the damage.", 
+      stats: [],
+      dep: { aegis: 2 },
+      maxLevel: 8,
+      coords: { x: 3, y: 4.75 }
+    },
+    holySuccor: {
+      name_en: "Holy Succor", 
+      desc: "Restores HP for one ally and then again for the user's row at half the power.",
+      
+      stats: ["WIS", "Head"],
+      dep: { provoke: 2 },
+      maxLevel: 8,
+      coords: { x: 2, y: 5.75 }
+    },
+    vivaciousPulse: {
+      name_en: "Vivacious Pulse",  
+      desc: "When the user is alive, party members with buffs will recover HP when they act.",
+      stats: [],
+      dep: { holySuccor: 2 },
+      maxLevel: 8,
+      coords: { x: 3, y: 5.75 }
+    },
+    cover: {
+      name_en: "Cover", 
+      desc: "When an ally is attacked, the user has a chance of automatically covering them.",
+      stats: [],
+      dep: { autoguard: 2, liement: 2 },
+      maxLevel: 8,
+      coords: { x: 4, y: 4.17 }
+    },
+    chop: {
+      name_en: "Chop",
+      desc: "Occasionally gains more items when using Chop points.",
+      stats: [],
+      unique: true,
+      dep: {},
+      maxLevel: 1,
+      coords: { x: 0, y: 6 }
+    }
+  },
   Medic: {
     steadyHands: {
       name_en: "Steady Hands",

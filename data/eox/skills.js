@@ -2431,7 +2431,7 @@ let skills = {
     },
     returnStroke: {
       name_en: "Grim Rush",  
-      desc: "Starter Edge skill. \nDeals melee weapon damage to one target. \nRecovers Force on hit.",
+      desc: "Starter Edge skill. \nDeals melee cut damage to one target. \nRecovers Force on hit.",
       stats: ["STR", "Arms", "Driveblade"],
       dep: {},
       maxLevel: 8,
@@ -2532,7 +2532,7 @@ let skills = {
     },
     roughDivide: {
       name_en: "Rough Divide",
-      desc: "Starter Edge skill. \nReduces physical damage to the user's row for one turn. \nIf Rough Divide is activated by enemy damage, the user will use their equipped weapon to counterattack the source of the damage and reduce Overheat by 1 turn. ",
+      desc: "Starter Edge skill. \nReduces physical damage to the user's row for one turn. \nIf Rough Divide is activated by enemy damage, the user will counterattack with cut damage and reduce Overheat by 1 turn. ",
       stats: ["STR", "Arms", "Driveblade"],
       dep: {},
       maxLevel: 8,

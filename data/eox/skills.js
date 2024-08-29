@@ -1186,7 +1186,7 @@ let skills = {
       desc: "For a set number of turns, an ally has a chance of nullifying Ailments, Binds and Debuffs. \nRecover the user's HP.",
       stats: ["Head"],
       dep: { spiritShield: 2 },
-      maxLevel: 8,
+      maxLevel: 6,
       coords: { x: 2, y: 1 }
     },
     fightingSpirit: {

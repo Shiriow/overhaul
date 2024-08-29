@@ -1198,7 +1198,7 @@ let skills = {
       coords: { x: 3, y: 1 }
     },
     bloodVeil: {
-      name_en: "Blood Veil/Defiance",
+      name_en: "Blood Veil",
       desc: "When the user loses HP, increases defense until the end of the turn.",
       stats: [],
       dep: { spiritShield: 2 },

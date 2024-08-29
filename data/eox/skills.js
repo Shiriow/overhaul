@@ -1106,7 +1106,7 @@ let skills = {
   Highlander: {
     heroBattle: {
       name_en: "Hero Battle",
-      desc: "For 3 turns, spear skills will have increased power, and restore HP to all party members based on damage dealt. \nSpear skills that activate instant death will still restore HP based on the damage that would have been dealt.",
+      desc: "For 3 turns, spear skills restore HP to all party members based on damage dealt. User's chance of being targeted is also increased.",
       stats: [],
       unique: true,
       type: "Boost",
@@ -1117,6 +1117,7 @@ let skills = {
     gaeBolg: {
       name_en: "Gae Bolg",
       desc: "This turn the party will endure all attacks, and the user will deal ranged stab damage to all combatants.",
+
       stats: ["STR", "Arm", "Spear"],
       unique: true,
       type: "Break",
@@ -1124,107 +1125,67 @@ let skills = {
       maxLevel: 0,
       coords: { x: 1, y: 0 }
     },
-    longThrust: {
-      name_en: "Vorpal Thrust",
-      desc: "Deals ranged stab damage to one target. Restores HP to the user based on the amount of damage dealt.",
+    toeToToe: {
+      name_en: "Toe To Toe",
+      desc: "Deals melee stab damage to one target. Restores the user's HP based on damage dealt.\nIncreases the user's chance of being targeted for this turn.",
       stats: ["STR", "Arm", "Spear"],
       dep: {},
-      maxLevel: 6,
+      maxLevel: 8,
       coords: { x: 0, y: 3.5 }
     },
-    nascentFlash: {
-      name_en: "Nascent Flash", 
-      desc: "Deals melee stab damage to one target. If it kills, heal the whole party.",
-      stats: ["STR", "Arm", "Spear"],
-      dep: { longThrust: 3 },
-      maxLevel: 6,
-      coords: { x: 1, y: 3.5 }
-    },
-    headPierce: {
-      name_en: "Head Pierce",
-      desc: "Deals melee stab damage to one target. Attempts to inflict head bind and instant death.",
-      stats: ["STR", "LUC", "Arm", "Spear"],
-      dep: { nascentFlash: 3 },
-      maxLevel: 6,
-      coords: { x: 2, y: 3.5 }
-    },
-    turningTide: {
-      name_en: "Turning Tide",
-      desc: "When the user defeats an enemy, restores HP to all party members.",
-      stats: [],
-      dep: { headPierce: 3 },
-      maxLevel: 8,
-      coords: { x: 3, y: 3.5 }
-    },
-    blackSabbath: {
-      name_en: "Black Sabbath",
-      desc: "Deals ranged almighty damage to all enemies, and restores all party members' HP based on damage dealt.",
-      stats: ["STR", "Arm", "Spear"],
-      dep: { turningTide: 3 },
-      maxLevel: 6,
-      coords: { x: 4, y: 3.5 }
-    },
-    lifeSurge: {
-      name_en: "Life Surge",
-      desc: "If the user is in the front row and at full HP, their TP is restored at the end of the turn.",
-      stats: [],
-      dep: { blackSabbath: 3, alliedBonds: 3 },
-      maxLevel: 6,
-      coords: { x: 5, y: 4.125 }
-    },
-    drainingThrust: {
-      name_en: "Draining Thrust",
-      desc: "Consumes the user's HP to deal melee stab damage to the enemy front row.",
-      stats: ["STR", "Arm", "Spear"],
+    bloodPact: {
+      name_en: "Blood Pact",
+      desc: "Consumes the HP of all allies other than the user by 15%. \nFor a set number of turns, the user will have increased attack and take damage in place of party members below 66% HP for a certain amount of times per turn. \nEvery time the user takes damage for another party member, the chance of them taking damage again on that turn is reduced.",
+      stats: ["Head"],
       dep: {},
       maxLevel: 8,
-      coords: { x: 0, y: 2.25 }
-    },
-    delayedCharge: {
-      name_en: "Delayed Charge",
-      desc: "Consumes the user's HP to deal ranged stab damage to one target at the end of a set number of turns after. \nDamage is increased based on the number of turns passed before its activation. \nIneffective if the user dies before the skill activates.",
-      stats: ["STR", "Arm", "Spear"],
-      dep: { drainingThrust: 3 },
-      maxLevel: 8,
-      coords: { x: 1, y: 2.25 }
-    },
-    crossCharge: {
-      name_en: "Cross Charge",
-      desc: "Consumes the user's HP to deal melee stab damage to one target. \nIf currently charging for Delayed Charge, activates it and increases Cross Charge's damage.",
-      stats: ["STR", "Arm", "Spear"],
-      dep: { delayedCharge: 3 },
-      maxLevel: 8,
-      coords: { x: 2, y: 2.25 }
-    },
-    thousandSpears: {
-      name_en: "Thousand Spears", 
-      desc: "Deals multiple instances of melee stab damage to an enemy's row. Damage decreases the higher the user's current HP is.",
-      stats: ["STR", "Arm", "Spear"],
-      dep: { crossCharge: 3 },
-      maxLevel: 8,
-      coords: { x: 3, y: 2.25 }
-    },
-    forceOffering: {
-      name_en: "Force Offering",
-      desc: "Consumes the user's HP to pause the duration of their Force Boost this turn and boost their attack until the end of the next turn. \nOnly usable once per Force Boost.",
-      stats: ["Head"],
-      dep: { thousandSpears: 3 },
-      maxLevel: 6,
-      coords: { x: 4, y: 2.25 }
-    },
-    bloodVeil: {
-      name_en: "Blood Veil",
-      desc: "When the user loses HP, increases defense until the end of the turn.",
-      stats: [],
-      dep: { drainingThrust: 3 },
-      maxLevel: 8,
-      coords: { x: 1, y: 1 }
+      coords: { x: 0, y: 2 }
     },
     bloodlust: {
       name_en: "Bloodlust",
       desc: "When the user loses HP, there is a chance that they will automatically attack with their weapon.",
       stats: [],
-      dep: { bloodVeil: 3 },
+      dep: { bloodPact: 1, toeToToe: 1 },
+      maxLevel: 8,
+      coords: { x: 1, y: 2.75 }
+    },
+    spiritShield: {
+      name_en: "Spirit Shield",
+      desc: "For a set number of turns, increases maximum HP for one row.",
+      stats: ["Head"],
+      dep: { bloodPact: 1, toeToToe: 1 },
+      maxLevel: 8,
+      coords: { x: 1, y: 1 }
+    },
+    wildOnslaught: {
+      name_en: "Wild Onslaught",
+      desc: "Consumes the user's HP to quickly deal melee stab damage to an enemy. Attempts to inflict instant death.\n\nDeals multiple instances of melee stab damage to all combatants other than the user. ",
+      stats: ["STR", "Arm", "Spear"],
+      dep: { spiritShield: 2 },
+      maxLevel: 8,
+      coords: { x: 2, y: 0 }
+    },
+    jawsOfDeath: {
+      name_en: "Jaws of Death",
+      desc: "When cast, the user will endure fatal damage once. \nIf the user endured a fatal hit, their damage on the next turn is increased depending on the damage endured.",
+      stats: ["Head"],
+      dep: { wildOnslaught: 2 },
+      maxLevel: 10,
+      coords: { x: 3, y: 0 }
+    },
+    b4B: {
+      name_en: "Blood for Blood",
+      desc: "For a set number of turns, the user gains a buff that reduces their defence, but increases damage dealt for their row. Consumes HP on cast.",
+      stats: ["Head"],
+      dep: { jawsOfDeath: 2 },
+      maxLevel: 8,
+      coords: { x: 4, y: 0 }
+    },
+    innerPeace: {
+      name_en: "Inner Peace",
+      desc: "For a set number of turns, an ally has a chance of nullifying Ailments, Binds and Debuffs. \nRecover the user's HP.",
+      stats: ["Head"],
+      dep: { spiritShield: 2 },
       maxLevel: 8,
       coords: { x: 2, y: 1 }
     },
@@ -1232,81 +1193,121 @@ let skills = {
       name_en: "Fighting Spirit",
       desc: "If the user lost HP on the previous turn, increases their attack this turn.",
       stats: [],
-      dep: { thousandSpears: 3 },
+      dep: { innerPeace: 2 },
       maxLevel: 8,
       coords: { x: 3, y: 1 }
     },
-    jawsOfDeath: {
-      name_en: "Jaws of Death",
-      desc: "When cast, the user will endure fatal damage once and take additional damage. \nIf the user endured a fatal hit through Jaws of Death, their damage on the next turn is increased depending on the damage endured.",
+    bloodVeil: {
+      name_en: "Blood Veil/Defiance",
+      desc: "When the user loses HP, increases defense until the end of the turn.",
+      stats: [],
+      dep: { spiritShield: 2 },
+      maxLevel: 8,
+      coords: { x: 2, y: 2 }
+    },
+    trueGrit: {
+      name_en: "True Grit",
+      desc: "Covers the user's row for one turn.",
       stats: ["Head"],
-      dep: { fightingSpirit: 3 },
+      dep: { bloodVeil: 2, frozenAbyss: 2 },
+      maxLevel: 8,
+      coords: { x: 3, y: 2.75 }
+    },
+    heavensValor: {
+      name_en: "Heaven's Valor",
+      desc: "Lowers all damage to the user until the end of the next turn. \nThen, deal melee stab damage to all enemies. Damage depends on number of hits taken and level of Bloodlust.",
+      stats: ["STR", "Arm", "Spear"],
+      dep: { trueGrit: 2 },
+      maxLevel: 8,
+      coords: { x: 4, y: 3.25 }
+    },
+    execratedWill: {
+      name_en: "Execrated Will",
+      desc: "If the user is in the front row and takes damage, their TP is restored.",
+      stats: [],
+      dep: { trueGrit: 2, fightingSpirit: 2 },
+      maxLevel: 4,
+      coords: { x: 4, y: 1.875 }
+    },
+    thousandSpears: {
+      name_en: "Thousand Spears",
+      desc: "Deals multiple instances of melee stab damage to an enemy's row. Damage decreases the higher the user's current HP is.",
+      stats: ["STR", "Arm", "Spear"],
+      dep: { execratedWill: 2 },
+      maxLevel: 8,
+      coords: { x: 5, y: 1.875 }
+    },
+    viciousSwipe: {
+      name_en: "?Vicious Swipe",
+      desc: "Deals melee stab attack to one target with splash damage and the user's adjacent allies.\n\nDeals melee stab attack to one target and the user with splash damage.",
+      stats: ["STR", "Arm", "Spear"],
+      dep: { bloodPact: 1, toeToToe: 1 },
+      maxLevel: 8,
+      coords: { x: 1, y: 4.5 }
+    },
+    frozenAbyss: {
+      name_en: "Frozen Abyss",
+      desc: "Deals ranged ice damage to all enemies. Heals the party for 25% of the damage dealt. \nDamage is decreased the lower the user's HP.",
+      stats: ["STR", "Arm", "Spear"],
+      dep: { viciousSwipe: 2 },
+      maxLevel: 8,
+      coords: { x: 2, y: 3.5 }
+    },
+    offering: {
+      name_en: "Cauterize",
+      desc: "Attack user's row with fire damage to remove their ailments and binds depending on level.",
+      stats: ["Head"],
+      dep: { viciousSwipe: 2 },
       maxLevel: 6,
-      coords: { x: 4, y: 1 }
+      coords: { x: 2, y: 4.5 }
     },
-    legionBurst: {
-      name_en: "Legion Burst",
-      desc: "Consumes the HP of all allies other than the user at the start of the turn. \nAt the end of the turn deal ranged stab damage to all enemies.",
+    southernCross: {
+      name_en: "Southern Cross",
+      desc: "Deal melee stab+ice damage to all combatants.",
       stats: ["STR", "Arm", "Spear"],
-      dep: {},
+      dep: { viciousSwipe: 2 },
       maxLevel: 8,
-      coords: { x: 0, y: 4.75 }
+      coords: { x: 2, y: 5.5 }
     },
-    legionCharge: {
-      name_en: "Legion Charge", 
-      desc: "Consumes the HP of all allies other than the user at the start of the turn. \nAt the end of the turn deal ranged stab damage to one target.",
-      stats: ["STR", "Arm", "Spear"],
-      dep: { legionBurst: 3 },
-      maxLevel: 10,
-      coords: { x: 1, y: 4.75 }
-    },
-    miseryTear: {
-      name_en: "Misery Tear", 
-      desc: "Deals melee stab damage to one enemy. Deals more damage the less HP the entire party has. \nBoth the party's current average percentage of HP remaining as well as the raw amount of HP missing are taken into account by this.",
-      stats: ["STR", "Arm", "Spear"],
-      dep: { legionCharge: 3 },
+    lastStand: {
+      name_en: "Last Stand",
+      desc: "For 3 turns, an ally will endure fatal damage once with a set amount of HP.",
+      stats: ["Head"],
+      dep: { southernCross: 2 },
       maxLevel: 8,
-      coords: { x: 2, y: 4.75 }
+      coords: { x: 3, y: 5.5 }
     },
     alliedBonds: {
       name_en: "Allied Bonds",
       desc: "If the user's skill consumed the HP of allies on the user's row, restores their TP at the end of the turn.",
       stats: [],
-      dep: { miseryTear: 3 },
-      maxLevel: 6,
-      coords: { x: 3, y: 4.75 }
-    },
-    spiritShield: {
-      name_en: "Spirit Shield",
-      desc: "Consumes the user's HP to increase the elemental defense and maximum HP of one row for a set number of turns.",
-      stats: ["Head"],
-      dep: { legionBurst: 3 },
-      maxLevel: 6,
-      coords: { x: 1, y: 6 }
-    },
-    bloodyOffense: {
-      name_en: "Bloody Offense",
-      desc: "Consumes the HP of all allies other than the user to increase a row's attack and decrease defence for a set number of turns.",
-      stats: ["Head"],
-      dep: { spiritShield: 3 },
-      maxLevel: 10,
-      coords: { x: 2, y: 6 }
-    },
-    bloodFortune: {
-      name_en: "Blood Fortune",
-      desc: "Consumes all party members' HP to increase their infliction rate of binds and ailments for a set number of turns.",
-      stats: ["Head"],
-      dep: { bloodyOffense: 3 },
-      maxLevel: 8,
-      coords: { x: 3, y: 6 }
-    },
-    battleInstincts: {
-      name_en: "Battle Instinct",
-      desc: "At the start of battle, there is a chance to cast a buff on all party members that negates ailments once for 3 turns. \nCannot activate if another ally activated it first.",
-      stats: [],
-      dep: { bloodFortune: 3 },
+      dep: { lastStand: 2 },
       maxLevel: 6,
       coords: { x: 4, y: 6 }
+    },
+    turningTide: {
+      name_en: "Turning Tide",
+      desc: "When the user defeats an enemy, restores HP to all party members.",
+      stats: [],
+      dep: { frozenAbyss: 2, offering: 2 },
+      maxLevel: 10,
+      coords: { x: 3, y: 4 }
+    },
+    bitingHalberd: {
+      name_en: "Biting Halberd",
+      desc: "Deal ranged stab damage to one target and consumes the HP of all allies other than the user. Damage is reduced the lower the party's HP.",
+      stats: ["STR", "Arm", "Spear"],
+      dep: { turningTide: 2, lastStand: 2 },
+      maxLevel: 8,
+      coords: { x: 4, y: 4.75 }
+    },
+    miseryTear: {
+      name_en: "Misery Tear",
+      desc: "Deals melee stab damage to one enemy. Deals more damage the less HP the entire party has. \nBoth the party's current average percentage of HP remaining as well as the raw amount of HP missing are taken into account by this.",
+      stats: ["STR", "Arm", "Spear"],
+      dep: { bitingHalberd: 2, alliedBonds: 2 },
+      maxLevel: 8,
+      coords: { x: 5, y: 5.375 }
     },
     mine: {
       name_en: "Mine",

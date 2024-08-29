@@ -1159,7 +1159,7 @@ let skills = {
     },
     wildOnslaught: {
       name_en: "Wild Onslaught",
-      desc: "Consumes the user's HP to quickly deal melee stab damage to an enemy. Attempts to inflict instant death.",
+      desc: "Consumes the user's HP to deal melee stab damage to an enemy. Attempts to inflict instant death.",
       stats: ["STR", "Arm", "Spear"],
       dep: { spiritShield: 2 },
       maxLevel: 8,

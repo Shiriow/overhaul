@@ -1159,7 +1159,7 @@ let skills = {
     },
     wildOnslaught: {
       name_en: "Wild Onslaught",
-      desc: "Consumes the user's HP to quickly deal melee stab damage to an enemy. Attempts to inflict instant death.\n\nDeals multiple instances of melee stab damage to all combatants other than the user. ",
+      desc: "Consumes the user's HP to quickly deal melee stab damage to an enemy. Attempts to inflict instant death.",
       stats: ["STR", "Arm", "Spear"],
       dep: { spiritShield: 2 },
       maxLevel: 8,
@@ -1238,8 +1238,8 @@ let skills = {
       coords: { x: 5, y: 1.875 }
     },
     viciousSwipe: {
-      name_en: "?Vicious Swipe",
-      desc: "Deals melee stab attack to one target with splash damage and the user's adjacent allies.\n\nDeals melee stab attack to one target and the user with splash damage.",
+      name_en: "Vicious Swipe",
+      desc: "Deals melee stab attack to one target with splash damage and the user's adjacent allies.",
       stats: ["STR", "Arm", "Spear"],
       dep: { bloodPact: 1, toeToToe: 1 },
       maxLevel: 8,
